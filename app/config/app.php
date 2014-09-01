@@ -10,14 +10,14 @@ return array(
 	'use_scripts_local' => FALSE,
 	
 	'default_page_title' => 'Quest Zenit',
-	'template' => 'site',
+	'template' => 'default',
     'welcome_page_tpl' => 'templates.site.index', #'guests.welcome',
 
 
 	'manifest' => storage_path('meta'),
 
 	'debug' => FALSE,
-	'url' => 'http://test.grapheme.ru/sarykum/public',
+	'url' => 'http://test.grapheme.ru/quest-zenit/public',
 	'timezone' => 'UTC',
 
     'locales' => array(
