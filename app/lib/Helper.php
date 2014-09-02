@@ -47,7 +47,7 @@ class Helper {
     }
 
     public static function tad($object) {
-        self::dd($object->toArray());
+        self::dd(is_object($object) ? $object->toArray() : $object);
     }
 
     public static function ta_($array) {
@@ -343,6 +343,9 @@ HTML;
         if (!@$array || !is_array($array) || !@$name)
             return false;
 
+        if (isset($array['content']))
+            return $array['content'];
+
         $return = '';
         #$name = $array['name'];
         #if ($name_group != '')
@@ -350,6 +353,11 @@ HTML;
 
         $value = $value ? $value : @$array['default'];
 
+        #Helper::d($value);
+
+        if (@is_callable($array['value_modifier'])) {
+            $value = $array['value_modifier']($value);
+        }
         #Helper::d($value);
 
         $others = array();
@@ -361,7 +369,7 @@ HTML;
             }
         }
         $others = ' ' . implode(' ', $others);
-        switch ($array['type']) {
+        switch (@$array['type']) {
             case 'text':
                 $return = '<input type="text" name="' . $name . '" value="' . $value . '"' . $others . ' />';
                 #$return = Form::text($array['name']);
@@ -380,6 +388,11 @@ HTML;
                 break;
             case 'gallery':
                 $return = ExtForm::gallery($name, $value);
+                break;
+            case 'date':
+                $others_array['class'] = trim(@$others_array['class'] . ' datepicker');
+                #$others_array = self::arrayToAttributes($others_array);
+                $return = Form::text($name, $value, $others_array);
                 break;
         }
         return $return;

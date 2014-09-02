@@ -5,7 +5,7 @@
 <div class="row">
 
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
-		<form action="{{ link::to(AuthAccount::getStartPage().'/settings/module') }}" class="smart-form">
+		<form action="{{ URL::route('modules.change') }}" class="smart-form">
 			<fieldset>
 				<label class="label">Список доступных модулей:</label>
 				<table class="table table-bordered table-striped">

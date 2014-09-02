@@ -18,9 +18,7 @@ class Allow {
                 $tmp->actions = $actions;
                 self::$modules[$tmp['name']] = $tmp;
             }
-            self::$modules['system'] = array('system' => 1);
-            self::$modules['groups'] = array('system' => 1);
-            self::$modules['users'] = array('system' => 1);
+            #self::$modules['system'] = array('system' => 1);
         }
         #Helper::dd(self::$modules);
     }
@@ -31,6 +29,8 @@ class Allow {
      *
      * @param string $module_name
      * @param string $action
+     * @param boolean $check_module_enabled
+     * @param boolean $admin_grants_all
      * @return bool
 	 */
 	public static function action($module_name, $action, $check_module_enabled = true, $admin_grants_all = true){
@@ -44,7 +44,7 @@ class Allow {
             $user_group = Auth::user()->group;
 
             #Helper::dd(@self::$modules);
-            #Helper::dd(@self::$modules[$module_name]);
+            #Helper::d(@self::$modules[$module_name]);
 
             if (!$check_module_enabled || isset(self::$modules[$module_name]) || @self::$modules[$module_name]['system']) {
 
@@ -59,6 +59,9 @@ class Allow {
                 } else {
 
                     $module = isset(self::$modules[$module_name]) ? self::$modules[$module_name] : null;
+
+                    #if ($module_name == 'system')
+                    #    Helper::dd($module->actions);
 
                     ## Check all conditions
                     if(!is_null($user_group) && !is_null($module) && !is_null($action)) {

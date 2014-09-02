@@ -59,9 +59,9 @@
                 <fieldset class="padding-top-10 clearfix">
                     @foreach ($fields['general'] as $field_name => $field)
                     <section>
-                        <label class="label">{{ $field['title'] }}</label>
-                        <label class="input {{ $field['type'] }}">
-                            {{ Helper::formField('fields[' . $field_name . ']', $field, @$element_fields[$field_name]) }}
+                        <label class="label">{{ @$field['title'] }}</label>
+                        <label class="input {{ @$field['type'] }}">
+                            {{ Helper::formField('fields[' . @$field_name . ']', @$field, @$element_fields[$field_name]) }}
                         </label>
                     </section>
                     @endforeach

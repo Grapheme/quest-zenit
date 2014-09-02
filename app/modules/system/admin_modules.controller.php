@@ -14,7 +14,8 @@ class AdminModulesController extends BaseController {
         $name = self::$name;
         $group = self::$group;
         Route::group(array('before' => 'auth', 'prefix' => 'admin'), function() use ($class, $name, $group) {
-        	Route::controller($group . '/' . $name, $class);
+            Route::post($group . '/' . $name, array('as' => 'modules.change', 'uses' => $class.'@postModule'));
+            Route::controller($group . '/' . $name, $class);
         });
     }
 
@@ -27,7 +28,7 @@ class AdminModulesController extends BaseController {
         return array(
         	'name' => self::$name,
         	'group' => self::$group,
-        	'title' => 'Настройки', 
+        	'title' => 'Модули',
             'visible' => 0,
         );
     }

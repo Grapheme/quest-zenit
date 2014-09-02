@@ -121,14 +121,6 @@ class PublicPagesController extends BaseController {
     
     ## Shortcodes of module
     public static function returnShortCodes() {
-        /**
-         * @todo Сделать шорткод для страниц (вставка страницы внутрь другой страницы, OMG). Да и нужно ли.. Уточнить у Андрея
-         */
-        #$tpl = static::returnTpl();
-    	#shortcode::add("page",
-        #    function($params = null) use ($tpl) {},
-        #    function($params = null) use ($tpl) {},
-        #);
     }
 
     ## Actions of module (for distribution rights of users)

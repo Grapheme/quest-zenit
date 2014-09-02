@@ -50,14 +50,12 @@ class SystemModules {
                         ## If permit to view menu element
                         $rules = @$menu_element['permit'];
                         $module = @$menu_element['module'] ?: $mod_name;
-                        $permit = Allow::action($module, $rules);
+                        $permit = $rules ? Allow::action($module, $rules, true, true) : true;
 
                         #Helper::d($module . " :: " . $permit);
                         #Helper::d( $menu_element['title'] . " - " . (int)$permit );
 
-                        if (
-                            Allow::module($module) && $permit
-                        )
+                        if ($permit)
                             $menu[] = $menu_element;
                     }
                 }
@@ -67,7 +65,8 @@ class SystemModules {
         #die();
 
         ## System permissions
-        if (Allow::action('system', 'permissions', false)) {
+        ## Migrated to /app/modules/system/...
+        if (0) {
 
             $menu_child = array();
 
@@ -99,13 +98,14 @@ class SystemModules {
                     'class' => 'fa-language',
                 );
 
-            $menu[] = array(
-                'title' => 'Настройки',
-                'link' => '#',
-                'class' => 'fa-gear',
-                'system' => 1,
-                'menu_child' => $menu_child,
-            );
+            if (count($menu_child))
+                $menu[] = array(
+                    'title' => 'Настройки',
+                    'link' => '#',
+                    'class' => 'fa-gear',
+                    'system' => 1,
+                    'menu_child' => $menu_child,
+                );
         }
         
         #Helper::d($menu);
