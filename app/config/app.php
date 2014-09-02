@@ -59,7 +59,8 @@ return array(
 		'Intervention\Image\ImageServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
-        'Illuminate\Custom\CustomUrlServiceProvider'
+        'Illuminate\Custom\CustomUrlServiceProvider',
+        'Flynsarmy\DbBladeCompiler\DbBladeCompilerServiceProvider',
     ),
 	'aliases' => array(
 		'App'             => 'Illuminate\Support\Facades\App',
@@ -73,6 +74,7 @@ return array(
 		'Cookie'          => 'Illuminate\Support\Facades\Cookie',
 		'Crypt'           => 'Illuminate\Support\Facades\Crypt',
 		'DB'              => 'Illuminate\Support\Facades\DB',
+        'DbView'          => 'Flynsarmy\DbBladeCompiler\Facades\DbView',
 		'Eloquent'        => 'Illuminate\Database\Eloquent\Model',
 		'Event'           => 'Illuminate\Support\Facades\Event',
 		'File'            => 'Illuminate\Support\Facades\File',

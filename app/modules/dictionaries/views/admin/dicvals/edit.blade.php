@@ -53,16 +53,21 @@
 
                 @if (@count($fields['general']))
                 <?
+                $onsuccess_js = array();
                 $element_fields = @is_object($element->fields) ? $element->fields->lists('value', 'key') : array();
                 #Helper::d($element_fields);
                 ?>
                 <fieldset class="padding-top-10 clearfix">
                     @foreach ($fields['general'] as $field_name => $field)
+                    <?
+                    if (@$field['after_save_js'])
+                        $onsuccess_js[] = $field['after_save_js'];
+                    ?>
                     <section>
                         <label class="label">{{ @$field['title'] }}</label>
-                        <label class="input {{ @$field['type'] }}">
+                        <div class="input {{ @$field['type'] }} {{ @$field['label_class'] }}">
                             {{ Helper::formField('fields[' . @$field_name . ']', @$field, @$element_fields[$field_name]) }}
-                        </label>
+                        </div>
                     </section>
                     @endforeach
                 </fieldset>
@@ -148,6 +153,12 @@
 	var validation_messages = {
 		name:              { required: "Укажите название" },
 	};
+    </script>
+
+    <script>
+        var onsuccess_function = function() {
+            {{ implode("\n", @$onsuccess_js) }}
+        }
     </script>
 
 	{{ HTML::script('js/modules/standard.js') }}

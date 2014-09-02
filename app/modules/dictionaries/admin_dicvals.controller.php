@@ -233,6 +233,11 @@ class AdminDicvalsController extends BaseController {
                         $value = $handler($value);
                     }
 
+                    #Helper::d($key . ' => ' . $value);
+
+                    if ($value === false)
+                        continue;
+
                     $field = DicFieldVal::firstOrNew(array('dicval_id' => $id, 'key' => $key, 'language' => NULL));
                     $field->value = $value;
                     $field->save();
@@ -254,8 +259,10 @@ class AdminDicvalsController extends BaseController {
                             #Helper::dd($handler);
                             $value = $handler($value);
                         }
-
                         #Helper::d($value);
+
+                        if ($value === false)
+                            continue;
 
                         $field = DicFieldVal::firstOrNew(array('dicval_id' => $id, 'key' => $key, 'language' => $locale_sign));
                         $field->value = $value;

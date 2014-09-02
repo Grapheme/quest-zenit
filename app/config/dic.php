@@ -13,8 +13,10 @@
  * Также можно задать следующие свойства:
  * - default - значение поля по-умолчанию
  * - others - набор дополнительных произвольных свойств элемента, таких как class, style, placeholder и т.д.
- * - handler - функция-замыкание, вызывается для обработки значения поля после получения ИЗ формы, перед записью в БД.
- * - value_modifier - функция-замыкание, вызывается для обработки значения поля после получения значения из БД, перед выводом В форму.
+ * - handler - функция-замыкание, вызывается для обработки значения поля после получения ИЗ формы, перед записью в БД
+ * - value_modifier - функция-замыкание, вызывается для обработки значения поля после получения значения из БД, перед выводом В форму
+ * - after_save_js - JS-код, который будет выполнен после сохранения страницы
+ * - content - содержимое, которое будет выведено на экран, вместо генерации кода элемента формы
  *
  * Некоторые типы полей могут иметь свои собственные уникальные свойства, например: значения для выбора в поле select; название группы для radio (а может обойдемся name?) и т.д.
  *
@@ -38,6 +40,8 @@
  * - radio
  *
  * Также в планах - возможность активировать SEO-модуль для каждого словаря по отдельности (ключ массива seo) и обрабатывать его.
+ *
+ * [!] Для визуального разделения можно использовать следующий элемент массива: array('content' => '<hr/>'),
  *
  * @author Zelensky Alexander
  *
@@ -125,13 +129,39 @@ return array(
 
                 'link_to_file_print' => array(
                     'title' => 'Ссылка на файл принта',
-                    'type' => 'file',
+                    'type' => 'upload',
+                    'accept' => '*', # .exe,image/*,video/*,audio/*
+                    'label_class' => 'input-file',
                     'default' => '',
+                    'handler' => function($value) {
+                            return ExtForm::process('upload', $value);
+                        },
+                    'others' => array(
+                        'class' => 'file_upload'
+                    ),
+                    /*
+                    'value_modifier' => function($value) {
+                            return $value;
+                            #return $value ? @date('d.m.Y', strtotime($value)) : $value;
+                        },
+                    */
+                    'after_save_js' => "
+                            //alert('GOOD SAVE UPLOAD!');
+                            //$('input[type=file].file_upload').each(function(){
+                            //    console.log($(this));
+                            //});
+                            //console.log($('input[type=hidden][name=redirect]').val());
+                            if (!$('input[type=hidden][name=redirect]').val())
+                                location.href = location.href;
+                        ",
                 ),
                 'link_to_buy_shirt' => array(
                     'title' => 'УРЛ для покупки футболки',
                     'type' => 'text',
                     'default' => '',
+                    'others' => array(
+                        'placeholder' => 'http://'
+                    ),
                 ),
                 'photo' => array(
                     'title' => 'Фото',

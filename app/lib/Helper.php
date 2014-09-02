@@ -391,8 +391,10 @@ HTML;
                 break;
             case 'date':
                 $others_array['class'] = trim(@$others_array['class'] . ' datepicker');
-                #$others_array = self::arrayToAttributes($others_array);
                 $return = Form::text($name, $value, $others_array);
+                break;
+            case 'upload':
+                $return = ExtForm::upload($name, $value, $others_array);
                 break;
         }
         return $return;
