@@ -35,7 +35,7 @@ class AdminSystemController extends BaseController {
         return array(
         	'name' => self::$name,
         	'group' => self::$group,
-        	'title' => 'Система', 
+        	'title' => '<i class="fa fa-exclamation-triangle"></i> Система',
             'visible' => 1,
         );
     }

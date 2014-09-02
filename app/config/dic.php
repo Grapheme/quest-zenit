@@ -151,7 +151,8 @@ return array(
                             $('input[type=file].file_upload').each(function(){
                                 //console.log($(this).val());
                                 if ($(this).val() != '')
-                                    location.href = location.href;
+                                    if (!$('input[type=hidden][name=redirect]').val())
+                                        location.href = location.href;
                             });
 
                             //console.log($('input[type=hidden][name=redirect]').val());

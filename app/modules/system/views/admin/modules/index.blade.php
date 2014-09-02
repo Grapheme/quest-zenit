@@ -1,4 +1,4 @@
-@extends('templates.'.AuthAccount::getStartPage())
+@extends(Helper::acclayout())
 
 
 @section('content')
@@ -9,13 +9,16 @@
 			<fieldset>
 				<label class="label">Список доступных модулей:</label>
 				<table class="table table-bordered table-striped">
+                    <?
+                    #Helper::dd(SystemModules::getModules());
+                    ?>
 					@foreach(SystemModules::getModules() as $name => $module)
 					<tr>
 						<td>{{ @$module['title'] }}</td>
 						<td style="width: 50px;">
 							<label class="toggle">
     							<?php $checked = ''; ?>
-    							@if(Module::where('name', @$module['name'])->exists() && Module::where('name', @$module['name'])->first()->on == 1)
+    							@if(Allow::module($module['name']))
     								<?php $checked = ' checked="checked"'; ?>
     							@endif 
     							<input type="checkbox"{{ $checked }} class="module-checkbox" data-name="{{ @$module['name'] }}">
@@ -34,6 +37,6 @@
 
 
 @section('scripts')
-	{{HTML::script('js/modules/settings.js')}}
+	{{ HTML::script('js/modules/settings.js') }}
 @stop
 

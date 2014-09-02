@@ -110,21 +110,23 @@ class AdminVideoController extends BaseController {
         return array(
         	'name' => self::$name,
         	'group' => self::$group,
-        	'title' => 'Галереи',
+        	'title' => 'Видеофайлы',
             'visible' => 1,
         );
     }
 
     ## Menu elements of the module
     public static function returnMenu() {
+        /*
         return array(
             array(
-            	'title' => 'Галереи',
+            	'title' => 'Видеофайлы',
                 'link' => self::$group,
                 'class' => 'fa-picture-o',
                 'permit' => 'view',
             ),
         );
+        */
     }
 
     /****************************************************************************/
