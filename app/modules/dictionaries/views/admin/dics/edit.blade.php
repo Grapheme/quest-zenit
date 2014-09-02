@@ -59,6 +59,43 @@
 
 		    </div>
     	</section>
+
+
+        @if (Allow::module('system'))
+        <section class="col col-6">
+            <div class="well">
+                <header>Отдельная сущность</header>
+                <fieldset>
+
+                    <section>
+                        <label class="checkbox">
+                            {{ Form::checkbox('entity', 1) }}
+                            <i></i>
+                            <strong>Вынести словарь в отдельную сущность</strong>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label class="label">Класс иконки <a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a></label>
+                        <label class="input">
+                            {{ Form::text('icon_class', null, array('placeholder' => 'Например: fa-circle-o')) }}
+                        </label>
+                    </section>
+
+                    {{--
+                    <section>
+                        <label class="label">URL-сегмент ссылки</label>
+                        <label class="input">
+                            {{ Form::text('link_url') }}
+                        </label>
+                    </section>
+                    --}}
+
+                </fieldset>
+            </div>
+        </section>
+        @endif
+
         <!-- /Form -->
    	</div>
 

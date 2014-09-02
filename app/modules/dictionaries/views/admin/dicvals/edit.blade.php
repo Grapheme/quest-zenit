@@ -14,8 +14,8 @@
 
     $url        = 
         @$element->id
-        ? action('dicval.update', array('dic_id' => $dic->id, 'id' => $element->id))
-        : action('dicval.store', array('dic_id' => $dic->id));
+        ? action(is_numeric($dic_id) ? 'dicval.update' : 'entity.update', array('dic_id' => $dic_id, 'id' => $element->id))
+        : action(is_numeric($dic_id) ? 'dicval.store'  : 'entity.store',  array('dic_id' => $dic_id));
     $method     = @$element->id ? 'PUT' : 'POST';
     $form_title = @$element->id ? $create_title : $edit_title;
     ?>
@@ -49,17 +49,19 @@
 
                 </fieldset>
 
+                {{ Helper::dd_($fields['general']) }}
+
                 @if (@count($fields['general']))
                 <?
                 $element_fields = @is_object($element->fields) ? $element->fields->lists('value', 'key') : array();
                 #Helper::d($element_fields);
                 ?>
                 <fieldset class="padding-top-10 clearfix">
-                    @foreach ($fields['general'] as $field)
+                    @foreach ($fields['general'] as $field_name => $field)
                     <section>
                         <label class="label">{{ $field['title'] }}</label>
                         <label class="input {{ $field['type'] }}">
-                            {{ Helper::formField($field, 'fields', @$element_fields[$field['name']]) }}
+                            {{ Helper::formField('fields[' . $field_name . ']', $field, @$element_fields[$field_name]) }}
                         </label>
                     </section>
                     @endforeach
@@ -128,7 +130,7 @@
 
     @if(@$element->id)
     @else
-    {{ Form::hidden('redirect', action('dicval.index', array('dic_id' => $dic->id))) }}
+    {{ Form::hidden('redirect', action(is_numeric($dic_id) ? 'dicval.index' : 'entity.index', array('dic_id' => $dic_id))) }}
     @endif
 
     {{ Form::close() }}

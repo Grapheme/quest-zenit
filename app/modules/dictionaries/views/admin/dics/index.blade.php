@@ -16,15 +16,18 @@
 						<th colspan="2" class="width-250 text-center">Действия</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody class="sortable">
 				@foreach($elements as $e => $element)
-					<tr>
+					<tr data-id="{{ $element->id }}"{{ $element->entity ? ' class="warning"' : '' }}>
 						<td class="text-center">
 						    {{ $e+1 }}
 						</td>
 						<td>
 						    {{ $element->name }}
-                            <br/><span style="color:#aaa">{{ $element->slug }}</span>
+                            <br/>
+                            <span style="color:#aaa">
+                                {{ $element->entity ? '<i class="fa fa-angle-double-right"></i> <a href="' . URL::route('entity.index', $element->slug) . '" title="Вынесено в отдельную сущность">' . $element->slug . '</a>' : $element->slug }}
+                            </span>
 						</td>
 						<td class="text-center" style="white-space:nowrap;">
 
@@ -95,5 +98,34 @@
 			loadScript("{{ asset('js/vendor/jquery-form.min.js'); }}");
 		}
 	</script>
+
+    <script>
+        $(document).on("mouseover", ".sortable", function(e){
+            // Check flag of sortable activated
+            if ( !$(this).data('sortable') ) {
+                // Activate sortable, if flag is not initialized
+                $(this).sortable({
+                    // On finish of sorting
+                    stop: function() {
+                        // Find all playlists
+                        var pls = $(this).find('tr');
+                        var poss = [];
+                        // Make array with current sorting order
+                        $(pls).each(function(i, item) {
+                            poss.push($(item).data('id'));
+                        });
+                        console.log(poss);
+                        // Send ajax request to server for saving sorting order
+                        $.ajax({
+                            url: "{{ URL::route('dic.order') }}",
+                            type: "post",
+                            data: {poss: poss},
+                            success: function() {}
+                        });
+                    }
+                });
+            }
+        });
+    </script>
 @stop
 

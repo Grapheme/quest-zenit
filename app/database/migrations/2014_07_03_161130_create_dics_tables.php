@@ -13,6 +13,9 @@ class CreateDicsTables extends Migration {
                 $table->increments('id');
                 $table->string('slug')->nullable()->unique();
                 $table->string('name')->nullable();
+    			$table->boolean('entity')->unsigned()->nullable()->index();
+                $table->string('icon_class')->nullable();
+                $table->integer('order')->unsigned()->nullable()->index();
             });
             echo(' + ' . $this->table . PHP_EOL);
         } else {

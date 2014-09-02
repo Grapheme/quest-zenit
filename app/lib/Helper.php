@@ -470,5 +470,21 @@ HTML;
         return $return;
     }
 
+    public static function clearModuleLink($path) {
+
+        $return = $path;
+
+        $start = AuthAccount::getStartPage();
+        $auth_acc_pos = mb_strpos($return, $start, 7);
+
+        if ($auth_acc_pos) {
+            $return = preg_replace("~.+?" . $start . "/?~is", '', $path);
+        }
+
+        #Helper::dd(AuthAccount::getStartPage() . ' = ' . $auth_acc_pos . ' = ' . $return);
+
+        return $return;
+    }
+
 }
 

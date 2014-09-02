@@ -112,9 +112,10 @@ class Allow {
 
         #Helper::dd(self::$modules);
 
-        #Helper::dd(self::$modules);
         #if (@self::$modules[$module_name])
         #    Helper::dd(self::$modules[$module_name]);
+
+        #Helper::d($module_name . ' => ' . isset(self::$modules[$module_name]));
 
         return (bool)(
             isset(self::$modules[$module_name])
@@ -125,6 +126,15 @@ class Allow {
         );
 	}
 
+    /**
+     * Проверяет, является ли пользователем Суперюзером (состоит в группе Администраторы).
+     * Обращается к заведомо несуществующему методу несуществующего модуля, без проверки активности модуля, с предоставлением полного доступа Администраторам.
+     *
+     * @return bool
+     */
+    public static function superuser() {
+        return self::action('undefined_module', 'undefined_action', false, true);
+    }
 
     /**
      * Alias for Allow::module(<module_name>);

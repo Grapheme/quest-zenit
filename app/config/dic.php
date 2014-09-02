@@ -4,29 +4,26 @@ return array(
 
     'fields' => array(
 
+        'quests' => array(
+
+            'general' => array(
+
+                'description' => array(
+                    'title' => 'Описание',
+                    'type' => 'textarea_redactor',
+                    'default' => '',
+                    'others' => array(
+                        #'placeholder' => 'Укажите описание'
+                    ),
+                ),
+            ),
+        ),
+
+        /*
         'room_type' => array(
 
             'general' => array(
-                /*
-                'price' => array(
-                    'title' => 'Цена',
-                    'type' => 'text',
-                    'default' => '',
-                    'others' => array(
-                        #'placeholder' => 'Укажите цену'
-                    ),
-                ),
-                #*/
-                /*
-                'description' => array(
-                    'title' => 'Описание номера',
-                    'type' => 'textarea',
-                    'default' => '',
-                    'others' => array(
-                        'placeholder' => 'Введите описание'
-                    ),
-                ),
-                #*/
+
             ),
 
             'i18n' => array(
@@ -67,6 +64,7 @@ return array(
             ),
 
         ),
+        */
 
     ),
 

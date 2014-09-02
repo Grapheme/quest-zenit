@@ -10,6 +10,7 @@
 #Helper::d("/" . AuthAccount::getStartPage($module['link']));
 #Helper::d( (string)Request::segment(2)."/".(string)Request::segment(3) . " == " . $module['link'] );
 #Helper::d( $module );
+#Helper::d(URL::to(AuthAccount::getStartPage().'/'.$module['link']));
 #Helper::d( $module['link']  == (string)Request::segment(2)."/".(string)Request::segment(3) );
 $menu_child_active = false;
 $class = false;

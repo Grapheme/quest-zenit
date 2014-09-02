@@ -47,7 +47,8 @@ class AdminDicsMenuController extends BaseController {
             array(
             	'title' => 'Словари',
                 'link' => self::$group . '/dic',
-                'class' => 'fa-bars', 
+                #'link' => URL::route('dic.index'),
+                'class' => 'fa-bars',
                 'permit' => 'view',
             ),
         );

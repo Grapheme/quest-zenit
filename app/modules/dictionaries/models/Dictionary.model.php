@@ -12,6 +12,8 @@ class Dictionary extends BaseModel {
     protected $fillable = array(
         'slug',
         'name',
+        'entity',
+        'icon_class',
     );
 
 	public static $rules = array(

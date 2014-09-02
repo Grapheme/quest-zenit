@@ -29,11 +29,11 @@
 						<td class="text-center" style="white-space:nowrap;">
 
         					@if(Allow::action($module['group'], 'dicval'))
-							<a href="{{ action('dicval.edit', array('dic_id' => $dic->id, 'id' => $element->id)) }}" class="btn btn-success margin-right-10">
+							<a href="{{ action(is_numeric($dic_id) ? 'dicval.edit' : 'entity.edit', array('dic_id' => $dic_id, 'id' => $element->id)) }}" class="btn btn-success margin-right-10">
 								Изменить
 							</a>
 
-							<form method="POST" action="{{ action('dicval.destroy', array('dic_id' => $dic->id, 'id' => $element->id)) }}" style="display:inline-block">
+							<form method="POST" action="{{ action(is_numeric($dic_id) ? 'dicval.destroy' : 'entity.destroy', array('dic_id' => $dic_id, 'id' => $element->id)) }}" style="display:inline-block">
 								<button type="submit" class="btn btn-danger remove-record">
 									Удалить
 								</button>
@@ -62,6 +62,7 @@
 		</div>
 	</div>
 	@endif
+
 @stop
 
 
@@ -103,9 +104,10 @@
                         $(pls).each(function(i, item) {
                             poss.push($(item).data('id'));
                         });
+                        console.log(poss);
                         // Send ajax request to server for saving sorting order
                         $.ajax({
-                            url: "{{ URL::action($CLASS.'@postAjaxOrderSave', array(), false) }}",
+                            url: "{{ URL::route('dicval.order') }}",
                             type: "post",
                             data: {poss: poss},
                             success: function() {}

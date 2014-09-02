@@ -6,43 +6,30 @@ class AdminDicsController extends BaseController {
     public static $group = 'dictionaries';
     public static $entity = 'dic';
     public static $entity_name = 'словарь';
-    /*
-    public static $dics = array(
-        'learning_forms' => 'Формы обучения',
-        'entrance_exams' => 'Вступит. экзамены',
-        'accepted_olympics' => 'Приним. олимпиады',
-    );
-    */
 
     /****************************************************************************/
 
     ## Routing rules of module
     public static function returnRoutes($prefix = null) {
         $class = __CLASS__;
-        #$dics = self::$dics;
-        #echo $prefix;
-        /*
-        Route::group(array('before' => 'auth', 'prefix' => $prefix), function() use ($class) {
-        	#Route::controller($class::$group."/speciality", $class);
-        	Route::resource($class::$group."/speciality", $class, array('as' => 'speciality', 'except' => array('show')));
-        });
-        */
-        Route::group(array('before' => 'auth', 'prefix' => $prefix . "/" . $class::$group), function() use ($class) {
+        $entity = self::$entity;
+
+        Route::group(array('before' => 'auth', 'prefix' => $prefix . "/" . $class::$group), function() use ($class, $entity) {
+            Route::post($entity.'/ajax-order-save', array('as' => 'dic.order', 'uses' => $class."@postAjaxOrderSave"));
             Route::resource('dic', $class,
                 array(
                     'except' => array('show'),
                     'names' => array(
-                        'index' => 'dic.index',
-                        'create' => 'dic.create',
-                        'store' => 'dic.store',
-                        'edit' => 'dic.edit',
-                        'update' => 'dic.update',
+                        'index'   => 'dic.index',
+                        'create'  => 'dic.create',
+                        'store'   => 'dic.store',
+                        'edit'    => 'dic.edit',
+                        'update'  => 'dic.update',
                         'destroy' => 'dic.destroy',
                     )
                 )
             );
         });
-
     }
 
     ## Shortcodes of module
@@ -73,6 +60,8 @@ class AdminDicsController extends BaseController {
 
             'entity' => self::$entity,
             'entity_name' => self::$entity_name,
+
+            'class' => __CLASS__,
         );
 
         View::share('module', $this->module);
@@ -84,9 +73,16 @@ class AdminDicsController extends BaseController {
 
         Allow::permission($this->module['group'], 'view');
 
-        $elements = Dictionary::orderBy('name', 'ASC')->paginate(30);
+        $elements = Dictionary::orderBy('name', 'ASC');
+
+        if (!Allow::superuser() || Allow::permission($this->module['group'], 'edit'))
+            $elements = $elements->where('entity', NULL);
+
+        $elements = $elements->paginate(30);
+
         #Helper::dd($elements);
-		return View::make($this->module['tpl'].'index', compact('elements'));
+
+        return View::make($this->module['tpl'].'index', compact('elements'));
 	}
 
     /************************************************************************************/
@@ -148,9 +144,14 @@ class AdminDicsController extends BaseController {
         $input = array(
             'slug' => Input::get('slug'),
             'name' => Input::get('name'),
+            'entity' => Input::get('entity') ? 1 : NULL,
+            'icon_class' => Input::get('icon_class'),
         );
 
-		$json_request = array('status'=>FALSE, 'responseText'=>'', 'responseErrorText'=>'', 'redirect'=>FALSE);
+        $json_request['responseText'] = "<pre>" . print_r($_POST, 1) . "</pre>";
+        #return Response::json($json_request,200);
+
+        $json_request = array('status'=>FALSE, 'responseText'=>'', 'responseErrorText'=>'', 'redirect'=>FALSE);
 		$validator = Validator::make($input, array('name' => 'required'));
 		if($validator->passes()) {
 
@@ -204,6 +205,21 @@ class AdminDicsController extends BaseController {
 		return Response::json($json_request,200);
 	}
 
+    public function postAjaxOrderSave() {
+
+        $poss = Input::get('poss');
+
+        $pls = Dic::whereIn('id', $poss)->get();
+
+        if ( $pls ) {
+            foreach ( $pls as $pl ) {
+                $pl->order = array_search($pl->id, $poss);
+                $pl->save();
+            }
+        }
+
+        return Response::make('1');
+    }
 }
 
 

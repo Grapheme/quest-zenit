@@ -12,25 +12,51 @@ class SystemModules {
         $mod_info = Config::get('mod_info');
         $mod_menu = Config::get('mod_menu');
         #Helper::dd($mod_info);
-        #Helper::dd($mod_menu);
+        #Helper::d($mod_menu);
+
+        $entity_dics = Dic::where('entity', '1')->orderBy('order', 'ASC')->get();
+        #Helper::tad($entity_dics);
+        if (count($entity_dics)) {
+            $dic_entities = array();
+            foreach ($entity_dics as $entity_dic) {
+                $dic_entities[$entity_dic->slug] = array(array(
+                    'title' => $entity_dic->name,
+                    #'link' => Helper::clearModuleLink(URL::route('dicval.index', $entity_dic->id)),
+                    'link' => Helper::clearModuleLink(URL::route('entity.index', $entity_dic->slug)),
+                    'class' => $entity_dic->icon_class,
+                    'module' => 'dictionaries',
+                    'permit' => 'dicval',
+                ));
+            }
+            $dic_entities += $mod_menu;
+            $mod_menu = $dic_entities;
+            #Helper::d($dic_entities);
+            #Helper::dd($mod_menu);
+        }
 
         ## If exists menu elements...
         if (isset($mod_menu) && is_array($mod_menu) && count($mod_menu)) {
             foreach( $mod_menu as $mod_name => $menu_elements ) {
 
                 if( is_array($menu_elements) && count($menu_elements) ) {
+
+                    #Helper::d($mod_name); #continue;
+                    #Helper::d($menu_elements); #continue;
+
                     foreach( $menu_elements as $m => $menu_element ) {
 
-                        #Helper::d($menu_element); continue;
-                        #Helper::d($menu_element); continue;
+                        #Helper::d($menu_element); #continue;
 
                         ## If permit to view menu element
-                        $permit = isset($menu_element['permit']) ? Allow::action($mod_name, $menu_element['permit']) : false;
+                        $rules = @$menu_element['permit'];
+                        $module = @$menu_element['module'] ?: $mod_name;
+                        $permit = Allow::action($module, $rules);
 
+                        #Helper::d($module . " :: " . $permit);
                         #Helper::d( $menu_element['title'] . " - " . (int)$permit );
 
                         if (
-                            Allow::module($mod_name) && $permit
+                            Allow::module($module) && $permit
                         )
                             $menu[] = $menu_element;
                     }
