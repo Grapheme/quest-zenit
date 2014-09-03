@@ -151,10 +151,10 @@
     var essence = '{{ $module['entity'] }}';
     var essence_name = '{{ $module['entity_name'] }}';
 	var validation_rules = {
-		//name:              { required: true },
+		name:              { required: true },
 	};
 	var validation_messages = {
-		//name:              { required: "Укажите название" },
+		name:              { required: "Укажите название" },
 	};
     </script>
 
