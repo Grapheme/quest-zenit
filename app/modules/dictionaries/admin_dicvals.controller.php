@@ -146,7 +146,9 @@ class AdminDicvalsController extends BaseController {
             ->with('metas')
             #->with('meta')
             ->with('allfields')
-            ->first();
+            ->first()
+            #->extract()
+        ;
 
         #Helper::tad($element);
 
@@ -200,10 +202,10 @@ class AdminDicvalsController extends BaseController {
 
             #Helper::d($id);
 
-            if ($id > 0 && NULL !== DicVal::find($id)) {
+            if ($id > 0 && NULL !== ($element = DicVal::find($id))) {
 
                 ## UPDATE DICVAL
-                DicVal::find($id)->update($input);
+                $element->update($input);
 
             } else {
 
@@ -230,7 +232,7 @@ class AdminDicvalsController extends BaseController {
                     ## If handler of field is defined
                     if (is_callable($handler = Config::get('dic.fields.' . $dic->slug . '.general.' . $key . '.handler'))) {
                         #Helper::dd($handler);
-                        $value = $handler($value);
+                        $value = $handler($value, $element);
                     }
 
                     #Helper::d($key . ' => ' . $value);

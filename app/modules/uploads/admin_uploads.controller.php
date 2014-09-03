@@ -84,6 +84,8 @@ class AdminUploadsController extends BaseController {
 
                 ## Delete
                 if ($delete && is_object($upload)) {
+                    #Helper::dd($upload->fullpath());
+                    @unlink($upload->fullpath());
                     $upload->delete();
                     if (!is_object($file))
                         return NULL;

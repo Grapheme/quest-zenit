@@ -44,4 +44,26 @@ class DicVal extends BaseModel {
         return $this->hasMany('DicFieldVal', 'dicval_id', 'id')->where('language', Config::get('app.locale'))->orWhere('language', NULL);
     }
 
+    public function extract($unset = false) {
+        ## Extract fields
+        if (@is_object($this->allfields) && count($this->allfields)) {
+            foreach ($this->allfields as $field) {
+                $this->{$field->key} = $field->value;
+            }
+            if ($unset)
+                unset($this->allfields);
+        }
+
+        ## Extract fields_i18n
+        ## ...
+
+        ## Extract metas
+        ## ...
+
+        ## Extract meta
+        ## ...
+
+        return $this;
+    }
+
 }

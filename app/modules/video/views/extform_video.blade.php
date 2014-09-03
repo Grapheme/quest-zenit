@@ -1,35 +1,31 @@
 
-    <!-- Don't forget add to parent page to scripts section JS code for correct functionality, some like this: -->
-    <!-- loadScript("/js/modules/gallery.js"); -->
+    <!-- Don't forget add to form: ['files' => true] -->
+    {{ Helper::ta_($value) }}
 
-    <?
-    $photo_exists = @is_object($photo) && $photo->id;
-    #Helper::dd($photo_exists);
-    ?>
-    @if ($photo_exists)
-    	<input type="text" name="{{ $name }}" value="{{ $photo->id }}" class="uploaded_image_{{ $photo->id }} uploaded_image_cap" style="position:absolute; left:-10000px;" />
-    @else
-        <input type="text" name="{{ $name }}" value="" class="uploaded_image_false uploaded_image_cap" style="position:absolute; left:-10000px;" />
+    Embed-код:
+    <label class="textarea">
+        {{ Form::textarea($name . '[embed]', is_object($value) ? $value->embed : null, array('rows' => '3')) }}
+    </label>
+
+    <p class="input margin-top-10">
+        Preview-изображение:
+        <br/>
+        @if (@is_object($value->image))
+            <label class="checkbox pull-right">
+                {{ Form::checkbox($name . '[delete_image]', 1, null, array('style' => 'display:inline-block; width:20px; height:20px;')) }} Удалить
+                <i></i>
+            </label>
+            {{ Helper::d_($value->image->name) }}
+            <a href="{{ $value->image->full() }}" target="_blank">
+                <img src="{{ $value->image->thumb() }}" style="width:100px" />
+            </a>
+        @endif
+    </p>
+
+    @if (@is_object($value) && $value->id)
+        {{ Form::hidden($name . '[video_id]', $value->id) }}
     @endif
-    <div>
-    	<div class="egg-dropzone-single dropzone" data-name="{{ $name }}" data-gallery_id="0"<? if ($photo_exists) { echo " style='display:none'";} ?>></div>
-        <div class="superbox_ photo-preview-container" style="margin-top:10px;">
 
-            @if ($photo_exists)
-
-            	<div class="photo-preview photo-preview-single" style="background-image:url({{ URL::to($photo->thumb()) }});">
-            		<a href="{{ URL::to($photo->path()) }}" target="_blank" title="Полноразмерное изображение" style="display:block; height:100%; color:#090; background:transparent"></a>
-            		<a href="#" class="photo-delete-single" data-photo-id="{{ $photo->id }}" style="">Удалить</a>
-            	</div>
-
-            @else
-
-            	<div class="photo-preview photo-preview-single" style="display:none;">
-            		<a href="#photo-path" target="_blank" title="Полноразмерное изображение" class="photo-full-link" style="display:block; height:100%; color:#090; background:transparent"></a>
-            		<a href="#" class="photo-delete-single" data-photo-id="#photo-id" style="">Удалить</a>
-            	</div>
-
-            @endif
-
-        </div>
-    </div>
+    <label class="input margin-top-10">
+        {{ Form::file($name . '[image_file]', $params) }}
+    </label>

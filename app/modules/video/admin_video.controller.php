@@ -46,8 +46,9 @@ class AdminVideoController extends BaseController {
                     $tpl = $params['tpl'];
                     unset($params['tpl']);
                 }
+                $params['class'] = trim(@$params['class'] . ' video_image_upload');
 
-                Helper::dd($value);
+                #Helper::dd($value);
 
                 if ( $value === false || $value === null ) {
                     $val = Form::text($name);
@@ -55,41 +56,89 @@ class AdminVideoController extends BaseController {
                     #Helper::d($matches);
                     $val = (int)@$matches[1];
                     if ( $val > 0 ) {
-                        $value = Photo::firstOrNew(array('id' => $val));
+                        $value = Video::firstOrNew(array('id' => $val));
                     }
                 } elseif (is_numeric($value)) {
-                    $value = Photo::find($value);
+                    $value = Video::where('id', $value)->with('image')->first();
                 }
 
-                $photo = $value;
                 ## return view with form element
-                return View::make($mod_tpl.$tpl, compact('name', 'photo', 'params'));                
-    	    },
+                return View::make($mod_tpl.$tpl, compact('name', 'value', 'params'))->render();
+            },
             ## Processing results closure
             function($params) use ($mod_tpl, $class) {
+
                 #Helper::dd($params);
-                ## Array with POST-data
-                $image = isset($params['image']) ? $params['image'] : false;
-                ## Return format
-                $return = isset($params['return']) ? $params['return'] : false;
-                ## ID of uploaded image
-                #$uploaded_image = isset($image['uploaded_image']) ? (int)$image['uploaded_image'] : false;
-                $uploaded_image = $image;
 
-                #Helper::dd($uploaded_image);
+                $embed = @$params['embed'] ?: NULL;
+                $image_file = @$params['image_file'] ?: NULL;
+                $video_id = @$params['video_id'] ?: false;
+                $delete_image = @$params['delete_image'] ?: false;
 
-                if (!$uploaded_image)
-                    return false;
-                ## Find photo by ID
-                $photo = Photo::where('id', $uploaded_image)->first();
-                ## If photo don't exists - return false
-                if (is_null($photo))
-                    return false;
-                ## Mark photo as "single used image"
-                $photo->gallery_id = -1;
-                $photo->save();
-                ## Return needable property or full object
-                return $return ? @$photo->$return : $photo;
+                $return = isset($params['return']) ? $params['return'] : 'id';
+                $module = isset($params['module']) ? $params['module'] : NULL;
+                $unit_id = isset($params['unit_id']) ? $params['unit_id'] : NULL;
+
+                ## Find record
+                $element = false;
+                if (is_numeric($video_id))
+                    $element = Video::find($video_id);
+
+                ## Delete
+                if ($delete_image && is_object($element)) {
+
+                    if (@is_object($element) && $element->image_id) {
+                        $image = Photo::find($element->image_id);
+                        if (is_object($image)) {
+                            @unlink($image->fullpath());
+                            $image->delete();
+                        }
+                    }
+
+                    $element->image_id = NULL;
+                    $element->update();
+                }
+
+                ## If new file uploaded
+                if (is_object($image_file)) {
+
+                    ## Upload image by Gallery controller
+                    $uploader = new AdminGalleriesController;
+                    $image = $uploader->postSingleupload($image_file, 'return_object_please');
+                    unset($uploader);
+
+                    /*
+                    ## Custom move image
+                    $dir = Config::get('app-default.galleries_photo_dir', public_path('uploads'));
+                    $file_name = time() . "_" . rand(1000, 1999) . '.' . $image_file->getClientOriginalExtension();
+                    $image_file->move($dir, $file_name);
+                    $image_path = preg_replace("~^" . addslashes(public_path()) . "~is", '', $dir . '/' . $file_name);
+
+                    ## Create photo
+                    $image = new Photo;
+                    $image->name = $file_name;
+                    $image->gallery_id = NULL;
+                    $image->save();
+                    */
+                }
+
+                ## Create new upload object if file not found
+                if (!is_object($element)) {
+                    $element = new Video;
+                    $element->save();
+                }
+                ## Update upload record
+                $element->update(array(
+                    #'title' => $title,
+                    #'description' => $description,
+                    'embed' => $embed,
+                    'image_id' => @is_object($image) ? $image->id : $element->image_id,
+                    'module' => $module,
+                    'unit_id' => $unit_id,
+                ));
+
+                ## Return
+                return @$element->$return;
             }
         );
 

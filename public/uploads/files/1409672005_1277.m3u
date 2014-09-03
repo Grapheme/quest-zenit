@@ -1,0 +1,393 @@
+﻿#EXTM3U
+#EXTINF:-1,Первый канал HD
+udp://@224.1.1.240:6000
+#EXTINF:-1,Россия-1
+udp://@224.2.0.6:6000
+#EXTINF:-1,Россия-HD
+udp://@224.1.1.241:6000
+#EXTINF:-1,Россия К
+udp://@224.1.1.120:6000
+#EXTINF:-1,НТВ
+udp://@224.2.0.5:6000
+#EXTINF:-1,Пятый канал
+udp://@224.1.1.53:6000
+#EXTINF:-1,Россия-2
+udp://@224.2.0.10:6000
+#EXTINF:-1,ОТР
+udp://@224.1.1.166:6000
+#EXTINF:-1,MCM Top
+udp://@224.1.1.30:6000
+#EXTINF:-1,BRIDGE TV
+udp://@224.1.1.21:6000
+#EXTINF:-1,Europa Plus TV
+udp://@224.1.2.213:6000
+#EXTINF:-1,VH1
+udp://@224.1.2.174:6000
+#EXTINF:-1,A-ONE
+udp://@224.1.1.50:6000
+#EXTINF:-1,MTV Rocks
+udp://@224.1.2.249:6000
+#EXTINF:-1,MTV Dance
+udp://@224.1.2.220:6000
+#EXTINF:-1,MTV Hits
+udp://@224.1.2.221:6000
+#EXTINF:-1,VH1 Classic
+udp://@224.1.2.226:6000
+#EXTINF:-1,RU.TV
+udp://@224.1.1.34:6000
+#EXTINF:-1,RUSSIAN MUSICBOX
+udp://@224.1.1.62:6000
+#EXTINF:-1,MUSICBOX
+udp://@224.1.2.138:6000
+#EXTINF:-1,RUSONG TV
+udp://@224.1.2.225:6000
+#EXTINF:-1,Ля-минор
+udp://@224.1.2.139:6000
+#EXTINF:-1,Шансон ТВ
+udp://@224.1.1.35:6000
+#EXTINF:-1,Mezzo
+udp://@224.1.2.217:6000
+#EXTINF:-1,Mezzo Live HD
+udp://@224.1.2.185:6000
+#EXTINF:-1,Ю
+udp://@224.1.1.162:6000
+#EXTINF:-1,МУЗ
+udp://@224.1.1.140:6000
+#EXTINF:-1,Пятница!
+udp://@224.1.1.94:6000
+#EXTINF:-1,MTV Live HD
+udp://@224.1.2.194:6000
+#EXTINF:-1,О2ТВ
+udp://@224.1.1.33:6000
+#EXTINF:-1,ЮМОР TV
+udp://@224.1.1.64:6000
+#EXTINF:-1,HD-Life
+udp://@224.1.2.186:6000
+#EXTINF:-1,Zee TV
+udp://@224.1.2.160:6000
+#EXTINF:-1,TV XXI
+udp://@224.1.1.54:6000
+#EXTINF:-1,TV1000
+udp://@224.1.1.40:6000
+#EXTINF:-1,TV1000 Action
+udp://@224.1.1.87:6000
+#EXTINF:-1,Sony Sci-Fi
+udp://@224.1.2.204:6000
+#EXTINF:-1,Fox HD
+udp://@224.1.2.193:6000
+#EXTINF:-1,Fox Life HD
+udp://@224.1.2.190:6000
+#EXTINF:-1,Кино Плюс
+udp://@224.1.2.242:6000
+#EXTINF:-1,Кинопоказ
+udp://@224.1.2.235:6000
+#EXTINF:-1,Еврокино
+udp://@224.1.2.232:6000
+#EXTINF:-1,MGM
+udp://@224.1.2.218:6000
+#EXTINF:-1,Universal Channel
+udp://@224.1.2.154:6000
+#EXTINF:-1,Иллюзион +
+udp://@224.1.1.31:6000
+#EXTINF:-1,TV1000 Русское кино
+udp://@224.1.1.89:6000
+#EXTINF:-1,Русский Иллюзион
+udp://@224.1.1.32:6000
+#EXTINF:-1,Наше новое кино
+udp://@224.1.2.244:6000
+#EXTINF:-1,Наше Кино
+udp://@224.1.2.243:6000
+#EXTINF:-1,КИНОСОЮЗ
+udp://@224.1.2.252:6000
+#EXTINF:-1,Комедия ТВ
+udp://@224.1.1.82:6000
+#EXTINF:-1,РЕТРО
+udp://@224.1.2.161:6000
+#EXTINF:-1,НСТВ
+udp://@224.1.1.80:6000
+#EXTINF:-1,SET HD
+udp://@224.1.2.192:6000
+#EXTINF:-1,TV1000 Premium HD
+udp://@224.1.1.236:6000
+#EXTINF:-1,TV1000 Megahit HD
+udp://@224.1.1.237:6000
+#EXTINF:-1,TV1000 Comedy HD
+udp://@224.1.1.238:6000
+#EXTINF:-1,СТС
+udp://@224.2.0.7:6000
+#EXTINF:-1,Домашний
+udp://@224.1.1.123:6000
+#EXTINF:-1,ТНТ
+udp://@224.1.1.126:6000
+#EXTINF:-1,РЕН ТВ
+udp://@224.2.0.8:6000
+#EXTINF:-1,ТВ3
+udp://@224.1.1.122:6000
+#EXTINF:-1,8 канал
+udp://@224.1.2.200:6000
+#EXTINF:-1,Перец
+udp://@224.1.1.161:6000
+#EXTINF:-1,2х2
+udp://@224.1.1.233:6000
+#EXTINF:-1,Paramount Comedy
+udp://@224.1.2.250:6000
+#EXTINF:-1,BBC Entertainment
+udp://@224.1.2.202:6000
+#EXTINF:-1,Discovery Channel
+udp://@224.1.1.2:6000
+#EXTINF:-1,Viasat History
+udp://@224.1.1.42:6000
+#EXTINF:-1,Viasat Explorer
+udp://@224.1.1.41:6000
+#EXTINF:-1,24ТЕХНО
+udp://@224.1.2.148:6000
+#EXTINF:-1,Discovery HD Showcase
+udp://@224.1.1.214:6000
+#EXTINF:-1,Discovery Science
+udp://@224.1.2.177:6000
+#EXTINF:-1,Galaxy TV
+udp://@224.1.2.248:6000
+#EXTINF:-1,National Geographic Channel
+udp://@224.1.2.141:6000
+#EXTINF:-1,National Geographic Channel HD
+udp://@224.1.2.188:6000
+#EXTINF:-1,Nat Geo Wild HD
+udp://@224.1.2.182:6000
+#EXTINF:-1,Animal Planet
+udp://@224.1.1.180:6000
+#EXTINF:-1,Animal Planet HD
+udp://@224.1.1.215:6000
+#EXTINF:-1,Zooпарк
+udp://@224.1.2.145:6000
+#EXTINF:-1,Домашние животные
+udp://@224.1.2.144:6000
+#EXTINF:-1,Viasat Nature
+udp://@224.1.2.227:6000
+#EXTINF:-1,Viasat Nature / History HD
+udp://@224.1.1.239:6000
+#EXTINF:-1,Amazing Life
+udp://@224.1.2.158:6000
+#EXTINF:-1,OCEAN-TV
+udp://@224.1.2.142:6000
+#EXTINF:-1,myZen HD
+udp://@224.1.2.191:6000
+#EXTINF:-1,Вопросы и Ответы
+udp://@224.1.2.152:6000
+#EXTINF:-1,ПСИХОЛОГИЯ21
+udp://@224.1.2.131:6000
+#EXTINF:-1,Парк развлечений
+udp://@224.1.1.167:6000
+#EXTINF:-1,Телепутешествия
+udp://@224.1.2.247:6000
+#EXTINF:-1,Travel and Adventure HD
+udp://@224.1.2.181:6000
+#EXTINF:-1,Outdoor Channel HD
+udp://@224.1.2.195:6000
+#EXTINF:-1,Моя планета
+udp://@224.1.2.146:6000
+#EXTINF:-1,English Club TV
+udp://@224.1.1.150:6000
+#EXTINF:-1,Da Vinci Learning
+udp://@224.1.2.209:6000
+#EXTINF:-1,Наука 2.0
+udp://@224.1.2.239:6000
+#EXTINF:-1,365 дней ТВ
+udp://@224.1.2.203:6000
+#EXTINF:-1,Кто есть Кто
+udp://@224.1.2.251:6000
+#EXTINF:-1,Первый образовательный
+udp://@224.1.1.5:6000
+#EXTINF:-1,Знание
+udp://@224.1.1.6:6000
+#EXTINF:-1,Просвещение
+udp://@224.1.1.212:6000
+#EXTINF:-1,Раз ТВ
+udp://@224.1.1.211:6000
+#EXTINF:-1,Усадьба
+udp://@224.1.2.150:6000
+#EXTINF:-1,Агро-ТВ
+udp://@224.1.1.170:6000
+#EXTINF:-1,Инва Медиа ТВ
+udp://@224.1.1.218:6000
+#EXTINF:-1,Звезда
+udp://@224.1.1.51:6000
+#EXTINF:-1,Оружие
+udp://@224.1.2.245:6000
+#EXTINF:-1,ОСТ ТВ
+udp://@224.1.1.135:6000
+#EXTINF:-1,Боец
+udp://@224.1.1.83:6000
+#EXTINF:-1,Бойцовский клуб
+udp://@224.1.2.230:6000
+#EXTINF:-1,Драйв
+udp://@224.1.2.147:6000
+#EXTINF:-1,Авто Плюс
+udp://@224.1.1.84:6000
+#EXTINF:-1,Motors TV
+udp://@224.1.2.219:6000
+#EXTINF:-1,AB Moteurs
+udp://@224.1.2.254:6000
+#EXTINF:-1,Охота и рыбалка
+udp://@224.1.2.143:6000
+#EXTINF:-1,Русский Экстрим
+udp://@224.1.2.175:6000
+#EXTINF:-1,Extreme Sports Channel
+udp://@224.1.2.214:6000
+#EXTINF:-1,Спорт 1 HD
+udp://@224.1.2.183:6000
+#EXTINF:-1,Спорт
+udp://@224.1.2.246:6000
+#EXTINF:-1,Баскетбол
+udp://@224.1.2.241:6000
+#EXTINF:-1,Футбол
+udp://@224.1.2.173:6000
+#EXTINF:-1,Наш футбол
+udp://@224.1.1.95:6000
+#EXTINF:-1,СПОРТ ПЛЮС
+udp://@224.1.2.253:6000
+#EXTINF:-1,Viasat Sport
+udp://@224.1.1.90:6000
+#EXTINF:-1,Eurosport HD
+udp://@224.1.2.184:6000
+#EXTINF:-1,Eurosport 2
+udp://@224.1.2.166:6000
+#EXTINF:-1,Eurosport News
+udp://@224.1.2.205:6000
+#EXTINF:-1,КХЛ ТВ HD
+udp://@224.1.1.248:6000
+#EXTINF:-1,Русская ночь
+udp://@224.1.1.85:6000
+#EXTINF:-1,Playboy
+udp://@224.1.1.98:6000
+#EXTINF:-1,Blue Hustler
+udp://@224.1.1.97:6000
+#EXTINF:-1,XXL
+udp://@224.1.1.99:6000
+#EXTINF:-1,Телевизионный Дамский Клуб
+udp://@224.1.1.24:6000
+#EXTINF:-1,Style TV
+udp://@224.1.2.140:6000
+#EXTINF:-1,FashionTV
+udp://@224.1.1.36:6000
+#EXTINF:-1,Fashion One HD
+udp://@224.1.2.189:6000
+#EXTINF:-1,Мать и дитя
+udp://@224.1.2.136:6000
+#EXTINF:-1,ЖИВИ!
+udp://@224.1.2.163:6000
+#EXTINF:-1,Здоровое ТВ
+udp://@224.1.2.151:6000
+#EXTINF:-1,Кухня ТВ
+udp://@224.1.2.149:6000
+#EXTINF:-1,AMEDIA
+udp://@224.1.2.172:6000
+#EXTINF:-1,Феникс+Кино
+udp://@224.1.2.162:6000
+#EXTINF:-1,Русский роман
+udp://@224.1.1.235:6000
+#EXTINF:-1,Diva Universal
+udp://@224.1.2.153:6000
+#EXTINF:-1,TLC
+udp://@224.1.2.130:6000
+#EXTINF:-1,CBS Drama
+udp://@224.1.2.229:6000
+#EXTINF:-1,Карусель
+udp://@224.1.1.66:6000
+#EXTINF:-1,Детский
+udp://@224.1.1.88:6000
+#EXTINF:-1,Мультимания
+udp://@224.1.2.238:6000
+#EXTINF:-1,Disney
+udp://@224.1.1.56:6000
+#EXTINF:-1,Cartoon Network
+udp://@224.1.2.134:6000
+#EXTINF:-1,Nickelodeon
+udp://@224.1.2.137:6000
+#EXTINF:-1,Nickelodeon HD
+udp://@224.1.2.187:6000
+#EXTINF:-1,KidsCo
+udp://@224.1.2.132:6000
+#EXTINF:-1,Baby TV
+udp://@224.1.2.207:6000
+#EXTINF:-1,Boomerang
+udp://@224.1.2.206:6000
+#EXTINF:-1,TiJi
+udp://@224.1.2.133:6000
+#EXTINF:-1,JimJam
+udp://@224.1.2.216:6000
+#EXTINF:-1,Nick Jr.
+udp://@224.1.1.213:6000
+#EXTINF:-1,Радость моя
+udp://@224.1.2.135:6000
+#EXTINF:-1,Gulli
+udp://@224.1.2.215:6000
+#EXTINF:-1,Детский мир / Телеклуб
+udp://@224.1.2.231:6000
+#EXTINF:-1,Россия-24
+udp://@224.1.1.52:6000
+#EXTINF:-1,Euronews
+udp://@224.1.2.129:6000
+#EXTINF:-1,RT HD
+udp://@224.1.1.246:6000
+#EXTINF:-1,RTД HD
+udp://@224.1.1.247:6000
+#EXTINF:-1,France 24
+udp://@224.1.2.170:6000
+#EXTINF:-1,France 24 (ENG)
+udp://@224.1.2.208:6000
+#EXTINF:-1,BBC World News
+udp://@224.1.1.210:6000
+#EXTINF:-1,Deutsche Welle
+udp://@224.1.2.210:6000
+#EXTINF:-1,NHK World
+udp://@224.1.2.223:6000
+#EXTINF:-1,РБК
+udp://@224.1.1.26:6000
+#EXTINF:-1,Успех
+udp://@224.1.1.219:6000
+#EXTINF:-1,Закон ТВ
+udp://@224.1.2.233:6000
+#EXTINF:-1,Комсомольская правда
+udp://@224.1.2.237:6000
+#EXTINF:-1,Дождь
+udp://@224.1.1.217:6000
+#EXTINF:-1,Ностальгия
+udp://@224.1.2.240:6000
+#EXTINF:-1,24_DOC
+udp://@224.1.1.232:6000
+#EXTINF:-1,Discovery World
+udp://@224.1.2.178:6000
+#EXTINF:-1,Investigation Discovery
+udp://@224.1.2.211:6000
+#EXTINF:-1,CBS Reality
+udp://@224.1.2.228:6000
+#EXTINF:-1,ТВ Центр
+udp://@224.1.1.7:6000
+#EXTINF:-1,СТРАНА
+udp://@224.1.1.168:6000
+#EXTINF:-1,Девятый канал
+udp://@224.1.1.11:6000
+#EXTINF:-1,Дон-ТР
+udp://@224.2.0.9:6000
+#EXTINF:-1,ТРО
+udp://@224.1.2.168:6000
+#EXTINF:-1,Мир
+udp://@224.1.1.67:6000
+#EXTINF:-1,Мир 24
+udp://@224.1.1.152:6000
+#EXTINF:-1,Союз
+udp://@224.1.1.77:6000
+#EXTINF:-1,Спас
+udp://@224.1.1.78:6000
+#EXTINF:-1,ТНВ-Планета
+udp://@224.1.2.169:6000
+#EXTINF:-1,Arirang TV
+udp://@224.1.1.216:6000
+#EXTINF:-1,Домашний магазин
+udp://@224.1.1.131:6000
+#EXTINF:-1,ТТС
+udp://@224.1.1.132:6000
+#EXTINF:-1,Стиль и Мода
+udp://@224.1.1.133:6000
+#EXTINF:-1,TV Sale
+udp://@224.1.1.134:6000

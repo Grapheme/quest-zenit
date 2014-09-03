@@ -20,4 +20,10 @@ class Photo extends Eloquent {
 		#return link::to(Config::get('app-default.galleries_photo_dir')) . "/" . $this->name;
 		return URL::to(Config::get('app-default.galleries_photo_public_dir') . "/" . $this->name);
 	}
+
+    public function fullpath() {
+        #return link::to(Config::get('app-default.galleries_photo_dir')) . "/" . $this->name;
+        return str_replace('//', '/', public_path(Config::get('app-default.galleries_photo_public_dir') . "/" . $this->name));
+    }
+
 }

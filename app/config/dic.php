@@ -13,12 +13,13 @@
  * Также можно задать следующие свойства:
  * - default - значение поля по-умолчанию
  * - others - набор дополнительных произвольных свойств элемента, таких как class, style, placeholder и т.д.
- * - handler - функция-замыкание, вызывается для обработки значения поля после получения ИЗ формы, перед записью в БД
+ * - handler - функция-замыкание, вызывается для обработки значения поля после получения ИЗ формы, перед записью в БД. Первым параметром передается значение поля, вторым - существующий объект DicVal, к которому относится данное поле
  * - value_modifier - функция-замыкание, вызывается для обработки значения поля после получения значения из БД, перед выводом В форму
  * - after_save_js - JS-код, который будет выполнен после сохранения страницы
  * - content - содержимое, которое будет выведено на экран, вместо генерации кода элемента формы
+ * - label_class - css-класс родительского элемента
  *
- * Некоторые типы полей могут иметь свои собственные уникальные свойства, например: значения для выбора в поле select; название группы для radio (а может обойдемся name?) и т.д.
+ * Некоторые типы полей могут иметь свои собственные уникальные свойства, например: значения для выбора у поля select; accept для указания разрешенных форматов у поля типа file и т.д.
  *
  * [!] Вывод полей на форму происходит с помощью /app/lib/Helper.php -> Helper::formField();
  *
@@ -29,15 +30,15 @@
  * - date (не требует доп. JS, работает для SmartAdmin из коробки, нужны handler и value_modifier для обработки)
  * - image (использует ExtForm::image() + доп. JS)
  * - gallery (использует ExtForm::gallery() + доп. JS, нужен handler для обработки)
+ * - upload
+ * - video
  *
  * Типы полей, запланированных к разработке:
- * - file
- * - video
- * - file-group
- * - video-group
  * - select
  * - checkbox
  * - radio
+ * - upload-group
+ * - video-group
  *
  * Также в планах - возможность активировать SEO-модуль для каждого словаря по отдельности (ключ массива seo) и обрабатывать его.
  *
@@ -57,13 +58,11 @@ return array(
                 'short' => array(
                     'title' => 'Краткое описание',
                     'type' => 'textarea_redactor',
-                    'default' => '',
                 ),
 
                 'date_start' => array(
                     'title' => 'Дата начала сбора',
                     'type' => 'date',
-                    'default' => '',
                     'others' => array(
                         'class' => 'text-center',
                         'style' => 'width: 221px',
@@ -79,7 +78,6 @@ return array(
                 'date_stop' => array(
                     'title' => 'Дата окончания сбора',
                     'type' => 'date',
-                    'default' => '',
                     'others' => array(
                         'class' => 'text-center',
                         'style' => 'width: 221px',
@@ -95,7 +93,6 @@ return array(
                 'date_quest' => array(
                     'title' => 'Дата проведения квеста',
                     'type' => 'date',
-                    'default' => '',
                     'others' => array(
                         'class' => 'text-center',
                         'style' => 'width: 221px',
@@ -112,58 +109,37 @@ return array(
                 'target_amount' => array(
                     'title' => 'Целевая сумма сбора',
                     'type' => 'text',
-                    'default' => '',
                 ),
                 'current_amount' => array(
                     'title' => 'Собранно на данный момент',
                     'type' => 'text',
-                    'default' => '',
                 ),
                 'count_members' => array(
                     'title' => 'Количество участников',
                     'type' => 'text',
-                    'default' => '',
                 ),
 
                 array('content' => '<hr/>'),
 
                 'link_to_file_print' => array(
-                    'title' => 'Ссылка на файл принта',
+                    'title' => 'Файл принта',
                     'type' => 'upload',
                     'accept' => '*', # .exe,image/*,video/*,audio/*
                     'label_class' => 'input-file',
-                    'default' => '',
-                    'handler' => function($value) {
+                    'handler' => function($value, $element = false) {
+                            if (@is_object($element) && @is_array($value)) {
+                                $value['module'] = 'dicval';
+                                $value['unit_id'] = $element->id;
+                            }
                             return ExtForm::process('upload', $value);
                         },
-                    'others' => array(
-                        'class' => 'file_upload'
-                    ),
-                    /*
-                    'value_modifier' => function($value) {
-                            return $value;
-                            #return $value ? @date('d.m.Y', strtotime($value)) : $value;
-                        },
-                    */
-                    'after_save_js' => "
-                            //alert('GOOD SAVE UPLOAD!');
-
-                            $('input[type=file].file_upload').each(function(){
-                                //console.log($(this).val());
-                                if ($(this).val() != '')
-                                    if (!$('input[type=hidden][name=redirect]').val())
-                                        location.href = location.href;
-                            });
-
-                            //console.log($('input[type=hidden][name=redirect]').val());
-                            //if (!$('input[type=hidden][name=redirect]').val())
-                            //    location.href = location.href;
-                        ",
                 ),
+
+                array('content' => '<hr/>'),
+
                 'link_to_buy_shirt' => array(
                     'title' => 'УРЛ для покупки футболки',
                     'type' => 'text',
-                    'default' => '',
                     'others' => array(
                         'placeholder' => 'http://'
                     ),
@@ -172,57 +148,53 @@ return array(
                     'title' => 'Фото',
                     'type' => 'image',
                 ),
+
+                array('content' => '<hr/>'),
+
                 'video' => array(
                     'title' => 'Видео',
                     'type' => 'video',
+                    'handler' => function($value, $element = false) {
+                            if (@is_object($element) && @is_array($value)) {
+                                $value['module'] = 'dicval';
+                                $value['unit_id'] = $element->id;
+                            }
+                            return ExtForm::process('video', $value);
+                        },
                 ),
+
+                array('content' => '<hr/>'),
 
                 'description' => array(
                     'title' => 'Полное описание',
                     'type' => 'textarea_redactor',
-                    'default' => '',
                 ),
 
             ),
         ),
 
         /*
-        'room_type' => array(
-
-            'general' => array(
-
-            ),
-
-            'i18n' => array(
+            array(
                 'price' => array(
-                    'title' => 'Цена',
+                    'title' => 'Текстовое поле',
                     'type' => 'text',
-                    'default' => '',
-                    'others' => array(
-                        #'placeholder' => 'Укажите цену'
-                    ),
+                ),
+                'short' => array(
+                    'title' => 'textarea обычная',
+                    'type' => 'textarea',
                 ),
                 'description' => array(
-                    'title' => 'Описание',
+                    'title' => 'textarea html-разметкой',
                     'type' => 'textarea_redactor',
-                    'default' => '',
-                    'others' => array(
-                        #'placeholder' => 'Укажите описание'
-                    ),
                 ),
-                'image' => array(
-                    'title' => 'Основное изображение',
-                    'type' => 'image',
-                ),
+
                 'gallery' => array(
                     'title' => 'Галерея',
                     'type' => 'gallery',
-                    'handler' => function($array) {
-                            #Helper::d('Gallery handler!');
-                            #Helper::dd($array);
+                    'handler' => function($array, $element) {
                             return ExtForm::process('gallery', array(
                                 'module'  => 'dicval_meta',
-                                'unit_id' => '[unknown] - single',
+                                'unit_id' => $element->id,
                                 'gallery' => $array,
                                 'single'  => true,
                             ));
@@ -230,7 +202,6 @@ return array(
                 ),
             ),
 
-        ),
         */
 
     ),

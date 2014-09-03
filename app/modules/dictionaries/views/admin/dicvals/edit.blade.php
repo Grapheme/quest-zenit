@@ -157,7 +157,26 @@
 
     <script>
         var onsuccess_function = function() {
-            {{ implode("\n", @$onsuccess_js) }}
+
+            // UPLOAD
+            $('input[type=file].file_upload').each(function(){
+                //console.log($(this).val());
+                if ($(this).val() != '')
+                    if (!$('input[type=hidden][name=redirect]').val())
+                        location.href = location.href;
+            });
+
+            // VIDEO
+            $('input[type=file].video_image_upload').each(function(){
+                //console.log($(this).val());
+                if ($(this).val() != '')
+                    if (!$('input[type=hidden][name=redirect]').val())
+                        location.href = location.href;
+            });
+
+            @if (@count($onsuccess_js))
+                {{ implode("\n", @$onsuccess_js) }}
+            @endif
         }
     </script>
 

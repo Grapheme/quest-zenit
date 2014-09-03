@@ -369,19 +369,17 @@ HTML;
             }
         }
         $others = ' ' . implode(' ', $others);
+        #$others_string = self::arrayToAttributes($others_array);
         switch (@$array['type']) {
             case 'text':
-                $return = '<input type="text" name="' . $name . '" value="' . $value . '"' . $others . ' />';
-                #$return = Form::text($array['name']);
+                $return = Form::text($name, $value, $others_array);
                 break;
             case 'textarea':
-                $return = '<textarea name="' . $name . '"' . $others . '>' . $value . '</textarea>';
+                $return = Form::textarea($name, $value, $others_array);
                 break;
             case 'textarea_redactor':
                 $others_array['class'] = trim(@$others_array['class'] . ' redactor redactor_450');
-                $others_array = self::arrayToAttributes($others_array);
-                #Helper::d($others_array);
-                $return = '<textarea name="' . $name . '"' . @$others_array . '>' . $value . '</textarea>';
+                $return = Form::textarea($name, $value, $others_array);
                 break;
             case 'image':
                 $return = ExtForm::image($name, $value);
@@ -394,7 +392,11 @@ HTML;
                 $return = Form::text($name, $value, $others_array);
                 break;
             case 'upload':
+                $others_array['class'] = trim(@$others_array['class'] . ' file_upload');
                 $return = ExtForm::upload($name, $value, $others_array);
+                break;
+            case 'video':
+                $return = ExtForm::video($name, $value, $others_array);
                 break;
         }
         return $return;

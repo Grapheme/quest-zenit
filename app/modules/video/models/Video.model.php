@@ -1,10 +1,10 @@
 <?php
 
-class Upload extends BaseModel {
+class Video extends BaseModel {
 
 	protected $guarded = array();
 
-	protected $table = 'uploads';
+	protected $table = 'videos';
 
     /*
     ## http://laravel.ru/articles/odd_bod/your-first-model
@@ -22,10 +22,8 @@ class Upload extends BaseModel {
 		#'seo_url' => 'alpha_dash',
 	);
 
-    public function fullpath() {
-        #return link::to(Config::get('app-default.galleries_photo_dir')) . "/" . $this->name;
-        #return public_path(Config::get('site.uploads_dir', public_path('uploads/files')));
-        return str_replace('//', '/', Config::get('site.uploads_dir', public_path('uploads/files')) . "/" . basename($this->path));
+    public function image() {
+        return $this->hasOne('Photo', 'id', 'image_id');
     }
 
     /*
