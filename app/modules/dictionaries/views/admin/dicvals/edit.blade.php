@@ -32,7 +32,6 @@
             <div class="well">
                 <header>{{ $form_title }}</header>
 
-                @if (!$dic->hide_slug || !$dic->hide_name)
                 <fieldset>
 
                     @if (!$dic->hide_slug)
@@ -44,17 +43,14 @@
                     </section>
                     @endif
 
-                    @if (!$dic->hide_name)
                     <section>
-                        <label class="label">Название</label>
+                        <label class="label">{{ $dic->name_title ?: 'Название' }}</label>
                         <label class="input">
                             {{ Form::text('name', null, array()) }}
                         </label>
                     </section>
-                    @endif
 
                 </fieldset>
-                @endif
 
                 {{ Helper::dd_($fields['general']) }}
 
@@ -155,10 +151,10 @@
     var essence = '{{ $module['entity'] }}';
     var essence_name = '{{ $module['entity_name'] }}';
 	var validation_rules = {
-		name:              { required: true },
+		//name:              { required: true },
 	};
 	var validation_messages = {
-		name:              { required: "Укажите название" },
+		//name:              { required: "Укажите название" },
 	};
     </script>
 

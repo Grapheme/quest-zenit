@@ -398,6 +398,10 @@ HTML;
             case 'video':
                 $return = ExtForm::video($name, $value, $others_array);
                 break;
+            case 'select':
+                $values = $array['values'];
+                $return = Form::select($name, $values, $value, $others_array);
+                break;
         }
         return $return;
     }

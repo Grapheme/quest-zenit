@@ -153,7 +153,10 @@
             //photo:             { required: "Загрузите фотографию", minlength: "Загрузите фотографию" },
             //date:              { required: "Выберите дату", minlength: "Выберите дату", maxlength: "Выберите дату" },
         };
-        //var onsuccess_function = 'update_blocks()';
+        var onsuccess_function = function(response) {
+            if (response.new_video_id)
+                location.href = location.href;
+        };
     </script>
 
 	{{ HTML::script('js/modules/standard.js') }}

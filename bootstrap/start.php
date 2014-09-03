@@ -12,7 +12,10 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 	'az' => array('Acer_5742G'),
-	#'production' => array('www.grapheme.ru'),
+	'kd' => array('DobriyMac.local'),
+	'server1.grapheme.ru' => array('www.grapheme.ru'),
+	'server2.grapheme.ru' => array('grapheme'),
+	#'server3.grapheme.ru' => array('samoilovi.ru'), ## FreeBSD, Laravel NOT available! 
 ));
 $app->bindInstallPaths(require __DIR__.'/paths.php');
 $framework = $app['path.base'].'/vendor/laravel/framework/src';

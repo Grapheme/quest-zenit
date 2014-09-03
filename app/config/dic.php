@@ -208,6 +208,39 @@ return array(
             ),
         ),
 
+        'transactions' => array(
+
+            'general' => array(
+
+                'quest' => array(
+                    'title' => 'Квест',
+                    'type' => 'select',
+                    'values' => array('Выберите..')+Dic::valuesBySlug('quests')->lists('name', 'id'),
+                ),
+                'payment_amount' => array(
+                    'title' => 'Сумма платежа',
+                    'type' => 'text',
+                    'others' => array(
+                        'disabled',
+                    ),
+                ),
+                'payment_date' => array(
+                    'title' => 'Дата платежа',
+                    'type' => 'text',
+                    'others' => array(
+                        'disabled',
+                    ),
+                ),
+                'payment_method' => array(
+                    'title' => 'Интерфейс платежа',
+                    'type' => 'text',
+                    'others' => array(
+                        'disabled',
+                    ),
+                ),
+            ),
+        ),
+
         /*
             array(
                 'price' => array(

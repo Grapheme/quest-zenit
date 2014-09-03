@@ -17,7 +17,7 @@ class DicVal extends BaseModel {
     );
 
 	public static $rules = array(
-		'name' => 'required',
+		#'name' => 'required',
 	);
 
     #public static function rules() {
