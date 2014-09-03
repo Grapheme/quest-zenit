@@ -61,7 +61,7 @@
     	</section>
 
 
-        @if (Allow::module('system'))
+        @if (Allow::action($module['group'], 'entity'))
         <section class="col col-6">
             <div class="well">
                 <header>Отдельная сущность</header>
