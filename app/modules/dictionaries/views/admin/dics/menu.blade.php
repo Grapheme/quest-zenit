@@ -11,6 +11,14 @@
             'title' => '&laquo;' . $element->name . '&raquo;',
             'class' => 'btn btn-default'
         );
+        $menus[] = array(
+            'link' => $element->entity
+                    ? URL::route('entity.index', $element->slug)
+                    : URL::route('dicval.index', $element->id)
+            ,
+            'title' => 'Содержимое (' . $element->values_count() . ')',
+            'class' => 'btn btn-warning'
+        );
     }
     if (Allow::action($module['group'], 'create')) {
         $menus[] = array(

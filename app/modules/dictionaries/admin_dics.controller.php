@@ -146,6 +146,8 @@ class AdminDicsController extends BaseController {
             'name' => Input::get('name'),
             'entity' => Input::get('entity') ? 1 : NULL,
             'icon_class' => Input::get('icon_class'),
+            'hide_slug' => Input::get('hide_slug') ? 1 : NULL,
+            'hide_name' => Input::get('hide_name') ? 1 : NULL,
         );
 
         $json_request['responseText'] = "<pre>" . print_r($_POST, 1) . "</pre>";

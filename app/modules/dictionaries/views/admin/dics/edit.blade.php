@@ -82,14 +82,21 @@
                         </label>
                     </section>
 
-                    {{--
                     <section>
-                        <label class="label">URL-сегмент ссылки</label>
-                        <label class="input">
-                            {{ Form::text('link_url') }}
+                        <label class="checkbox">
+                            {{ Form::checkbox('hide_slug', 1) }}
+                            <i></i>
+                            Скрыть поле для ввода системного имени (slug)
                         </label>
                     </section>
-                    --}}
+
+                    <section>
+                        <label class="checkbox">
+                            {{ Form::checkbox('hide_name', 1) }}
+                            <i></i>
+                            Скрыть поле для ввода названия (name)
+                        </label>
+                    </section>
 
                 </fieldset>
             </div>

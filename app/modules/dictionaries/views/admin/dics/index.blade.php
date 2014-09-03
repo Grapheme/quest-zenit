@@ -39,7 +39,7 @@
 
         					@if(Allow::action($module['group'], 'dicval'))
                             <a href="{{ action('dicval.index', array('dic_id' => $element->id)) }}" class="btn btn-warning margin-right-10">
-                                Содержимое ({{ $element->values()->count() }})
+                                Содержимое ({{ $element->values_count() }})
                             </a>
                     		@endif
 

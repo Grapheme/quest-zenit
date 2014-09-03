@@ -14,10 +14,12 @@ class Dictionary extends BaseModel {
         'name',
         'entity',
         'icon_class',
+        'hide_slug',
+        'hide_name',
     );
 
 	public static $rules = array(
-		'name' => 'required',
+		#'name' => 'required',
 	);
 
     #public static function rules() {
@@ -31,6 +33,10 @@ class Dictionary extends BaseModel {
             ->orderBy('slug', 'ASC')
             ->orderBy('name', 'ASC')
             ->orderBy('id', 'ASC');
+    }
+
+    public function values_count() {
+        return DicVal::where('dic_id', $this->id)->count();
     }
 
     public function value() {
