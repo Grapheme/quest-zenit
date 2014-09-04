@@ -5,27 +5,27 @@ $prefix = Auth::check() ? AuthAccount::getStartPage() : 'guest';
 /*
 | Общие роуты, независящие от условий
 */
-
 //Route::get('image/{image_group}/{id}', 'ImageController@showImage')->where('id','\d+');
 Route::get('redactor/get-uploaded-images', 'DownloadsController@redactorUploadedImages');
 Route::post('redactor/upload', 'DownloadsController@redactorUploadImage');
 
+#################################################################
+## Все, что ниже - можно вынести в модуль system - Пользователи.
+## Но, возможно, придется следить за порядком загрузки модулей...
+#################################################################
+
 ## В случае, если неавторизованный пользователь зайдет на /admin, то он будет переадресован на /login.
 Route::get('admin', array('before' => 'auth2login', 'uses' => 'BaseController@redirectToLogin'));
 /*
-| Роуты, доступные для всех авторизованных пользователей
+| Роуты, доступные для всех авторизованных пользователей - dashboard
 */
 Route::group(array('before' => 'auth', 'prefix' => $prefix), function(){
-
     Route::get('/', 'BaseController@dashboard');
-	//Route::controller('downloads', 'DownloadsController');
-	//Route::controller('articles', 'ArticlesController');
 });
 
 /*
 | Роуты, доступные только для неавторизованных пользователей
 */
-
 Route::group(array('before' => 'guest', 'prefix' => ''), function(){
 	Route::post('signin', array('as' => 'signin', 'uses' => 'GlobalController@signin'));
 	Route::post('signup', array('as' => 'signup', 'uses' => 'GlobalController@signup'));
@@ -38,8 +38,8 @@ Route::group(array('before' => 'guest', 'prefix' => ''), function(){
 Route::get('login', array('before' => 'login', 'as' => 'login', 'uses' => 'GlobalController@loginPage'));
 Route::get('logout', array('before' => 'auth', 'as' => 'logout', 'uses' => 'GlobalController@logout'));
 
-#Route::get('admin', array('before' => 'guest', 'as' => 'login', 'uses' => 'GlobalController@loginPage'));
-#function(){ Redirect::route('login'); }
+#################################################################
+
 
 
 /***********************************************************************/
