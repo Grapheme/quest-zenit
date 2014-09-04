@@ -46,7 +46,7 @@ Route::get('logout', array('before' => 'auth', 'as' => 'logout', 'uses' => 'Glob
 /******************** ЗАГРУЗКА РЕСУРСОВ ИЗ МОДУЛЕЙ *********************/
 /***********************************************************************/
 ## For debug
-$load_debug = 1;
+$load_debug = 0;
 ## Reserved methods for return resourses of controller
 $returnRoutes = "returnRoutes";
 $returnActions = "returnActions";
@@ -138,7 +138,7 @@ foreach ($files as $file) {
 
     } else {
 
-        if ($load_debug) echo " CLASS NOT FOUND: {$module_fullname} | composer dump-autoload OR file name start with DIGIT!";
+        if ($load_debug) echo " CLASS NOT FOUND: {$module_fullname} | composer dump-autoload OR php-file has unusual codepage OR file name start with DIGIT!";
         
     }
     
