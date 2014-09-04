@@ -82,7 +82,7 @@ Route::filter('guest', function(){
 
 Route::filter('auth2login', function(){
     if(Auth::check()) {
-        Helper::dd(Request::path() . ' != ' . AuthAccount::getStartPage());
+        #Helper::dd(Request::path() . ' != ' . AuthAccount::getStartPage());
         if (Request::path() != AuthAccount::getStartPage())
             return Redirect::to(AuthAccount::getStartPage());
     } else {

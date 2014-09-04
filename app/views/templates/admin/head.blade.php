@@ -21,5 +21,5 @@
 @endif
 
     <script>
-    var base_url = '<?=URL::to('')?>';
+    var base_url = '{{ URL::to('') }}';
     </script>
