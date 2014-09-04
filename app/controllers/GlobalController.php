@@ -75,11 +75,11 @@ class GlobalController extends \BaseController {
 	} // функция регистрации пользователя
 
 
+    ## Завершение сеанса пользователя
 	public function logout(){
-
 		Auth::logout();
-		return Redirect::to('/');
-	} // функция завершения сеанса пользователя
+		return Redirect::route('login');
+	}
 
 
 	public function activation(){
