@@ -173,6 +173,7 @@ return array(
             ),
         ),
 
+        /*
         'members' => array(
 
             'general' => array(
@@ -207,15 +208,26 @@ return array(
                 ),
             ),
         ),
+        */
 
         'transactions' => array(
 
             'general' => array(
 
-                'quest' => array(
+                'quest_id' => array(
                     'title' => 'Квест',
                     'type' => 'select',
                     'values' => array('Выберите..')+Dic::valuesBySlug('quests')->lists('name', 'id'),
+                    'others' => array(
+                        'disabled',
+                    ),
+                ),
+                'payment_status' => array(
+                    'title' => 'Статус платежа',
+                    'type' => 'text',
+                    'others' => array(
+                        'disabled',
+                    ),
                 ),
                 'payment_amount' => array(
                     'title' => 'Сумма платежа',
@@ -234,6 +246,13 @@ return array(
                 'payment_method' => array(
                     'title' => 'Интерфейс платежа',
                     'type' => 'text',
+                    'others' => array(
+                        'disabled',
+                    ),
+                ),
+                'payment_full' => array(
+                    'title' => 'Техническая информация о платеже',
+                    'type' => 'textarea',
                     'others' => array(
                         'disabled',
                     ),

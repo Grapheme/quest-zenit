@@ -5,7 +5,7 @@ class Dictionary extends BaseModel {
 	protected $guarded = array();
 
     public $table = 'dictionary';
-    public $timestamps = false;
+    #public $timestamps = false;
 
 	public static $order_by = "name ASC";
 
