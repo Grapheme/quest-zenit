@@ -46,7 +46,7 @@ Route::get('logout', array('before' => 'auth', 'as' => 'logout', 'uses' => 'Glob
 /******************** ЗАГРУЗКА РЕСУРСОВ ИЗ МОДУЛЕЙ *********************/
 /***********************************************************************/
 ## For debug
-$load_debug = 0;
+$load_debug = 1;
 ## Reserved methods for return resourses of controller
 $returnRoutes = "returnRoutes";
 $returnActions = "returnActions";

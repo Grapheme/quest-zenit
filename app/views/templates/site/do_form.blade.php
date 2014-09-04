@@ -7,7 +7,7 @@
 
 @section('content')
 
-    {{ $page->block('content') }}
+    111
 
 @stop
 
