@@ -28,12 +28,12 @@
                                 <strong>{{ $element->module }}{{ $element->unit_id ? ' / '.$element->unit_id : '' }} /</strong>
                             @endif
 
-                            {{ $element->original_name }}
+                            {{ mb_substr($element->original_name, 0, 100) }}
 
-                            <br/>
-                            <span class="note">
+                            <div class="note">
                                 {{ $element->path }}
-                            </span>
+                            </div>
+
                             <div class="note">
                                 {{ Helper::smartFilesize($element->filesize) }}
                             </div>
@@ -47,7 +47,7 @@
 						</td>
 						<td class="text-center" style="vertical-align:middle; white-space:nowrap;">
 
-                            <a href="{{ URL::to($element->path) }}" target="_blank" download class="btn btn-success margin-right-10">
+                            <a href="{{ URL::to($element->path) }}" target="_blank" download="$element->original_name" class="btn btn-success margin-right-10">
                                 <i class="fa fa-download"></i> Скачать
                             </a>
 

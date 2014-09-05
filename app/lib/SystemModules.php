@@ -28,8 +28,9 @@ class SystemModules {
                     'permit' => 'dicval',
                 ));
             }
-            $dic_entities += $mod_menu;
-            $mod_menu = $dic_entities;
+            ##$dic_entities += $mod_menu;
+            ##$mod_menu = $dic_entities;
+
             #Helper::d($dic_entities);
             #Helper::dd($mod_menu);
         }
@@ -37,9 +38,10 @@ class SystemModules {
         ## If exists menu elements...
         if (isset($mod_menu) && is_array($mod_menu) && count($mod_menu)) {
             #foreach( $mod_menu as $mod_name => $menu_elements ) {
-            foreach( Allow::modules() as $mod_name => $module ) {
+            foreach( $dic_entities+Allow::modules() as $mod_name => $module ) {
 
-                $menu_elements = $mod_menu[$mod_name];
+                ## Hardcode...
+                $menu_elements = is_object($module) ? $mod_menu[$mod_name] : $module;
 
                 if( is_array($menu_elements) && count($menu_elements) ) {
 

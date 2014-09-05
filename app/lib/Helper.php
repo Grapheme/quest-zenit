@@ -496,8 +496,10 @@ HTML;
         $return = $path;
 
         $start = AuthAccount::getStartPage();
-        $auth_acc_pos = mb_strpos($return, $start, 7);
+        if (!$start)
+            return $return;
 
+        $auth_acc_pos = @mb_strpos($return, $start, 7);
         if ($auth_acc_pos) {
             $return = preg_replace("~.+?" . $start . "/?~is", '', $path);
         }

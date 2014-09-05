@@ -84,7 +84,7 @@ class AdminUploadsController extends BaseController {
             ## Processing results closure
             function($params) use ($mod_tpl, $class) {
 
-                #Helper::dd($params);
+                #Helper::d($params);
 
                 $file = isset($params['file']) ? $params['file'] : false;
                 $upload_id = isset($params['upload_id']) ? $params['upload_id'] : false;
@@ -225,11 +225,15 @@ class AdminUploadsController extends BaseController {
         Allow::permission($this->module['group'], 'create');
 
         #Helper::dd(Input::all());
+        #Helper::d(Input::file('file'));
+
         if (Input::hasFile('file')) {
-            ExtForm::process('upload', Input::file('file'));
+            $result = ExtForm::process('upload', Input::file('file'));
+            #Helper::dd($result);
         }
 
         return Redirect::to(URL::previous());
+        #return Redirect::to(URL::route('uploads.index', $array));
 
     }
 

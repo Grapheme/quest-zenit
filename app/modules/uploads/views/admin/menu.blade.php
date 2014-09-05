@@ -22,7 +22,7 @@
         {{ Form::open(array('url' => '#', 'class' => 'smart-form', 'files' => true)) }}
             <section>
                 <label class="input pull-left" style="width:300px;">
-                    {{ ExtForm::upload('file') }}
+                    {{ ExtForm::upload('file', array('allow' => '*')) }}
                 </label>
                 &nbsp; <button class="btn btn-default">Загрузить</button>
             </section>
