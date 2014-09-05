@@ -18,11 +18,19 @@
 
     {{ Helper::drawmenu($menus) }}
 
-    {{ Form::open(array('url' => '#', 'class' => 'smart-form', 'files' => true)) }}
-        <section>
-            <label class="input pull-left" style="width:300px;">
-                {{ ExtForm::upload('file') }}
-            </label>
-            &nbsp; <button class="btn btn-default">Загрузить</button>
-        </section>
-    {{ Form::close() }}
+    @if (@is_dir(Config::get('site.uploads_dir')) && @is_writable(Config::get('site.uploads_dir')))
+        {{ Form::open(array('url' => '#', 'class' => 'smart-form', 'files' => true)) }}
+            <section>
+                <label class="input pull-left" style="width:300px;">
+                    {{ ExtForm::upload('file') }}
+                </label>
+                &nbsp; <button class="btn btn-default">Загрузить</button>
+            </section>
+        {{ Form::close() }}
+    @else
+        <div class="alert alert-danger fade in min-table">
+            <i class="fa-fw fa fa-times"></i>
+            Директория для загрузки файлов недоступна для записи.<br/>
+            Для выставления прав выполните команду в консоли: chmod -R 777 public/uploads
+        </div>
+    @endif

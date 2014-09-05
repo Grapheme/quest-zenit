@@ -7,7 +7,7 @@ class ModulesTableSeeder extends Seeder{
 		Module::create(array(
 			'name' => 'system',
 			'on' => 1,
-			'order'=> 0
+			'order'=> 999
 		));
 
 		Module::create(array(
