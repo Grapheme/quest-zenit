@@ -1,0 +1,21 @@
+{
+  "name": "CBW template",
+  "version": "0.8.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "1.10.2",
+    "modernizr": "~2.8.3",
+    "colorbox": "~1.5.13",
+    "jQuery.dotdotdot": "~1.6.16",
+    "jquery-Mustache": "~0.2.7",
+    "underscore": "~1.7.0"
+  }
+}
