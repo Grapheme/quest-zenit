@@ -24,7 +24,8 @@ if (
 ?>
 			<li class='{{ $menu_child_active }}'>
 				<a href="{{ URL::to(link::auth($module['link'])) }}" title="{{{ $module['title'] }}}"{{ (isset($module['menu_child']) && !empty($module['menu_child']) && $module['link'] == '#') ? ' onclick="return false;"' : '' }}>
-					<i class="fa fa-lg fa-fw {{ $module['class'] }}"></i> <span class="menu-item-parent">{{{ $module['title'] }}}</span>
+					<i class="fa fa-lg fa-fw {{ $module['class'] }}"></i>
+                    <span class="menu-item-parent">{{{ $module['title'] }}}</span>
 				</a>
 			    @if(isset($module['menu_child']) && is_array($module['menu_child']) && count($module['menu_child']))
 				<ul{{ $menu_child_active ? ' style="display:block;"' : '' }}>

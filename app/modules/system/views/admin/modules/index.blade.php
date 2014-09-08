@@ -6,19 +6,12 @@
 
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
 
-		<form action="{{ URL::route('modules.change') }}" class="smart-form">
-			<fieldset>
+        <h1>Модули</h1>
 
-                <h1>Модули</h1>
+		<form action="{{ URL::route('modules.change') }}" class="smart-form">
                 {{--<label class="label">Список доступных модулей:</label>--}}
 
-            </fieldset>
-
-            <span></span>
-
-            <fieldset>
-
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped white-bg">
                     <?
                     #Helper::d(SystemModules::getModules());
                     $modules_info = Config::get('mod_info');
@@ -43,7 +36,7 @@
                         @endforeach
                     </tbody>
 				</table>
-			</fieldset>
+
 		</form>
 	</div>
 
