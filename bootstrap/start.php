@@ -13,6 +13,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 	'az' => array('Acer_5742G'),
 	'kd' => array('DobriyMac.local'),
+	'sc' => array('MAC-PC'),
 	'server1.grapheme.ru' => array('www.grapheme.ru'),
 	'server2.grapheme.ru' => array('grapheme'),
 	#'server3.grapheme.ru' => array('samoilovi.ru'), ## FreeBSD, Laravel NOT available! 
