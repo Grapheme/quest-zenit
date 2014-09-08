@@ -21,9 +21,9 @@
                 <table class="table table-bordered table-striped">
                     <?
                     #Helper::d(SystemModules::getModules());
-                    #Helper::tad(Allow::modules());
-                    $modules_info = SystemModules::getModules();
+                    $modules_info = Config::get('mod_info');
                     $modules = Allow::modules();
+                    #Helper::dd($modules);
                     ?>
                     <tbody class="sortable">
                         @foreach($modules as $name => $module)
@@ -35,7 +35,7 @@
                                     @if(Allow::module($module->name))
                                         <?php $checked = ' checked="checked"'; ?>
                                     @endif
-                                    <input type="checkbox"{{ $checked }} class="module-checkbox" data-name="{{ @$module->name }}">
+                                    <input type="checkbox"{{ $checked }} class="module-checkbox" data-name="{{ $module->name }}">
                                     <i data-swchon-text="вкл" data-swchoff-text="выкл"></i>
                                 </label>
                             </td>

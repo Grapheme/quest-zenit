@@ -28,12 +28,6 @@ class AdminUsersController extends BaseController {
 
     ## Info about module (now only for admin dashboard & menu)
     public static function returnInfo() {
-        return array(
-        	'name' => self::$name,
-        	'group' => self::$group,
-        	'title' => 'Пользователи', 
-            'visible' => 0,
-        );
     }
     
     /****************************************************************************/

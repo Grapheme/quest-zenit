@@ -63,6 +63,7 @@ $files = glob($mod_path);
 $mod_actions = array();
 $mod_info = array();
 $mod_menu = array();
+$mod_new = array();
 $default_actions = Config::get('actions');
 foreach ($files as $file) {
 
@@ -117,8 +118,23 @@ foreach ($files as $file) {
 
         ## Load module info...
         if (method_exists($module_fullname, $returnInfo)) {
+
             if ($load_debug) echo " [ load info... ] ";
-            $mod_info[$module_name] = $module_fullname::$returnInfo();
+            #$mod_info[$module_name] = $module_fullname::$returnInfo();
+
+            $module_info = $module_fullname::$returnInfo();
+            if (!$module_info)
+                continue;
+
+            $mod_info[$module_name] = $module_info;
+
+            $module = new Module;
+            $module->name = $module_info['name'];
+            $module->on = 0;
+            $module->order = NULL;
+
+            $mod_new[$module_name] = $module;
+
         }
         
         ## Load module actions...
@@ -145,6 +161,8 @@ foreach ($files as $file) {
     if ($load_debug) echo "<br/>\n";
 }
 #Helper::dd($mod_actions);
+#Helper::dd($mod_info);
+#Helper::dd($mod_menu);
 
 /*
 foreach ($mod_actions as $module_name => $actions) {
@@ -164,6 +182,7 @@ foreach ($mod_actions as $module_name => $actions) {
 Config::set('mod_info', $mod_info);
 Config::set('mod_actions', $mod_actions);
 Config::set('mod_menu', $mod_menu);
+Config::set('mod_new', $mod_new);
 #View::share('mod_actions', $mod_actions);
 #print_r($app);
 

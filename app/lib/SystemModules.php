@@ -40,8 +40,10 @@ class SystemModules {
             #foreach( $mod_menu as $mod_name => $menu_elements ) {
             foreach( $dic_entities+Allow::modules() as $mod_name => $module ) {
 
+                #Helper::d($mod_menu);
+
                 ## Hardcode...
-                $menu_elements = is_object($module) ? $mod_menu[$mod_name] : $module;
+                $menu_elements = @is_object($module) && @is_array($mod_menu[$mod_name]) ? $mod_menu[$mod_name] : $module;
 
                 if( is_array($menu_elements) && count($menu_elements) ) {
 
@@ -91,18 +93,18 @@ class SystemModules {
         }
         #Helper::dd($modules);
 
-		if(is_null($name)):
+		if(is_null($name)) {
 			return $modules;
-		else:
-			if(isset($modules[$name])):
-				if(is_null($index)):
-					return $modules[$name];
-				elseif(isset($modules[$name][$index])):
-					return $modules[$name][$index];
-				endif;
-			else:
+        } else {
+			if(isset($modules['$name'])) {
+				if(is_null($index)) {
+					return $modules['$name'];
+                } elseif(isset($modules['$name'][$index])) {
+					return $modules['$name'][$index];
+                }
+            } else {
 				return TRUE;
-			endif;
-		endif;
+            }
+        }
 	}
 }

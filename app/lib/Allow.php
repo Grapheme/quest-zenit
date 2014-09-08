@@ -140,7 +140,12 @@ class Allow {
     }
 
     public static function modules(){
-        return self::$modules;
+        #Helper::d(self::$modules);
+        #Helper::d(SystemModules::getModules());
+        #Helper::dd(self::$modules + SystemModules::getModules());
+        #return self::$modules;
+
+        return self::$modules + Config::get('mod_new');
     }
 
     /**
