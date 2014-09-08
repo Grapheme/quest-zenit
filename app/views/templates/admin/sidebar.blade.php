@@ -35,9 +35,7 @@ $have_childs = isset($module['menu_child']) && is_array($module['menu_child']) &
                         {{ $module['badge']() }}
                     @endif
                     @if ($have_childs)
-                    <b class="collapse-sign">
-                        <em class="fa fa-plus-square-o"></em>
-                    </b>
+                    {{-- <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b> --}}
                     @endif
 				</a>
 			    @if($have_childs)
