@@ -1,0 +1,237 @@
+/* ==========================================================================
+	 1. Layout and helpers
+	 2. Tag elements styles
+	 3. Components
+	 4. KHL hacks
+	 ========================================================================== */
+
+/* ==========================================================================
+	 1. Layout and helpers
+	 ========================================================================== */
+
+*{
+	box-sizing: inherit;
+}
+html{
+	font-size: 16px;
+}
+body{
+	font: 22px/20px  Arial, 'Helvetica', sans-serif;
+	line-height: 20px;
+	font-weight: @Regular;
+	background: @White;
+	margin: 0;
+    padding: 0;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
+}
+.content-wrapper{
+	position: relative;
+}
+.wrp{
+	width: 1770px;
+	margin: 0 auto;
+	position: relative;
+	@media @underDesktopMq {
+		width: 970px;
+	}
+	&_quest{
+		z-index: 2;
+	}
+}
+.no-pointerevents{
+	pointer-events: none;
+}
+.hidden{
+	display: none !important;
+}
+.visual-hidden{
+	visibility: hidden !important;
+}
+.nowrap{
+	white-space: nowrap;
+}
+.clearfix{
+	.clearfix();
+}
+/* ==========================================================================
+	 2. Tag elements styles
+	 ========================================================================== */
+
+h1{
+	color: @White;
+	font-size: 62px;
+	line-height: 60px;
+	font-weight: 700;
+	margin: 0 0 43px;
+	padding-top: 57px;
+	text-align: center;
+	.subpixel-smoothing();
+}
+h2{
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: @Light;
+	color: @DarkGray;
+	text-transform: uppercase;
+	margin: 0;
+	.subpixel-smoothing();
+}
+h3{
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: @Bold;
+	color: @Black;
+}
+h4,h5,h6{
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: 400;
+	color: @Black;
+}
+a{
+	text-decoration: none;
+	transition: color @AnimDefault;
+	color: @White;
+	outline: none;
+	svg{
+		fill: @White;
+		transition: fill @White;
+		vertical-align: middle;
+	}
+	&:focus{
+		outline:none;
+	}
+	&:hover{
+		color: @White;
+		svg{
+			fill: @White;
+		}
+	}
+}
+input, textarea, button{
+	font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+/* ==========================================================================
+	 3. Components
+	 ========================================================================== */
+.little-font{
+	font-size: 16px;
+	line-height: 27px;
+	margin: 0;
+	&_white{
+		color: @White;
+	}
+	&_gray{
+		color: @Gray;
+	}
+	&_bold{
+		font-weight: 700;
+	}
+}
+.middle-font{
+	font-size: 20px;
+	line-height: 30px;
+	margin: 0;
+	&_white{
+		color: @White;
+	}
+	&_gray{
+		color: @Gray;
+	}
+	&_bold{
+		font-weight: 700;
+	}
+}
+.main-font{
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 40px;
+	margin: 0;
+	&_white{
+		color: @White;
+	}
+	&_gray{
+		color: @DarkGray;
+	}
+	&_light{
+		font-weight: 300;
+	}
+	&.block-title{
+		text-align: center;
+		padding: 58px 0 38px;
+		text-transform: none;
+	}
+}
+.big-font{
+	color: @White;
+	font-size: 62px;
+	line-height: 60px;
+	font-weight: 700;
+	margin: 0 0 12px;
+	padding-top: 17px;
+	text-align: center;
+	.subpixel-smoothing();
+}
+.fl-r{
+	float: right;
+}
+.fl-l{
+	float: left;
+}
+.rouble{
+	&:before{
+		content: '';
+	}
+}
+
+.quest-button{
+	background: @White;
+	border: none;
+	display: inline-block;
+	line-height: 0;
+	font-size: 35px;
+	color: @Blue;
+	text-align: center;
+	overflow: hidden;
+	padding: 49px 0;
+	width: 438px;
+	height: 100px;
+	position: relative;
+	.transition(background-color @AnimDefault);
+	&:hover{
+		background: #dff5ff;
+		color: @Blue;
+	}
+	&:active,
+	&:focus{
+		outline: none;
+		background: #bfebff;
+	}
+	&_disabled,
+	&_disabled:hover{
+		cursor: default;
+		background: #eee;
+		color: #d6d6d5;
+	}
+}
+.close-button{
+	.transition(background-color @AnimDefault);
+	&:hover{
+	}
+	&:focus{
+	}
+}
+.quest-prev{
+	top:50%;
+	left: 0px;
+	margin-top: -78px;
+}
+.quest-next{
+	top:50%;
+	right: 0px;
+	margin-top: -78px;
+}

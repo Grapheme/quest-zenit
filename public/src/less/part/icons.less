@@ -1,0 +1,98 @@
+.icon{
+	display: inline-block;
+	background-size: cover;
+	vertical-align: top;
+}
+.line-icon{
+	position: absolute;
+	top: 84px;
+	border-bottom: 2px solid @White;
+	opacity: 0.3;
+	width: 78px;
+	@media @underDesktopMq {
+		width: 30px;
+	}
+	&:after{
+		content: '';
+		position: absolute;
+		width: 4px;
+		height: 4px;
+		border: 2px solid @White;
+		.border-radius(50%);
+		top: -3px;
+	}
+	&_left{
+		left: 0;
+		&:after{
+			left: -10px;
+		}
+	}
+	&_right{
+		right: 0;
+		&:after{
+			right: -10px;
+
+		}
+	}
+}
+.icon_zenit_logo{
+	width: 86px;
+	height: 42px;
+}
+.icon_advita{
+	width: 90px;
+	height: 50px;
+}
+.icon_rub-big{
+	margin-top: 7px;
+	width: 35px;
+	height: 46px;
+}
+.icon_rub-little{
+	margin-top: 6px;
+	width: 24px;
+	height: 29px;
+}
+.icon_rub-small{
+	width: 10px;
+	height: 11px;
+	margin-top: 8px;
+	margin-left: 4px;
+	&_biger{
+		width: 16px;
+		height: 21px;
+	}
+}
+
+.icon-arrow_left,
+.icon-arrow_right,
+.icon-play-button{
+	position: absolute;
+	font-size: 46px;
+	border: 2px solid @White;
+	cursor: pointer;
+	color: transparent;
+	z-index: 10;
+	.transition(all @AnimDefault);
+	.icon-arrow_right-empty,
+	.icon-arrow_left-empty,
+	.icon-play-button-empty{
+		color: @White;
+		font-size: 46px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&:hover{
+		opacity: 0.5;
+		color: @White;
+		.icon-arrow_right-empty,
+		.icon-arrow_left-empty,
+		.icon-play-button-empty{
+			color: transparent;
+		}
+	}
+	&:active{
+		opacity: 1;
+	}
+}

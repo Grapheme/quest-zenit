@@ -1,0 +1,131 @@
+.other-quests{
+	background: @Gray;
+	position: relative;
+	padding-bottom: 10px;
+	&__container{
+		position: relative;
+		width: 1960px;
+		margin: 0 auto;
+		height: 400px;
+    	overflow: hidden;
+		text-align: center;
+		padding: 0 100px;
+		&:before{
+			content: '';
+			width: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			background: @Gray;
+			z-index: 2;
+			@media @underDesktopMq {
+				width: 140px;
+			}
+		}
+		&:after{
+			content: '';
+			width: 100px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			background: @Gray;
+			z-index: 2;
+			@media @underDesktopMq {
+				width: 140px;
+			}
+		}
+		@media @underDesktopMq {
+			width: 1140px;
+			height: 800px;
+			padding: 0 140px;
+		}
+	}
+	&__list{
+		padding: 0;
+		list-style-type: none;
+		margin: 0;
+		.clearfix();
+		display: block;
+		margin-top: 0;
+		text-align: center;
+		z-index: 1;
+		.transition(margin @AnimDefault);
+	}
+	&__item{
+		margin: 0;
+		width: 300px;
+		height: 360px;
+		padding-right: 40px;
+		display: block;
+		float: left;
+		vertical-align: top;
+		position: relative;
+		margin-bottom: 40px;
+	}
+	&__link{
+		display: block;
+		position: relative;
+		width: 260px;
+		&:hover{
+			.other-quests__overflow{
+				top: 0;
+			}
+		}
+	}
+	&__title{
+		width: 260px;
+		height: 100px;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+		display: block;
+	}
+	&__each-container{
+		position: relative;
+		display: block;
+		overflow: hidden;
+		width: 260px;
+	}
+	&__image{
+		position: relative;
+		display: block;
+		width: 260px;
+		max-height: 260px;
+		overflow: hidden;
+	}
+	&__overflow{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 260px;
+		left: 0;
+		display: block;
+		.transition(top @AnimDefault);
+		&:before{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: @LightGreen;
+			opacity: 0.8;
+		}
+	}
+	&__price{
+		position: relative;
+		text-align: center;
+		display: block;
+		padding-top: 41px;
+		padding-bottom: 11px;
+	}
+	&__description{
+		position: relative;
+		text-align: center;
+		display: block;
+		padding: 0 20px;
+		line-height: 22px;
+	}
+}

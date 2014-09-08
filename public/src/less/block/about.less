@@ -1,0 +1,27 @@
+.about-proj{
+	padding-bottom: 50px;
+	position: relative;
+	&>.wrp{
+		text-align: center;
+	}
+	&__container{
+		.clearfix();
+		padding-top: 12px;
+		padding-bottom: 50px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	&__block{
+		text-align: left;
+		width: 560px;
+		float: left;
+		@media @underDesktopMq {
+			width: 460px;
+		}
+		&_gray{
+			padding: 35px;
+			background: @Gray;
+			margin-right: 40px;
+		}
+	}
+}

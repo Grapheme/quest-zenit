@@ -1,0 +1,274 @@
+@SocialVk: #3B83D6;
+@SocialFb: #4D70D5;
+@SocialOk: #F49435;
+@SocialTwitter: #26BCED;
+@SocialGp: #F56544;
+@SocialYoutube: #FF4F4F;
+@SocialInstagram: #B18258;
+@SocialFoursquare: #1DAFF0;
+
+@SocialHoverVk: #6395CF;
+@SocialHoverFb: #718DDD;
+@SocialHoverOk: #F9AD61;
+@SocialHoverTwitter: #51C9F1;
+@SocialHoverGp: #F67456;
+@SocialHoverInstagram: #C19B79;
+
+.icon_social-vk{
+	width: 11px;
+	height: 12px;
+}
+.icon_social-fb{
+	width: 9px;
+	height: 16px;
+}
+.icon_social-ok{
+	width: 10px;
+	height: 16px;
+}
+.icon_social-twitter{
+	width: 16px;
+	height: 13px;
+}
+.icon_social-gp{
+	width: 19px;
+	height: 16px;
+}
+.icon_social-youtube{
+	width: 16px;
+	height: 12px;
+}
+.icon_social-instagram{
+	width: 14px;
+	height: 14px;
+}
+.icon_social-foursquare{
+	width: 16px;
+	height: 16px;
+}
+.social-share{
+	&__list{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		line-height: 0;
+		margin-right: 30px;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	&__link{
+		cursor: pointer;
+		display: block;
+		height: 30px;
+		line-height: 26px;
+		background: @White;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: @Bold;
+		.social-share_short &{
+			width: 30px;
+			text-align: center;
+		}
+		.social-share_borderless &{
+			border: none;
+			background: #fff;
+		}
+		.social-share_long &{
+			padding: 0 20px;
+		}
+		// Specific
+		&_vk{
+			color: @SocialVk;
+			.social-share__icon{
+				fill: @SocialVk;
+				margin-top: -1px;
+
+			}
+			.social-share_short &{
+				padding-left: 2px;
+			}
+		}
+		&_fb{
+			color: @SocialFb;
+			.social-share__icon{
+				fill: @SocialFb;
+			}
+		}
+		&_ok{
+			color: @SocialOk;
+			.social-share__icon{
+				fill: @SocialOk;
+				margin-top: -1px;
+			}
+		}
+		&_twitter{
+			color: @SocialTwitter;
+			.social-share__icon{
+				fill: @SocialTwitter;
+			}
+		}
+		&_gp{
+			color: @SocialGp;
+			.social-share__icon{
+				fill: @SocialGp;
+			}
+		}
+		&_instagram{
+			color: @SocialInstagram;
+			.social-share__icon{
+				fill: @SocialInstagram;
+			}
+		}
+
+		&_vk:hover{
+			border-color: @SocialHoverVk;
+			background: @SocialHoverVk;
+		}
+		&_fb:hover{
+			border-color: @SocialHoverFb;
+			background: @SocialHoverFb;
+		}
+		&_ok:hover{
+			border-color: @SocialHoverOk;
+			background: @SocialHoverOk;
+		}
+		&_twitter:hover{
+			border-color: @SocialHoverTwitter;
+			background: @SocialHoverTwitter;
+		}
+		&_gp:hover{
+			border-color: @SocialHoverGp;
+			background: @SocialHoverGp;
+
+		}
+		&_instagram:hover{
+			border-color: @SocialHoverInstagram;
+			background: @SocialHoverInstagram;
+		}
+
+		&_vk:active{
+			border-color: @SocialVk;
+			background: @SocialVk;
+		}
+		&_fb:active{
+			border-color: @SocialFb;
+			background: @SocialFb;
+		}
+		&_ok:active{
+			border-color: @SocialOk;
+			background: @SocialOk;
+		}
+		&_twitter:active{
+			border-color: @SocialTwitter;
+			background: @SocialTwitter;
+		}
+		&_gp:active{
+			border-color: @SocialGp;
+			background: @SocialGp;
+		}
+		&_instagram:active{
+			border-color: @SocialInstagram;
+			background: @SocialInstagram;
+		}
+		.social-share__link_add:hover&{
+			background: #fff;
+			.profile__close-icon{
+				opacity: 1;
+			}
+			.profile__plus-icon{
+				opacity: 1;
+			}
+		}
+	}
+	&_white &__link{
+		border-color: @White;
+		background: @White;
+			&_vk:hover{
+				border-color: @SocialHoverVk;
+				background: @SocialHoverVk;
+			}
+			&_fb:hover{
+				border-color: @SocialHoverFb;
+				background: @SocialHoverFb;
+			}
+			&_ok:hover{
+				border-color: @SocialHoverOk;
+				background: @SocialHoverOk;
+			}
+			&_twitter:hover{
+				border-color: @SocialHoverTwitter;
+				background: @SocialHoverTwitter;
+			}
+			&_gp:hover{
+				border-color: @SocialHoverGp;
+				background: @SocialHoverGp;
+
+			}
+			&_instagram:hover{
+				border-color: @SocialHoverInstagram;
+				background: @SocialHoverInstagram;
+			}
+
+			&_vk:active{
+				border-color: @SocialVk;
+				background: @SocialVk;
+			}
+			&_fb:active{
+				border-color: @SocialFb;
+				background: @SocialFb;
+			}
+			&_ok:active{
+				border-color: @SocialOk;
+				background: @SocialOk;
+			}
+			&_twitter:active{
+				border-color: @SocialTwitter;
+				background: @SocialTwitter;
+			}
+			&_gp:active{
+				border-color: @SocialGp;
+				background: @SocialGp;
+			}
+			&_instagram:active{
+				border-color: @SocialInstagram;
+				background: @SocialInstagram;
+			}
+	}
+	&__icon{
+		display: inline-block;
+		vertical-align: middle;
+		transition: all @AnimDefault;
+		.social-share__link:hover>&,
+		.social-share__link:active>&{
+			fill: #fff;
+		}
+		.social-share__link_add:hover>&{
+			opacity: 0;
+		}
+	}
+	&__text{
+		vertical-align: middle;
+		margin: 0 15px;
+		transition: color @AnimDefault;
+		.social-share__link:hover>&,
+		.social-share__link:active>&{
+			color: #fff;
+		}
+	}
+	&__counter{
+		padding-left: 9px;
+		opacity: .5;
+		vertical-align: middle;
+		transition: color @AnimDefault;
+		.social-share__link:hover>&,
+		.social-share__link:active>&{
+			color: #fff;
+		}
+	}
+}

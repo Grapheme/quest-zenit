@@ -1,0 +1,278 @@
+.game-info{
+	display: table;
+	position: relative;
+	width: 1290px;
+	margin: 0 auto;
+	margin-top: 20px;
+	@media @underDesktopMq {
+		width: 980px;
+	}
+	&__container{
+		display: table-row;
+		.game-info__left,
+		.game-info__right,
+		{
+			display: table-cell;
+			width: 33.3%;
+			vertical-align: middle;
+			@media @underDesktopMq {
+				width: 30%;
+			}
+		}
+		.game-info__center{
+			display: table-cell;
+			width: 33.3%;
+			vertical-align: middle;
+			@media @underDesktopMq {
+				width: 40%;
+			}
+		}
+	}
+	&__left{
+		position: relative;
+	}
+	&__information{
+		margin-top: 4px;
+		width: 264px;
+		position: relative;
+		display: inline-block;
+		&_right{
+			padding-right: 37px;
+			text-align: right;
+			@media @underDesktopMq {
+				padding-right: 50px;
+			}
+		}
+		&_left{
+			padding-left: 37px;
+			text-align: left;
+			@media @underDesktopMq {
+				padding-left: 50px;
+			}
+		}
+		@media @underDesktopMq {
+			display: block;
+			float: none;
+			width: 100%;
+		}
+	}
+	&__center{
+		position: relative;
+		text-align: center;
+	}
+	&__right{
+		position: relative;
+		padding-left: 160px;
+		@media @underDesktopMq {
+			padding-left: 0;
+		}
+	}
+}
+.game-statistic{
+	position: relative;
+	width: 1380px;
+	margin: 0 auto;
+	@media @underDesktopMq {
+		width: 960px;
+	}
+	&__line-container{
+		position: relative;
+		width: 1360px;
+		height: 33px;
+		margin: 0 auto;
+
+		@media @underDesktopMq {
+			width: 960px;
+		}
+	}
+	&__line{
+		width: 1330px;
+		margin: 0 auto;
+		position: relative;
+		border-bottom: 2px solid @White;
+		opacity: 0.3;
+		margin-top: 58px;
+		@media @underDesktopMq {
+			width: 940px;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			border: 2px solid @White;
+			.border-radius(50%);
+			top: -3px;
+			left: -18px;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			border: 2px solid @White;
+			.border-radius(50%);
+			top: -3px;
+			right: -18px;
+		}
+	}
+	&__from{
+		position: absolute;
+		display: inline-block;
+		top: -36px;
+		left: 0;
+	}
+	&__to{
+		position: absolute;
+		display: inline-block;
+		top: -36px;
+		margin-left: -78px;
+		left: 100%;
+		&.m-active{
+			&:before{
+				top: 33px;
+				content: '';
+				position: absolute;
+				left: 50%;
+				width: 4px;
+				height: 4px;
+				border: 2px solid #ffffff;
+				background: #ffffff;
+				.border-radius(50%);
+			}
+		}
+	}
+	&__total{
+		position: absolute;
+		display: inline-block;
+		top: -36px;
+		left: 0;
+		width: 160px;
+		text-align: center;
+		margin-left: -80px;
+		.transition(all 2s);
+		opacity: 0;
+		&:before{
+			position: absolute;
+			top: 33px;
+			content: '';
+			position: absolute;
+			left: 77px;
+			width: 4px;
+			height: 4px;
+			border: 2px solid @White;
+			background: @White;
+			.border-radius(50%);
+		}
+	}
+	&__colored-container{
+		position: relative;
+		border: 10px solid rgba(255, 255, 255, 0.5);
+	}
+	&__colored-line{
+		position: relative;
+		height: 20px;
+		background: @White;
+	}
+	&__colored-list{
+		padding: 0;
+		margin: 0;
+		position: relative;
+		height: 20px;
+	}
+	&__colored-item{
+		float: left;
+		display: inline-block;
+		margin: 0;
+		height: 20px;
+		width: 0;
+		position: relative;
+		.transition(width 2s);
+		&_green{
+			background: @Green;
+		}
+		&_lightblue{
+			background: @LightBlue;
+		}
+		&_blue{
+			background: @Blue;
+		}
+		&_torquous{
+			background: @Torquous;
+		}
+		&_orange{
+			background: @Orange;
+		}
+		&_red{
+			background: @LightRed;
+		}
+		&:hover{
+			.dropdown-window{
+				opacity: 1;
+				top: 30px;
+				max-height: 200px;
+				padding: 40px;
+				overflow: visible;
+			}
+		}
+	}
+}
+.dropdown-window{
+	opacity: 0;
+	position: absolute;
+	width: 240px;
+	left: 50%;
+	margin-left: -120px;
+	top: 20px;
+	max-height: 0;
+	padding: 0 40px;
+	overflow: hidden;
+	.transition(all @AnimDefault);
+	&:before{
+		content: '';
+		position: absolute;
+		top: -9px;
+		left: 50%;
+		margin-left: -10px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 10px 10px 10px;
+	}
+	&_green{
+		background: @Green;
+		&:before{
+			border-color: transparent transparent @Green transparent;
+		}
+	}
+	&_lightblue{
+		background: @LightBlue;
+		&:before{
+			border-color: transparent transparent @LightBlue transparent;
+		}
+	}
+	&_blue{
+		background: @Blue;
+		&:before{
+			border-color: transparent transparent @Blue transparent;
+		}
+	}
+	&_torquous{
+		background: @Torquous;
+		&:before{
+			border-color: transparent transparent @Torquous transparent;
+		}
+	}
+	&_orange{
+		background: @Orange;
+		&:before{
+			border-color: transparent transparent @Orange transparent;
+		}
+	}
+	&_red{
+		background: @LightRed;
+		&:before{
+			border-color: transparent transparent @LightRed transparent;
+		}
+	}
+}

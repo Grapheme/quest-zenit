@@ -1,0 +1,37 @@
+.smi{
+	position: relative;
+	background: @LightGreen;
+	&__container{
+		position: relative;
+		width: 1960px;
+		margin: 0 auto;
+		height: 800px;
+    	overflow-y: hidden;
+    	overflow-x: auto;
+		text-align: center;
+		padding: 0 65px;
+		@media @underDesktopMq {
+			width: 1000px;
+			height: 800px;
+		}
+	}
+	&__list{
+		padding: 0;
+		margin: 0;
+		margin-left: -40px;
+		list-style-type: none;
+		display: inline-block;
+		margin-top: 0;
+		text-align: center;
+		.transition(margin-top @AnimDefault);
+	}
+	&__item{
+		margin: 0;
+		width: 560px;
+		margin-right: 40px;
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		margin-bottom: 40px;
+	}
+}
