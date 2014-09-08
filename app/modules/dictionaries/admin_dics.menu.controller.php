@@ -51,6 +51,19 @@ class AdminDicsMenuController extends BaseController {
                 #'link' => URL::route('dic.index'),
                 'class' => 'fa-bars',
                 'permit' => 'view',
+                'icon_badge' => function() {
+                        return;
+                        return '<em>9</em>';
+                    },
+                'badge' => function() {
+                        return;
+                        return '
+                            <span class="badge pull-right inbox-badge">1</span>
+                            <span class="badge pull-right inbox-badge bg-color-greenLight">2</span>
+                            <span class="badge pull-right inbox-badge bg-color-blue">3</span>
+                            <span class="badge pull-right inbox-badge bg-color-redLight">4</span>
+                            ';
+                    },
             ),
         );
         #*/

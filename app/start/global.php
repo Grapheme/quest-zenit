@@ -174,3 +174,8 @@ require app_path().'/filters.php';
 #*/
 
 #Event::listen('illuminate.query', function($query){ echo $query . "<br/>\n"; });
+
+Blade::extend(function($view, $compiler){
+    $pattern = $compiler->createPlainMatcher('literal');
+    return preg_replace($pattern, '$1<?php echo $2->format(\'m/d/Y H:i\'); ?>', $view);
+});
