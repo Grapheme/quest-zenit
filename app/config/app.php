@@ -10,7 +10,7 @@ return array(
 	'use_scripts_local' => FALSE,
 	
 	'default_page_title' => 'Quest Zenit',
-	'template' => 'default',
+	'template' => 'site',
     'welcome_page_tpl' => 'templates.site.index', #'guests.welcome',
 
 

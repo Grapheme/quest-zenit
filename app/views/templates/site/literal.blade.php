@@ -1,5 +1,4 @@
 
-    @literal
 	<!-- templates -->
 	<script id="mainTpl" type="x-tmpl-mustache">
 		<ul class="game-statistic__colored-list js-paymentList">				
@@ -30,8 +29,3 @@
 		</li>
 		{{ /quests }}
 	</script>
-    @endliteral
-
-    {{ HTML::scriptmod("js/vendor/jquery.min.js") }}
-    {{ HTML::scriptmod("js/plugins.js") }}
-    {{ HTML::scriptmod("js/main.js") }}
