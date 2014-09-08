@@ -64,6 +64,7 @@ class BaseController extends Controller {
         $parts[] = AuthAccount::getStartPage();
         $parts[] = 'dashboard';
 
+#Helper::dd($parts);
         return View::make(implode('.', $parts));
     }
 

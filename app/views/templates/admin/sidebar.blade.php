@@ -5,7 +5,7 @@
     	@foreach(SystemModules::getSidebarModules() as $name => $module)
 <? #echo (string)Request::segment(2) . " == " . $module['link'] . " > " . (int)((string)Request::segment(2) == $module['link']); ?>
 <? #dd(Request::segment(2)); ?>
-<?
+<?php
 #Helper::d($_SERVER['REQUEST_URI']);
 #Helper::d("/" . AuthAccount::getStartPage($module['link']));
 #Helper::d( (string)Request::segment(2)."/".(string)Request::segment(3) . " == " . $module['link'] );
@@ -22,7 +22,7 @@ if (
     #$class = 'active';
     $menu_child_active = "active open"; 
 ?>
-			<li class='{{ $menu_child_active }}'>
+			<li class='{{ @$menu_child_active }}'>
 				<a href="{{ URL::to(link::auth($module['link'])) }}" title="{{{ $module['title'] }}}"{{ (isset($module['menu_child']) && !empty($module['menu_child']) && $module['link'] == '#') ? ' onclick="return false;"' : '' }}>
 					<i class="fa fa-lg fa-fw {{ $module['class'] }}"></i>
                     <span class="menu-item-parent">{{{ $module['title'] }}}</span>
