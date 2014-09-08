@@ -46,6 +46,7 @@ class AdminCollectorsController extends BaseController {
         #$modules = Module::where('on', '1')->orderBy('order', 'ASC')->orderBy('updated_at', 'ASC')->get();
         #Helper::tad($modules);
 
+
         ## File with times of modification each JS
         $mods_file = storage_path('modules_js_modifications.dat');
         ## Cache of the last compile JS
