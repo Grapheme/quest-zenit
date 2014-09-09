@@ -59,5 +59,4 @@
 				<span class="icon icon-arrow_up-empty"></span>
 			</span>
 		</div>
-		<span class="js-noVisible" style="visibility: hidden; lineheight: 0; position: fixed; bottom: 0;"></span>
 	</footer>

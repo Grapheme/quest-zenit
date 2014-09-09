@@ -1,7 +1,8 @@
 window.QuestZenit = {};
 
 QuestZenit.Carousel = function() {
-    $(".js-scrollableQuests").carousel();
+    $(".js-scrollableQuests").carousel(6, 1);
+    $(".js-scrollableNews").carousel(3, 0);
 };
 
 QuestZenit.LightBox = function() {
@@ -59,7 +60,7 @@ QuestZenit.LightBox = function() {
 };
 
 QuestZenit.Pagescroll = function() {
-    var mainquest, otherquest, aboutProject, smi, parthers, contacts, bottomS, windowWidth = $(".js-noVisible").offset().top;
+    var mainquest, otherquest, aboutProject, smi, parthers, contacts, bottomS;
     $(".js-scrollTop").on("click", function() {
         $.smoothScroll({
             scrollTarget: "#"
@@ -460,55 +461,73 @@ QuestZenit.TimeLine = function() {
     }
 };
 
-$(function() {
-    $.fn.carousel = function(color) {
+$(document).ready(function() {
+    $.fn.carousel = function(num, resizeHeight) {
+        var resizeIt = false;
+        if (resizeHeight === 1) {
+            resizeIt = true;
+        }
         var $container = $(this), $child = $container.children(), $allChildrens = $child.find("li"), elementHeight = $container.height(), scrolledHeight = $child.height(), containerHeight = $child.height(), difference = 0, containerW = 0, elementWidth = 0, time, modulDif, modulMargin, width = 0, margin = 0;
         $allChildrens.each(function() {
             width = $(this).outerWidth() + width;
         });
         var permanentW = width;
         $child.css("width", width + "px");
-        $container.append('<span class="icon icon-arrow_left quest-prev js-prev"><span class="icon icon-arrow_left-empty"></span></span><span class="icon quest-next icon-arrow_right js-next"><span class="icon icon-arrow_right-empty"></span></span>');
-        var $next = $container.find(".js-next");
-        var $prev = $container.find(".js-prev");
+        if (num < $allChildrens.length) {
+            $container.append('<span class="icon icon-arrow_left quest-prev js-prev"><span class="icon icon-arrow_left-empty"></span></span><span class="icon quest-next icon-arrow_right js-next"><span class="icon icon-arrow_right-empty"></span></span>');
+            var $next = $container.find(".js-next");
+            var $prev = $container.find(".js-prev");
+            resizedw();
+            $next.on("click", function(e) {
+                var $this = $(this);
+                margin = margin - elementWidth;
+                modulMargin = Math.abs(margin);
+                $child.css("margin-left", margin + "px");
+                if (modulMargin >= modulDif) {
+                    $this.hide();
+                } else {
+                    $prev.show();
+                }
+            });
+            $prev.on("click", function(e) {
+                var $this = $(this);
+                margin = margin + elementWidth;
+                modulMargin = Math.abs(margin);
+                $child.css("margin-left", margin + "px");
+                if (modulMargin < elementWidth) {
+                    $this.hide();
+                } else {
+                    $next.show();
+                }
+            });
+        }
         resizedw();
-        $next.on("click", function(e) {
-            var $this = $(this);
-            margin = margin - elementWidth;
-            modulMargin = Math.abs(margin);
-            $child.css("margin-left", margin + "px");
-            if (modulMargin >= modulDif) {
-                $this.hide();
-            } else {
-                $prev.show();
-            }
-        });
-        $prev.on("click", function(e) {
-            var $this = $(this);
-            margin = margin + elementWidth;
-            modulMargin = Math.abs(margin);
-            $child.css("margin-left", margin + "px");
-            if (modulMargin < elementWidth) {
-                $this.hide();
-            } else {
-                $next.show();
-            }
-        });
         function resizedw() {
             var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName("body")[0].clientWidth;
-            if (x < 2100) {
-                width = permanentW / 2;
+            if (x < 2100 && resizeIt) {
+                if ($allChildrens.length % 2 === 0) {
+                    width = permanentW / 2;
+                } else {
+                    width = permanentW / 2 + $allChildrens.first().width();
+                }
             } else {
                 width = permanentW;
             }
+            margin = 0;
             containerW = $container.outerWidth();
             difference = containerW - width;
             modulDif = Math.abs(difference);
             $child.css("width", width + "px");
             elementWidth = $allChildrens.first().outerWidth();
-            $child.css("margin-left", 0);
-            $prev.hide();
-            $next.show();
+            if (num < $allChildrens.length) {
+                $child.css("margin-left", 0);
+            } else {
+                $child.css("margin", "0 auto");
+            }
+            if (num < $allChildrens.length) {
+                $prev.hide();
+                $next.show();
+            }
         }
         $(window).on("resize", function() {
             clearTimeout(time);

@@ -5,8 +5,7 @@ QuestZenit.Pagescroll = function() {
 		smi,
 		parthers,
 		contacts,
-		bottomS,
-		windowWidth = $(".js-noVisible").offset().top;
+		bottomS;
 	$(".js-scrollTop").on('click', function() {
 		$.smoothScroll({
 			scrollTarget: '#'
