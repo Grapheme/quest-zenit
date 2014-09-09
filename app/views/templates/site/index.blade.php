@@ -157,7 +157,7 @@
 									</span>
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__media-container">
@@ -177,7 +177,7 @@
 								<div class="news__top">
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__information">
@@ -196,7 +196,7 @@
 								<div class="news__top">
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__media-container">
@@ -214,7 +214,7 @@
 								<div class="news__top">
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__media-container">
@@ -236,7 +236,7 @@
 								<div class="news__top">
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__information">
@@ -256,7 +256,7 @@
 									</span>
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__media-container">
@@ -281,7 +281,7 @@
 									</span>
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__media-container">
@@ -301,7 +301,7 @@
 								<div class="news__top">
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__information">
@@ -320,7 +320,7 @@
 								<div class="news__top">
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__media-container">
@@ -338,7 +338,7 @@
 								<div class="news__top">
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__media-container">
@@ -360,7 +360,7 @@
 								<div class="news__top">
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__information">
@@ -380,7 +380,7 @@
 									</span>
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link">Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
 								<div class="news__media-container">
@@ -398,7 +398,6 @@
 					</li>
 				</ul>
 			</div>
-			
 		</section>
 	<!-- Partners -->
 		<section class="partners" id="parthers">

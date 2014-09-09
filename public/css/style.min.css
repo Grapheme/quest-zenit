@@ -1031,6 +1031,10 @@ button {
   margin-left: -20px;
   margin-top: -20px;
 }
+.icon-link {
+  font-size: 20px;
+  color: #fff;
+}
 @font-face {
   font-family: 'icomoon';
   src: url('../fonts/icomoon.eot?42f6x4');
@@ -2280,25 +2284,6 @@ button {
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
 }
-.news__link:before {
-  content: '';
-  position: absolute;
-  left: 4;
-  top: 0;
-  width: 3px;
-  height: 3px;
-  border: 2px solid #fff;
-}
-.news__link:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 6;
-  width: 3px;
-  height: 3px;
-  border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-}
 .news__link:hover {
   opacity: 1;
 }
@@ -2337,4 +2322,9 @@ button {
 .news__description {
   position: relative;
   line-height: 20px;
+}
+.news .icon-link {
+  position: absolute;
+  left: 0;
+  top: 0;
 }

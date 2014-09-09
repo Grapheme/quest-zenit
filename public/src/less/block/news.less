@@ -17,7 +17,6 @@
 			.clearfix();
 			.news__date-icon{
 				background: @LightBlue;
-				
 				top: 0;
 			}
 			@media @underDesktopMq {
@@ -85,25 +84,6 @@
 		padding-left: 30px;
 		position: relative;
 		.transition(opacity 0.4s);
-		&:before{
-			content: '';
-			position: absolute;
-			left: 4;
-			top: 0;
-			width: 3px;
-			height: 3px;
-			border: 2px solid #fff;
-		}
-		&:after{
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 6;
-			width: 3px;
-			height: 3px;
-			border-left: 2px solid #fff;
-			border-bottom: 2px solid #fff;
-		}
 		&:hover{
 			opacity: 1;
 		}
@@ -142,5 +122,10 @@
 	&__description{
 		position: relative;
 		line-height: 20px;
+	}
+	.icon-link{
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 }
