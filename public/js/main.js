@@ -436,6 +436,8 @@ QuestZenit.TimeLine = function() {
                 width = prise / destination * 100;
             } else {
                 width = prise / total * 100;
+                $(".js-xDate").show();
+                $(".game-statistic__line").addClass("m-online");
             }
             $this.css("width", width + "%");
         });

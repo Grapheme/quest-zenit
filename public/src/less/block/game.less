@@ -92,6 +92,11 @@
 		border-bottom: 2px solid @White;
 		opacity: 0.3;
 		margin-top: 58px;
+		&.m-online{
+			&:after{
+				border: none;
+			}
+		}
 		@media @underDesktopMq {
 			width: 940px;
 		}
@@ -128,17 +133,16 @@
 		top: -36px;
 		margin-left: -78px;
 		left: 100%;
+		.icon-star{
+			position: absolute;
+			top:25px;
+			right:-18px;
+		}
 		&.m-active{
-			&:before{
-				top: 33px;
-				content: '';
-				position: absolute;
-				left: 50%;
-				width: 4px;
-				height: 4px;
-				border: 2px solid #ffffff;
-				background: #ffffff;
-				.border-radius(50%);
+			.icon-star{
+				right: auto;
+				left:50%;
+				margin-left: -10px;
 			}
 		}
 	}
@@ -173,6 +177,14 @@
 		position: relative;
 		height: 20px;
 		background: @White;
+	}
+	&__xDay{
+		position: absolute;
+		right: -10px;
+		top:-11px;
+		@media @underDesktopMq {
+			right: -16px;
+		}
 	}
 	&__colored-list{
 		padding: 0;
