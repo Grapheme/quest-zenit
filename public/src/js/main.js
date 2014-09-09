@@ -83,5 +83,6 @@ $(function() {
 	QuestZenit.TimeLine();
 	QuestZenit.Social.updateStatic();
 	QuestZenit.Carousel();
+	QuestZenit.Pagescroll();
 	//QuestZenit.LightBox();
 });

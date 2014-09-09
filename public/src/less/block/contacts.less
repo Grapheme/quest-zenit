@@ -1,0 +1,44 @@
+.contacts{
+	position:relative;
+	.wrp{
+		z-index: 1;
+		padding-bottom: 176px;
+		@media @underDesktopMq {
+			padding-bottom: 126px;
+		}
+	}
+	&__title{
+		padding-bottom: 30px;
+	}
+	&__container{
+		position: relative;
+
+	}
+	&__row{
+		&_hidden{
+			.contacts__cell{
+				padding-top: 50px;
+			}
+			display: none;
+			@media @underDesktopMq {
+				display: table-row;
+			}
+		}
+	}
+	&__cell{
+		width: 33.3%;
+		vertical-align: top;
+		@media @underDesktopMq {
+			width: 50%;
+		}
+		&_hide{
+			.middle-font{
+				padding-bottom: 20px;
+			}
+			@media @underDesktopMq {
+				display: none;
+			}
+		}
+		
+	}
+}

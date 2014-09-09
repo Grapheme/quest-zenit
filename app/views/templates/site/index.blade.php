@@ -159,34 +159,46 @@
 	<!-- Partners -->
 		<section class="partners" id="parthers">
 			<div class="wrp">
+				<h2 class="block-title main-font main-font_gray main-font_light">Партнеры</h2>
+				<ul class="partners__container">
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+				</ul>
 			</div>
 		</section>
-	<!-- End of content -->
+		<!-- End of content -->
 		<nav class="quest-navigation">
 			<ul class="quest-navigation__list">
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#mainQuest" class="js-easyScroll m-active" data-scroll="1"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#otherQuests" class="js-easyScroll" data-scroll="2"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#aboutProject" class="js-easyScroll" data-scroll="3"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#smi" class="js-easyScroll" data-scroll="4"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#parthers" class="js-easyScroll" data-scroll="5"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#contacts" class="js-easyScroll" data-scroll="6"></a>
 				</li>
 			</ul>
 		</nav>
-		<!-- Contacts -->
-		<section class="contacts" id="contacts">
-		</section>
 
 @stop
 

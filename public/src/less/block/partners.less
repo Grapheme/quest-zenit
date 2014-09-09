@@ -1,0 +1,30 @@
+.partners{
+	position: relative;
+	background: #cfd8e1;
+	&__container{
+		position: relative;
+		padding: 10px 0 20px;
+		margin: 0;
+		margin-left: -40px;
+		.clearfix();
+		list-style-type: none;
+		@media @underDesktopMq {
+			width: 860px;
+			margin: 0 auto;
+		}
+		
+	}
+	&__each-partner{
+		float: left;
+		width: 260px;
+		height: 140px;
+		margin-bottom: 40px;
+		margin-left: 40px;
+		border: 2px solid #a9bbcd;
+		@media @underDesktopMq {
+			&:nth-child(3n - 2){
+				margin-left: 0;
+			}
+		}
+	}
+}

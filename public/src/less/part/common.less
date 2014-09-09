@@ -29,6 +29,9 @@ body{
 }
 .content-wrapper{
 	position: relative;
+	@media screen and (max-width: 1160px){
+		width: 1160px;
+	}
 }
 .wrp{
 	width: 1770px;
@@ -144,6 +147,17 @@ input, textarea, button{
 	}
 	&_bold{
 		font-weight: 700;
+	}
+	&_center{
+		text-align: center;
+	}
+	&_opacity{
+		opacity: 0.7;
+	}
+	&__span{
+		opacity: 0.7;
+		font-size: 16px;
+		line-height: 1;
 	}
 }
 .main-font{
