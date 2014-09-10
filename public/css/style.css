@@ -181,8 +181,8 @@ table {
 /* Common styles for overlay and modal type (fixed morph) */
 .morph-button-fixed,
 .morph-button-fixed .morph-content {
-  width: 438px;
-  height: 100px;
+  width: 10px;
+  height: 10px;
 }
 .morph-button-fixed > button {
   z-index: 1000;
@@ -680,6 +680,16 @@ a:hover {
 a:hover svg {
   fill: #ffffff;
 }
+button {
+  outline: none;
+  outline: 0;
+  outline-style: none;
+  outline-width: 0;
+}
+button:focus {
+  outline: 0;
+  box-shadow: none;
+}
 input,
 textarea,
 button {
@@ -1004,12 +1014,18 @@ button {
   border-radius: 50%;
   letter-spacing: 0;
 }
+.icon-question_blue {
+  background: #16aef2;
+}
 .icon-star {
   color: #fff;
   font-size: 20px;
   border: 2px solid #fff;
   border-radius: 50%;
   letter-spacing: 1;
+}
+.icon-star_blue {
+  background: #16aef2;
 }
 .icon-arrow_up {
   position: absolute;
@@ -1914,6 +1930,9 @@ button {
   margin-bottom: 40px;
 }
 .other-quests__link {
+  padding: 0;
+  background: none;
+  border: none;
   display: block;
   position: relative;
   width: 260px;
@@ -2367,6 +2386,32 @@ button {
   left: 0;
   top: 0;
 }
+.morph-button {
+  z-index: 0 !important;
+}
+.morph-button_quest {
+  width: 438px;
+  height: 100px;
+}
+.morph-button_quest .morph-content {
+  width: 438px;
+  height: 100px;
+}
+.morph-button_other-quest .morph-content {
+  width: 260px;
+  height: 260px;
+  margin-top: 100px;
+  left: 0;
+}
+.morph-button_other-quest .morph-content.open {
+  margin-top: 0;
+}
+.morph-button.active {
+  z-index: 20 !important;
+}
+.morph-button.active .morph-content {
+  margin-top: 0;
+}
 .quest-participate__title {
   font-size: 60px;
   font-weight: bold;
@@ -2437,4 +2482,10 @@ button {
 .quest-participate__info {
   text-align: center;
   margin-top: 27px;
+}
+.morph-content_renderMe {
+  background: #4eb567;
+}
+.quest-renderMe {
+  position: relative;
 }

@@ -41,7 +41,7 @@
 					</div>
 					<div class="game-statistic">
 						<div class="game-statistic__line-container">
-							<div class="game-statistic__line"></div>
+							<div class="game-statistic__line js-line"></div>
 							<p class="game-statistic__from little-font little-font_white">
 								<span>0</span>
 								<span class="icon icon_rub-small"></span>
@@ -49,14 +49,14 @@
 							<p class="game-statistic__to little-font little-font_white js-destinationButton">
 								<span>500 000</span>
 								<span class="icon icon_rub-small"></span>
-								<span class="icon-star"></span>
+								<span class="icon-star icon-star_blue"></span>
 							</p>
 							<div class="game-statistic__total little-font little-font_white js-totalButton">
 								<span>1200 000</span>
 								<span class="icon icon_rub-small"></span>
 							</div>
 						</div>
-						<span class="icon-question js-xDate game-statistic__xDay" style="display: none;"></span>
+						<span class="icon-question icon-question_blue js-xDate game-statistic__xDay" style="display: none;"></span>
 						<div class="game-statistic__colored-container">
 							<div class="game-statistic__colored-line" id="main-render">
 							</div>
@@ -65,10 +65,9 @@
 				</div>
 
 				<!--  Lightbox open button -->
-				<div class="morph-button morph-button-overlay morph-button-fixed">
+				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest">
 					<button class="quest__take-part quest-button js-participate">Принять участие</button>
 					<div class="morph-content morph-content_participate">
-
 						<div>
 							<!-- LightBox content -->
 							<section class="quest-participate">
