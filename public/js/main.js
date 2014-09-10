@@ -407,7 +407,7 @@ QuestZenit.TimeLine = function() {
     $.fn.timeline = function() {
         var finalPrice = 0;
         var currentPrice = 0;
-        var $container = $(this), $list = $container.find(".js-paymentList"), status = $container.attr("data-status"), destination = parseInt($container.find(".js-destination").attr("data-destination")), total = parseInt($container.find(".js-totalCash").attr("data-total")), buttonWidth, $to = $container.find(".js-destinationButton"), x = "", $button = $container.find(".js-totalButton"), $xDate = $container.find(".js-xDate"), $each = $container.find(".js-showEach"), $line = $container.find(".js-line");
+        var $container = $(this), $list = $container.find(".js-paymentList"), status = $container.attr("data-status"), destination = parseInt($container.find(".js-destination").attr("data-destination")), total = parseInt($container.find(".js-totalCash").attr("data-total")), buttonWidth, $to = $container.find(".js-destinationButton"), x = "", $button = $container.find(".js-totalButton"), $xDate = $container.find(".js-xDate"), $each = $container.find(".js-showEach"), $line = $container.find(".js-line"), $overline = $container.find(".js-overline");
         if (destination >= total) {
             buttonWidth = total / destination * 100;
             x = "";
@@ -424,7 +424,7 @@ QuestZenit.TimeLine = function() {
                 $list.css("padding-right", "20%");
                 if (destination < total) {
                     $xDate.show();
-                    $(".game-statistic__line").addClass("m-online");
+                    $line.addClass("m-online");
                 }
             } else {
                 timeline(100);
@@ -440,8 +440,10 @@ QuestZenit.TimeLine = function() {
                     left: persent + "%",
                     opacity: 1
                 });
-                $to.css("left", buttonWidth + "%").addClass("m-active");
+                $overline.css("width", persent + "%").addClass("m-active");
+                $to.css("left", buttonWidth + "%");
             } else {
+                $overline.css("width", buttonWidth + "%").addClass("m-active");
                 $button.css({
                     left: buttonWidth + "%",
                     opacity: 1

@@ -13,7 +13,8 @@ QuestZenit.TimeLine = function() {
 			$button = $container.find('.js-totalButton'),
 			$xDate = $container.find(".js-xDate"),
 			$each = $container.find(".js-showEach"),
-			$line = $container.find(".js-line");
+			$line = $container.find(".js-line"),
+			$overline = $container.find(".js-overline");
 		if (destination >= total) {
 			buttonWidth = (total / destination) * 100;
 			x = '';
@@ -31,7 +32,7 @@ QuestZenit.TimeLine = function() {
 				$list.css('padding-right', '20%');
 				if (destination < total) {
 					$xDate.show();
-					$(".game-statistic__line").addClass('m-online');
+					$line.addClass('m-online');
 				}
 			} else {
 				timeline(100);
@@ -47,8 +48,10 @@ QuestZenit.TimeLine = function() {
 					"left": persent + "%",
 					"opacity": 1
 				});
-				$to.css("left", buttonWidth + '%').addClass('m-active');
+				$overline.css('width', persent + '%').addClass('m-active');
+				$to.css("left", buttonWidth + '%');
 			} else {
+				$overline.css('width', buttonWidth + '%').addClass('m-active');
 				$button.css({
 					"left": buttonWidth + "%",
 					"opacity": 1

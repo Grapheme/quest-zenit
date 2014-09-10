@@ -41,7 +41,9 @@
 					</div>
 					<div class="game-statistic">
 						<div class="game-statistic__line-container">
-							<div class="game-statistic__line js-line"></div>
+							<div class="game-statistic__line js-line">
+								<div class="game-statistic__overline js-overline"></div>
+							</div>
 							<p class="game-statistic__from little-font little-font_white">
 								<span>0</span>
 								<span class="icon icon_rub-small"></span>

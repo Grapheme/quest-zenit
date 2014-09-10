@@ -1460,8 +1460,7 @@ button {
   width: 1330px;
   margin: 0 auto;
   position: relative;
-  border-bottom: 2px solid #ffffff;
-  opacity: 0.3;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   margin-top: 58px;
 }
 .game-statistic__line.m-online:after {
@@ -1477,7 +1476,7 @@ button {
   position: absolute;
   width: 4px;
   height: 4px;
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1489,7 +1488,7 @@ button {
   position: absolute;
   width: 4px;
   height: 4px;
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1530,19 +1529,6 @@ button {
   -webkit-transition: all 2s;
   transition: all 2s;
   opacity: 0;
-}
-.game-statistic__total:before {
-  top: 33px;
-  content: '';
-  position: absolute;
-  left: 77px;
-  width: 4px;
-  height: 4px;
-  border: 2px solid #ffffff;
-  background: #ffffff;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
 }
 .game-statistic__colored-container {
   position: relative;
@@ -1603,6 +1589,33 @@ button {
   max-height: 200px;
   padding: 40px;
   overflow: visible;
+}
+.game-statistic__overline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+.game-statistic__overline:before {
+  top: -3px;
+  content: '';
+  position: absolute;
+  right: -4px;
+  width: 4px;
+  height: 4px;
+  border: 2px solid transparent;
+  background: transparent;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.game-statistic__overline.m-active:before {
+  border: 2px solid #fff;
+  background: #fff;
 }
 .dropdown-window {
   opacity: 0;
