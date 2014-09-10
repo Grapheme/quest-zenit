@@ -1,8 +1,10 @@
 module.exports = function(grunt) {
 	var custom = require('./custom.json');
 	var jsPluginsList = [
-			"bower_components/colorbox/jquery.colorbox-min.js",
-			"bower_components/underscore/underscore-min.js"
+			"bower_components/underscore/underscore-min.js",
+			"bower_components/jquery-ui/ui/core.js",
+			"bower_components/jquery-ui/ui/widget.js",
+			"bower_components/jquery-ui/ui/tabs.js"
 		],
 		jadeTemplates = [],
 		isTest = custom.test || false,

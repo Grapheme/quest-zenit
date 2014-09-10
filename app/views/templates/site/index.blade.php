@@ -65,7 +65,46 @@
 				</div>
 
 				<!--  Lightbox open button -->
-				<a href="#" class="quest__take-part quest-button js-participate">Принять участие</a>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<button class="quest__take-part quest-button js-participate">Принять участие</button>
+					<div class="morph-content morph-content_participate">
+
+						<div>
+							<!-- LightBox content -->
+							<section class="quest-participate">
+								<span class="icon icon-close icon-play-close">
+									<span class="icon icon-play-close-empty"></span>
+								</span>
+								<div class="wrp wrp_quest">
+									<h2 class="quest-participate__title">
+										Принять участие
+									</h2>
+									<div id="paymentTabs" class="quest-participate__container">
+										<ul class="quest-participate__list">
+											<li class="quest-participate__item"><a href="#internetPayment" class="quest-participate__link">Оплатить через интернет</a></li>
+											<li class="quest-participate__item"><a href="#smsPayment" class="quest-participate__link">Оплатить с помощью СМС</a></li>
+										</ul>
+										<div id="internetPayment" class="quest-participate__content">
+											<form action="#" class="quest-participate__form  js-formClear">
+												<p class="quest-participate__font">MasterCard, VISA, Яндекс Деньги, WebMoney, QIWI, Мобильные платежи Билайн, Мегафон, МТС и многое другое</p>
+												<input class="quest-participate__input" type="text" placeholder="Отправитель (необязательно)">
+												<input type="submit" value="Продолжить" class="quest-button quest-participate__submit">	
+											</form>
+											<p class="middle-font middle-font_white middle-font__span quest-participate__info">На сайте-партнере ДеньгиОнлайн</p>
+										</div>
+										<div id="smsPayment" class="quest-participate__content js-formClear">
+											<form action="#" class="quest-participate__form">
+												<input class="quest-participate__input" type="text" placeholder="Отправитель (необязательно)">
+												<input type="submit" value="Продолжить" class="quest-button quest-participate__submit">	
+											</form>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- LightBox end -->
+						</div>
+					</div>
+				</div>
 				<!--  Share -->
 				<div class="quest__share-container">
 					<!-- TODO Шарилки нужно заинтегрировать. на фронте сделан только внешний вид. И ссылки прописаны хардкорно. на локальной машине не отобразятся svg социалок, на сервере будет норм -->

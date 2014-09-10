@@ -1,4 +1,4 @@
 QuestZenit.Carousel = function() {
-	$('.js-scrollableQuests').carousel(6, 1);
-	$('.js-scrollableNews').carousel(3, 0);
+	$('.js-scrollableQuests').cuscarousel(6, 1);
+	$('.js-scrollableNews').cuscarousel(3, 0);
 };

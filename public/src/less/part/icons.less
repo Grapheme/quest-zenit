@@ -63,7 +63,31 @@
 		height: 21px;
 	}
 }
-
+.icon-play-close{
+	position: absolute;
+	font-size: 46px;
+	border: 2px solid @White;
+	cursor: pointer;
+	color: transparent;
+	.transition(all @AnimDefault);
+	.icon-play-close-empty{
+		color: @White;
+		font-size: 46px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&:hover{
+		opacity: 0.5;
+		color: @White;
+		.icon-play-close-empty{
+			color: transparent;
+		}
+	}
+	&:active{
+		opacity: 1;
+	}
+}
 .icon-arrow_left,
 .icon-arrow_right,
 .icon-arrow_up,
@@ -74,6 +98,7 @@
 	cursor: pointer;
 	color: transparent;
 	.transition(all @AnimDefault);
+	
 	.icon-arrow_right-empty,
 	.icon-arrow_left-empty,
 	.icon-arrow_up-empty,
@@ -97,6 +122,12 @@
 	&:active{
 		opacity: 1;
 	}
+}
+.icon-play-close{
+	position: absolute;
+	right: 50px;
+	top:50px;
+	z-index: 10;
 }
 .icon-play-button{
 	z-index: 1;
