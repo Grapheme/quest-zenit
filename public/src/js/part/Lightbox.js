@@ -36,31 +36,33 @@ QuestZenit.LightBox = function() {
 
 	var el = document.querySelector( '.morph-button' );
 
-	new UIMorphingButton( el, {
-		closeEl : '.icon-close',
-		onBeforeOpen : function() {
-			// don't allow to scroll
-			noScroll();
-		},
-		onAfterOpen : function() {
-			// can scroll again
-			canScroll();
-			// add class "noscroll" to body
-			classie.addClass( document.body, 'noscroll' );
-			// add scroll class to main el
-			classie.addClass( el, 'scroll' );
-		},
-		onBeforeClose : function() {
-			// remove class "noscroll" to body
-			classie.removeClass( document.body, 'noscroll' );
-			// remove scroll class from main el
-			classie.removeClass( el, 'scroll' );
-			// don't allow to scroll
-			noScroll();
-		},
-		onAfterClose : function() {
-			// can scroll again
-			canScroll();
-		}
+	[].slice.call( document.querySelectorAll( '.morph-button' ) ).forEach( function(bttn) {
+		new UIMorphingButton( bttn, {
+			closeEl : '.icon-close',
+			onBeforeOpen : function() {
+				// don't allow to scroll
+				noScroll();
+			},
+			onAfterOpen : function() {
+				// can scroll again
+				canScroll();
+				// add class "noscroll" to body
+				classie.addClass( document.body, 'noscroll' );
+				// add scroll class to main el
+				classie.addClass( el, 'scroll' );
+			},
+			onBeforeClose : function() {
+				// remove class "noscroll" to body
+				classie.removeClass( document.body, 'noscroll' );
+				// remove scroll class from main el
+				classie.removeClass( el, 'scroll' );
+				// don't allow to scroll
+				noScroll();
+			},
+			onAfterClose : function() {
+				// can scroll again
+				canScroll();
+			}
+		} );
 	});
 };

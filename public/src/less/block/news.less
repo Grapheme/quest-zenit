@@ -1,0 +1,131 @@
+.news{
+	position: relative;
+	&__container{
+		position: relative;
+		width: 100%;
+		.clearfix();
+		&_video{
+			.news__title-info{
+				padding-left: 100px;
+			}
+			.news__date-icon{
+				background: @LightRed;
+				bottom: 0;
+			}
+		}
+		&_photo{
+			.clearfix();
+			.news__date-icon{
+				background: @LightBlue;
+				top: 0;
+			}
+			@media @underDesktopMq {
+				.news__halph-container{
+					.news__media-container{
+						width: 260px;
+						float: left;
+					}
+					.news__information {
+						display: block;
+						padding-left: 280px;
+					}
+				}
+			}
+		}
+		&_article{
+			.news__date-icon{
+				background: @Green;
+				top: 0;
+			}
+			.news__description{
+				padding-left: 130px;
+			}
+		}
+	}
+	&__full-container{
+		position: relative;
+		padding-bottom: 40px;
+	}
+	&__halph-container{
+		width: 260px;
+		float: left;
+		padding-bottom: 40px;
+		&:nth-child(2n){
+			float: right;
+		}
+		@media @underDesktopMq {
+			width: 100%;
+		}
+	}
+	&__top{
+		position: relative;
+		width: 100%;
+	}
+	&__video-button{
+		left: 0;
+		top: 0;
+	}
+	&__title-info{
+		position: relative;
+		width: 100%;
+		text-align: left;
+	}
+	&__title{
+		color: #fff;
+		font-size: 30px;
+		line-height: 30px;
+		font-weight: normal;
+		margin: 0;
+		margin-bottom: 18px;
+	}
+	&__link{
+		padding-bottom: 20px;
+		display: block;
+		padding-left: 30px;
+		position: relative;
+		.transition(opacity 0.4s);
+		&:hover{
+			opacity: 1;
+		}
+	}
+	&__media-container{
+		position: relative;
+	}
+	&__image{
+		display: block;
+		max-width: 100%;
+		.transition(max-width 0.4s);
+	}
+	&__date-icon{
+		width: 112px;
+		height: 112px;
+		position: absolute;
+		left: 0;
+		display: block;
+		text-align: center;
+		color: #fff;
+	}
+	&__date{
+		font-weight: bold;
+		font-size: 50px;
+		line-height: 104px
+	}
+	&__month{
+		opacity: 0.5;
+		font-weight: bold;
+	}
+	&__information{
+		position: relative;
+		text-align: left;
+		padding-top: 10px;
+	}
+	&__description{
+		position: relative;
+		line-height: 20px;
+	}
+	.icon-link{
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+}

@@ -1,0 +1,4 @@
+{
+  "views_url": "../app/views/templates/**",
+  "test": false
+}

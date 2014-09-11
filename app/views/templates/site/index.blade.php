@@ -41,7 +41,9 @@
 					</div>
 					<div class="game-statistic">
 						<div class="game-statistic__line-container">
-							<div class="game-statistic__line"></div>
+							<div class="game-statistic__line js-line">
+								<div class="game-statistic__overline js-overline"></div>
+							</div>
 							<p class="game-statistic__from little-font little-font_white">
 								<span>0</span>
 								<span class="icon icon_rub-small"></span>
@@ -49,12 +51,14 @@
 							<p class="game-statistic__to little-font little-font_white js-destinationButton">
 								<span>500 000</span>
 								<span class="icon icon_rub-small"></span>
+								<span class="icon-star icon-star_blue"></span>
 							</p>
 							<div class="game-statistic__total little-font little-font_white js-totalButton">
 								<span>1200 000</span>
 								<span class="icon icon_rub-small"></span>
 							</div>
 						</div>
+						<span class="icon-question icon-question_blue js-xDate game-statistic__xDay" style="display: none;"></span>
 						<div class="game-statistic__colored-container">
 							<div class="game-statistic__colored-line" id="main-render">
 							</div>
@@ -63,7 +67,45 @@
 				</div>
 
 				<!--  Lightbox open button -->
-				<a href="#" class="quest__take-part quest-button js-participate">Принять участие</a>
+				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest">
+					<button class="quest__take-part quest-button js-participate">Принять участие</button>
+					<div class="morph-content morph-content_participate">
+						<div>
+							<!-- LightBox content -->
+							<section class="quest-participate">
+								<span class="icon icon-close icon-play-close">
+									<span class="icon icon-play-close-empty"></span>
+								</span>
+								<div class="wrp wrp_quest">
+									<h2 class="quest-participate__title">
+										Принять участие
+									</h2>
+									<div id="paymentTabs" class="quest-participate__container">
+										<ul class="quest-participate__list">
+											<li class="quest-participate__item"><a href="#internetPayment" class="quest-participate__link">Оплатить через интернет</a></li>
+											<li class="quest-participate__item"><a href="#smsPayment" class="quest-participate__link">Оплатить с помощью СМС</a></li>
+										</ul>
+										<div id="internetPayment" class="quest-participate__content">
+											<form action="#" class="quest-participate__form  js-formClear">
+												<p class="quest-participate__font">MasterCard, VISA, Яндекс Деньги, WebMoney, QIWI, Мобильные платежи Билайн, Мегафон, МТС и многое другое</p>
+												<input class="quest-participate__input" type="text" placeholder="Отправитель (необязательно)">
+												<input type="submit" value="Продолжить" class="quest-button quest-participate__submit">	
+											</form>
+											<p class="middle-font middle-font_white middle-font__span quest-participate__info">На сайте-партнере ДеньгиОнлайн</p>
+										</div>
+										<div id="smsPayment" class="quest-participate__content js-formClear">
+											<form action="#" class="quest-participate__form">
+												<input class="quest-participate__input" type="text" placeholder="Отправитель (необязательно)">
+												<input type="submit" value="Продолжить" class="quest-button quest-participate__submit">	
+											</form>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- LightBox end -->
+						</div>
+					</div>
+				</div>
 				<!--  Share -->
 				<div class="quest__share-container">
 					<!-- TODO Шарилки нужно заинтегрировать. на фронте сделан только внешний вид. И ссылки прописаны хардкорно. на локальной машине не отобразятся svg социалок, на сервере будет норм -->
@@ -122,8 +164,8 @@
 	<!--  Other Questions -->
 		<section class="other-quests" id="otherQuests">
 			<h2 class="block-title main-font main-font_gray main-font_light">Прошедние квесты</h2>
-			<div class="other-quests__container js-scrollableQuests">
-				<ul class="other-quests__list" id="latestQuests">
+			<div class="carousel__container carousel__container_gray other-quests__container js-scrollableQuests">
+				<ul class="carousel__list" id="latestQuests">
 				</ul>
 			</div>
 		</section>
@@ -146,12 +188,255 @@
 			<div class="wrp">
 				<h2 class="block-title main-font main-font_gray main-font_light">СМИ о нас</h2>
 			</div>
-			<div class="smi__container js-scrollableNews">
-				<ul class="smi__list">
-					<li class="smi__item">
-						<span class="icon icon-play-button">
-							<span class="icon icon-play-button-empty"></span>
-						</span>
+			<div class="carousel__container carousel__container_green smi__container js-scrollableNews">
+				<ul class="carousel__list" id="latestNews">
+					<li class="smi__item news">
+						<div class="news__container news__container_video">
+							<div class="news__full-container">
+								<div class="news__top">
+									<span class="icon icon-play-button news__video-button">
+										<span class="icon icon-play-button-empty"></span>
+									</span>
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+						<div class="news__container news__container_article">
+							<div class="news__full-container">
+								<div class="news__top">
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__information">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+									<p class="middle-font middle-font_white middle-font__span news__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="smi__item news">
+						<div class="news__container news__container_photo">
+							<div class="news__halph-container">
+								<div class="news__top">
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+							<div class="news__halph-container">
+								<div class="news__top">
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="smi__item news">
+						<div class="news__container news__container_article">
+							<div class="news__full-container">
+								<div class="news__top">
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__information">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+									<p class="middle-font middle-font_white middle-font__span news__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+						<div class="news__container news__container_video">
+							<div class="news__full-container">
+								<div class="news__top">
+									<span class="icon icon-play-button news__video-button">
+										<span class="icon icon-play-button-empty"></span>
+									</span>
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="smi__item news">
+						<div class="news__container news__container_video">
+							<div class="news__full-container">
+								<div class="news__top">
+									<span class="icon icon-play-button news__video-button">
+										<span class="icon icon-play-button-empty"></span>
+									</span>
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+						<div class="news__container news__container_article">
+							<div class="news__full-container">
+								<div class="news__top">
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__information">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+									<p class="middle-font middle-font_white middle-font__span news__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="smi__item news">
+						<div class="news__container news__container_photo">
+							<div class="news__halph-container">
+								<div class="news__top">
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+							<div class="news__halph-container">
+								<div class="news__top">
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="smi__item news">
+						<div class="news__container news__container_article">
+							<div class="news__full-container">
+								<div class="news__top">
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__information">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+									<p class="middle-font middle-font_white middle-font__span news__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
+						<div class="news__container news__container_video">
+							<div class="news__full-container">
+								<div class="news__top">
+									<span class="icon icon-play-button news__video-button">
+										<span class="icon icon-play-button-empty"></span>
+									</span>
+									<div class="news__title-info">
+										<h3 class="news__title">Самый веселый способ помочь</h3>
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+									</div>
+								</div>
+								<div class="news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
+									<div class="news__date-icon">
+										<span class="news__date">12</span>
+										<span class="news__month">/08</span>
+									</div>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
+								</div>
+							</div>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -159,34 +444,46 @@
 	<!-- Partners -->
 		<section class="partners" id="parthers">
 			<div class="wrp">
+				<h2 class="block-title main-font main-font_gray main-font_light">Партнеры</h2>
+				<ul class="partners__container">
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"></li>
+				</ul>
 			</div>
 		</section>
-	<!-- End of content -->
+		<!-- End of content -->
 		<nav class="quest-navigation">
 			<ul class="quest-navigation__list">
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#mainQuest" class="js-easyScroll m-active" data-scroll="1"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#otherQuests" class="js-easyScroll" data-scroll="2"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#aboutProject" class="js-easyScroll" data-scroll="3"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#smi" class="js-easyScroll" data-scroll="4"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#parthers" class="js-easyScroll" data-scroll="5"></a>
 				</li>
 				<li class="quest-navigation__item">
-					<a href="#" class="js-easyScroll"></a>
+					<a href="#contacts" class="js-easyScroll" data-scroll="6"></a>
 				</li>
 			</ul>
 		</nav>
-		<!-- Contacts -->
-		<section class="contacts" id="contacts">
-		</section>
 
 @stop
 

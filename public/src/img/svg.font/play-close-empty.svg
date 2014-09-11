@@ -3,5 +3,10 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="46px" height="46px" viewBox="13.5 33.5 46 46" enable-background="new 13.5 33.5 46 46" xml:space="preserve">
-<polygon points="32.479,64.349 40.328,56.5 32.479,48.651 31.064,50.065 37.5,56.5 31.064,62.935 "/>
+<g>
+	<rect x="28.929" y="55" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 21.8581 121.0533)" width="14.142" height="2"/>
+</g>
+<g>
+	<rect x="35" y="48.929" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 21.8581 121.0533)" width="2" height="14.142"/>
+</g>
 </svg>

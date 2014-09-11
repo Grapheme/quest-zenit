@@ -15,8 +15,8 @@
     </script>
 	<script id="otherTpl" type="x-tmpl-mustache">
 		{{ #quests }}
-		<li class="other-quests__item">
-			<a href="{{ link }}" class="other-quests__link">
+		<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest">
+			<button class="other-quests__link">
 				<span class="other-quests__title main-font main-font_white main-font_light">{{ title }}</span>
 					<span class="other-quests__each-container">
 					<img class="other-quests__image" src="{{ image }}" alt="quest" />
@@ -25,7 +25,16 @@
 						<span class="other-quests__description little-font little-font_white">{{ description }}</span>
 					</span>
 				</span>
-			</a>
+			</button>
+			<div class="morph-content morph-content_renderMe">
+				<div>
+					<section class="quest-renderMe" data-id="{{ link }}">
+						<span class="icon icon-close icon-play-close">
+							<span class="icon icon-play-close-empty"></span>
+						</span>
+					</section>
+				</div>
+			</div>
 		</li>
 		{{ /quests }}
 	</script>

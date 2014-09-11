@@ -89,9 +89,13 @@
 		width: 1330px;
 		margin: 0 auto;
 		position: relative;
-		border-bottom: 2px solid @White;
-		opacity: 0.3;
+		border-bottom: 2px solid rgba(255,255,255, 0.3);
 		margin-top: 58px;
+		&.m-online{
+			&:after{
+				border: none;
+			}
+		}
 		@media @underDesktopMq {
 			width: 940px;
 		}
@@ -100,7 +104,7 @@
 			position: absolute;
 			width: 4px;
 			height: 4px;
-			border: 2px solid @White;
+			border: 2px solid rgba(255,255,255, 0.3);
 			.border-radius(50%);
 			top: -3px;
 			left: -18px;
@@ -110,7 +114,7 @@
 			position: absolute;
 			width: 4px;
 			height: 4px;
-			border: 2px solid @White;
+			border: 2px solid rgba(255,255,255, 0.3);
 			.border-radius(50%);
 			top: -3px;
 			right: -18px;
@@ -128,17 +132,16 @@
 		top: -36px;
 		margin-left: -78px;
 		left: 100%;
+		.icon-star{
+			position: absolute;
+			top:25px;
+			right:-18px;
+		}
 		&.m-active{
-			&:before{
-				top: 33px;
-				content: '';
-				position: absolute;
-				left: 50%;
-				width: 4px;
-				height: 4px;
-				border: 2px solid #ffffff;
-				background: #ffffff;
-				.border-radius(50%);
+			.icon-star{
+				right: auto;
+				left:50%;
+				margin-left: -10px;
 			}
 		}
 	}
@@ -152,18 +155,6 @@
 		margin-left: -80px;
 		.transition(all 2s);
 		opacity: 0;
-		&:before{
-			position: absolute;
-			top: 33px;
-			content: '';
-			position: absolute;
-			left: 77px;
-			width: 4px;
-			height: 4px;
-			border: 2px solid @White;
-			background: @White;
-			.border-radius(50%);
-		}
 	}
 	&__colored-container{
 		position: relative;
@@ -173,6 +164,14 @@
 		position: relative;
 		height: 20px;
 		background: @White;
+	}
+	&__xDay{
+		position: absolute;
+		right: -10px;
+		top:-11px;
+		@media @underDesktopMq {
+			right: -16px;
+		}
 	}
 	&__colored-list{
 		padding: 0;
@@ -209,10 +208,37 @@
 		&:hover{
 			.dropdown-window{
 				opacity: 1;
-				top: 30px;
+				top: -180px;
 				max-height: 200px;
 				padding: 40px;
 				overflow: visible;
+			}
+		}
+	}
+	&__overline{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0%;
+		height: 2px;
+		background: #fff;
+		.transition(width 2s);
+		&:before{
+			position: absolute;
+			top: -3px;
+			content: '';
+			position: absolute;
+			right: -4px;
+			width: 4px;
+			height: 4px;
+			border: 2px solid transparent;
+			background: transparent;
+			.border-radius(50%);
+		}
+		&.m-active{
+			&:before{
+				border: 2px solid #fff;
+				background: #fff;
 			}
 		}
 	}
@@ -223,7 +249,7 @@
 	width: 240px;
 	left: 50%;
 	margin-left: -120px;
-	top: 20px;
+	top: -160px;
 	max-height: 0;
 	padding: 0 40px;
 	overflow: hidden;
@@ -231,48 +257,48 @@
 	&:before{
 		content: '';
 		position: absolute;
-		top: -9px;
+		bottom: -9px;
 		left: 50%;
 		margin-left: -10px;
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 0 10px 10px 10px;
+		border-width:  10px 10px 0 10px;
 	}
 	&_green{
 		background: @Green;
 		&:before{
-			border-color: transparent transparent @Green transparent;
+			border-color: @Green transparent transparent transparent;
 		}
 	}
 	&_lightblue{
 		background: @LightBlue;
 		&:before{
-			border-color: transparent transparent @LightBlue transparent;
+			border-color: @LightBlue transparent transparent transparent;
 		}
 	}
 	&_blue{
 		background: @Blue;
 		&:before{
-			border-color: transparent transparent @Blue transparent;
+			border-color: @Blue transparent transparent transparent;
 		}
 	}
 	&_torquous{
 		background: @Torquous;
 		&:before{
-			border-color: transparent transparent @Torquous transparent;
+			border-color: @Torquous transparent transparent transparent;
 		}
 	}
 	&_orange{
 		background: @Orange;
 		&:before{
-			border-color: transparent transparent @Orange transparent;
+			border-color: @Orange transparent transparent transparent;
 		}
 	}
 	&_red{
 		background: @LightRed;
 		&:before{
-			border-color: transparent transparent @LightRed transparent;
+			border-color: @LightRed transparent transparent transparent;
 		}
 	}
 }

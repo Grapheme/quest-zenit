@@ -1,0 +1,39 @@
+.morph-content{
+	&_participate{
+		&:before{
+			&:extend(.quest:before);
+		}
+		&:after{
+			&:extend(.quest:after);
+		}
+	}
+}
+
+.morph-button{
+	z-index: 0 !important;
+	&_quest{
+		width: 438px;
+		height: 100px;
+		.morph-content{
+			width: 438px;
+			height: 100px;
+		}
+	}
+	&_other-quest{
+		.morph-content{
+			width: 260px;
+			height: 260px;
+			margin-top: 100px;
+			left: 0;
+			&.open{
+				margin-top: 0;
+			}
+		}
+	}
+	&.active{
+		z-index: 20 !important;
+		.morph-content{
+			margin-top: 0;
+		}
+	}
+}
