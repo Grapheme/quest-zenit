@@ -61,12 +61,13 @@ QuestZenit.TimeLine = function() {
 				var $this = $(this),
 					prise = $this.attr("data-size"),
 					width;
+
 				if (destination >= total) {
 					width = prise / destination * 100;
 				} else {
 					width = prise / total * 100;
 				}
-				$this.css("width", width + '%');
+				$this.css('width', width + '%');
 				
 			});
 		};

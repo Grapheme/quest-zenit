@@ -6,6 +6,318 @@ QuestZenit.Carousel = function() {
 };
 
 QuestZenit.LightBox = function() {
+    var renderData = {
+        players: [ {
+            cash: 5e4,
+            "class": "green",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e5,
+            "class": "lightblue",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 2e3,
+            "class": "blue",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e3,
+            "class": "torquous",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e5,
+            "class": "orange",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 47e3,
+            "class": "red",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 5e4,
+            "class": "green",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e5,
+            "class": "lightblue",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 2e3,
+            "class": "blue",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e3,
+            "class": "torquous",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e5,
+            "class": "orange",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 47e3,
+            "class": "red",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 5e4,
+            "class": "green",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e5,
+            "class": "lightblue",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 2e3,
+            "class": "blue",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e3,
+            "class": "torquous",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e5,
+            "class": "orange",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 47e3,
+            "class": "red",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 5e4,
+            "class": "green",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e5,
+            "class": "lightblue",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 2e3,
+            "class": "blue",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e3,
+            "class": "torquous",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 1e5,
+            "class": "orange",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        }, {
+            cash: 47e3,
+            "class": "red",
+            date: "12.07.2014",
+            name: "Черемушкин Иван"
+        } ],
+        quests: [ {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_1.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "1"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_2.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "2"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_3.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "3"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_1.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "1"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_2.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "2"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_3.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "3"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_1.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "1"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_2.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "2"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_3.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "3"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_1.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "1"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_2.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "2"
+        }, {
+            title: "Победоносный Кришито",
+            image: "img/quests/quest_3.jpg",
+            price: "400000",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            link: "3"
+        } ],
+        fullquest: [ {
+            id: 1,
+            title: "Синегривый ХАЛК1",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            "start-date": "12.08.2014",
+            "end-date": "12.09.2014",
+            total: "1200000",
+            destination: "500000",
+            "action-date": "12.08.2014",
+            gamers: "234",
+            photos: [ {
+                src: "../img/advita-photos/photo_1.jpg",
+                alt: "Фото1"
+            }, {
+                src: "../img/advita-photos/photo_2.jpg",
+                alt: "Фото2"
+            }, {
+                src: "../img/advita-photos/photo_3.jpg",
+                alt: "Фото3"
+            }, {
+                src: "../img/advita-photos/photo_1.jpg",
+                alt: "Фото4"
+            }, {
+                src: "../img/advita-photos/photo_1.jpg",
+                alt: "Фото1"
+            }, {
+                src: "../img/advita-photos/photo_2.jpg",
+                alt: "Фото2"
+            }, {
+                src: "../img/advita-photos/photo_3.jpg",
+                alt: "Фото3"
+            }, {
+                src: "../img/advita-photos/photo_1.jpg",
+                alt: "Фото4"
+            } ],
+            videos: [ {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            } ]
+        }, {
+            id: 2,
+            title: "Синегривый ХАЛК2",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            "start-date": "12.08.2014",
+            "end-date": "12.09.2014",
+            total: "1200000",
+            destination: "500000",
+            "action-date": "12.08.2014",
+            gamers: "234",
+            photos: [ {
+                src: "../img/advita-photos/photo_1.jpg",
+                alt: "Фото1"
+            }, {
+                src: "../img/advita-photos/photo_2.jpg",
+                alt: "Фото2"
+            }, {
+                src: "../img/advita-photos/photo_3.jpg",
+                alt: "Фото3"
+            }, {
+                src: "../img/advita-photos/photo_1.jpg",
+                alt: "Фото4"
+            } ],
+            videos: [ {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            } ]
+        }, {
+            id: 3,
+            title: "Синегривый ХАЛК3",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            "start-date": "12.08.2014",
+            "end-date": "12.09.2014",
+            total: "1200000",
+            destination: "500000",
+            "action-date": "12.08.2014",
+            gamers: "234",
+            photos: [ {
+                src: "../img/advita-photos/photo_1.jpg",
+                alt: "Фото1"
+            }, {
+                src: "../img/advita-photos/photo_2.jpg",
+                alt: "Фото2"
+            }, {
+                src: "../img/advita-photos/photo_3.jpg",
+                alt: "Фото3"
+            }, {
+                src: "../img/advita-photos/photo_1.jpg",
+                alt: "Фото4"
+            } ],
+            videos: [ {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            }, {
+                url: "../img/advita-photos/photo_1.jpg"
+            } ]
+        } ]
+    };
+    var render = function(data, destination) {
+        var template = $(destination).html();
+        Mustache.parse(template);
+        return Mustache.render(template, data);
+    };
+    $("#main-render").html(render(renderData, "#mainTpl"));
+    $("#latestQuests").html(render(renderData, "#otherTpl"));
     var docElem = window.document.documentElement, didScroll, scrollPosition;
     function noScrollFn() {
         window.scrollTo(scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0);
@@ -43,16 +355,34 @@ QuestZenit.LightBox = function() {
             closeEl: ".icon-close",
             onBeforeOpen: function() {
                 noScroll();
+                if ($(bttn).hasClass("js-renderOther")) {
+                    var dataLink = parseInt($(bttn).attr("data-id"));
+                    var $destination = $(bttn).find(".js-renderedContainer");
+                    var g = _.find(renderData.fullquest, function(x) {
+                        return x.id === dataLink;
+                    });
+                    $destination.html(render(g, "#otherFullTpl"));
+                    $("#lastRendered").html(render(renderData, "#mainTpl"));
+                    if ($("#latestPhoto").length) {
+                        $("#latestPhoto").cuscarousel(6, 0);
+                    }
+                }
             },
             onAfterOpen: function() {
                 canScroll();
                 classie.addClass(document.body, "noscroll");
-                classie.addClass(el, "scroll");
+                classie.addClass(bttn, "scroll");
+                if ($(bttn).hasClass("js-renderOther")) {
+                    $("#renderedQuest").timeline();
+                }
             },
             onBeforeClose: function() {
                 classie.removeClass(document.body, "noscroll");
-                classie.removeClass(el, "scroll");
+                classie.removeClass(bttn, "scroll");
                 noScroll();
+                if ($(bttn).hasClass("js-renderOther")) {
+                    $(bttn).find(".js-renderedContainer").html("");
+                }
             },
             onAfterClose: function() {
                 canScroll();
@@ -315,6 +645,34 @@ QuestZenit.Render = function() {
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
             link: "#"
+        } ],
+        fullquest: [ {
+            title: "Синегривый ХАЛК1",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            "start-date": "12.08.2014",
+            "end-date": "12.09.2014",
+            total: "1200000",
+            destination: "500000",
+            "action-date": "12.08.2014",
+            gamers: "234"
+        }, {
+            title: "Синегривый ХАЛК2",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            "start-date": "12.08.2014",
+            "end-date": "12.09.2014",
+            total: "1200000",
+            destination: "500000",
+            "action-date": "12.08.2014",
+            gamers: "234"
+        }, {
+            title: "Синегривый ХАЛК3",
+            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+            "start-date": "12.08.2014",
+            "end-date": "12.09.2014",
+            total: "1200000",
+            destination: "500000",
+            "action-date": "12.08.2014",
+            gamers: "234"
         } ]
     };
     var render = function(data, destination) {
@@ -483,12 +841,11 @@ QuestZenit.TimeLine = function() {
 };
 
 $(document).ready(function() {
-    QuestZenit.Render();
+    QuestZenit.LightBox();
     QuestZenit.TimeLine();
     QuestZenit.Social.updateStatic();
     QuestZenit.Carousel();
     QuestZenit.Pagescroll();
-    QuestZenit.LightBox();
     QuestZenit.Tabs();
 });
 //# sourceMappingURL=main.map

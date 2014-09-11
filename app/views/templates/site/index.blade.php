@@ -190,7 +190,7 @@
 			</div>
 			<div class="carousel__container carousel__container_green smi__container js-scrollableNews">
 				<ul class="carousel__list" id="latestNews">
-					<li class="smi__item news">
+					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
 							<div class="news__full-container">
 								<div class="news__top">
@@ -232,7 +232,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="smi__item news">
+					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_photo">
 							<div class="news__halph-container">
 								<div class="news__top">
@@ -272,7 +272,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="smi__item news">
+					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_article">
 							<div class="news__full-container">
 								<div class="news__top">
@@ -314,7 +314,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="smi__item news">
+					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
 							<div class="news__full-container">
 								<div class="news__top">
@@ -356,7 +356,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="smi__item news">
+					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_photo">
 							<div class="news__halph-container">
 								<div class="news__top">
@@ -396,7 +396,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="smi__item news">
+					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_article">
 							<div class="news__full-container">
 								<div class="news__top">
