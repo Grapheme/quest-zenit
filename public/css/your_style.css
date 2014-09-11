@@ -124,6 +124,8 @@ margin-left: 0;
 }
 .redactor_box {
 	max-width: 790px;
+    z-index: 1000;
+    position: relative;
 }
 .redactor_box.redactor_box_fullscreen {
 	max-width: none;
