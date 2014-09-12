@@ -5,4 +5,5 @@ $(document).ready(function(){
 	QuestZenit.Carousel();
 	QuestZenit.Pagescroll();
 	QuestZenit.Tabs();
+	QuestZenit.ColorboxMedia();
 });

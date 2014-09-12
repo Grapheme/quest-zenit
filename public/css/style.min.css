@@ -531,6 +531,147 @@ table {
   border-width: 0;
   background: none;
 }
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+#cboxWrapper {
+  max-width: none;
+}
+#cboxOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+#cboxMiddleLeft,
+#cboxBottomLeft {
+  clear: left;
+}
+#cboxContent {
+  position: relative;
+}
+#cboxLoadedContent {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#cboxTitle {
+  margin: 0;
+}
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+  cursor: pointer;
+}
+.cboxPhoto {
+  float: left;
+  margin: auto;
+  border: 0;
+  display: block;
+  max-width: none;
+  -ms-interpolation-mode: bicubic;
+}
+.cboxIframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+}
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay {
+  background: #000;
+}
+#colorbox {
+  outline: 0;
+}
+#cboxContent {
+  margin-top: 20px;
+  background: #000;
+}
+.cboxIframe {
+  background: #fff;
+}
+#cboxError {
+  padding: 50px;
+  border: 1px solid #ccc;
+}
+#cboxLoadedContent {
+  border: 5px solid #000;
+  background: #fff;
+}
+#cboxTitle {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: #ccc;
+}
+#cboxCurrent {
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  color: #ccc;
+}
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxClose {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  width: auto;
+  background: none;
+}
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
+  outline: 0;
+}
+#cboxSlideshow {
+  position: absolute;
+  top: -20px;
+  right: 90px;
+  color: #fff;
+}
+#cboxPrevious:hover {
+  background-position: bottom left;
+}
+#cboxNext:hover {
+  background-position: bottom right;
+}
 /* ==========================================================================
 	 0. Responsive breaks
 	 ========================================================================== */
@@ -598,6 +739,14 @@ body {
 }
 .wrp_quest {
   z-index: 11;
+}
+.wrp_short {
+  width: 1160px;
+}
+@media only screen and (max-width: 2099px) {
+  .wrp_short {
+    width: 970px;
+  }
 }
 .no-pointerevents {
   pointer-events: none;
@@ -1002,7 +1151,7 @@ button {
   position: absolute;
   right: 50px;
   top: 50px;
-  z-index: 10;
+  z-index: 100;
 }
 .icon-play-button {
   z-index: 1;
@@ -2199,7 +2348,7 @@ button {
 }
 .quest-navigation {
   position: fixed;
-  left: 50px;
+  left: 40px;
   top: 200px;
   z-index: 10;
 }
@@ -2372,6 +2521,7 @@ button {
 }
 .news__media-container {
   position: relative;
+  display: block;
 }
 .news__image {
   display: block;
@@ -2543,6 +2693,12 @@ button {
   background: #4eb567;
   z-index: 0;
 }
+.quest-renderMe__under-link {
+  padding-top: 28px;
+  position: relative;
+  display: block;
+  font-size: 20px;
+}
 .quest-renderMe-media {
   background: #4eb567;
 }
@@ -2560,4 +2716,151 @@ button {
 .quest-renderMe-media__item > img {
   position: relative;
   width: 260px;
+}
+.render-video__list {
+  padding: 0;
+  margin: 0;
+  display: block;
+  list-style-type: none;
+  *zoom: 1;
+}
+.render-video__list:before,
+.render-video__list:after {
+  content: " ";
+  display: table;
+}
+.render-video__list:after {
+  clear: both;
+}
+.render-video__list:before,
+.render-video__list:after {
+  content: " ";
+  display: table;
+}
+.render-video__list:after {
+  clear: both;
+}
+.render-video__item {
+  margin-bottom: 40px;
+  float: left;
+  margin-right: 40px;
+}
+.render-video__item:nth-child(2n) {
+  margin-right: 0;
+}
+.render-video__link {
+  display: block;
+  width: 560px;
+  position: relative;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+@media only screen and (max-width: 2099px) {
+  .render-video__link {
+    width: 465px;
+  }
+}
+.render-video__link:hover {
+  opacity: 1;
+}
+.render-video__link:hover .icon-play-button {
+  opacity: 0.5;
+  color: #ffffff;
+}
+.render-video__link:hover .icon-play-button-empty {
+  color: transparent;
+}
+.render-video__thumbnail {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.render-video__video-button {
+  top: 50%;
+  left: 50%;
+  margin-top: -23px;
+  margin-left: -23px;
+}
+.render-video .news__date-icon {
+  width: 112px;
+  height: 112px;
+  position: absolute;
+  left: 0;
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+.render-video .news__date-icon_red {
+  background: #f56a6a;
+  bottom: 0;
+  left: 0;
+  top: auto;
+  text-align: center;
+}
+.render-description {
+  margin-top: -40px;
+}
+.render-description__container {
+  padding-bottom: 80px;
+}
+.render-description__text {
+  padding-right: 40px;
+  text-align: left;
+  line-height: 20px;
+}
+.modal-colorbox #cboxContent {
+  margin: 0;
+  background: transparent;
+}
+.modal-colorbox #cboxLoadedContent {
+  background: transparent;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 50px solid transparent;
+  border-bottom: 0 solid transparent;
+}
+.modal-colorbox #cboxCurrent {
+  display: none !important;
+}
+.modal-colorbox #cboxClose {
+  width: 46px;
+  height: 46px;
+  top: 0;
+  right: 0;
+  left: auto;
+  position: absolute;
+}
+.modal-colorbox .icon-play-close {
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: 0;
+}
+.modal-colorbox #cboxPrevious {
+  position: absolute;
+  right: auto;
+  left: 0;
+  top: 100px;
+  width: 46px;
+  height: 46px;
+}
+.modal-colorbox .quest-prev {
+  top: 0;
+  left: 0;
+  margin-top: 0;
+}
+.modal-colorbox #cboxNext {
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: 100px;
+  width: 46px;
+  height: 46px;
+}
+.modal-colorbox .quest-next {
+  top: 0;
+  left: 0;
+  margin-top: 0;
 }

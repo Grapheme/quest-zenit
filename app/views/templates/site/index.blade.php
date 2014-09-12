@@ -165,7 +165,7 @@
 		<section class="other-quests" id="otherQuests">
 			<h2 class="block-title main-font main-font_gray main-font_light">Прошедние квесты</h2>
 			<div class="carousel__container carousel__container_gray other-quests__container js-scrollableQuests">
-				<ul class="carousel__list" id="latestQuests">
+				<ul class="carousel__list js-otherQuestList" id="latestQuests">
 				</ul>
 			</div>
 		</section>
@@ -192,23 +192,24 @@
 				<ul class="carousel__list" id="latestNews">
 					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
+							<!-- here is variable "BKorP55Aqvg" -->
 							<div class="news__full-container">
 								<div class="news__top">
-									<span class="icon icon-play-button news__video-button">
+									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/BKorP55Aqvg?rel=0&amp;wmode=transparent">
 										<span class="icon icon-play-button-empty"></span>
-									</span>
+									</a>
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="http://www.youtube.com/watch?v=BKorP55Aqvg" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="news__media-container">
-									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<div class="news__date-icon">
+								<a href="http://www.youtube.com/embed/BKorP55Aqvg?rel=0&amp;wmode=transparent" class="js-youtube news__media-container">
+									<img class="news__image" src="http://img.youtube.com/vi/BKorP55Aqvg/hqdefault.jpg" alt="video">
+									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
-									</div>
-								</div>
+									</span>
+								</a>
 								<div class="news__information">
 									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
 								</div>
@@ -241,13 +242,13 @@
 										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="news__media-container">
+								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
 									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<div class="news__date-icon">
+									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
-									</div>
-								</div>
+									</span>
+								</a>
 								<div class="news__information">
 									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
 								</div>
@@ -259,13 +260,13 @@
 										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="news__media-container">
+								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
 									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<div class="news__date-icon">
+									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
-									</div>
-								</div>
+									</span>
+								</a>
 								<div class="news__information">
 									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
 								</div>
@@ -291,23 +292,24 @@
 							</div>
 						</div>
 						<div class="news__container news__container_video">
+							<!-- here is variable "ZBAGEeOms-8" -->
 							<div class="news__full-container">
 								<div class="news__top">
-									<span class="icon icon-play-button news__video-button">
+									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
 										<span class="icon icon-play-button-empty"></span>
-									</span>
+									</a>
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="http://www.youtube.com/watch?v=ZBAGEeOms-8" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="news__media-container">
-									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<div class="news__date-icon">
+								<a href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent" class="js-youtube news__media-container">
+									<img class="news__image" src="http://img.youtube.com/vi/ZBAGEeOms-8/hqdefault.jpg" alt="video">
+									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
-									</div>
-								</div>
+									</span>
+								</a>
 								<div class="news__information">
 									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
 								</div>
@@ -316,23 +318,24 @@
 					</li>
 					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
+							<!-- here is variable "ZBAGEeOms-8" -->
 							<div class="news__full-container">
 								<div class="news__top">
-									<span class="icon icon-play-button news__video-button">
+									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
 										<span class="icon icon-play-button-empty"></span>
-									</span>
+									</a>
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="http://www.youtube.com/watch?v=ZBAGEeOms-8" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="news__media-container">
-									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<div class="news__date-icon">
+								<a href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent" class="js-youtube news__media-container">
+									<img class="news__image" src="http://img.youtube.com/vi/ZBAGEeOms-8/hqdefault.jpg" alt="video">
+									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
-									</div>
-								</div>
+									</span>
+								</a>
 								<div class="news__information">
 									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
 								</div>
@@ -365,13 +368,13 @@
 										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="news__media-container">
+								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
 									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<div class="news__date-icon">
+									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
-									</div>
-								</div>
+									</span>
+								</a>
 								<div class="news__information">
 									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
 								</div>
@@ -383,13 +386,13 @@
 										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="news__media-container">
+								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
 									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<div class="news__date-icon">
+									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
-									</div>
-								</div>
+									</span>
+								</a>
 								<div class="news__information">
 									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
 								</div>
@@ -415,23 +418,24 @@
 							</div>
 						</div>
 						<div class="news__container news__container_video">
+							<!-- here is variable "ZBAGEeOms-8" -->
 							<div class="news__full-container">
 								<div class="news__top">
-									<span class="icon icon-play-button news__video-button">
+									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
 										<span class="icon icon-play-button-empty"></span>
-									</span>
+									</a>
 									<div class="news__title-info">
 										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
+										<a href="http://www.youtube.com/watch?v=ZBAGEeOms-8" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="news__media-container">
-									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<div class="news__date-icon">
+								<a href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent" class="js-youtube news__media-container">
+									<img class="news__image" src="http://img.youtube.com/vi/ZBAGEeOms-8/hqdefault.jpg" alt="video">
+									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
-									</div>
-								</div>
+									</span>
+								</a>
 								<div class="news__information">
 									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
 								</div>

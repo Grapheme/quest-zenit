@@ -95,7 +95,7 @@
 							</div>
 						</div>
 					</div>
-
+					<a class="little-font little-font_white little-font_center quest-renderMe__under-link" href="#">Скачать принт для печати</a>
 					<a href="#" target="_blank" class="quest__take-part quest-button">Купить футболку</a>
 					<!--  Share -->
 					<div class="quest__share-container">
@@ -155,10 +155,35 @@
 				<ul class="carousel__list">
 					{{ #photos }}
 					<li class="quest-renderMe-media__item carousel__item">
-						<img src="{{ src }}" alt=" {{ alt }} ">
+						<a class="cbox-photo" href="{{ src }}" data-group="{{ id }}">
+							<img src="{{ src }}" alt="{{ alt }}">
+						</a>
 					</li>
 					{{ /photos }}
 				</ul>
+			</div>
+			<div class="wrp wrp_short render-video">
+				<h2 class="block-title main-font main-font_gray main-font_light">Видео</h2>
+				<ul class="render-video__list">
+					{{ #videos }}
+					<li class="render-video__item">
+						<a class="js-youtube render-video__link" href="http://www.youtube.com/embed/{{ url }}?rel=0&amp;wmode=transparent">
+							<img class="render-video__thumbnail" src="http://img.youtube.com/vi/{{ url }}/hqdefault.jpg" alt="video">
+							<span class="news__date-icon news__date-icon_red">
+								<span class="icon icon-play-button render-video__video-button">
+									<span class="icon icon-play-button-empty"></span>
+								</span>
+							</span>
+						</a>
+					</li>
+					{{ /videos }}
+				</ul>
+			</div>
+			<div class="wrp wrp_short render-description">
+				<h2 class="block-title main-font main-font_gray main-font_light">Описание</h2>
+				<div class="render-description__container js-columnizer">
+					<p class="middle-font middle-font_white middle-font__span render-description__text"> {{ fulldescription }}</p>
+				</div>
 			</div>
 		</section>
 	</script>

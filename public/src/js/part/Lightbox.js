@@ -112,44 +112,44 @@ QuestZenit.LightBox = function() {
 			'gamers': '234',
 			'photos': [
 				{
-					'src': '../img/advita-photos/photo_1.jpg',
+					'src': 'img/advita-photos/photo_1.jpg',
 					'alt': 'Фото1'
 				},{
-					'src': '../img/advita-photos/photo_2.jpg',
+					'src': 'img/advita-photos/photo_2.jpg',
 					'alt': 'Фото2'
 				},{
-					'src': '../img/advita-photos/photo_3.jpg',
+					'src': 'img/advita-photos/photo_3.jpg',
 					'alt': 'Фото3'
 				},{
-					'src': '../img/advita-photos/photo_1.jpg',
+					'src': 'img/advita-photos/photo_1.jpg',
 					'alt': 'Фото4'
 				},
 				{
-					'src': '../img/advita-photos/photo_1.jpg',
+					'src': 'img/advita-photos/photo_1.jpg',
 					'alt': 'Фото1'
 				},{
-					'src': '../img/advita-photos/photo_2.jpg',
+					'src': 'img/advita-photos/photo_2.jpg',
 					'alt': 'Фото2'
 				},{
-					'src': '../img/advita-photos/photo_3.jpg',
+					'src': 'img/advita-photos/photo_3.jpg',
 					'alt': 'Фото3'
 				},{
-					'src': '../img/advita-photos/photo_1.jpg',
+					'src': 'img/advita-photos/photo_1.jpg',
 					'alt': 'Фото4'
 				}
 			],
 			'videos': [
 				{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'gqMaWqS2FVQ'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'w9nEpXIGA2k'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'IvdYyil6IEk'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'UF37Ouze7LY'
 				}
-			]
-
+			],
+			'fulldescription': 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.'
 		},{
 			'id': 2,
 			'title': 'Синегривый ХАЛК2',
@@ -162,30 +162,31 @@ QuestZenit.LightBox = function() {
 			'gamers': '234',
 			'photos': [
 				{
-					'src': '../img/advita-photos/photo_1.jpg',
+					'src': 'img/advita-photos/photo_1.jpg',
 					'alt': 'Фото1'
 				},{
-					'src': '../img/advita-photos/photo_2.jpg',
+					'src': 'img/advita-photos/photo_2.jpg',
 					'alt': 'Фото2'
 				},{
-					'src': '../img/advita-photos/photo_3.jpg',
+					'src': 'img/advita-photos/photo_3.jpg',
 					'alt': 'Фото3'
 				},{
-					'src': '../img/advita-photos/photo_1.jpg',
+					'src': 'img/advita-photos/photo_1.jpg',
 					'alt': 'Фото4'
 				}
 			],
 			'videos': [
 				{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'gqMaWqS2FVQ'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'w9nEpXIGA2k'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'IvdYyil6IEk'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'UF37Ouze7LY'
 				}
-			]
+			],
+			'fulldescription': 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.'
 		},{	
 			'id': 3,
 			'title': 'Синегривый ХАЛК3',
@@ -198,30 +199,31 @@ QuestZenit.LightBox = function() {
 			'gamers': '234',
 			'photos': [
 				{
-					'src': '../img/advita-photos/photo_1.jpg',
+					'src': 'img/advita-photos/photo_1.jpg',
 					'alt': 'Фото1'
 				},{
-					'src': '../img/advita-photos/photo_2.jpg',
+					'src': 'img/advita-photos/photo_2.jpg',
 					'alt': 'Фото2'
 				},{
-					'src': '../img/advita-photos/photo_3.jpg',
+					'src': 'img/advita-photos/photo_3.jpg',
 					'alt': 'Фото3'
 				},{
-					'src': '../img/advita-photos/photo_1.jpg',
+					'src': 'img/advita-photos/photo_1.jpg',
 					'alt': 'Фото4'
 				}
 			],
 			'videos': [
 				{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'gqMaWqS2FVQ'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'w9nEpXIGA2k'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'IvdYyil6IEk'
 				},{
-					'url': '../img/advita-photos/photo_1.jpg'
+					'url': 'UF37Ouze7LY'
 				}
-			]
+			],
+			'fulldescription': 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.'
 		}]
 	};
 
@@ -268,31 +270,55 @@ QuestZenit.LightBox = function() {
 		new UIMorphingButton( bttn, {
 			closeEl : '.icon-close',
 			onBeforeOpen : function() {
-				// don't allow to scroll
 				noScroll();
+				//for rendered other past quest only
 				if ($(bttn).hasClass("js-renderOther")){
 					var dataLink = parseInt($(bttn).attr("data-id"));
 					var $destination = $(bttn).find(".js-renderedContainer");
+
+					//get right quest
 					var g = _.find(renderData.fullquest, function(x) {
 						return x.id === dataLink;
 					});
-					$destination.html(render(g, '#otherFullTpl'));
+
+					//rendered each past quest
+					$destination.html(render(g, '#otherFullTpl').replace(/\r/g, "<br/>"));
+
+					//Render statistic for timeline (colored li into ul)
 					$("#lastRendered").html(render(renderData, '#mainTpl'));
+
+					//Carousel for images
 					if ($('#latestPhoto').length) {
 						$('#latestPhoto').cuscarousel(6, 0);
 					}
 				}
 			},
 			onAfterOpen : function() {
-				// can scroll again
 				canScroll();
-				// add class "noscroll" to body
 				classie.addClass( document.body, 'noscroll' );
-				// add scroll class to main el
 				classie.addClass( bttn, 'scroll' );
+
+				//for rendered other past quest only
 				if ($(bttn).hasClass("js-renderOther")){
 					$("#renderedQuest").timeline();
 
+					//Colorbox for images
+					var group = $(".cbox-photo").attr('data-group'),
+						closeButton = '<span class="icon icon-close icon-play-close"><span class="icon icon-play-close-empty"></span></span>',
+						nextButton = '<span class="icon quest-next icon-arrow_right"><span class="icon icon-arrow_right-empty"></span></span>',
+						prevButton = '<span class="icon icon-arrow_left quest-prev"><span class="icon icon-arrow_left-empty"></span></span>';
+					$(".cbox-photo").colorbox({
+						next: nextButton,
+						previous: prevButton,
+						className: 'modal-colorbox',
+						close: closeButton,
+						maxWidth: '80%',
+						maxHeight: '80%',
+						rel: group
+					});
+					$(".js-otherQuestList .js-columnizer").columnize({
+						columns: 2
+					});
 				}
 			},
 			onBeforeClose : function() {

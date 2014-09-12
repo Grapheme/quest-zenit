@@ -5,6 +5,30 @@ QuestZenit.Carousel = function() {
     $(".js-scrollableNews").cuscarousel(3, 0);
 };
 
+QuestZenit.ColorboxMedia = function() {
+    var $container = $("body");
+    var closeButton = '<span class="icon icon-close icon-play-close"><span class="icon icon-play-close-empty"></span></span>';
+    $container.on("click", ".js-youtube", function(e) {
+        e.preventDefault();
+        $(this).colorbox({
+            className: "modal-colorbox",
+            close: closeButton,
+            iframe: true,
+            innerWidth: 640,
+            innerHeight: 390
+        });
+    });
+    $container.on("click", ".js-newsPhoto", function(e) {
+        e.preventDefault();
+        $(this).colorbox({
+            className: "modal-colorbox",
+            close: closeButton,
+            maxWidth: "80%",
+            maxHeight: "80%"
+        });
+    });
+};
+
 QuestZenit.LightBox = function() {
     var renderData = {
         players: [ {
@@ -212,39 +236,40 @@ QuestZenit.LightBox = function() {
             "action-date": "12.08.2014",
             gamers: "234",
             photos: [ {
-                src: "../img/advita-photos/photo_1.jpg",
+                src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото1"
             }, {
-                src: "../img/advita-photos/photo_2.jpg",
+                src: "img/advita-photos/photo_2.jpg",
                 alt: "Фото2"
             }, {
-                src: "../img/advita-photos/photo_3.jpg",
+                src: "img/advita-photos/photo_3.jpg",
                 alt: "Фото3"
             }, {
-                src: "../img/advita-photos/photo_1.jpg",
+                src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото4"
             }, {
-                src: "../img/advita-photos/photo_1.jpg",
+                src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото1"
             }, {
-                src: "../img/advita-photos/photo_2.jpg",
+                src: "img/advita-photos/photo_2.jpg",
                 alt: "Фото2"
             }, {
-                src: "../img/advita-photos/photo_3.jpg",
+                src: "img/advita-photos/photo_3.jpg",
                 alt: "Фото3"
             }, {
-                src: "../img/advita-photos/photo_1.jpg",
+                src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото4"
             } ],
             videos: [ {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "gqMaWqS2FVQ"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "w9nEpXIGA2k"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "IvdYyil6IEk"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
-            } ]
+                url: "UF37Ouze7LY"
+            } ],
+            fulldescription: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
         }, {
             id: 2,
             title: "Синегривый ХАЛК2",
@@ -256,27 +281,28 @@ QuestZenit.LightBox = function() {
             "action-date": "12.08.2014",
             gamers: "234",
             photos: [ {
-                src: "../img/advita-photos/photo_1.jpg",
+                src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото1"
             }, {
-                src: "../img/advita-photos/photo_2.jpg",
+                src: "img/advita-photos/photo_2.jpg",
                 alt: "Фото2"
             }, {
-                src: "../img/advita-photos/photo_3.jpg",
+                src: "img/advita-photos/photo_3.jpg",
                 alt: "Фото3"
             }, {
-                src: "../img/advita-photos/photo_1.jpg",
+                src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото4"
             } ],
             videos: [ {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "gqMaWqS2FVQ"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "w9nEpXIGA2k"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "IvdYyil6IEk"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
-            } ]
+                url: "UF37Ouze7LY"
+            } ],
+            fulldescription: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
         }, {
             id: 3,
             title: "Синегривый ХАЛК3",
@@ -288,27 +314,28 @@ QuestZenit.LightBox = function() {
             "action-date": "12.08.2014",
             gamers: "234",
             photos: [ {
-                src: "../img/advita-photos/photo_1.jpg",
+                src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото1"
             }, {
-                src: "../img/advita-photos/photo_2.jpg",
+                src: "img/advita-photos/photo_2.jpg",
                 alt: "Фото2"
             }, {
-                src: "../img/advita-photos/photo_3.jpg",
+                src: "img/advita-photos/photo_3.jpg",
                 alt: "Фото3"
             }, {
-                src: "../img/advita-photos/photo_1.jpg",
+                src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото4"
             } ],
             videos: [ {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "gqMaWqS2FVQ"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "w9nEpXIGA2k"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
+                url: "IvdYyil6IEk"
             }, {
-                url: "../img/advita-photos/photo_1.jpg"
-            } ]
+                url: "UF37Ouze7LY"
+            } ],
+            fulldescription: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
         } ]
     };
     var render = function(data, destination) {
@@ -361,7 +388,7 @@ QuestZenit.LightBox = function() {
                     var g = _.find(renderData.fullquest, function(x) {
                         return x.id === dataLink;
                     });
-                    $destination.html(render(g, "#otherFullTpl"));
+                    $destination.html(render(g, "#otherFullTpl").replace(/\r/g, "<br/>"));
                     $("#lastRendered").html(render(renderData, "#mainTpl"));
                     if ($("#latestPhoto").length) {
                         $("#latestPhoto").cuscarousel(6, 0);
@@ -374,6 +401,19 @@ QuestZenit.LightBox = function() {
                 classie.addClass(bttn, "scroll");
                 if ($(bttn).hasClass("js-renderOther")) {
                     $("#renderedQuest").timeline();
+                    var group = $(".cbox-photo").attr("data-group"), closeButton = '<span class="icon icon-close icon-play-close"><span class="icon icon-play-close-empty"></span></span>', nextButton = '<span class="icon quest-next icon-arrow_right"><span class="icon icon-arrow_right-empty"></span></span>', prevButton = '<span class="icon icon-arrow_left quest-prev"><span class="icon icon-arrow_left-empty"></span></span>';
+                    $(".cbox-photo").colorbox({
+                        next: nextButton,
+                        previous: prevButton,
+                        className: "modal-colorbox",
+                        close: closeButton,
+                        maxWidth: "80%",
+                        maxHeight: "80%",
+                        rel: group
+                    });
+                    $(".js-otherQuestList .js-columnizer").columnize({
+                        columns: 2
+                    });
                 }
             },
             onBeforeClose: function() {
@@ -450,239 +490,7 @@ QuestZenit.Pagescroll = function() {
     });
 };
 
-QuestZenit.Render = function() {
-    var renderData = {
-        players: [ {
-            cash: 5e4,
-            "class": "green",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "lightblue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 2e3,
-            "class": "blue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e3,
-            "class": "torquous",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "orange",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 47e3,
-            "class": "red",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 5e4,
-            "class": "green",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "lightblue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 2e3,
-            "class": "blue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e3,
-            "class": "torquous",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "orange",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 47e3,
-            "class": "red",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 5e4,
-            "class": "green",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "lightblue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 2e3,
-            "class": "blue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e3,
-            "class": "torquous",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "orange",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 47e3,
-            "class": "red",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 5e4,
-            "class": "green",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "lightblue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 2e3,
-            "class": "blue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e3,
-            "class": "torquous",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "orange",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 47e3,
-            "class": "red",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        } ],
-        quests: [ {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_1.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_2.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_3.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_1.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_2.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_3.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_1.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_2.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_3.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_1.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_2.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        }, {
-            title: "Победоносный Кришито",
-            image: "img/quests/quest_3.jpg",
-            price: "400000",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "#"
-        } ],
-        fullquest: [ {
-            title: "Синегривый ХАЛК1",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            "start-date": "12.08.2014",
-            "end-date": "12.09.2014",
-            total: "1200000",
-            destination: "500000",
-            "action-date": "12.08.2014",
-            gamers: "234"
-        }, {
-            title: "Синегривый ХАЛК2",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            "start-date": "12.08.2014",
-            "end-date": "12.09.2014",
-            total: "1200000",
-            destination: "500000",
-            "action-date": "12.08.2014",
-            gamers: "234"
-        }, {
-            title: "Синегривый ХАЛК3",
-            description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            "start-date": "12.08.2014",
-            "end-date": "12.09.2014",
-            total: "1200000",
-            destination: "500000",
-            "action-date": "12.08.2014",
-            gamers: "234"
-        } ]
-    };
-    var render = function(data, destination) {
-        var template = $(destination).html();
-        Mustache.parse(template);
-        return Mustache.render(template, data);
-    };
-    $("#main-render").html(render(renderData, "#mainTpl"));
-    $("#latestQuests").html(render(renderData, "#otherTpl"));
-};
+QuestZenit.Render = function() {};
 
 QuestZenit.Social = {
     getUrl: {
@@ -847,5 +655,6 @@ $(document).ready(function() {
     QuestZenit.Carousel();
     QuestZenit.Pagescroll();
     QuestZenit.Tabs();
+    QuestZenit.ColorboxMedia();
 });
 //# sourceMappingURL=main.map
