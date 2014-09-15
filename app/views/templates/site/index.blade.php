@@ -20,8 +20,8 @@
 						<div class="game-info__container">
 							<div class="game-info__left">
 								<div class="game-info__information game-info__information_right">
-									<p class="little-font little-font_white">Начало сбора: <span>12.08.2014</span></p>
-									<p class="little-font little-font_white">Окончание сбора: <span>12.09.2014</span></p>
+									<p class="little-font little-font_white">Начало сбора: <span class="js-temimelineStart" data-start="12.08.2014">12.08.2014</span></p>
+									<p class="little-font little-font_white">Окончание сбора: <span  class="js-temimelineEnd" data-end="12.09.2014">12.09.2014</span></p>
 								</div>
 								<i class="icon line-icon line-icon_right"></i>
 							</div>
@@ -44,7 +44,7 @@
 							<div class="game-statistic__line js-line">
 								<div class="game-statistic__overline js-overline"></div>
 							</div>
-							<p class="game-statistic__from little-font little-font_white">
+							<p class="game-statistic__from little-font little-font_white js-startPrice">
 								<span>0</span>
 								<span class="icon icon_rub-small"></span>
 							</p>
@@ -56,6 +56,12 @@
 							<div class="game-statistic__total little-font little-font_white js-totalButton">
 								<span>1200 000</span>
 								<span class="icon icon_rub-small"></span>
+							</div>
+							<div class="game-statistic__dateStart little-font little-font_white js-startButton">
+								<span>17 дней</span>
+							</div>
+							<div class="game-statistic__dateEnd little-font little-font_white js-endButton">
+								<span>7 дней</span>
 							</div>
 						</div>
 						<span class="icon-question icon-question_blue js-xDate game-statistic__xDay" style="display: none;"></span>

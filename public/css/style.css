@@ -1679,6 +1679,12 @@ button {
   left: 50%;
   margin-left: -10px;
 }
+.game-statistic__to.m-disactive {
+  color: transparent;
+}
+.game-statistic__to.m-disactive .icon_rub-small {
+  opacity: 0;
+}
 .game-statistic__total {
   position: absolute;
   display: inline-block;
@@ -1777,6 +1783,43 @@ button {
 .game-statistic__overline.m-active:before {
   border: 2px solid #fff;
   background: #fff;
+}
+.game-statistic__dateStart {
+  position: absolute;
+  display: inline-block;
+  top: 9px;
+  width: 80px;
+  margin-left: -40px;
+  left: 10%;
+  text-align: center;
+}
+.game-statistic__dateStart:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  border: 10px solid transparent;
+  border-top: 10px solid #fff;
+  margin-left: -10px;
+}
+.game-statistic__dateEnd {
+  position: absolute;
+  display: inline-block;
+  top: 9px;
+  width: 80px;
+  margin-right: -40px;
+  right: 10%;
+  text-align: center;
+}
+.game-statistic__dateEnd:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  border: 10px solid transparent;
+  border-top: 10px solid #fff;
+  margin-left: -10px;
+  opacity: 0.3;
 }
 .dropdown-window {
   opacity: 0;

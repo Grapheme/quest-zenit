@@ -5,7 +5,8 @@ module.exports = function(grunt) {
 			"bower_components/underscore/underscore-min.js",
 			"bower_components/jquery-ui/ui/core.js",
 			"bower_components/jquery-ui/ui/widget.js",
-			"bower_components/jquery-ui/ui/tabs.js"
+			"bower_components/jquery-ui/ui/tabs.js",
+			"bower_components/moment/min/moment.min.js"
 		],
 		jadeTemplates = [],
 		isTest = custom.test || false,
