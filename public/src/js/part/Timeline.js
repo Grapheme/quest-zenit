@@ -20,11 +20,13 @@ QuestZenit.TimeLine = function() {
 			endDate = moment($endDate.attr('data-end'), 'DD.MM.YYYY'),
 			today = moment(),
 			firstDate = today.diff(startDate, 'days') + ' дн.',
-			secondDate = today.diff(endDate, 'days') + ' дн.',
+			secondDate = endDate.diff(today, 'days') + ' дн.',
 			$renderDataStart = $container.find(".js-startButton"),
 			$renderDataEnd = $container.find(".js-endButton"),
 			positionright = '10%',
 			$startPrice = $container.find('.js-startPrice'),
+			refStatus1 = endDate.diff(today, 'days'),
+			refStatus2 = today.diff(startDate, 'days'),
 			$overline = $container.find(".js-overline");
 		if (destination >= total) {
 			buttonWidth = (total / destination) * 100;
@@ -38,11 +40,17 @@ QuestZenit.TimeLine = function() {
 		}, 3000);
 
 		var gameStatus = function(){
+			console.log(refStatus1, refStatus2);
+			if (refStatus1 > 0 && refStatus2 > 0){
+				status = 'online';
+			} else {
+				status = 'offline';
+			}
 			if (status === 'online'){
 				timeline(80);
 				$list.css('padding-right', '20%');
-				$renderDataStart.find('span').html(firstDate);
-				$renderDataEnd.find('span').html(secondDate);
+				$renderDataStart.addClass('m-active').find('span').html(firstDate);
+				$renderDataEnd.addClass('m-active').find('span').html(secondDate);
 				if (destination < total) {
 					$xDate.show();
 					$line.addClass('m-online');

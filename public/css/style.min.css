@@ -1793,7 +1793,7 @@ button {
   left: 10%;
   text-align: center;
 }
-.game-statistic__dateStart:before {
+.game-statistic__dateStart.m-active:before {
   content: '';
   position: absolute;
   left: 50%;
@@ -1811,7 +1811,7 @@ button {
   right: 10%;
   text-align: center;
 }
-.game-statistic__dateEnd:before {
+.game-statistic__dateEnd.m-active:before {
   content: '';
   position: absolute;
   left: 50%;

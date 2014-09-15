@@ -573,7 +573,7 @@ QuestZenit.TimeLine = function() {
     $.fn.timeline = function() {
         var finalPrice = 0;
         var currentPrice = 0;
-        var $container = $(this), $list = $container.find(".js-paymentList"), status = $container.attr("data-status"), destination = parseInt($container.find(".js-destination").attr("data-destination")), total = parseInt($container.find(".js-totalCash").attr("data-total")), buttonWidth, $to = $container.find(".js-destinationButton"), x = "", $button = $container.find(".js-totalButton"), $xDate = $container.find(".js-xDate"), $each = $container.find(".js-showEach"), $line = $container.find(".js-line"), $startDate = $container.find(".js-temimelineStart"), $endDate = $container.find(".js-temimelineEnd"), startDate = moment($startDate.attr("data-start"), "DD.MM.YYYY"), endDate = moment($endDate.attr("data-end"), "DD.MM.YYYY"), today = moment(), firstDate = today.diff(startDate, "days") + " дн.", secondDate = today.diff(endDate, "days") + " дн.", $renderDataStart = $container.find(".js-startButton"), $renderDataEnd = $container.find(".js-endButton"), positionright = "10%", $startPrice = $container.find(".js-startPrice"), $overline = $container.find(".js-overline");
+        var $container = $(this), $list = $container.find(".js-paymentList"), status = $container.attr("data-status"), destination = parseInt($container.find(".js-destination").attr("data-destination")), total = parseInt($container.find(".js-totalCash").attr("data-total")), buttonWidth, $to = $container.find(".js-destinationButton"), x = "", $button = $container.find(".js-totalButton"), $xDate = $container.find(".js-xDate"), $each = $container.find(".js-showEach"), $line = $container.find(".js-line"), $startDate = $container.find(".js-temimelineStart"), $endDate = $container.find(".js-temimelineEnd"), startDate = moment($startDate.attr("data-start"), "DD.MM.YYYY"), endDate = moment($endDate.attr("data-end"), "DD.MM.YYYY"), today = moment(), firstDate = today.diff(startDate, "days") + " дн.", secondDate = endDate.diff(today, "days") + " дн.", $renderDataStart = $container.find(".js-startButton"), $renderDataEnd = $container.find(".js-endButton"), positionright = "10%", $startPrice = $container.find(".js-startPrice"), refStatus1 = endDate.diff(today, "days"), refStatus2 = today.diff(startDate, "days"), $overline = $container.find(".js-overline");
         if (destination >= total) {
             buttonWidth = total / destination * 100;
             x = "";
@@ -585,11 +585,17 @@ QuestZenit.TimeLine = function() {
             gameStatus();
         }, 3e3);
         var gameStatus = function() {
+            console.log(refStatus1, refStatus2);
+            if (refStatus1 > 0 && refStatus2 > 0) {
+                status = "online";
+            } else {
+                status = "offline";
+            }
             if (status === "online") {
                 timeline(80);
                 $list.css("padding-right", "20%");
-                $renderDataStart.find("span").html(firstDate);
-                $renderDataEnd.find("span").html(secondDate);
+                $renderDataStart.addClass("m-active").find("span").html(firstDate);
+                $renderDataEnd.addClass("m-active").find("span").html(secondDate);
                 if (destination < total) {
                     $xDate.show();
                     $line.addClass("m-online");
