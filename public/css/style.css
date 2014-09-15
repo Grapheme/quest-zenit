@@ -1668,6 +1668,7 @@ button {
   top: -36px;
   margin-left: -78px;
   left: 100%;
+  z-index: 1;
 }
 .game-statistic__to .icon-star {
   position: absolute;
