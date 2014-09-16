@@ -40,7 +40,6 @@ QuestZenit.TimeLine = function() {
 		}, 3000);
 
 		var gameStatus = function(){
-			console.log(refStatus1, refStatus2);
 			if (refStatus1 > 0 && refStatus2 > 0){
 				status = 'online';
 			} else {

@@ -120,50 +120,8 @@
 	                        'title': 'Зарядим все вместе. Благотворительный квест' |trans |url_encode,
 	                        'description' : 'Синегривый Халк'|trans |url_encode ,
 	                        'image': "{{ asset('frontend/img/quest-back.jpg') }}" |url_encode } %} -->
-	                <div class="social-share social-share_long js-shareBlock" data-url="#" data-controller-url="/share_count">
-	                	<ul class="social-share__list">
-	                		<li class="social-share__item">
-	                			<span onclick="window.open('http://vk.com/share.php?url=%23&amp;title=%D0%97%D0%B0%D1%80%D1%8F%D0%B4%D0%B8%D0%BC%20%D0%B2%D1%81%D0%B5%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5.%20%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%B2%D0%B5%D1%81%D1%82&amp;description=%D0%A1%D0%B8%D0%BD%D0%B5%D0%B3%D1%80%D0%B8%D0%B2%D1%8B%D0%B9%20%D0%A5%D0%B0%D0%BB%D0%BA&amp;image=%7B%7B%20asset%28%27frontend%2Fimg%2Fquest-back.jpg%27%29%20%7D%7D&amp;noparse=true', '_blank')" class="js-shareButton social-share__link social-share__link_vk">
-	                				<svg class="social-share__icon icon_social-vk">
-	                					<use xlink:href="img/svg/icons.svg#icon_social-vk"></use>
-	                				</svg>
-	                				<span data-type="vk" class="social-share__counter js-count"> </span>
-	                			</span>
-	                		</li>
-	                		<li class="social-share__item">
-	                			<span onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=%D0%97%D0%B0%D1%80%D1%8F%D0%B4%D0%B8%D0%BC%20%D0%B2%D1%81%D0%B5%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5.%20%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%B2%D0%B5%D1%81%D1%82&amp;p[summary]=%D0%A1%D0%B8%D0%BD%D0%B5%D0%B3%D1%80%D0%B8%D0%B2%D1%8B%D0%B9%20%D0%A5%D0%B0%D0%BB%D0%BA&amp;p[url]=%23&amp;p[images][0]=%7B%7B%20asset%28%27frontend%2Fimg%2Fquest-back.jpg%27%29%20%7D%7D', '_blank')" class="js-shareButton social-share__link social-share__link_fb">
-	                				<svg class="social-share__icon icon_social-fb">
-	                					<use xlink:href="img/svg/icons.svg#icon_social-fb"></use>
-	                				</svg>
-	                				<span data-type="fb" class="social-share__counter js-count"> </span>
-	                			</span>
-	                		</li>
-	                		<li class="social-share__item">
-	                			<span onclick="window.open('http://www.odnoklassniki.ru/dk?st.cmd=addShare&amp;st.s=1&amp;st.comments=%D0%A1%D0%B8%D0%BD%D0%B5%D0%B3%D1%80%D0%B8%D0%B2%D1%8B%D0%B9%20%D0%A5%D0%B0%D0%BB%D0%BA&amp;st._surl=%23', '_blank')" class="js-shareButton social-share__link social-share__link_ok">
-	                				<svg class="social-share__icon icon_social-ok">
-	                					<use xlink:href="img/svg/icons.svg#icon_social-ok"></use>
-	                				</svg>
-	                				<span data-type="ok" class="social-share__counter js-count"> </span>
-	                			</span>
-	                		</li>
-	                		<li class="social-share__item">
-	                			<span onclick="window.open('https://twitter.com/intent/tweet?text=%D0%A1%D0%B8%D0%BD%D0%B5%D0%B3%D1%80%D0%B8%D0%B2%D1%8B%D0%B9%20%D0%A5%D0%B0%D0%BB%D0%BA&amp;url=%23', '_blank')" class="js-shareButton social-share__link social-share__link_twitter">
-	                				<svg class="social-share__icon icon_social-twitter">
-	                					<use xlink:href="img/svg/icons.svg#icon_social-twitter"></use>
-	                				</svg>
-	                				<span data-type="twitter" class="social-share__counter js-count"> </span>
-	                			</span>
-	                		</li>
-	                		<li class="social-share__item">
-	                			<span onclick="window.open('https://plus.google.com/share?url=%23', '_blank')" class="js-shareButton social-share__link social-share__link_gp">
-	                				<svg class="social-share__icon icon_social-gp">
-	                					<use xlink:href="img/svg/icons.svg#icon_social-gp"></use>
-	                				</svg>
-	                				<span data-type="gp" class="social-share__counter js-count"> </span>
-	                			</span>
-	                		</li>
-	                	</ul>
-	                </div>
+					<!-- <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter"></div> -->
+	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="Синегривый ХАЛК" data-shareDescription="Нападающий сборной Бразилии  и ФК <<Зенит>> Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском" data-shareImage="img/quests/quest_1.jpg"></div>
 				</div>
 			</div>
 		</section>

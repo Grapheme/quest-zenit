@@ -175,55 +175,55 @@ QuestZenit.LightBox = function() {
             image: "img/quests/quest_1.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "1"
+            link: "4"
         }, {
             title: "Победоносный Кришито",
             image: "img/quests/quest_2.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "2"
+            link: "5"
         }, {
             title: "Победоносный Кришито",
             image: "img/quests/quest_3.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "3"
+            link: "6"
         }, {
             title: "Победоносный Кришито",
             image: "img/quests/quest_1.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "1"
+            link: "7"
         }, {
             title: "Победоносный Кришито",
             image: "img/quests/quest_2.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "2"
+            link: "8"
         }, {
             title: "Победоносный Кришито",
             image: "img/quests/quest_3.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "3"
+            link: "9"
         }, {
             title: "Победоносный Кришито",
             image: "img/quests/quest_1.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "1"
+            link: "10"
         }, {
             title: "Победоносный Кришито",
             image: "img/quests/quest_2.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "2"
+            link: "11"
         }, {
             title: "Победоносный Кришито",
             image: "img/quests/quest_3.jpg",
             price: "400000",
             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-            link: "3"
+            link: "12"
         } ],
         fullquest: [ {
             id: 1,
@@ -235,6 +235,7 @@ QuestZenit.LightBox = function() {
             destination: "500000",
             "action-date": "12.08.2014",
             gamers: "234",
+            questImage: "img/quests/quest_1.jpg",
             photos: [ {
                 src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото1"
@@ -280,6 +281,7 @@ QuestZenit.LightBox = function() {
             destination: "500000",
             "action-date": "12.08.2014",
             gamers: "234",
+            questImage: "img/quests/quest_2.jpg",
             photos: [ {
                 src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото1"
@@ -313,6 +315,7 @@ QuestZenit.LightBox = function() {
             destination: "500000",
             "action-date": "12.08.2014",
             gamers: "234",
+            questImage: "img/quests/quest_3.jpg",
             photos: [ {
                 src: "img/advita-photos/photo_1.jpg",
                 alt: "Фото1"
@@ -389,6 +392,22 @@ QuestZenit.LightBox = function() {
                         return x.id === dataLink;
                     });
                     $destination.html(render(g, "#otherFullTpl").replace(/\r/g, "<br/>"));
+                    var shareLink = window.location.href;
+                    var shareTitle = $("#ya-share").attr("data-shareTitle");
+                    var description = $("#ya-share").attr("data-shareDescription");
+                    var image = window.location.origin + "/" + $("#ya-share").attr("data-shareImage");
+                    new Ya.share({
+                        element: "ya-share",
+                        theme: "counter",
+                        elementStyle: {
+                            type: "none",
+                            quickServices: [ "vkontakte", "facebook", "odnoklassniki", "twitter", "gplus" ]
+                        },
+                        title: shareTitle,
+                        description: description,
+                        link: shareLink,
+                        image: image
+                    });
                     $("#lastRendered").html(render(renderData, "#mainTpl"));
                     if ($("#latestPhoto").length) {
                         $("#latestPhoto").cuscarousel(6, 0);
@@ -490,77 +509,41 @@ QuestZenit.Pagescroll = function() {
     });
 };
 
+QuestZenit.PopupOpen = function() {
+    var popupNumber = window.location.hash.substring(1), hash = window.location.pathname;
+    $(".icon-close").on("click", function() {
+        window.location.hash = "";
+    });
+    $(window).load(function() {
+        $(".js-renderOther").each(function() {
+            var $this = $(this);
+            if (popupNumber === $this.attr("data-id")) {
+                var $button = $this.find(".js-openPopup");
+                $button.trigger("click");
+            }
+        });
+    });
+};
+
 QuestZenit.Render = function() {};
 
-QuestZenit.Social = {
-    getUrl: {
-        twitter: function(o) {
-            var ar = [];
-            ar.push("https://twitter.com/intent/tweet?");
-            if (o.title) {
-                ar.push("text=", encodeURIComponent(o.title), "&");
-            }
-            ar.push("url=", encodeURIComponent(o.url));
-            return ar.join("");
+QuestZenit.MainShare = function() {
+    var shareLink = window.location.origin + window.location.pathname;
+    var shareTitle = $("#ya-shareMain").attr("data-shareTitle");
+    var description = $("#ya-shareMain").attr("data-shareDescription");
+    var image = window.location.origin + "/" + $("#ya-shareMain").attr("data-shareImage");
+    new Ya.share({
+        element: "ya-shareMain",
+        theme: "counter",
+        elementStyle: {
+            type: "none",
+            quickServices: [ "vkontakte", "facebook", "odnoklassniki", "twitter", "gplus" ]
         },
-        vk: function(o) {
-            var ar = [];
-            ar.push("http://vk.com/share.php?");
-            ar.push("url=", encodeURIComponent(o.url));
-            if (o.title) {
-                ar.push("&title=", encodeURIComponent(o.title));
-            }
-            if (o.description) {
-                ar.push("&description=", encodeURIComponent(o.description));
-            }
-            if (o.image) {
-                ar.push("&image=", encodeURIComponent(o.image));
-            }
-            ar.push("&noparse=true");
-            return ar.join("");
-        },
-        fb: function(o) {
-            var ar = [];
-            ar.push("http://www.facebook.com/sharer.php?s=100");
-            ar.push("&p[url]=", encodeURIComponent(o.url));
-            if (o.title) {
-                ar.push("&p[title]=", encodeURIComponent(o.title));
-            }
-            if (o.description) {
-                ar.push("&p[summary]=", encodeURIComponent(o.description));
-            }
-            if (o.image) {
-                ar.push("&p[images][0]=", encodeURIComponent(o.image));
-            }
-            return ar.join("");
-        },
-        ok: function(o) {
-            var ar = [];
-            ar.push("http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1");
-            ar.push("&st._surl=", encodeURIComponent(o.url));
-            ar.push("&st.comments=", encodeURIComponent(o.description));
-            return ar.join("");
-        },
-        gp: function(o) {
-            var ar = [];
-            ar.push("https://plus.google.com/share");
-            ar.push("?url=", encodeURIComponent(o.url));
-            return ar.join("");
-        }
-    },
-    updateBlock: function($block, url) {
-        url = url || $block.data("url");
-    },
-    prepareLinks: function($block, params) {
-        $block.on("click", ".js-shareButton", function() {
-            window.open(QuestZenit.Social.getUrl[this.getAttribute("data-type")](params), "", "toolbar=0,status=0,width=626,height=436");
-        });
-    },
-    updateStatic: function() {
-        $(".js-shareBlock").each(function() {
-            QuestZenit.Social.updateBlock($(this));
-        });
-    }
+        title: shareTitle,
+        description: description,
+        link: shareLink,
+        image: image
+    });
 };
 
 QuestZenit.Tabs = function() {
@@ -585,7 +568,6 @@ QuestZenit.TimeLine = function() {
             gameStatus();
         }, 3e3);
         var gameStatus = function() {
-            console.log(refStatus1, refStatus2);
             if (refStatus1 > 0 && refStatus2 > 0) {
                 status = "online";
             } else {
@@ -675,12 +657,13 @@ QuestZenit.TimeLine = function() {
 };
 
 $(document).ready(function() {
+    QuestZenit.MainShare();
     QuestZenit.LightBox();
     QuestZenit.TimeLine();
-    QuestZenit.Social.updateStatic();
     QuestZenit.Carousel();
     QuestZenit.Pagescroll();
     QuestZenit.Tabs();
     QuestZenit.ColorboxMedia();
+    QuestZenit.PopupOpen();
 });
 //# sourceMappingURL=main.map

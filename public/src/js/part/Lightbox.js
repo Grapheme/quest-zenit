@@ -50,54 +50,54 @@ QuestZenit.LightBox = function() {
 			'image': 'img/quests/quest_1.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '1'
+			'link': '4'
 			},
 			{ 'title': 'Победоносный Кришито',
 			'image': 'img/quests/quest_2.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '2'
+			'link': '5'
 			},
 			{ 'title': 'Победоносный Кришито',
 			'image': 'img/quests/quest_3.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '3'
+			'link': '6'
 			},{ 'title': 'Победоносный Кришито',
 			'image': 'img/quests/quest_1.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '1'
+			'link': '7'
 			},
 			{ 'title': 'Победоносный Кришито',
 			'image': 'img/quests/quest_2.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '2'
+			'link': '8'
 			},
 			{ 'title': 'Победоносный Кришито',
 			'image': 'img/quests/quest_3.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '3'
+			'link': '9'
 			},
 			{ 'title': 'Победоносный Кришито',
 			'image': 'img/quests/quest_1.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '1'
+			'link': '10'
 			},
 			{ 'title': 'Победоносный Кришито',
 			'image': 'img/quests/quest_2.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '2'
+			'link': '11'
 			},
 			{ 'title': 'Победоносный Кришито',
 			'image': 'img/quests/quest_3.jpg',
 			'price': '400000',
 			'description': 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
-			'link': '3'
+			'link': '12'
 			}
 		],
 		fullquest: [{
@@ -110,6 +110,7 @@ QuestZenit.LightBox = function() {
 			'destination': '500000',
 			'action-date': '12.08.2014',
 			'gamers': '234',
+			'questImage': 'img/quests/quest_1.jpg',
 			'photos': [
 				{
 					'src': 'img/advita-photos/photo_1.jpg',
@@ -160,6 +161,7 @@ QuestZenit.LightBox = function() {
 			'destination': '500000',
 			'action-date': '12.08.2014',
 			'gamers': '234',
+			'questImage': 'img/quests/quest_2.jpg',
 			'photos': [
 				{
 					'src': 'img/advita-photos/photo_1.jpg',
@@ -197,6 +199,7 @@ QuestZenit.LightBox = function() {
 			'destination': '500000',
 			'action-date': '12.08.2014',
 			'gamers': '234',
+			'questImage': 'img/quests/quest_3.jpg',
 			'photos': [
 				{
 					'src': 'img/advita-photos/photo_1.jpg',
@@ -281,8 +284,29 @@ QuestZenit.LightBox = function() {
 						return x.id === dataLink;
 					});
 
+					
+
 					//rendered each past quest
 					$destination.html(render(g, '#otherFullTpl').replace(/\r/g, "<br/>"));
+
+					
+					//Add share
+					var shareLink = window.location.href;
+					var shareTitle = $('#ya-share').attr('data-shareTitle');
+					var description = $('#ya-share').attr('data-shareDescription');
+					var image = window.location.origin + '/' + $('#ya-share').attr('data-shareImage');
+					new Ya.share({
+						element: 'ya-share',
+						theme: 'counter',
+						elementStyle: {
+							'type': 'none',
+							'quickServices': ['vkontakte','facebook','odnoklassniki','twitter','gplus']
+						},
+						title: shareTitle,
+						description: description,
+						link: shareLink,
+						image: image
+					});
 
 					//Render statistic for timeline (colored li into ul)
 					$("#lastRendered").html(render(renderData, '#mainTpl'));

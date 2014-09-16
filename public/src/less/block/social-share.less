@@ -272,3 +272,146 @@
 		}
 	}
 }
+
+.b-share_theme_counter{
+	&.quest__share-yaShare{
+		.b-share-icon{
+			background:none !important;
+			background-image: none !important;
+			width: 40px;
+			height: 30px;
+			.transition(color 0.4s);
+		}
+		.b-share-counter{
+			.transition(color 0.4s);
+		}
+		.b-share__link{
+			border-color: @White;
+			background: @White;
+			margin-right: 30px;
+			.transition(all 0.4s);
+			border-radius: 0;
+			&:hover,
+			&:active{
+				height: auto;
+				.b-share-icon,
+				.b-share-counter{
+					color: #fff;
+				}
+			}
+		}
+		.b-share-btn__vkontakte{
+			.b-share-icon{
+				&:before{
+					&:extend(.icon-vk:before);
+					font-size: 30px;
+					font-family: 'icomoon';
+				}
+			}
+			.b-share-icon,
+			.b-share-counter{
+				color: @SocialHoverVk;
+			}
+			&:hover{
+				border-color: @SocialHoverVk;
+				background-color: @SocialHoverVk;
+			}
+			&:active{
+				border-color: @SocialVk;
+				background-color: @SocialVk;
+			}
+		}
+		.b-share-btn__facebook{
+			.b-share-icon{
+				&:before{
+					&:extend(.icon-facebook:before);
+					font-size: 30px;
+					font-family: 'icomoon';
+				}
+			}
+			.b-share-icon,
+			.b-share-counter{
+				color: @SocialHoverFb;
+			}
+			&:hover{
+				border-color: @SocialHoverFb;
+				background-color: @SocialHoverFb;
+			}
+			&:active{
+				border-color: @SocialFb;
+				background-color: @SocialFb;
+			}
+		}
+		.b-share-btn__odnoklassniki{
+			.b-share-icon{
+				&:before{
+					&:extend(.icon-ok:before);
+					font-size: 30px;
+					font-family: 'icomoon';
+				}
+			}
+			.b-share-icon,
+			.b-share-counter{
+				color: @SocialHoverOk;
+			}
+			&:hover{
+				border-color: @SocialHoverOk;
+				background-color: @SocialHoverOk;
+			}
+			&:active{
+				border-color: @SocialOk;
+				background-color: @SocialOk;
+			}
+		}
+		.b-share-btn__twitter{
+			.b-share-icon{
+				&:before{
+					&:extend(.icon-twitter:before);
+					font-size: 30px;
+					font-family: 'icomoon';
+				}
+			}
+			.b-share-icon,
+			.b-share-counter{
+				color: @SocialHoverTwitter;
+			}
+			&:hover{
+				border-color: @SocialHoverTwitter;
+				background-color: @SocialHoverTwitter;
+			}
+			&:active{
+				border-color: @SocialTwitter;
+				background-color: @SocialTwitter;
+			}
+		}
+		.b-share-btn__gplus{
+			.b-share-icon{
+				&:before{
+					&:extend(.icon-gplus:before);
+					font-size: 30px;
+					font-family: 'icomoon';
+				}
+			}
+			.b-share-icon,
+			.b-share-counter{
+				color: @SocialHoverGp;
+			}
+			&:hover{
+				border-color: @SocialHoverGp;
+				background-color: @SocialHoverGp;
+			}
+			&:active{
+				border-color: @SocialGp;
+				background-color: @SocialGp;
+			}
+		}
+	}
+	.b-share-counter {
+		display: none;
+		float: left;
+		margin: 5px 6px 3px 3px;
+		color: #fff;
+		font: 20px Arial,sans-serif;
+		line-height: 20px;
+	}
+}

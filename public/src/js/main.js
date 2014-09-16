@@ -1,9 +1,10 @@
 $(document).ready(function(){
+	QuestZenit.MainShare();
 	QuestZenit.LightBox();
 	QuestZenit.TimeLine();
-	QuestZenit.Social.updateStatic();
 	QuestZenit.Carousel();
 	QuestZenit.Pagescroll();
 	QuestZenit.Tabs();
 	QuestZenit.ColorboxMedia();
+	QuestZenit.PopupOpen();
 });

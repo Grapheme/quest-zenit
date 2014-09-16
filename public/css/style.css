@@ -1148,8 +1148,8 @@ button {
   opacity: 1;
 }
 .icon-play-close {
-  position: absolute;
-  right: 50px;
+  position: fixed;
+  right: 70px;
   top: 50px;
   z-index: 100;
 }
@@ -1237,6 +1237,26 @@ button {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-gplus:before,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__gplus .b-share-icon:before {
+  content: "\e611";
+}
+.icon-vk:before,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__vkontakte .b-share-icon:before {
+  content: "\e612";
+}
+.icon-ok:before,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__odnoklassniki .b-share-icon:before {
+  content: "\e613";
+}
+.icon-facebook:before,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__facebook .b-share-icon:before {
+  content: "\e614";
+}
+.icon-twitter:before,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__twitter .b-share-icon:before {
+  content: "\e615";
 }
 .icon-arrow_right:before {
   content: "\e602";
@@ -2130,6 +2150,124 @@ button {
 .social-share__link:hover > .social-share__counter,
 .social-share__link:active > .social-share__counter {
   color: #fff;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-icon {
+  background: none !important;
+  background-image: none !important;
+  width: 40px;
+  height: 30px;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-counter {
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share__link {
+  border-color: #ffffff;
+  background: #ffffff;
+  margin-right: 30px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 0;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share__link:hover,
+.b-share_theme_counter.quest__share-yaShare .b-share__link:active {
+  height: auto;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share__link:hover .b-share-icon,
+.b-share_theme_counter.quest__share-yaShare .b-share__link:active .b-share-icon,
+.b-share_theme_counter.quest__share-yaShare .b-share__link:hover .b-share-counter,
+.b-share_theme_counter.quest__share-yaShare .b-share__link:active .b-share-counter {
+  color: #fff;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__vkontakte .b-share-icon:before {
+  font-size: 30px;
+  font-family: 'icomoon';
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__vkontakte .b-share-icon,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__vkontakte .b-share-counter {
+  color: #6395cf;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__vkontakte:hover {
+  border-color: #6395cf;
+  background-color: #6395cf;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__vkontakte:active {
+  border-color: #3b83d6;
+  background-color: #3b83d6;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__facebook .b-share-icon:before {
+  font-size: 30px;
+  font-family: 'icomoon';
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__facebook .b-share-icon,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__facebook .b-share-counter {
+  color: #718ddd;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__facebook:hover {
+  border-color: #718ddd;
+  background-color: #718ddd;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__facebook:active {
+  border-color: #4d70d5;
+  background-color: #4d70d5;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__odnoklassniki .b-share-icon:before {
+  font-size: 30px;
+  font-family: 'icomoon';
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__odnoklassniki .b-share-icon,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__odnoklassniki .b-share-counter {
+  color: #f9ad61;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__odnoklassniki:hover {
+  border-color: #f9ad61;
+  background-color: #f9ad61;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__odnoklassniki:active {
+  border-color: #f49435;
+  background-color: #f49435;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__twitter .b-share-icon:before {
+  font-size: 30px;
+  font-family: 'icomoon';
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__twitter .b-share-icon,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__twitter .b-share-counter {
+  color: #51c9f1;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__twitter:hover {
+  border-color: #51c9f1;
+  background-color: #51c9f1;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__twitter:active {
+  border-color: #26bced;
+  background-color: #26bced;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__gplus .b-share-icon:before {
+  font-size: 30px;
+  font-family: 'icomoon';
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__gplus .b-share-icon,
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__gplus .b-share-counter {
+  color: #f67456;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__gplus:hover {
+  border-color: #f67456;
+  background-color: #f67456;
+}
+.b-share_theme_counter.quest__share-yaShare .b-share-btn__gplus:active {
+  border-color: #f56544;
+  background-color: #f56544;
+}
+.b-share_theme_counter .b-share-counter {
+  display: none;
+  float: left;
+  margin: 5px 6px 3px 3px;
+  color: #fff;
+  font: 20px Arial, sans-serif;
+  line-height: 20px;
 }
 .other-quests {
   background: #a9bbcd;
