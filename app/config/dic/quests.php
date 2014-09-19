@@ -125,4 +125,22 @@ return array(
     },
 
 
+    /**
+     * Если данная функция объявлена, то ее вывод заменит вторую строку в списке записей словаря
+     */
+    'second_line_modifier' => function($line, $dic, $dicval) {
+
+        $return = '';
+
+        if ($dicval->date_start && $dicval->date_stop)
+            $return .= '
+                <span class="margin-right-10"><i class="fa fa-clock-o"></i> ' . Carbon\Carbon::createFromFormat('Y-m-d', $dicval->date_start)->format('d.m.Y') . ' - ' . Carbon\Carbon::createFromFormat('Y-m-d', $dicval->date_stop)->format('d.m.Y') . '</span>';
+
+        $return .= '
+            <span class="margin-right-10"><i class="fa fa-money"></i> ' . (int)$dicval->current_amount . ' из ' . (int)$dicval->target_amount . '</span>
+            <span class="margin-right-10"><i class="fa fa-users"></i> ' . (int)$dicval->count_members . '</span>
+            ';
+        return $return;
+    },
+
 );
