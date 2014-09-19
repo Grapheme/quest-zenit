@@ -1,4 +1,12 @@
 .quest-participate{
+	position: relative;
+	min-height: 100%;
+	&:before{
+		&:extend(.quest:before);
+	}
+	&:after{
+		&:extend(.quest:after);
+	}
 	&__title{
 		font-size: 60px;
 		font-weight: bold;

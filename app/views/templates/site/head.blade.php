@@ -12,13 +12,15 @@
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-	<meta name="viewport" content="width=1200,initial-scale=1">
+	<meta name="viewport" content="width=1300,initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	{{ HTML::scriptmod('js/vendor/modernizr-2.6.2.min.js') }}
 	{{ HTML::stylemod('css/style.css') }}
+	<script type="text/javascript" src="http://yandex.st/share/share.js" charset="utf-8"></script> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
 	<script src="js/vendor/jquery.mustache.js" type="text/javascript"></script>
+
 	<!-- svg icon loader -->
 		<script>
 			//<![CDATA[

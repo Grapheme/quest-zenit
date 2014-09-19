@@ -104,10 +104,11 @@
 			position: absolute;
 			width: 4px;
 			height: 4px;
-			border: 2px solid rgba(255,255,255, 0.3);
+			border: 2px solid rgba(255,255,255, 1);
+			background: rgba(255,255,255, 1);
 			.border-radius(50%);
 			top: -3px;
-			left: -18px;
+			left: -4px;
 		}
 		&:after{
 			content: '';
@@ -132,6 +133,7 @@
 		top: -36px;
 		margin-left: -78px;
 		left: 100%;
+		z-index: 1;
 		.icon-star{
 			position: absolute;
 			top:25px;
@@ -142,6 +144,12 @@
 				right: auto;
 				left:50%;
 				margin-left: -10px;
+			}
+		}
+		&.m-disactive{
+			color: transparent;
+			.icon_rub-small{
+				opacity: 0;
 			}
 		}
 	}
@@ -239,6 +247,47 @@
 			&:before{
 				border: 2px solid #fff;
 				background: #fff;
+			}
+		}
+	}
+	&__dateStart{
+		position: absolute;
+		display: inline-block;
+		top: 9px;
+		width: 80px;
+		margin-left: -40px;
+		left: 10%;
+		text-align: center;
+		&.m-active{
+			&:before{
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: -9px;
+				border: 10px solid transparent;
+				border-top: 10px solid #fff;
+				margin-left: -10px;
+			}
+		}
+	}
+	&__dateEnd{
+		position: absolute;
+		display: inline-block;
+		top: 9px;
+		width: 80px;
+		margin-right: -40px;
+		right: 10%;
+		text-align: center;
+		&.m-active{
+			&:before{		
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: -9px;
+				border: 10px solid transparent;
+				border-top: 10px solid #fff;
+				margin-left: -10px;
+				opacity: 0.3;
 			}
 		}
 	}
