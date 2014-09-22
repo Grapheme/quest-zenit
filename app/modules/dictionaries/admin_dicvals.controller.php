@@ -225,6 +225,7 @@ class AdminDicvalsController extends BaseController {
             ->with('metas')
             #->with('meta')
             ->with('allfields')
+            ->with('seos')
             ->first()
             #->extract(1)
         ;
@@ -233,6 +234,7 @@ class AdminDicvalsController extends BaseController {
         $this->callHook('before_create_edit', $dic, $element);
         $this->callHook('before_create', $dic, $element);
 
+        $element->extract(1);
         #Helper::tad($element);
 
 		return View::make($this->module['tpl'].'edit', compact('element', 'dic', 'dic_id', 'locales', 'dic_settings'));
@@ -274,11 +276,13 @@ class AdminDicvalsController extends BaseController {
         $locales = Input::get('locales');
         $fields = Helper::withdraw($input, 'fields'); #Input::get('fields');
         $fields_i18n = Input::get('fields_i18n');
+        $seo = Input::get('seo');
 
         if (!@$input['slug'] && $dic->make_slug_from_name)
             $input['slug'] = Helper::translit($input['name']);
 
-        $json_request['responseText'] = "<pre>" . print_r($_POST, 1) . "</pre>";
+        #$json_request['responseText'] = "<pre>" . print_r(Input::get('seo'), 1) . "</pre>";
+        $json_request['responseText'] = "<pre>" . print_r(Input::all(), 1) . "</pre>";
         #return Response::json($json_request,200);
 
         $json_request = array('status' => FALSE, 'responseText' => '', 'responseErrorText' => '', 'redirect' => FALSE);
@@ -367,7 +371,10 @@ class AdminDicvalsController extends BaseController {
 
             ## FIELDS I18N
             #if (@is_array($fields_i18n) && count($fields_i18n)) {
-            if (isset($element_fields_i18n) && is_array($element_fields_i18n) && count($element_fields_i18n)) {
+            if (
+                isset($element_fields_i18n) && is_array($element_fields_i18n) && count($element_fields_i18n)
+                && is_array($fields_i18n) && count($fields_i18n)
+            ) {
 
                 #Helper::d('Перебираем все $element_fields_i18n...');
                 #Helper::dd($fields_i18n);
@@ -404,13 +411,35 @@ class AdminDicvalsController extends BaseController {
 
             ## LOCALES
             if (@is_array($locales) && count($locales)) {
-                #Helper::dd($locales);
                 foreach ($locales as $locale_sign => $array) {
-
                     $element_meta = DicValMeta::firstOrNew(array('dicval_id' => $id, 'language' => $locale_sign));
                     $element_meta->update($array);
                     $element_meta->save();
                     unset($element_meta);
+                }
+            }
+
+
+            ## SEO
+            if (@is_array($seo) && count($seo)) {
+                #Helper::ta($element);
+                #Helper::d($seo);
+                foreach ($seo as $locale_sign => $seo_array) {
+                    ## SEO
+                    if (is_array($seo_array) && count($seo_array)) {
+                        #Helper::d($seo_array);
+                        ###############################
+                        ## Process SEO
+                        ###############################
+                        $seo_result = ExtForm::process('seo', array(
+                            'module'  => 'DicVal',
+                            'unit_id' => $element->id,
+                            'data'    => $seo_array,
+                            'locale'  => $locale_sign,
+                        ));
+                        #Helper::tad($seo_result);
+                        ###############################
+                    }
                 }
             }
 
