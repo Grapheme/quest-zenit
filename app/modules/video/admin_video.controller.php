@@ -174,11 +174,11 @@ class AdminVideoController extends BaseController {
             array(
             	'title' => 'Видеофайлы',
                 'link' => self::$group,
-                'class' => 'fa-picture-o',
+                'class' => 'fa-file-video-o',
                 'permit' => 'view',
             ),
         );
-        */
+        #*/
     }
 
     /****************************************************************************/
@@ -198,8 +198,8 @@ class AdminVideoController extends BaseController {
 	
 	public function getIndex(){
 		
-		$galleries = Gallery::orderBy('id', 'desc')->get();
-		return View::make($this->tpl.'index', compact('galleries'));
+		$videos = Video::orderBy('id', 'desc')->paginate(30);
+		return View::make($this->tpl.'index', compact('videos'));
 	}
 
     /****************************************************************************/
