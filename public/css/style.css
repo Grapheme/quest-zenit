@@ -1184,9 +1184,9 @@ button {
 }
 .icon-arrow_up {
   position: absolute;
-  bottom: 10px;
+  bottom: 80px;
   left: 50%;
-  margin-left: -23px;
+  margin-left: -30px;
 }
 .icon-square {
   width: 110px;
@@ -1442,31 +1442,28 @@ button {
   margin: 0;
   line-height: 39px;
 }
+.top__title > span {
+  text-transform: none;
+  padding-left: 10px;
+  font-weight: normal;
+}
 .top__description {
   margin: 0;
-  color: #70747c;
+  color: #fff;
   font-size: 20px;
-}
-.top__center {
-  position: absolute;
-  width: 650px;
-  top: 20px;
-  line-height: 30px;
-  left: 50%;
-  margin-left: -325px;
+  padding: 20px 310px;
 }
 @media only screen and (max-width: 2099px) {
-  .top__center {
-    padding-top: 18px;
-    padding-bottom: 20px;
-    position: relative;
-    width: 100%;
-    margin-left: 0;
-    left: 0;
-    top: 0;
-    border-top: 1px solid #cfd8e1;
-    text-align: center;
+  .top__description {
+    padding: 20px 0;
   }
+}
+.top__center {
+  position: relative;
+  width: 100%;
+  background: #a9bbcd;
+  line-height: 30px;
+  text-align: center;
 }
 .top__right {
   float: right;
@@ -1510,6 +1507,7 @@ button {
   text-align: center;
   width: 1020px;
   margin: 0 auto;
+  font-size: 20px;
 }
 @media only screen and (max-width: 2099px) {
   .quest__description {
@@ -2386,6 +2384,9 @@ button {
   width: 560px;
   float: left;
 }
+.about-proj__block + .about-proj__block {
+  padding-top: 35px;
+}
 @media only screen and (max-width: 2099px) {
   .about-proj__block {
     width: 460px;
@@ -2491,7 +2492,7 @@ button {
 }
 @media only screen and (max-width: 2099px) {
   .contacts .wrp {
-    padding-bottom: 126px;
+    padding-bottom: 146px;
   }
 }
 .contacts__title {
@@ -2527,6 +2528,20 @@ button {
   .contacts__cell_hide {
     display: none;
   }
+}
+.contacts__documents {
+  position: absolute;
+  padding: 30px 0;
+  bottom: 3px;
+  text-align: center;
+  width: 100%;
+}
+.contacts__documents a {
+  display: inline-block;
+  margin-left: 100px;
+}
+.contacts__documents a:first-child {
+  margin-left: 0;
 }
 .quest-navigation {
   position: fixed;

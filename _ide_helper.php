@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.8 on 2014-09-12.
+ * Generated for Laravel 4.2.9 on 2014-09-25.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -5678,6 +5678,18 @@ namespace {
         }
         
         /**
+         * Create a number input field.
+         *
+         * @param string $name
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function number($name, $value = null, $options = array()){
+            return \Illuminate\Html\FormBuilder::number($name, $value, $options);
+        }
+        
+        /**
          * Create a select box field.
          *
          * @param string $name
@@ -7134,9 +7146,9 @@ namespace {
         }
         
         /**
-         * Returns the requested URI.
+         * Returns the requested URI (path and query string).
          *
-         * @return string The raw URI (i.e. not urldecoded)
+         * @return string The raw URI (i.e. not URI decoded)
          * @api 
          * @static 
          */
@@ -7160,9 +7172,9 @@ namespace {
         }
         
         /**
-         * Generates a normalized URI for the Request.
+         * Generates a normalized URI (URL) for the Request.
          *
-         * @return string A normalized URI for the Request
+         * @return string A normalized URI (URL) for the Request
          * @see getQueryString()
          * @api 
          * @static 
@@ -9766,9 +9778,9 @@ namespace {
         }
         
         /**
-         * Returns the requested URI.
+         * Returns the requested URI (path and query string).
          *
-         * @return string The raw URI (i.e. not urldecoded)
+         * @return string The raw URI (i.e. not URI decoded)
          * @api 
          * @static 
          */
@@ -9792,9 +9804,9 @@ namespace {
         }
         
         /**
-         * Generates a normalized URI for the Request.
+         * Generates a normalized URI (URL) for the Request.
          *
-         * @return string A normalized URI for the Request
+         * @return string A normalized URI (URL) for the Request
          * @see getQueryString()
          * @api 
          * @static 
@@ -11761,7 +11773,7 @@ namespace {
          *
          * @param string $path
          * @param mixed $extra
-         * @param bool $secure
+         * @param bool|null $secure
          * @return string 
          * @static 
          */
@@ -11787,7 +11799,7 @@ namespace {
          * Generate a URL to an application asset.
          *
          * @param string $path
-         * @param bool $secure
+         * @param bool|null $secure
          * @return string 
          * @static 
          */

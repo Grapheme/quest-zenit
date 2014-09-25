@@ -22,30 +22,28 @@
 		font-weight: bold;
 		margin: 0;
 		line-height: 39px;
+		&>span{
+			text-transform: none;
+			padding-left: 10px;
+			font-weight: normal;
+		}
 	}
 	&__description{
 		margin: 0;
-		color: @TextGray;
+		color: #fff;
 		font-size: 20px;
+		padding: 20px 310px;
+		@media @underDesktopMq {
+			padding: 20px 0;
+		}
 	}
 	&__center{
-		position: absolute;
-		width: 650px;
-		top: 20px;
+		position: relative;
+		width: 100%;
+		background: #a9bbcd;
 		line-height: 30px;
-		left: 50%;
-		margin-left: -325px;
-		@media @underDesktopMq {
-			padding-top: 18px;
-			padding-bottom: 20px;
-			position: relative;
-			width: 100%;
-			margin-left: 0;
-			left: 0;
-			top: 0;
-			border-top: 1px solid #cfd8e1;
-			text-align: center;
-		}
+		text-align: center;
+
 	}
 	&__right{
 		float: right;

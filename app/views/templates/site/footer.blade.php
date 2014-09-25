@@ -55,6 +55,10 @@
 					</td>
 				</tr>
 			</table>
+			<div class="contacts__documents">
+				<a href="http://advita.ru/fund.php" target="_blank" class="middle-font middle-font_white middle-font__span">Уставные документы</a>
+				<a href="docs/pp.pdf" target="_blank" class="middle-font middle-font_white middle-font__span">Оплата и безопасность</a>
+			</div>
 			<span class="icon icon-arrow_up js-scrollTop">
 				<span class="icon icon-arrow_up-empty"></span>
 			</span>

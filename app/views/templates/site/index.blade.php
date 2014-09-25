@@ -12,8 +12,8 @@
 	<!--  Main Question -->
 		<section class="quest" id="mainQuest" data-status="online">
 			<div class="wrp wrp_quest">
-				<h1 class="quest__title">Синегривый ХАЛК</h1>
-				<p class="quest__description main-font main-font_gray main-font_light">Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском</p>
+				<h1 class="quest__title">Халк cпоет на стадионе</h1>
+				<p class="quest__description main-font main-font_gray main-font_light">Да, тот самый Халк умеет не только играть в футбол. Мы обещаем — если до конца октября нам удастся собрать 200 тысяч рублей для пациентов «АдВиты», Халк сменит бутсы на микрофон и споет перед началом одного из домашних матчей СКА в «Ледовом дворце»! Ему не будет легко, ему будет даже страшно, но он готов! Дело за вами! Давай!</p>
 				<!--  Quest container -->
 				<div class="quest__container">
 					<div class="game-info">
@@ -74,7 +74,7 @@
 
 				<!--  Lightbox open button -->
 				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest">
-					<button class="quest__take-part quest-button js-participate">Принять участие</button>
+					<button class="quest__take-part quest-button js-participate">Давай-давай!</button>
 					<div class="morph-content morph-content_participate">
 						<div>
 							<!-- LightBox content -->
@@ -114,13 +114,6 @@
 				</div>
 				<!--  Share -->
 				<div class="quest__share-container">
-					<!-- TODO Шарилки нужно заинтегрировать. на фронте сделан только внешний вид. И ссылки прописаны хардкорно. на локальной машине не отобразятся svg социалок, на сервере будет норм -->
-					<!-- {% include 'QuestZenitBundle:Block:social.html.twig' with {
-	                        'url' : "#" |url_encode ,
-	                        'title': 'Зарядим все вместе. Благотворительный квест' |trans |url_encode,
-	                        'description' : 'Синегривый Халк'|trans |url_encode ,
-	                        'image': "{{ asset('frontend/img/quest-back.jpg') }}" |url_encode } %} -->
-					<!-- <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter"></div> -->
 	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="Синегривый ХАЛК" data-shareDescription="Нападающий сборной Бразилии  и ФК <<Зенит>> Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском" data-shareImage="img/quests/quest_1.jpg"></div>
 				</div>
 			</div>
@@ -139,10 +132,10 @@
 				<h2 class="block-title main-font main-font_gray main-font_light">О проекте</h2>
 				<div class="about-proj__container">
 					<div class="about-proj__block about-proj__block_gray fl-l">
-						<p class="middle-font middle-font_white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic reiciendis eveniet placeat minima, voluptates dolor totam, consequuntur, fuga similique nam repellat ad illo officiis minus a reprehenderit, iusto tempore. Perspiciatis.</p>
+						<p class="middle-font middle-font_white">«Давай-давай!» — совместный проект благотворительного фонда «АдВита» и футбольного клуба «Зенит». Раз в месяц мы объявляем о начале очередного квеста, по условиям которого наш игрок, тренер или известный болельщик готов сделать что-то очень необычное при одном условии: необходимо набрать определенную сумму, которая полностью будет переведена в помощь пациентам «АдВиты».</p>
 					</div>
 					<div class="about-proj__block fl-r">
-						<p class="little-font little-font_gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem illum laborum, ipsum, nam iusto totam neque rem quibusdam unde harum. Asperiores totam iste ipsum quae, dignissimos animi eos consectetur tempora!</p>
+						<p class="little-font little-font_gray">Для того, чтобы помочь, наши герои действительно готовы на все. Дело за вами! Мы хотим не просто заниматься благотворительностью — мы хотим делать это самым невероятным образом.<br><br>Присоединяйтесь! Будет интересно!</p>
 					</div>
 				</div>
 			</div>
