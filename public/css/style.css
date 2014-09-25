@@ -1433,6 +1433,7 @@ button {
   position: relative;
   float: left;
   padding-left: 4px;
+  padding-top: 16px;
 }
 .top__title {
   color: #333945;
