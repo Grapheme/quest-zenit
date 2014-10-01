@@ -467,7 +467,6 @@ QuestZenit.Pagescroll = function() {
         mainquest = $("#mainQuest").offset().top;
         otherquest = $("#otherQuests").offset().top - 200;
         aboutProject = $("#aboutProject").offset().top - 200;
-        smi = $("#smi").offset().top - 200;
         parthers = $("#parthers").offset().top - 200;
         contacts = $("#contacts").offset().top - 200;
     });
@@ -486,16 +485,12 @@ QuestZenit.Pagescroll = function() {
                 $(".js-easyScroll").removeClass("m-active");
                 $('.js-easyScroll[data-scroll="2"]').addClass("m-active");
             }
-            if (scrolled >= aboutProject && scrolled < smi) {
+            if (scrolled >= aboutProject && scrolled < parthers) {
                 $(".js-easyScroll").removeClass("m-active");
                 $('.js-easyScroll[data-scroll="3"]').addClass("m-active");
                 $(".js-easyScroll").addClass("m-gray");
             } else {
                 $(".js-easyScroll").removeClass("m-gray");
-            }
-            if (scrolled >= smi && scrolled < parthers) {
-                $(".js-easyScroll").removeClass("m-active");
-                $('.js-easyScroll[data-scroll="4"]').addClass("m-active");
             }
             if (scrolled >= parthers && scrolled < parthers + 500) {
                 $(".js-easyScroll").removeClass("m-active");

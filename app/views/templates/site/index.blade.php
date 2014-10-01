@@ -140,8 +140,9 @@
 				</div>
 			</div>
 		</section>
+		<!-- TODO Вернуть, когда будет актуальны СМИ -->
 	<!-- SMI -->
-		<section class="smi" id="smi">
+		<!-- <section class="smi" id="smi">
 			<div class="wrp">
 				<h2 class="block-title main-font main-font_gray main-font_light">СМИ о нас</h2>
 			</div>
@@ -149,7 +150,7 @@
 				<ul class="carousel__list" id="latestNews">
 					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
-							<!-- here is variable "BKorP55Aqvg" -->
+							here is variable "BKorP55Aqvg"
 							<div class="news__full-container">
 								<div class="news__top">
 									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/BKorP55Aqvg?rel=0&amp;wmode=transparent">
@@ -249,7 +250,7 @@
 							</div>
 						</div>
 						<div class="news__container news__container_video">
-							<!-- here is variable "ZBAGEeOms-8" -->
+							here is variable "ZBAGEeOms-8"
 							<div class="news__full-container">
 								<div class="news__top">
 									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
@@ -275,7 +276,7 @@
 					</li>
 					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
-							<!-- here is variable "ZBAGEeOms-8" -->
+							here is variable "ZBAGEeOms-8"
 							<div class="news__full-container">
 								<div class="news__top">
 									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
@@ -375,7 +376,7 @@
 							</div>
 						</div>
 						<div class="news__container news__container_video">
-							<!-- here is variable "ZBAGEeOms-8" -->
+							here is variable "ZBAGEeOms-8"
 							<div class="news__full-container">
 								<div class="news__top">
 									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
@@ -401,7 +402,7 @@
 					</li>
 				</ul>
 			</div>
-		</section>
+		</section> -->
 	<!-- Partners -->
 		<section class="partners" id="parthers">
 			<div class="wrp">
@@ -434,9 +435,10 @@
 				<li class="quest-navigation__item">
 					<a href="#aboutProject" class="js-easyScroll" data-scroll="3"></a>
 				</li>
-				<li class="quest-navigation__item">
+				<!-- TODO Вернуть, когда будет актуальны СМИ -->
+				<!-- <li class="quest-navigation__item">
 					<a href="#smi" class="js-easyScroll" data-scroll="4"></a>
-				</li>
+				</li> -->
 				<li class="quest-navigation__item">
 					<a href="#parthers" class="js-easyScroll" data-scroll="5"></a>
 				</li>

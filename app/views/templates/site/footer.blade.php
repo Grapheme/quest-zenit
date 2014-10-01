@@ -19,11 +19,11 @@
 					</td>
 					<td class="contacts__cell contacts__cell_hide">
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови: (812) 3372733
+							Телефон диспетчера службы крови: +7(812) 3372733
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови: +7 (901) 3000025 
+							Телефон диспетчера службы крови: +7(901) 3000025 
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 					</td>
@@ -33,30 +33,31 @@
 						</div>
 						<div class="contacts-info-block">
 							<p class="middle-font middle-font_white middle-font_opacity">
-								(812) 3372733  факс<br>+7 (92) 963 62 43
+								+7(812) 3372733  факс<br>+7(92) 963 62 43
 							</p>
-							<a href="mailto:mail@advita.ru" class="middle-font middle-font_white">mail@advita.ru</a>
+							<a href="mailto:mail@advita.ru" class="middle-font middle-font_white">mail@advita.ru</a> 
+							<a href="http://advita.ru" class="middle-font middle-font_white little-margin">advita.ru</a> 
 						</div>
 					</td>
 				</tr>
 				<tr class="contacts__row contacts__row_hidden">
 					<td class="contacts__cell">
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови:<br>+7 (812) 3372733
+							Телефон диспетчера службы крови:<br>+7(812) 3372733
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 					</td>
 					<td class="contacts__cell contacts__cell_hide"></td>
 					<td class="contacts__cell">
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови:<br>+7 (901) 3000025 
+							Телефон диспетчера службы крови:<br>+7(901) 3000025 
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 					</td>
 				</tr>
 			</table>
 			<div class="contacts__documents">
-				<a href="http://advita.ru/fund.php" target="_blank" class="middle-font middle-font_white middle-font__span">Уставные документы</a>
+				<a href="docs/offer.pdf" target="_blank" class="middle-font middle-font_white middle-font__span">Оферта</a>
 				<a href="docs/pp.pdf" target="_blank" class="middle-font middle-font_white middle-font__span">Оплата и безопасность</a>
 			</div>
 			<span class="icon icon-arrow_up js-scrollTop">

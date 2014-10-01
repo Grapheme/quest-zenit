@@ -971,6 +971,9 @@ button {
   right: 0px;
   margin-top: -78px;
 }
+.little-margin {
+  margin-left: 20px;
+}
 /* Placeholder */
 *::-webkit-input-placeholder {
   /* WebKit browsers */
@@ -1184,9 +1187,9 @@ button {
 }
 .icon-arrow_up {
   position: absolute;
-  bottom: 80px;
+  bottom: 70px;
   left: 50%;
-  margin-left: -30px;
+  margin-left: -25px;
 }
 .icon-square {
   width: 110px;
@@ -1817,9 +1820,13 @@ button {
   content: '';
   position: absolute;
   left: 50%;
-  top: -9px;
-  border: 10px solid transparent;
-  border-top: 10px solid #fff;
+  top: -12px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
   margin-left: -10px;
 }
 .game-statistic__dateEnd {
@@ -1835,9 +1842,13 @@ button {
   content: '';
   position: absolute;
   left: 50%;
-  top: -9px;
-  border: 10px solid transparent;
-  border-top: 10px solid #fff;
+  top: -12px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
   margin-left: -10px;
   opacity: 0.3;
 }
@@ -2540,9 +2551,11 @@ button {
 .contacts__documents a {
   display: inline-block;
   margin-left: 100px;
+  min-width: 180px;
 }
 .contacts__documents a:first-child {
   margin-left: 0;
+  text-align: right;
 }
 .quest-navigation {
   position: fixed;
