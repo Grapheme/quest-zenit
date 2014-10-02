@@ -57,7 +57,7 @@
 				</tr>
 			</table>
 			<div class="contacts__documents">
-				<a href="docs/offer.pdf" target="_blank" class="middle-font middle-font_white middle-font__span">Оферта</a>
+				<a href="docs/offer_advita.pdf" target="_blank" class="middle-font middle-font_white middle-font__span">Оферта</a>
 				<a href="docs/pp.pdf" target="_blank" class="middle-font middle-font_white middle-font__span">Оплата и безопасность</a>
 			</div>
 			<span class="icon icon-arrow_up js-scrollTop">
