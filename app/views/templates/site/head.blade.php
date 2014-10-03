@@ -18,8 +18,8 @@
 	{{ HTML::stylemod('css/style.css') }}
 	<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
 	
-	<script src="js/vendor/jquery.min.js"></script>
-	<script src="js/vendor/jquery.mustache.js" type="text/javascript"></script>
+	{{ HTML::scriptmod("js/vendor/jquery.min.js") }}
+	{{ HTML::scriptmod("js/vendor/jquery.mustache.js") }}
 
 	<!-- svg icon loader -->
 		<script>
