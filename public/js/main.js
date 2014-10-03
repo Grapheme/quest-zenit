@@ -652,8 +652,8 @@ QuestZenit.TimeLine = function() {
 };
 
 $(document).ready(function() {
-    QuestZenit.MainShare();
     QuestZenit.LightBox();
+    QuestZenit.MainShare();
     QuestZenit.TimeLine();
     QuestZenit.Carousel();
     QuestZenit.Pagescroll();
