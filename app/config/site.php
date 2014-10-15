@@ -14,7 +14,7 @@ return array(
     'dengionline' => array(
         'url' => 'https://www.onlinedengi.ru/wmpaycheck.php',
         'project' => '294',
-        'secret' => 'IT\'S_A_PROJECT_SECRET_WORD',
+        'secret' => 'nhTB7hb67ihn^&Ij^*(niJfhT&H@QECQ',
         'amount' => '100',
         'return_url_success' => URL::route('dengionline.return_url_success'),
         'return_url_fail' => URL::route('dengionline.return_url_fail'),
