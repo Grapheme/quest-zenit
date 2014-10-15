@@ -10,7 +10,7 @@ class PublicQuestController extends BaseController {
     ## Routing rules of module
     public static function returnRoutes($prefix = null) {
 
-        Route::group(array('before' => '', 'prefix' => 'quest'), function() {
+        Route::group(array('before' => '', 'prefix' => ''), function() {
             Route::get('/do', array('as' => 'do', 'uses' => __CLASS__.'@getFormDengiOnline'));
             Route::post('/invoice', array('as' => 'invoice', 'uses' => __CLASS__.'@postAddInvoice'));
 

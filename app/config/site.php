@@ -21,3 +21,11 @@ return array(
         'notification_url' => URL::route('dengionline.notification_url'),
     ),
 );
+
+/**
+ * IP: 81.23.121.50
+ * l: root
+ * p: splqndlr54
+ *
+ * /data/www/default/quest
+ */
