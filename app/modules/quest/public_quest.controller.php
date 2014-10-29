@@ -18,6 +18,9 @@ class PublicQuestController extends BaseController {
             Route::get('/dengionline/fail', array('as' => 'dengionline.return_url_fail', 'uses' => __CLASS__.'@getFailDengiOnline'));
             Route::post('/dengionline/notification', array('as' => 'dengionline.notification_url', 'uses' => __CLASS__.'@postNotificationDengiOnline'));
 
+            Route::post('/inplat/notification', array('as' => 'inplat.notification_url', 'uses' => __CLASS__.'@postNotificationInplat'));
+
+
         });
     }
 
@@ -179,6 +182,24 @@ class PublicQuestController extends BaseController {
     }
 
 
+    public function postNotificationInplat() {
+
+        $input = Input::all();
+        ## Create new Transaction
+        $dicval = DicVal::inject('transactions', array(
+            'slug' => NULL,
+            'name' => 'INPLAT TEST PAYMENT',
+            'fields' => array(
+                'quest_id' => '777',
+                'payment_amount' => '777',
+                'payment_date' => date("Y-m-d H:i:s"),
+                'payment_method' => 'inplat',
+                'payment_full' => json_encode($input),
+            ),
+        ));
+
+        return '1';
+    }
 }
 
 
