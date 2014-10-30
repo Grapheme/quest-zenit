@@ -112,8 +112,6 @@ return array(
         'View'            => 'Illuminate\Support\Facades\View',
 
         'ImageManipulation' => 'Intervention\Image\Facades\Image',
-        'SphinxSearch' => 'Scalia\SphinxSearch\SphinxSearchFacade',
-        'Bugsnag' => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
 
         'Collection'      => 'Illuminate\Database\Eloquent\Collection',
     ),
