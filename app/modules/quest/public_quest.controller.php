@@ -103,9 +103,12 @@ class PublicQuestController extends BaseController {
     public function postNotificationDengiOnline() {
 
         ## Request from DengiOnline
-        $question = Input::all();
+        $input = Input::all();
         $secretKey = Config::get('site.dengionline.secret');
 
+        file_put_contents(storage_path('inplat_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
+
+        $question = $input;
         ## Check Order ID
         $order_id = @$question['orderid'];
         if (!$order_id)
@@ -185,6 +188,9 @@ class PublicQuestController extends BaseController {
     public function postNotificationInplat() {
 
         $input = Input::all();
+
+        file_put_contents(storage_path('inplat_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
+
         ## Create new Transaction
         $dicval = DicVal::inject('transactions', array(
             'slug' => NULL,
