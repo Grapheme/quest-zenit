@@ -32,18 +32,8 @@ QuestZenit.ColorboxMedia = function() {
 QuestZenit.LightBox = function() {
     var renderData = {
         players: [ {
-            cash: 5e4,
-            "class": "green",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
+            cash: 1e3,
             "class": "lightblue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 2e3,
-            "class": "blue",
             date: "12.07.2014",
             name: "Черемушкин Иван"
         }, {
@@ -52,8 +42,8 @@ QuestZenit.LightBox = function() {
             date: "12.07.2014",
             name: "Черемушкин Иван"
         }, {
-            cash: 1e5,
-            "class": "orange",
+            cash: 1e3,
+            "class": "torquous",
             date: "12.07.2014",
             name: "Черемушкин Иван"
         }, {
@@ -62,13 +52,13 @@ QuestZenit.LightBox = function() {
             date: "12.07.2014",
             name: "Черемушкин Иван"
         }, {
-            cash: 5e4,
-            "class": "green",
+            cash: 1e4,
+            "class": "lightblue",
             date: "12.07.2014",
             name: "Черемушкин Иван"
         }, {
-            cash: 1e5,
-            "class": "lightblue",
+            cash: 1e3,
+            "class": "orange",
             date: "12.07.2014",
             name: "Черемушкин Иван"
         }, {
@@ -77,78 +67,13 @@ QuestZenit.LightBox = function() {
             date: "12.07.2014",
             name: "Черемушкин Иван"
         }, {
-            cash: 1e3,
-            "class": "torquous",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "orange",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 47e3,
-            "class": "red",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 5e4,
+            cash: 460,
             "class": "green",
             date: "12.07.2014",
             name: "Черемушкин Иван"
         }, {
-            cash: 1e5,
+            cash: 6e4,
             "class": "lightblue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 2e3,
-            "class": "blue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e3,
-            "class": "torquous",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "orange",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 47e3,
-            "class": "red",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 5e4,
-            "class": "green",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "lightblue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 2e3,
-            "class": "blue",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e3,
-            "class": "torquous",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 1e5,
-            "class": "orange",
-            date: "12.07.2014",
-            name: "Черемушкин Иван"
-        }, {
-            cash: 47e3,
-            "class": "red",
             date: "12.07.2014",
             name: "Черемушкин Иван"
         } ],

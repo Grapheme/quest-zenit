@@ -12,29 +12,29 @@
 	<!--  Main Question -->
 		<section class="quest" id="mainQuest" data-status="online">
 			<div class="wrp wrp_quest">
-				<h1 class="quest__title">Халк cпоет на стадионе</h1>
-				<p class="quest__description main-font main-font_gray main-font_light">Да, тот самый Халк умеет не только играть в футбол. Мы обещаем — если до конца октября нам удастся собрать 200 тысяч рублей для пациентов «АдВиты», Халк сменит бутсы на микрофон и споет перед началом одного из домашних матчей СКА в «Ледовом дворце»! Ему не будет легко, ему будет даже страшно, но он готов! Дело за вами! Давай!</p>
+				<h1 class="quest__title">Отправим Малафеева таксовать на «Audi»!</h1>
+				<p class="quest__description main-font main-font_gray main-font_light">Если до конца ноября мы вместе соберем 300 тысяч рублей для пациентов «АдВиты», Вячеслав Малафеев целый день будет работать таксистом!</p>
 				<!--  Quest container -->
 				<div class="quest__container">
 					<div class="game-info">
 						<div class="game-info__container">
 							<div class="game-info__left">
 								<div class="game-info__information game-info__information_right">
-									<p class="little-font little-font_white">Начало сбора: <span class="js-temimelineStart" data-start="12.09.2014">12.08.2014</span></p>
-									<p class="little-font little-font_white">Окончание сбора: <span  class="js-temimelineEnd" data-end="18.10.2014">12.09.2014</span></p>
+									<p class="little-font little-font_white">Начало сбора: <span class="js-temimelineStart" data-start="30.10.2014">30.10.2014</span></p>
+									<p class="little-font little-font_white">Окончание сбора: <span  class="js-temimelineEnd" data-end="01.12.2014">01.12.2014</span></p>
 								</div>
 								<i class="icon line-icon line-icon_right"></i>
 							</div>
 							<div class="game-info__center">
 								<p class="main-font main-font_gray main-font_light">Собрано</p>
-								<p class="big-font js-totalCash" data-total="1200000">1200 000 <span class="icon icon_rub-big"></span></p>
-								<p class="main-font main-font_gray main-font_light">Цель <span class="js-destination" data-destination="500000">500 000</span><span class="icon icon_rub-little"></span></p>
+								<p class="big-font js-totalCash" data-total="123460">123 460 <span class="icon icon_rub-big"></span></p>
+								<p class="main-font main-font_gray main-font_light">Цель <span class="js-destination" data-destination="300000">300 000</span><span class="icon icon_rub-little"></span></p>
 							</div>
 							<div class="game-info__right">
 								<i class="icon line-icon line-icon_left"></i>
 								<div class="game-info__information game-info__information_left">
-									<p class="little-font little-font_white">Дата проведения: <span>12.08.2014</span></p>
-									<p class="little-font little-font_white">Участники: <span>234</span> человека</p>
+									<p class="little-font little-font_white">Дата проведения: <span>10.12.2014</span></p>
+									<p class="little-font little-font_white">Участники: <span>172</span> человека</p>
 								</div>
 							</div>
 						</div>
@@ -49,12 +49,12 @@
 								<span class="icon icon_rub-small"></span>
 							</p>
 							<p class="game-statistic__to little-font little-font_white js-destinationButton">
-								<span>500 000</span>
+								<span>300 000</span>
 								<span class="icon icon_rub-small"></span>
 								<span class="icon-star icon-star_blue"></span>
 							</p>
 							<div class="game-statistic__total little-font little-font_white js-totalButton">
-								<span>1200 000</span>
+								<span>123 460</span>
 								<span class="icon icon_rub-small"></span>
 							</div>
 							<div class="game-statistic__dateStart little-font little-font_white js-startButton">
@@ -74,7 +74,7 @@
 
 				<!--  Lightbox open button -->
 				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest">
-					<button class="quest__take-part quest-button js-participate">Давай-давай!</button>
+					<button class="quest__take-part quest-button js-participate">Присоединиться</button>
 					<div class="morph-content morph-content_participate">
 						<div>
 							<!-- LightBox content -->
@@ -114,13 +114,13 @@
 				</div>
 				<!--  Share -->
 				<div class="quest__share-container">
-	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="Синегривый ХАЛК" data-shareDescription="Нападающий сборной Бразилии  и ФК <<Зенит>> Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском" data-shareImage="img/quests/quest_1.jpg"></div>
+	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="Отправим Малафеева таксовать на «Audi»!" data-shareDescription="Если до конца ноября мы вместе соберем 300 тысяч рублей для пациентов «АдВиты», Вячеслав Малафеев целый день будет работать таксистом!" data-shareImage="img/quests/quest_1.jpg"></div>
 				</div>
 			</div>
 		</section>
 	<!--  Other Questions -->
 		<section class="other-quests" id="otherQuests">
-			<h2 class="block-title main-font main-font_gray main-font_light">Прошедние квесты</h2>
+			<h2 class="block-title main-font main-font_gray main-font_light">Прошедние</h2>
 			<div class="carousel__container carousel__container_gray other-quests__container js-scrollableQuests">
 				<ul class="carousel__list js-otherQuestList" id="latestQuests">
 				</ul>
