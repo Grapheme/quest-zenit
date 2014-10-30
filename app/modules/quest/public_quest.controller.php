@@ -10,17 +10,17 @@ class PublicQuestController extends BaseController {
     ## Routing rules of module
     public static function returnRoutes($prefix = null) {
 
-        Route::group(array('before' => '', 'prefix' => ''), function() {
-            Route::get('/do', array('as' => 'do', 'uses' => __CLASS__.'@getFormDengiOnline'));
-            Route::post('/invoice', array('as' => 'invoice', 'uses' => __CLASS__.'@postAddInvoice'));
 
-            Route::get('/dengionline/success', array('as' => 'dengionline.return_url_success', 'uses' => __CLASS__.'@getSuccessDengiOnline'));
-            Route::get('/dengionline/fail', array('as' => 'dengionline.return_url_fail', 'uses' => __CLASS__.'@getFailDengiOnline'));
-            Route::post('/dengionline/notification', array('as' => 'dengionline.notification_url', 'uses' => __CLASS__.'@postNotificationDengiOnline'));
+        Route::group(array('before' => '', 'prefix' => ''), function() {
+
+            Route::any('/form/do', array('as' => 'do', 'uses' => __CLASS__.'@getFormDengiOnline'));
+            Route::any('/invoice', array('as' => 'invoice', 'uses' => __CLASS__.'@postAddInvoice'));
+
+            Route::any('/dengionline/success', array('as' => 'dengionline.return_url_success', 'uses' => __CLASS__.'@getSuccessDengiOnline'));
+            Route::any('/dengionline/fail', array('as' => 'dengionline.return_url_fail', 'uses' => __CLASS__.'@getFailDengiOnline'));
+            Route::any('/dengionline/notification', array('as' => 'dengionline.notification_url', 'uses' => __CLASS__.'@postNotificationDengiOnline'));
 
             Route::post('/inplat/notification', array('as' => 'inplat.notification_url', 'uses' => __CLASS__.'@postNotificationInplat'));
-
-
         });
     }
 
@@ -48,7 +48,7 @@ class PublicQuestController extends BaseController {
 
     public function getFormDengiOnline() {
 
-        return View::make(Helper::layout('do_form'), compact('room'));
+        return View::make(Helper::layout('do_form'), compact('asd'));
     }
 
     public function postAddInvoice() {
