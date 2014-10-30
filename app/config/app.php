@@ -64,7 +64,6 @@ return array(
         'Illuminate\Custom\CustomUrlServiceProvider',
         'Flynsarmy\DbBladeCompiler\DbBladeCompilerServiceProvider',
         'Scalia\SphinxSearch\SphinxSearchServiceProvider',
-        'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
         'sngrl\StringBladeCompiler\StringBladeCompilerServiceProvider',
     ),
     'aliases' => array(
