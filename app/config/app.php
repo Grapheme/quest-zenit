@@ -64,7 +64,6 @@ return array(
         'Illuminate\Custom\CustomUrlServiceProvider',
         'Flynsarmy\DbBladeCompiler\DbBladeCompilerServiceProvider',
         'Scalia\SphinxSearch\SphinxSearchServiceProvider',
-        'sngrl\StringBladeCompiler\StringBladeCompilerServiceProvider',
     ),
     'aliases' => array(
         'App'             => 'Illuminate\Support\Facades\App',
