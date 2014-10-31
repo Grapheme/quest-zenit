@@ -54,6 +54,7 @@ class PublicQuestController extends BaseController {
 
         #$quest_id = Input::get('quest_id');
         $quest_id = $this->getCurrentQuest();
+        Helper::tad($quest_id);
         $quest_id = is_object($quest_id) ? $quest_id->id : false;
 
         $nickname = Input::get('nickname');
