@@ -10,11 +10,10 @@ class PublicQuestController extends BaseController {
     ## Routing rules of module
     public static function returnRoutes($prefix = null) {
 
-
         Route::group(array('before' => '', 'prefix' => ''), function() {
 
             Route::any('/form/do', array('as' => 'do', 'uses' => __CLASS__.'@getFormDengiOnline'));
-            Route::any('/invoice', array('as' => 'invoice', 'uses' => __CLASS__.'@postAddInvoice'));
+            Route::post('/payment/add_invoice', array('as' => 'invoice', 'uses' => __CLASS__.'@postAddInvoice'));
 
             Route::any('/dengionline/success', array('as' => 'dengionline.return_url_success', 'uses' => __CLASS__.'@getSuccessDengiOnline'));
             Route::any('/dengionline/fail', array('as' => 'dengionline.return_url_fail', 'uses' => __CLASS__.'@getFailDengiOnline'));
@@ -53,15 +52,24 @@ class PublicQuestController extends BaseController {
 
     public function postAddInvoice() {
 
-        $quest_id = Input::get('quest_id');
+        #$quest_id = Input::get('quest_id');
+        $quest_id = $this->getCurrentQuest();
+        $quest_id = is_object($quest_id) ? $quest_id->id : false;
+
         $nickname = Input::get('nickname');
-        $amount = Input::get('amount');
+        #$amount = Input::get('amount');
         $mode_type = Input::get('mode_type');
 
-        if (!$quest_id || !$nickname || !$amount || !$mode_type)
+        #Helper::d(Input::all());
+
+        if (
+            !$quest_id
+            || !$nickname
+            #|| !$amount
+            || !$mode_type
+        )
             return Redirect::to(URL::previous());
 
-        #Helper::d(Input::all());
 
         ## Create new Transaction
         $dicval = DicVal::inject('transactions', array(
@@ -69,7 +77,7 @@ class PublicQuestController extends BaseController {
             'name' => $nickname,
             'fields' => array(
                 'quest_id' => $quest_id,
-                'payment_amount' => $amount,
+                'payment_amount' => 'unknown',
                 'payment_date' => date("Y-m-d H:i:s"),
                 'payment_method' => 'dengionline',
                 'payment_full' => json_encode(array('paymode' => $mode_type)),
@@ -83,7 +91,7 @@ class PublicQuestController extends BaseController {
         $array = array(
             'project' => Config::get('site.dengionline.project'),
             'nickname' => $nickname,
-            'amount' => $amount,
+            #'amount' => $amount,
             'order_id' => $dicval->id,
             'return_url_success' => Config::get('site.dengionline.return_url_success'),
             'return_url_fail' => Config::get('site.dengionline.return_url_fail'),
@@ -112,8 +120,8 @@ class PublicQuestController extends BaseController {
         ## Check Order ID
         $order_id = @$question['orderid'];
 
-        ## DEBUG
-        if (is_numeric($order_id) && (int)$order_id === 0) {
+        ## DEBUG ONLY!!
+        if (is_numeric($order_id) && (int)$order_id === 0 && FALSE) {
 
             ## Find the current quest ID
             $quest_id = 0;
@@ -123,6 +131,7 @@ class PublicQuestController extends BaseController {
                 'name' => @$input['userid'],
                 'fields' => array(
                     'quest_id' => $quest_id,
+                    'payment_status' => 1,
                     'payment_amount' => @$input['amount'],
                     'payment_date' => @$input['ps_paid_date'],
                     'payment_method' => 'dengionline',
@@ -181,6 +190,19 @@ class PublicQuestController extends BaseController {
             if ($dicval_field->value == '1')
                 $this->sendResponse('YES', 'Платеж был успешно выполнен ранее.');
 
+
+
+            ## Get payment amount
+            $dicval_field_amount = DicFieldVal::firstOrNew(array(
+                'dicval_id' => $dicval->id,
+                'key' => 'amount',
+            ));
+            ## Save payment amount
+            $dicval_field_amount->value = $question['amount'];
+            $dicval_field_amount->save();
+
+
+
             ## Mark payment as finished
             $dicval_field->value = '1';
             $dicval_field->save();
@@ -229,6 +251,43 @@ class PublicQuestController extends BaseController {
 
         return '1';
     }
+
+
+    private function getCurrentQuest() {
+
+        $dicval = Dic::valuesBySlug('quests', function($query) {
+
+            /**
+             * Фильтр значений (DicVal) по его доп. полю (DicFieldVal)
+             * SOLUTION_id
+             */
+            $tbl_dicval = (new DicVal())->getTable();
+            $tbl_dic_field_val = (new DicFieldVal())->getTable();
+
+            $query->select($tbl_dicval . '.*');
+
+            $rand_tbl_alias = md5(time() . rand(999999, 9999999));
+            $query->join($tbl_dic_field_val . ' AS ' . $rand_tbl_alias, $rand_tbl_alias . '.dicval_id', '=', $tbl_dicval . '.id')
+                ->where($rand_tbl_alias . '.key', '=', 'date_start')
+                ->where($rand_tbl_alias . '.value', '<=', date('Y-m-d'));
+
+            $rand_tbl_alias = md5(time() . rand(999999, 9999999));
+            $query->join($tbl_dic_field_val . ' AS ' . $rand_tbl_alias, $rand_tbl_alias . '.dicval_id', '=', $tbl_dicval . '.id')
+                ->where($rand_tbl_alias . '.key', '=', 'date_stop')
+                ->where($rand_tbl_alias . '.value', '>=', date('Y-m-d'));
+
+            $query->take(1);
+        });
+        $dicval = $dicval[0]
+            ->extract(1)
+        ;
+
+        #Helper::tad($dicval);
+        #Helper::smartQueries(1);
+
+        return $dicval;
+    }
+
 }
 
 
