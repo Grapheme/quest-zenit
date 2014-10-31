@@ -97,7 +97,8 @@ class PublicQuestController extends BaseController {
             'return_url_success' => Config::get('site.dengionline.return_url_success'),
             'return_url_fail' => Config::get('site.dengionline.return_url_fail'),
         );
-        $url = Config::get('site.dengionline.url') . '?' . Helper::arrayToAttributes($array);
+        $url = Config::get('site.dengionline.url') . '?' . Helper::arrayToUrlAttributes($array);
+        Helper::dd($url);
         return Redirect::to($url);
     }
 
