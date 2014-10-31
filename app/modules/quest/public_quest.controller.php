@@ -19,7 +19,7 @@ class PublicQuestController extends BaseController {
             Route::any('/dengionline/fail', array('as' => 'dengionline.return_url_fail', 'uses' => __CLASS__.'@getFailDengiOnline'));
             Route::any('/dengionline/notification', array('as' => 'dengionline.notification_url', 'uses' => __CLASS__.'@postNotificationDengiOnline'));
 
-            Route::post('/inplat/notification', array('as' => 'inplat.notification_url', 'uses' => __CLASS__.'@postNotificationInplat'));
+            Route::any('/inplat/notification', array('as' => 'inplat.notification_url', 'uses' => __CLASS__.'@postNotificationInplat'));
         });
     }
 
