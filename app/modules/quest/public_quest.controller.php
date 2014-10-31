@@ -197,7 +197,7 @@ class PublicQuestController extends BaseController {
             ## Get payment amount
             $dicval_field_amount = DicFieldVal::firstOrNew(array(
                 'dicval_id' => $dicval->id,
-                'key' => 'amount',
+                'key' => 'payment_amount',
             ));
             ## Save payment amount
             $dicval_field_amount->value = @$question['amount'];
