@@ -115,10 +115,10 @@ class PublicQuestController extends BaseController {
         $question = $input;
         $secretKey = Config::get('site.dengionline.secret');
 
-        file_put_contents(storage_path('dengionline_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
-
-        ## Check Order ID
+        ## Get Order ID
         $order_id = @$question['orderid'];
+
+        file_put_contents(storage_path('dengionline_' . (int)$order_id . '_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
 
         ## DEBUG ONLY!!
         if (is_numeric($order_id) && (int)$order_id === 0 && FALSE) {
@@ -198,7 +198,7 @@ class PublicQuestController extends BaseController {
                 'key' => 'amount',
             ));
             ## Save payment amount
-            $dicval_field_amount->value = $question['amount'];
+            $dicval_field_amount->value = @$question['amount'];
             $dicval_field_amount->save();
 
 
