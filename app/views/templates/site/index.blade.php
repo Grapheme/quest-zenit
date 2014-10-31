@@ -122,7 +122,7 @@
                                                                 settings: {
                                                                 },
                                                                 params: {
-                                                                    "accountalt": "1111111"
+                                                                    "accountalt": "-"
                                                                 }
                                                             }
                                                         );
