@@ -54,7 +54,7 @@ class PublicQuestController extends BaseController {
 
         #$quest_id = Input::get('quest_id');
         $quest_id = $this->getCurrentQuest();
-        Helper::tad($quest_id);
+        #Helper::tad($quest_id);
         $quest_id = is_object($quest_id) ? $quest_id->id : false;
 
         $nickname = Input::get('nickname');
@@ -279,6 +279,10 @@ class PublicQuestController extends BaseController {
 
             $query->take(1);
         });
+
+        if (!count($dicval))
+            return null;
+
         $dicval = $dicval[0]
             ->extract(1)
         ;
