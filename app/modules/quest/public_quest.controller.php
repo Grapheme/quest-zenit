@@ -99,7 +99,7 @@ class PublicQuestController extends BaseController {
         );
         $url = Config::get('site.dengionline.url') . '?' . Helper::arrayToUrlAttributes($array);
         #Helper::dd($url);
-        return Redirect::to($url);
+        return Redirect($url, 302);
     }
 
     public function getSuccessDengiOnline() {
