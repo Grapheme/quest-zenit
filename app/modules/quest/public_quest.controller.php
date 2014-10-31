@@ -104,11 +104,11 @@ class PublicQuestController extends BaseController {
 
         ## Request from DengiOnline
         $input = Input::all();
+        $question = $input;
         $secretKey = Config::get('site.dengionline.secret');
 
-        file_put_contents(storage_path('inplat_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
+        file_put_contents(storage_path('dengionline_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
 
-        $question = $input;
         ## Check Order ID
         $order_id = @$question['orderid'];
         if (!$order_id)
