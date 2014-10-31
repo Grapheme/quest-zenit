@@ -12,7 +12,8 @@ return array(
     'uploads_dir' => public_path('uploads/files'),
 
     'dengionline' => array(
-        'url' => 'https://www.onlinedengi.ru/wmpaycheck.php',
+        #'url' => 'https://www.onlinedengi.ru/wmpaycheck.php',
+        'url' => 'https://paymentgateway.ru/pgw/',
         'project' => '294',
         'secret' => 'nhTB7hb67ihn^&Ij^*(niJfhT&H@QECQ',
         'amount' => '100',
