@@ -106,8 +106,29 @@
 										</div>
 										<div id="smsPayment" class="quest-participate__content js-formClear">
 											<form action="#" class="quest-participate__form">
+											    @if (0)
 												<input class="quest-participate__input" type="text" placeholder="Отправитель (необязательно)">
-												<input type="submit" value="Продолжить" class="quest-button quest-participate__submit">	
+												<input type="submit" value="Продолжить" class="quest-button quest-participate__submit">
+												@else
+
+                                                    <script type="text/javascript" src="https://pay.inplat.ru/_js/pay_main.js"></script>
+                                                    <p>
+                                                        <div id="inplat"></div>
+                                                    </p>
+                                                    <script type="text/javascript">
+                                                        InPlat.Widgets.Button(
+                                                            "inplat","2fdgeo45299dfslk29nm21",
+                                                            {
+                                                                settings: {
+                                                                },
+                                                                params: {
+                                                                    "accountalt": "1111111"
+                                                                }
+                                                            }
+                                                        );
+                                                    </script>
+
+                                                @endif
 											</form>
 										</div>
 									</div>
