@@ -97,32 +97,11 @@
 											<form action="{{ URL::route('invoice')  }}" method="POST" class="quest-participate__form  js-formClear">
 												<p class="quest-participate__font">MasterCard, VISA, Яндекс Деньги, WebMoney, QIWI, Мобильные платежи Билайн, Мегафон, МТС и многое другое</p>
 												<input class="quest-participate__input" type="text" name="nickname" placeholder="Отправитель (необязательно)">
-
-                                                @if (0)
-                                                <p class="PGWform"></p>
-                                                @else
 												<input type="submit" value="Продолжить" class="quest-button quest-participate__submit">
-												@endif
-
                                                 <input type="hidden" name="mode_type" value="dengionline">
 											</form>
 											<p class="middle-font middle-font_white middle-font__span quest-participate__info">На сайте-партнере ДеньгиОнлайн</p>
 											@endif
-
-                                            <script src="https://paymentgateway.ru/pgw/js/build/ext.min.js" id="PGWform"
-                                                    data-pgw_place=".PGWform"
-                                                    data-pgw_host="https://paymentgateway.ru/pgw/"
-                                                    data-pgw_type="modal"
-                                                    data-pgw_button="true"
-                                                    data-pgw_button_text="Продолжить"
-                                                    data-pgw_button_class="quest-button quest-participate__submit"
-                                                    data-pgw_zindex="99999"
-                                                    data-pgw_nickname="test_nickname"
-                                                    data-pgw_orderid="test_order_123456"
-                                                    data-pgw_project="{{ Config::get('site.dengionline.project') }}"
-                                                    data-pgw_comment="Некий комментарий к прохождению платежа">
-                                            </script>
-
 
 										</div>
 										<div id="smsPayment" class="quest-participate__content js-formClear">
