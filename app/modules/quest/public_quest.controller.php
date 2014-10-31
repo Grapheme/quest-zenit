@@ -12,6 +12,8 @@ class PublicQuestController extends BaseController {
 
         Route::group(array('before' => '', 'prefix' => ''), function() {
 
+            Route::any('/', array('as' => 'main_page', 'uses' => __CLASS__.'@getMainPage'));
+
             Route::any('/form/do', array('as' => 'do', 'uses' => __CLASS__.'@getFormDengiOnline'));
             Route::post('/payment/add_invoice', array('as' => 'invoice', 'uses' => __CLASS__.'@postAddInvoice'));
 
@@ -50,6 +52,23 @@ class PublicQuestController extends BaseController {
     public function getFormDengiOnline() {
 
         return View::make(Helper::layout('do_form'), compact('asd'));
+    }
+
+
+    public function getMainPage() {
+
+        $quest = $this->getCurrentQuest();
+
+        #Helper::tad($quest);
+        #die;
+
+        $transactions = Dic::valuesBySlug('transactions', function($query) use ($quest) {
+            $query->filter_by_field('quest_id', $quest->id);
+            $query->filter_by_field('payment_date', '=', '2014-09-04 15:05:18');
+        });
+        Helper::tad($transactions);
+
+        return View::make(Helper::layout('index'), compact('quest'));
     }
 
     public function postAddInvoice() {

@@ -8,7 +8,7 @@ return array(
 
             'short' => array(
                 'title' => 'Краткое описание',
-                'type' => 'textarea_redactor',
+                'type' => 'textarea',
             ),
 
             'date_start' => array(
@@ -64,10 +64,16 @@ return array(
             'current_amount' => array(
                 'title' => 'Собранно на данный момент',
                 'type' => 'text',
+                'others' => array(
+                    'disabled' => 'disabled',
+                ),
             ),
             'count_members' => array(
                 'title' => 'Количество участников',
                 'type' => 'text',
+                'others' => array(
+                    'disabled' => 'disabled',
+                ),
             ),
 
             array('content' => '<hr/>'),

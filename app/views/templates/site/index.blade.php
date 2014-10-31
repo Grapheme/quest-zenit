@@ -1,4 +1,10 @@
 @extends(Helper::layout())
+<?
+$date_start = $quest->date_start ? (new \Carbon\Carbon())->createFromFormat('Y-m-d', $quest->date_start)->format('d.m.Y') : false;
+$date_stop  = $quest->date_stop  ? (new \Carbon\Carbon())->createFromFormat('Y-m-d', $quest->date_stop)->format('d.m.Y')  : false;
+$date_quest = $quest->date_quest ? (new \Carbon\Carbon())->createFromFormat('Y-m-d', $quest->date_quest)->format('d.m.Y') : false;
+$target_amount = $quest->target_amount;
+?>
 
 
 @section('style')
@@ -12,29 +18,33 @@
 	<!--  Main Question -->
 		<section class="quest" id="mainQuest" data-status="online">
 			<div class="wrp wrp_quest">
-				<h1 class="quest__title">Отправим Малафеева таксовать на «Audi»!</h1>
-				<p class="quest__description main-font main-font_gray main-font_light">Если до конца ноября мы вместе соберем 300 тысяч рублей для пациентов «АдВиты», Вячеслав Малафеев целый день будет работать таксистом!</p>
+				<h1 class="quest__title">
+				    {{ $quest->name }}
+				</h1>
+				<p class="quest__description main-font main-font_gray main-font_light">
+				    {{ $quest->short }}
+				</p>
 				<!--  Quest container -->
 				<div class="quest__container">
 					<div class="game-info">
 						<div class="game-info__container">
 							<div class="game-info__left">
 								<div class="game-info__information game-info__information_right">
-									<p class="little-font little-font_white">Начало сбора: <span class="js-temimelineStart" data-start="30.10.2014">30.10.2014</span></p>
-									<p class="little-font little-font_white">Окончание сбора: <span  class="js-temimelineEnd" data-end="01.12.2014">01.12.2014</span></p>
+									<p class="little-font little-font_white">Начало сбора: <span class="js-temimelineStart" data-start="{{ $date_start }}">{{ $date_start }}</span></p>
+									<p class="little-font little-font_white">Окончание сбора: <span  class="js-temimelineEnd" data-end="{{ $date_stop }}">{{ $date_stop }}</span></p>
 								</div>
 								<i class="icon line-icon line-icon_right"></i>
 							</div>
 							<div class="game-info__center">
 								<p class="main-font main-font_gray main-font_light">Собрано</p>
-								<p class="big-font js-totalCash" data-total="123460">123 460 <span class="icon icon_rub-big"></span></p>
-								<p class="main-font main-font_gray main-font_light">Цель <span class="js-destination" data-destination="300000">300 000</span><span class="icon icon_rub-little"></span></p>
+								<p class="big-font js-totalCash" data-total="??????">??? ??? <span class="icon icon_rub-big"></span></p>
+								<p class="main-font main-font_gray main-font_light">Цель <span class="js-destination" data-destination="{{ $target_amount }}">{{ $target_amount }}</span><span class="icon icon_rub-little"></span></p>
 							</div>
 							<div class="game-info__right">
 								<i class="icon line-icon line-icon_left"></i>
 								<div class="game-info__information game-info__information_left">
-									<p class="little-font little-font_white">Дата проведения: <span>10.12.2014</span></p>
-									<p class="little-font little-font_white">Участники: <span>172</span> человека</p>
+									<p class="little-font little-font_white">Дата проведения: <span>{{ $date_quest }}</span></p>
+									<p class="little-font little-font_white">Участники: <span>???</span> человека</p>
 								</div>
 							</div>
 						</div>
