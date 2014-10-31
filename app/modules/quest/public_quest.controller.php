@@ -114,6 +114,7 @@ class PublicQuestController extends BaseController {
         if (!$order_id)
             $this->sendResponse('NO', 'Не указан номер заказа.');
 
+
         ## Find transaction by Order ID
         $dicval = DicVal::where('id', $order_id)->with('allfields', 'dic')->first()->extract(1);
 
