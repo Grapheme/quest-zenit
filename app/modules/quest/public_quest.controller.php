@@ -112,8 +112,8 @@ class PublicQuestController extends BaseController {
         ## Check Order ID
         $order_id = @$question['orderid'];
 
-        ## DEBUG
-        if (is_numeric($order_id) && (int)$order_id === 0) {
+        ## DEBUG ONLY!!
+        if (is_numeric($order_id) && (int)$order_id === 0 && FALSE) {
 
             ## Find the current quest ID
             $quest_id = 0;
@@ -123,6 +123,7 @@ class PublicQuestController extends BaseController {
                 'name' => @$input['userid'],
                 'fields' => array(
                     'quest_id' => $quest_id,
+                    'payment_status' => 1,
                     'payment_amount' => @$input['amount'],
                     'payment_date' => @$input['ps_paid_date'],
                     'payment_method' => 'dengionline',
