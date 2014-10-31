@@ -19,6 +19,8 @@ class PublicQuestController extends BaseController {
             Route::any('/dengionline/fail', array('as' => 'dengionline.return_url_fail', 'uses' => __CLASS__.'@getFailDengiOnline'));
             Route::any('/dengionline/notification', array('as' => 'dengionline.notification_url', 'uses' => __CLASS__.'@postNotificationDengiOnline'));
 
+            Route::any('/inplat/success', array('as' => 'inplat.return_url_success', 'uses' => __CLASS__.'@getSuccessInplat'));
+            Route::any('/inplat/fail', array('as' => 'inplat.return_url_fail', 'uses' => __CLASS__.'@getFailInplat'));
             Route::any('/inplat/notification', array('as' => 'inplat.notification_url', 'uses' => __CLASS__.'@postNotificationInplat'));
         });
     }
@@ -107,6 +109,14 @@ class PublicQuestController extends BaseController {
     }
 
     public function getFailDengiOnline() {
+        return 'Не удалось совершить платеж.';
+    }
+
+    public function getSuccessInplat() {
+        return 'Платеж успешно проведен.';
+    }
+
+    public function getFailInplat() {
         return 'Не удалось совершить платеж.';
     }
 
@@ -238,20 +248,41 @@ class PublicQuestController extends BaseController {
 
         file_put_contents(storage_path('inplat_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
 
-        ## Create new Transaction
-        $dicval = DicVal::inject('transactions', array(
-            'slug' => NULL,
-            'name' => 'INPLAT TEST PAYMENT',
-            'fields' => array(
-                'quest_id' => '777',
-                'payment_amount' => '777',
-                'payment_date' => date("Y-m-d H:i:s"),
-                'payment_method' => 'inplat',
-                'payment_full' => json_encode($input),
-            ),
-        ));
+        $quest_id = $this->getCurrentQuest();
+        #Helper::tad($quest_id);
+        $quest_id = is_object($quest_id) ? $quest_id->id : false;
 
-        return '1';
+        if (!count($input) || !@$input['payment_id'])
+            return json_encode(array(
+                'code' => '1',
+                'text' => 'Ошибка проведения платежа - неверный идентификатор',
+                'redirect_url' => URL::route('inplat.return_url_fail'),
+            ));
+
+        $dicval_exists = DicVal::where('slug', $input['payment_id'])->first();
+
+        if (!$dicval_exists) {
+
+            ## Create new Transaction
+            $dicval = DicVal::inject('transactions', array(
+                'slug' => $input['payment_id'],
+                'name' => @$input['params']['msisdn'],
+                'fields' => array(
+                    'quest_id' => $quest_id,
+                    'payment_status' => (int)(@$input['status'] == 'auth'),
+                    'payment_amount' => @$input['params']['sum'],
+                    'payment_date' => date("Y-m-d H:i:s"),
+                    'payment_method' => 'inplat',
+                    'payment_full' => json_encode($input),
+                ),
+            ));
+        }
+
+        return json_encode(array(
+            'code' => '0',
+            'text' => 'Операция осуществлена.',
+            'redirect_url' => URL::route('inplat.return_url_success'),
+        ));
     }
 
 
