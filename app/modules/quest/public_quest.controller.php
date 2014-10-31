@@ -111,18 +111,18 @@ class PublicQuestController extends BaseController {
 
         ## Check Order ID
         $order_id = @$question['orderid'];
-        if (!$order_id)
-            $this->sendResponse('NO', 'Не указан номер заказа.');
-
 
         ## DEBUG
         if (is_numeric($order_id) && (int)$order_id === 0) {
+
+            ## Find the current quest ID
+            $quest_id = 0;
 
             $dicval = DicVal::inject('transactions', array(
                 'slug' => NULL,
                 'name' => @$input['userid'],
                 'fields' => array(
-                    'quest_id' => 0,
+                    'quest_id' => $quest_id,
                     'payment_amount' => @$input['amount'],
                     'payment_date' => @$input['ps_paid_date'],
                     'payment_method' => 'dengionline',
@@ -132,6 +132,10 @@ class PublicQuestController extends BaseController {
 
             $this->sendResponse('YES', 'Платеж успешно совершен.');
         }
+
+
+        if (!$order_id)
+            $this->sendResponse('NO', 'Не указан номер заказа.');
 
         ## Find transaction by Order ID
         $dicval = DicVal::where('id', $order_id)->with('allfields', 'dic')->first()->extract(1);
