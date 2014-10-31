@@ -14,7 +14,7 @@ return array(
     'dengionline' => array(
         #'url' => 'https://www.onlinedengi.ru/wmpaycheck.php',
         'url' => 'https://paymentgateway.ru/pgw/',
-        'project' => '294',
+        'project' => '7803',
         'secret' => 'nhTB7hb67ihn^&Ij^*(niJfhT&H@QECQ',
         'amount' => '100',
         'return_url_success' => URL::route('dengionline.return_url_success'),
