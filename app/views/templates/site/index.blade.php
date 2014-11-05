@@ -203,8 +203,8 @@ $target_amount = (int)$quest->target_amount;
 
     <!-- TODO Вернуть, когда будет актуальны СМИ -->
     <!-- SMI -->
+		@if (Input::get('news') == 1)
         @if (count($news))
-		<!---->
 		<section class="smi" id="smi">
 			<div class="wrp">
 				<h2 class="block-title main-font main-font_gray main-font_light">СМИ о нас</h2>
@@ -523,6 +523,7 @@ $target_amount = (int)$quest->target_amount;
 				</ul>
 			</div>
 		</section> -->
+		@endif
 		@endif
 
 	<!-- Partners -->
