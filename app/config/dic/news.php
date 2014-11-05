@@ -79,7 +79,7 @@ return array(
                 'type' => 'image',
                 #'first_note' => 'Оптимальный размер: 360x270',
             ),
-
+            /*
             'gallery_id' => array(
                 'title' => 'Фотографии',
                 'type' => 'gallery',
@@ -92,22 +92,7 @@ return array(
                     ));
                 }
             ),
-
-            /*
-            'gallery_id' => array(
-                'title' => 'Галерея изображений',
-                'type' => 'gallery',
-                'handler' => function($array, $element) {
-                    return ExtForm::process('gallery', array(
-                        'module'  => 'DicValMeta',
-                        'unit_id' => $element->id,
-                        'gallery' => $array,
-                        'single'  => true,
-                    ));
-                },
-                #'first_note' => 'Оптимальный размер: 400x300',
-            ),
-            #*/
+            */
 
             'video_embed' => array(
                 'title' => 'Видео (embed-код)',
