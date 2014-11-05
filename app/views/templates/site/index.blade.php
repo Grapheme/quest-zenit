@@ -3,7 +3,7 @@
 $date_start = $quest->date_start ? (new \Carbon\Carbon())->createFromFormat('Y-m-d', $quest->date_start)->format('d.m.Y') : false;
 $date_stop  = $quest->date_stop  ? (new \Carbon\Carbon())->createFromFormat('Y-m-d', $quest->date_stop)->format('d.m.Y')  : false;
 $date_quest = $quest->date_quest ? (new \Carbon\Carbon())->createFromFormat('Y-m-d', $quest->date_quest)->format('d.m.Y') : false;
-$target_amount = $quest->target_amount;
+$target_amount = (int)$quest->target_amount;
 ?>
 
 
