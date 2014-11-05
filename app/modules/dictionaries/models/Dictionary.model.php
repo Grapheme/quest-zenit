@@ -166,19 +166,21 @@ class Dictionary extends BaseModel {
         $list = self::makeLists($collection, null, $local_id);
         #Helper::d($list);
 
-        $values = $model::whereIn($remote_id, $list);
-        if (is_callable($additional_rules)) {
-            #$values = $additional_rules($values);
-            /**
-             * Правильный способ применения доп. условий через функцию-замыкание
-             */
-            call_user_func($additional_rules, $values);
+        $values = new Collection;
+        if (count($list)) {
+            $values = $model::whereIn($remote_id, $list);
+            if (is_callable($additional_rules)) {
+                #$values = $additional_rules($values);
+                /**
+                 * Правильный способ применения доп. условий через функцию-замыкание
+                 */
+                call_user_func($additional_rules, $values);
+            }
+            $values = $values->get();
+
+            $values = Dic::modifyKeys($values, 'id');
+            #Helper::tad($values);
         }
-
-        $values = $values->get();
-
-        $values = Dic::modifyKeys($values, 'id');
-        #Helper::tad($values);
 
         foreach($collection as $e => $element) {
 
@@ -188,7 +190,7 @@ class Dictionary extends BaseModel {
                  * Правильная кастомная установка поля.
                  * Доп. поле должно устанавливаться как связь (relation)
                  */
-                $element->relations[$key] = $values[$element->$local_id];
+                $element->relations[$key] = @$values[$element->$local_id] ?: NULL;
 
                 /**
                  * Правильное обновление значения элемента коллекции
