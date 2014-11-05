@@ -36,9 +36,7 @@ class Dictionary extends BaseModel {
     public function values() {
         return $this->hasMany('DicVal', 'dic_id', 'id')
             ->where('version_of', NULL)
-            ->with('meta', array('fields' => function($query){
-                #$query->whereIn('name', array_keys((array)Config::get('dic.dic_name.fields')));
-            }))
+            ->with('meta', 'fields')
             ->orderBy('order', 'ASC')
             ->orderBy('slug', 'ASC')
             ->orderBy('name', 'ASC')
