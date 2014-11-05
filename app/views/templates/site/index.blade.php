@@ -522,7 +522,7 @@ $target_amount = (int)$quest->target_amount;
 
 				</ul>
 			</div>
-		</section> -->
+		</section>
 		@endif
 		@endif
 
