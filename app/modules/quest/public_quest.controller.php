@@ -90,7 +90,7 @@ class PublicQuestController extends BaseController {
                 $data['players'][] = array(
                     'cash' => (int)$transaction->payment_amount,
                     'class' => (string)$classes[array_rand($classes)],
-                    'date' => (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d H:i:s', $transaction->payment_date)->format('d.m.Y'),
+                    'date' => $transaction->payment_date ? (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d H:i:s', $transaction->payment_date)->format('d.m.Y') : '',
                     'name' => (string)$payer_name,
                 );
             }
@@ -175,11 +175,11 @@ class PublicQuestController extends BaseController {
                 'id' => $f,
                 'title' => (string)$finished_quest->name,
                 'description' => $finished_quest->short,
-                'start-date' => (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_start)->format('d.m.Y'),
-                'end-date' => (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_stop)->format('d.m.Y'),
+                'start-date' => $finished_quest->date_start ? (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_start)->format('d.m.Y') : '',
+                'end-date' => $finished_quest->date_stop ? (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_stop)->format('d.m.Y') : '',
                 'total' => (string)$finished_quest->current_amount,
                 'destination' => (string)$finished_quest->target_amount,
-                'action-date' => (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_quest)->format('d.m.Y'),
+                'action-date' => $finished_quest->date_quest ? (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_quest)->format('d.m.Y') : '',
                 'gamers' => (string)"234",
                 'questImage' => isset($photos[$finished_quest->photo]) && is_object($photos[$finished_quest->photo]) ? $photos[$finished_quest->photo]->full() : '',
                 'photos' => isset($gall[$finished_quest->gallery_id]) ? $gall[$finished_quest->gallery_id] : NULL,
