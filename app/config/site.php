@@ -21,6 +21,9 @@ return array(
     'galleries_photo_public_dir' => '/uploads/galleries',
     'galleries_thumb_public_dir' => '/uploads/galleries/thumbs',
 
+    'galleries_photo_size' => -800, # 800 => 800x600 || 600x800 ; -800 => 800x1000 || 1000x800
+    'galleries_thumb_size' => -265, # 200 => 200x150 || 150x200 ; -200 => 200x300 || 300x200
+
     'dengionline' => array(
         #'url' => 'https://www.onlinedengi.ru/wmpaycheck.php',
         'url' => 'https://paymentgateway.ru/pgw/',

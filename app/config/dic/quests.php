@@ -8,6 +8,11 @@ return array(
 
             'short' => array(
                 'title' => 'Краткое описание',
+                'type' => 'textarea',
+            ),
+
+            'description' => array(
+                'title' => 'Полное описание',
                 'type' => 'textarea_redactor',
             ),
 
@@ -61,13 +66,27 @@ return array(
                 'title' => 'Целевая сумма сбора',
                 'type' => 'text',
             ),
+
+            'photo_id' => array(
+                'title' => 'Фоновое изображение',
+                'type' => 'image',
+            ),
+
+            array('content' => '<hr/>'),
+
             'current_amount' => array(
                 'title' => 'Собранно на данный момент',
                 'type' => 'text',
+                'others' => array(
+                    'disabled' => 'disabled',
+                ),
             ),
             'count_members' => array(
                 'title' => 'Количество участников',
                 'type' => 'text',
+                'others' => array(
+                    'disabled' => 'disabled',
+                ),
             ),
 
             array('content' => '<hr/>'),
@@ -95,13 +114,10 @@ return array(
                     'placeholder' => 'http://'
                 ),
             ),
-            'photo' => array(
-                'title' => 'Фото',
-                'type' => 'image',
-            ),
 
             array('content' => '<hr/>'),
 
+            /*
             'video' => array(
                 'title' => 'Видео',
                 'type' => 'video',
@@ -113,12 +129,25 @@ return array(
                         return ExtForm::process('video', $value);
                     },
             ),
+            */
 
-            array('content' => '<hr/>'),
+            'gallery_id' => array(
+                'title' => 'Фотографии',
+                'type' => 'gallery',
+                'handler' => function($array, $element) {
+                    return ExtForm::process('gallery', array(
+                        'module'  => 'DicVal',
+                        'unit_id' => $element->id,
+                        'gallery' => $array,
+                        'single'  => true,
+                    ));
+                }
+            ),
 
-            'description' => array(
-                'title' => 'Полное описание',
-                'type' => 'textarea_redactor',
+            'video' => array(
+                'title' => 'Видеозаписи',
+                'type' => 'textarea',
+                'first_note' => 'По одному на строку. Хеш код видео из YouTube. Например:<br/><u>http://www.youtube.com/watch?v=M2-hDrBIlOo</u> => <b>M2-hDrBIlOo</b>',
             ),
 
         );

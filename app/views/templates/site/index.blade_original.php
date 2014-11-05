@@ -8,21 +8,6 @@ $target_amount = $quest->target_amount;
 
 
 @section('style')
-    @if ($quest->photo_id)
-    <?
-    #$photo = Photo::firstOrNew(['id' => $quest->photo_id]);
-    $photo = Photo::find($quest->photo_id);
-    ?>
-    @if (is_object($photo))
-    <style>
-    .quest:before,
-    .quest-participate:before {
-        background: url('{{ $photo->full() }}') no-repeat;
-        background-size: cover;
-    }
-    </style>
-    @endif
-    @endif
 @stop
 
 
@@ -30,9 +15,7 @@ $target_amount = $quest->target_amount;
 
     
 	<!-- Content -->
-
-	@if ($quest->id)
-<!--  Main Question -->
+	<!--  Main Question -->
 		<section class="quest" id="mainQuest" data-status="online">
 			<div class="wrp wrp_quest">
 				<h1 class="quest__title">
@@ -174,9 +157,6 @@ $target_amount = $quest->target_amount;
 				</div>
 			</div>
 		</section>
-
-    @endif
-
 	<!--  Other Questions -->
 		<section class="other-quests" id="otherQuests">
 			<h2 class="block-title main-font main-font_gray main-font_light">Прошедние</h2>
@@ -185,7 +165,6 @@ $target_amount = $quest->target_amount;
 				</ul>
 			</div>
 		</section>
-
 	<!--  About -->
 		<section class="about-proj" id="aboutProject">
 			<div class="wrp">
@@ -200,72 +179,14 @@ $target_amount = $quest->target_amount;
 				</div>
 			</div>
 		</section>
-
-    <!-- TODO Вернуть, когда будет актуальны СМИ -->
-    <!-- SMI -->
-        @if (count($news))
-		<!--
-		<section class="smi" id="smi">
+		<!-- TODO Вернуть, когда будет актуальны СМИ -->
+	<!-- SMI -->
+		<!-- <section class="smi" id="smi">
 			<div class="wrp">
 				<h2 class="block-title main-font main-font_gray main-font_light">СМИ о нас</h2>
 			</div>
 			<div class="carousel__container carousel__container_green smi__container js-scrollableNews">
 				<ul class="carousel__list" id="latestNews">
-
-				    @foreach ($news as $new)
-				    <?
-				    #$class = 'news__container_photo';
-				    if ($new->video_embed != '')
-                        $class = 'news__container_video';
-                    elseif (is_object($new->image))
-                        $class = 'news__container_photo';
-                    else
-                        $class = 'news__container_article';
-
-				    ?>
-					<li class="smi__item news carousel__item">
-						<div class="news__container {{ $class }}">
-							<div class="news__full-container">
-								<div class="news__top">
-									<div class="news__title-info">
-									    @if ($new->video_embed != '')
-                                        <a class="js-youtube icon icon-play-button news__video-button" href="#">
-                                            <span class="icon icon-play-button-empty"></span>
-                                        </a>
-                                        @endif
-										<h3 class="news__title">{{ $new->name }}</h3>
-										@if ($new->source_title)
-                                            <a href="{{ $new->source_url ?: '#' }}" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>{{ $new->source_title }}</a>
-										@endif
-									</div>
-								</div>
-								<div class="js-youtube news__media-container">
-									{{--<img class="news__image" src="http://img.youtube.com/vi/BKorP55Aqvg/hqdefault.jpg" alt="video">--}}
-									@if ($new->video_embed != '')
-									<div class="news__image">
-									    {{ $new->video_embed }}
-									</div>
-									@elseif (is_object($new->image))
-                                        <a href="{{ $new->image->full() }}" class="js-newsPhoto news__media-container">
-                                            <img class="news__image" src="{{ $new->image->full() }}" alt="news-image">
-                                        </a>
-                                    @endif
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</div>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">
-									    {{ $new->content }}
-									</p>
-								</div>
-							</div>
-						</div>
-					</li>
-					@endforeach
-
-                    @if (0)
 					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
 							here is variable "BKorP55Aqvg"
@@ -518,13 +439,9 @@ $target_amount = $quest->target_amount;
 							</div>
 						</div>
 					</li>
-					@endif
-
 				</ul>
 			</div>
 		</section> -->
-		@endif
-
 	<!-- Partners -->
 		<section class="partners" id="parthers">
 			<div class="wrp">
@@ -571,7 +488,242 @@ $target_amount = $quest->target_amount;
 		</nav>
 
     <script>
-    var renderDataMain = {{ json_encode($data) }};
+    var renderDataMain = {
+         players: [ {
+             cash: 1e3,
+             "class": "lightblue",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         }, {
+             cash: 1e3,
+             "class": "torquous",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         }, {
+             cash: 1e3,
+             "class": "torquous",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         }, {
+             cash: 47e3,
+             "class": "red",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         }, {
+             cash: 1e4,
+             "class": "lightblue",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         }, {
+             cash: 1e3,
+             "class": "orange",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         }, {
+             cash: 2e3,
+             "class": "blue",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         }, {
+             cash: 460,
+             "class": "green",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         }, {
+             cash: 6e4,
+             "class": "lightblue",
+             date: "12.07.2014",
+             name: "Черемушкин Иван"
+         } ],
+         quests: [ {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_1.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "1"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_2.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "2"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_3.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "3"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_1.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "4"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_2.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "5"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_3.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "6"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_1.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "7"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_2.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "8"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_3.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "9"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_1.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "10"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_2.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "11"
+         }, {
+             title: "Победоносный Кришито",
+             image: "img/quests/quest_3.jpg",
+             price: "400000",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Xалк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             link: "12"
+         } ],
+         fullquest: [ {
+             id: 1,
+             title: "Синегривый ХАЛК1",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             "start-date": "12.08.2014",
+             "end-date": "12.09.2014",
+             total: "1200000",
+             destination: "500000",
+             "action-date": "12.08.2014",
+             gamers: "234",
+             questImage: "img/quests/quest_1.jpg",
+             photos: [ {
+                 src: "img/advita-photos/photo_1.jpg",
+                 alt: "Фото1"
+             }, {
+                 src: "img/advita-photos/photo_2.jpg",
+                 alt: "Фото2"
+             }, {
+                 src: "img/advita-photos/photo_3.jpg",
+                 alt: "Фото3"
+             }, {
+                 src: "img/advita-photos/photo_1.jpg",
+                 alt: "Фото4"
+             }, {
+                 src: "img/advita-photos/photo_1.jpg",
+                 alt: "Фото1"
+             }, {
+                 src: "img/advita-photos/photo_2.jpg",
+                 alt: "Фото2"
+             }, {
+                 src: "img/advita-photos/photo_3.jpg",
+                 alt: "Фото3"
+             }, {
+                 src: "img/advita-photos/photo_1.jpg",
+                 alt: "Фото4"
+             } ],
+             videos: [ {
+                 url: "gqMaWqS2FVQ"
+             }, {
+                 url: "w9nEpXIGA2k"
+             }, {
+                 url: "IvdYyil6IEk"
+             }, {
+                 url: "UF37Ouze7LY"
+             } ],
+             fulldescription: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+         }, {
+             id: 2,
+             title: "Синегривый ХАЛК2",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             "start-date": "12.08.2014",
+             "end-date": "12.09.2014",
+             total: "1200000",
+             destination: "500000",
+             "action-date": "12.08.2014",
+             gamers: "234",
+             questImage: "img/quests/quest_2.jpg",
+             photos: [ {
+                 src: "img/advita-photos/photo_1.jpg",
+                 alt: "Фото1"
+             }, {
+                 src: "img/advita-photos/photo_2.jpg",
+                 alt: "Фото2"
+             }, {
+                 src: "img/advita-photos/photo_3.jpg",
+                 alt: "Фото3"
+             }, {
+                 src: "img/advita-photos/photo_1.jpg",
+                 alt: "Фото4"
+             } ],
+             videos: [ {
+                 url: "gqMaWqS2FVQ"
+             }, {
+                 url: "w9nEpXIGA2k"
+             }, {
+                 url: "IvdYyil6IEk"
+             }, {
+                 url: "UF37Ouze7LY"
+             } ],
+             fulldescription: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+         }, {
+             id: 3,
+             title: "Синегривый ХАЛК3",
+             description: 'Нападающий сборной Бразилии  и ФК "Зенит" Халк одевается в костюм талисмана Зенита и фотографируется с прохожими на Невском',
+             "start-date": "12.08.2014",
+             "end-date": "12.09.2014",
+             total: "1200000",
+             destination: "500000",
+             "action-date": "12.08.2014",
+             gamers: "234",
+             questImage: "img/quests/quest_3.jpg",
+             photos: [ {
+                 src: "img/advita-photos/photo_1.jpg",
+                 alt: "Фото1"
+             }, {
+                 src: "img/advita-photos/photo_2.jpg",
+                 alt: "Фото2"
+             }, {
+                 src: "img/advita-photos/photo_3.jpg",
+                 alt: "Фото3"
+             }, {
+                 src: "img/advita-photos/photo_1.jpg",
+                 alt: "Фото4"
+             } ],
+             videos: [ {
+                 url: "gqMaWqS2FVQ"
+             }, {
+                 url: "w9nEpXIGA2k"
+             }, {
+                 url: "IvdYyil6IEk"
+             }, {
+                 url: "UF37Ouze7LY"
+             } ],
+             fulldescription: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\r Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+         } ]
+     };
     </script>
 
 @stop
