@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.11 on 2014-10-30.
+ * Generated for Laravel 4.2.8 on 2014-10-31.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1675,11 +1675,10 @@ namespace {
          * Set the event dispatcher instance.
          *
          * @param \Illuminate\Events\Dispatcher
-         * @return void 
          * @static 
          */
         public static function setDispatcher($events){
-            \Illuminate\Auth\Guard::setDispatcher($events);
+            return \Illuminate\Auth\Guard::setDispatcher($events);
         }
         
         /**
@@ -1966,6 +1965,11 @@ namespace {
             //Method inherited from \Illuminate\View\Compilers\Compiler            
             return \Illuminate\View\Compilers\BladeCompiler::isExpired($path);
         }
+        
+    }
+
+
+    class Carbon extends \Carbon\Carbon{
         
     }
 
@@ -2924,23 +2928,9 @@ namespace {
          * @return array 
          * @static 
          */
-        public static function selectFromWriteConnection($query, $bindings = array()){
+        public static function select($query, $bindings = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::selectFromWriteConnection($query, $bindings);
-        }
-        
-        /**
-         * Run a select statement against the database.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @param bool $useReadPdo
-         * @return array 
-         * @static 
-         */
-        public static function select($query, $bindings = array(), $useReadPdo = true){
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::select($query, $bindings, $useReadPdo);
+            return \Illuminate\Database\MySqlConnection::select($query, $bindings);
         }
         
         /**
@@ -3849,6 +3839,16 @@ namespace {
          */
         public static function simplePaginate($perPage = null, $columns = array()){
             return \Illuminate\Database\Eloquent\Builder::simplePaginate($perPage, $columns);
+        }
+        
+        /**
+         * Run the default delete function on the builder.
+         *
+         * @return mixed 
+         * @static 
+         */
+        public static function forceDelete(){
+            return \Illuminate\Database\Eloquent\Builder::forceDelete();
         }
         
         /**
@@ -5196,16 +5196,6 @@ namespace {
             \Illuminate\Events\Dispatcher::forget($event);
         }
         
-        /**
-         * Forget all of the queued listeners.
-         *
-         * @return void 
-         * @static 
-         */
-        public static function forgetQueued(){
-            \Illuminate\Events\Dispatcher::forgetQueued();
-        }
-        
     }
 
 
@@ -5675,18 +5665,6 @@ namespace {
          */
         public static function textarea($name, $value = null, $options = array()){
             return \Illuminate\Html\FormBuilder::textarea($name, $value, $options);
-        }
-        
-        /**
-         * Create a number input field.
-         *
-         * @param string $name
-         * @param array $options
-         * @return string 
-         * @static 
-         */
-        public static function number($name, $value = null, $options = array()){
-            return \Illuminate\Html\FormBuilder::number($name, $value, $options);
         }
         
         /**
@@ -6340,26 +6318,6 @@ namespace {
         }
         
         /**
-         * Returns the client IP address.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function ip(){
-            return \Illuminate\Http\Request::ip();
-        }
-        
-        /**
-         * Returns the client IP addresses.
-         *
-         * @return array 
-         * @static 
-         */
-        public static function ips(){
-            return \Illuminate\Http\Request::ips();
-        }
-        
-        /**
          * Determine if the request contains a given input item key.
          *
          * @param string|array $key
@@ -7146,9 +7104,9 @@ namespace {
         }
         
         /**
-         * Returns the requested URI (path and query string).
+         * Returns the requested URI.
          *
-         * @return string The raw URI (i.e. not URI decoded)
+         * @return string The raw URI (i.e. not urldecoded)
          * @api 
          * @static 
          */
@@ -7172,9 +7130,9 @@ namespace {
         }
         
         /**
-         * Generates a normalized URI (URL) for the Request.
+         * Generates a normalized URI for the Request.
          *
-         * @return string A normalized URI (URL) for the Request
+         * @return string A normalized URI for the Request
          * @see getQueryString()
          * @api 
          * @static 
@@ -7391,17 +7349,6 @@ namespace {
         public static function setDefaultLocale($locale){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::setDefaultLocale($locale);
-        }
-        
-        /**
-         * Get the default locale.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getDefaultLocale(){
-            //Method inherited from \Symfony\Component\HttpFoundation\Request            
-            return \Illuminate\Http\Request::getDefaultLocale();
         }
         
         /**
@@ -8010,11 +7957,11 @@ namespace {
          * @param array $data
          * @param \Closure|string $callback
          * @param string $queue
-         * @return mixed 
+         * @return void 
          * @static 
          */
         public static function queue($view, $data, $callback, $queue = null){
-            return \Illuminate\Mail\Mailer::queue($view, $data, $callback, $queue);
+            \Illuminate\Mail\Mailer::queue($view, $data, $callback, $queue);
         }
         
         /**
@@ -8024,11 +7971,11 @@ namespace {
          * @param string|array $view
          * @param array $data
          * @param \Closure|string $callback
-         * @return mixed 
+         * @return void 
          * @static 
          */
         public static function queueOn($queue, $view, $data, $callback){
-            return \Illuminate\Mail\Mailer::queueOn($queue, $view, $data, $callback);
+            \Illuminate\Mail\Mailer::queueOn($queue, $view, $data, $callback);
         }
         
         /**
@@ -8039,11 +7986,11 @@ namespace {
          * @param array $data
          * @param \Closure|string $callback
          * @param string $queue
-         * @return mixed 
+         * @return void 
          * @static 
          */
         public static function later($delay, $view, $data, $callback, $queue = null){
-            return \Illuminate\Mail\Mailer::later($delay, $view, $data, $callback, $queue);
+            \Illuminate\Mail\Mailer::later($delay, $view, $data, $callback, $queue);
         }
         
         /**
@@ -8054,11 +8001,11 @@ namespace {
          * @param string|array $view
          * @param array $data
          * @param \Closure|string $callback
-         * @return mixed 
+         * @return void 
          * @static 
          */
         public static function laterOn($queue, $delay, $view, $data, $callback){
-            return \Illuminate\Mail\Mailer::laterOn($queue, $delay, $view, $data, $callback);
+            \Illuminate\Mail\Mailer::laterOn($queue, $delay, $view, $data, $callback);
         }
         
         /**
@@ -8538,16 +8485,6 @@ namespace {
         }
         
         /**
-         * Determine if the application is in maintenance mode.
-         *
-         * @return bool 
-         * @static 
-         */
-        public static function isDownForMaintenance(){
-            return \Illuminate\Queue\QueueManager::isDownForMaintenance();
-        }
-        
-        /**
          * Push a new job onto the queue.
          *
          * @param string $job
@@ -8969,26 +8906,6 @@ namespace {
          */
         public static function secure(){
             return \Illuminate\Http\Request::secure();
-        }
-        
-        /**
-         * Returns the client IP address.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function ip(){
-            return \Illuminate\Http\Request::ip();
-        }
-        
-        /**
-         * Returns the client IP addresses.
-         *
-         * @return array 
-         * @static 
-         */
-        public static function ips(){
-            return \Illuminate\Http\Request::ips();
         }
         
         /**
@@ -9778,9 +9695,9 @@ namespace {
         }
         
         /**
-         * Returns the requested URI (path and query string).
+         * Returns the requested URI.
          *
-         * @return string The raw URI (i.e. not URI decoded)
+         * @return string The raw URI (i.e. not urldecoded)
          * @api 
          * @static 
          */
@@ -9804,9 +9721,9 @@ namespace {
         }
         
         /**
-         * Generates a normalized URI (URL) for the Request.
+         * Generates a normalized URI for the Request.
          *
-         * @return string A normalized URI (URL) for the Request
+         * @return string A normalized URI for the Request
          * @see getQueryString()
          * @api 
          * @static 
@@ -10023,17 +9940,6 @@ namespace {
         public static function setDefaultLocale($locale){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::setDefaultLocale($locale);
-        }
-        
-        /**
-         * Get the default locale.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getDefaultLocale(){
-            //Method inherited from \Symfony\Component\HttpFoundation\Request            
-            return \Illuminate\Http\Request::getDefaultLocale();
         }
         
         /**
@@ -11061,17 +10967,6 @@ namespace {
         }
         
         /**
-         * Determine if this is a valid session ID.
-         *
-         * @param string $id
-         * @return bool 
-         * @static 
-         */
-        public static function isValidId($id){
-            return \Illuminate\Session\Store::isValidId($id);
-        }
-        
-        /**
          * Returns the session name.
          *
          * @return mixed The session name.
@@ -11727,12 +11622,34 @@ namespace {
         }
         
         /**
+         * Get the URL to a controller action.
+         *
+         * @param string $action
+         * @param mixed $parameters
+         * @param bool $absolute
+         * @return string 
+         * @static 
+         */
+        public static function action($action, $parameters = array(), $absolute = true){
+            return \Illuminate\Routing\CustomUrlGenerator::action($action, $parameters, $absolute);
+        }
+        
+        /**
          * 
          *
          * @static 
          */
         public static function add_url_modifier($route_name, $closure){
             return \Illuminate\Routing\CustomUrlGenerator::add_url_modifier($route_name, $closure);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function get_modified_parameters($route_name, $params = array()){
+            return \Illuminate\Routing\CustomUrlGenerator::get_modified_parameters($route_name, $params);
         }
         
         /**
@@ -11773,7 +11690,7 @@ namespace {
          *
          * @param string $path
          * @param mixed $extra
-         * @param bool|null $secure
+         * @param bool $secure
          * @return string 
          * @static 
          */
@@ -11799,7 +11716,7 @@ namespace {
          * Generate a URL to an application asset.
          *
          * @param string $path
-         * @param bool|null $secure
+         * @param bool $secure
          * @return string 
          * @static 
          */
@@ -11830,20 +11747,6 @@ namespace {
         public static function forceSchema($schema){
             //Method inherited from \Illuminate\Routing\UrlGenerator            
             \Illuminate\Routing\CustomUrlGenerator::forceSchema($schema);
-        }
-        
-        /**
-         * Get the URL to a controller action.
-         *
-         * @param string $action
-         * @param mixed $parameters
-         * @param bool $absolute
-         * @return string 
-         * @static 
-         */
-        public static function action($action, $parameters = array(), $absolute = true){
-            //Method inherited from \Illuminate\Routing\UrlGenerator            
-            return \Illuminate\Routing\CustomUrlGenerator::action($action, $parameters, $absolute);
         }
         
         /**
@@ -12495,6 +12398,11 @@ namespace {
         public static function cache($callback, $lifetime = null, $returnObj = false){
             return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
         }
+        
+    }
+
+
+    class Collection extends \Illuminate\Database\Eloquent\Collection{
         
     }
 

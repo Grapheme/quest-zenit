@@ -57,18 +57,162 @@ class PublicQuestController extends BaseController {
 
     public function getMainPage() {
 
+        $data = array();
+
+        $classes = array(
+            'lightblue',
+            'torquous',
+            'red',
+            'orange',
+            'blue',
+            'green',
+        );
+
         $quest = $this->getCurrentQuest();
-
         #Helper::tad($quest);
-        #die;
 
-        $transactions = Dic::valuesBySlug('transactions', function($query) use ($quest) {
-            $query->filter_by_field('quest_id', $quest->id);
-            $query->filter_by_field('payment_date', '=', '2014-09-04 15:05:18');
+
+        #if (is_object($quest)) {
+
+            $transactions = Dic::valuesBySlug('transactions', function($query) use ($quest) {
+                $query->filter_by_field('quest_id', '=', $quest->id);
+                #$query->filter_by_field('payment_date', '=', '2014-09-04 15:05:18');
+            });
+            $transactions = DicVal::extracts($transactions, 1);
+            #Helper::tad($transactions);
+
+            $count_members = count($transactions);
+            $amount = 0;
+            foreach ($transactions as $transaction) {
+                $amount += $transaction->payment_amount;
+
+                $payer_name = $transaction->name;
+                $data['players'][] = array(
+                    'cash' => (int)$transaction->payment_amount,
+                    'class' => (string)$classes[array_rand($classes)],
+                    'date' => (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d H:i:s', $transaction->payment_date)->format('d.m.Y'),
+                    'name' => (string)$payer_name,
+                );
+            }
+        #}
+
+        $finished_quests = Dic::valuesBySlug('quests', function($query) use ($quest) {
+            #$query->filter_by_field('date_stop', '<=', date('Y-m-d H:i:s', time()));
+            $query->filter_by_field('date_stop', '<=', $quest->date_start, 1);
+            $query->order_by_field('date_stop', 'DESC');
         });
-        Helper::tad($transactions);
+        $finished_quests = DicVal::extracts($finished_quests, 1);
+        #Helper::tad($finished_quests);
 
-        return View::make(Helper::layout('index'), compact('quest'));
+        $images_ids = array();
+        $photos = array();
+        foreach ($finished_quests as $finished_quest) {
+            $photo_id = $finished_quest->photo;
+            if ($photo_id)
+                $images_ids[] = $photo_id;
+        }
+        if (count($images_ids)) {
+            $photos = Photo::whereIn('id', $images_ids)->get();
+            $photos = Dic::modifyKeys($photos, 'id');
+        }
+        #Helper::tad($photos);
+
+        $galleries_ids = array();
+        $galleries = array();
+        foreach ($finished_quests as $finished_quest) {
+            $gallery_id = $finished_quest->gallery_id;
+            if ($gallery_id)
+                $galleries_ids[] = $gallery_id;
+        }
+        if (count($galleries_ids)) {
+            $galleries = Gallery::whereIn('id', $galleries_ids)->with('photos')->get();
+            $galleries = Dic::modifyKeys($galleries, 'id');
+        }
+        #Helper::tad($galleries);
+
+        $gall = array();
+        foreach ($galleries as $gallery) {
+            $gal = array();
+
+            foreach ($gallery->photos as $photo) {
+                $gal[] = array(
+                    'src' => $photo->full(),
+                );
+            }
+            $gall[$gallery->id] = $gal;
+        }
+        #Helper::tad($gall);
+
+
+        $f = 0;
+        foreach ($finished_quests as $finished_quest) {
+            ++$f;
+
+            $data['quests'][] = array(
+                'title' => $finished_quest->name,
+                'image' => isset($photos[$finished_quest->photo]) && is_object($photos[$finished_quest->photo]) ? $photos[$finished_quest->photo]->full() : '',
+                'price' => (string)$finished_quest->target_amount,
+                'description' => $finished_quest->short,
+                'link' => (string)$f,
+            );
+
+            #Helper::dd($finished_quest->date_start);
+
+            $videos = array();
+            if (trim($finished_quest->video) != '') {
+                $lines = explode("\n", $finished_quest->video);
+                foreach ($lines as $line) {
+                    $line = trim($line);
+                    if (!$line)
+                        continue;
+                    $videos[] = array(
+                        'url' => $line
+                    );
+                }
+            }
+
+            $data['fullquest'][] = array(
+                'id' => $f,
+                'title' => (string)$finished_quest->name,
+                'description' => $finished_quest->short,
+                'start-date' => (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_start)->format('d.m.Y'),
+                'end-date' => (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_stop)->format('d.m.Y'),
+                'total' => (string)$finished_quest->current_amount,
+                'destination' => (string)$finished_quest->target_amount,
+                'action-date' => (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_quest)->format('d.m.Y'),
+                'gamers' => (string)"234",
+                'questImage' => isset($photos[$finished_quest->photo]) && is_object($photos[$finished_quest->photo]) ? $photos[$finished_quest->photo]->full() : '',
+                'photos' => isset($gall[$finished_quest->gallery_id]) ? $gall[$finished_quest->gallery_id] : NULL,
+                'videos' => $videos,
+                'fulldescription' => (string)$finished_quest->description,
+            );
+        }
+
+
+        #Helper::dd($data);
+
+
+        $news = Dic::valuesBySlug('news', function($query){
+            /*
+            #$query->custom_hasOne('image', 'Photo', 'image_id', 'id');
+            $query->custom_dicval_with_hasOne(
+                'image',
+                ['Photo', 'image_id', 'id']
+            );
+            #*/
+        });
+        #$news->load((new DicVal)->customHasOne('Photo', 'image_id', 'id'));
+        $news = DicVal::extracts($news, 1);
+
+        $news = Dic::custom_load_hasOne($news, 'image', ['Photo', 'image_id', 'id']);
+        $news = Dic::custom_load_hasOne($news, 'gallery', ['Gallery', 'gallery_id', 'id'], function($query){
+            $query->with('photos');
+        });
+
+        #Helper::dd($news);
+        #Helper::tad($news);
+
+        return View::make(Helper::layout('index'), compact('quest', 'count_members', 'amount', 'finished_quests', 'data', 'news'));
     }
 
     public function postAddInvoice() {
@@ -246,6 +390,27 @@ class PublicQuestController extends BaseController {
             $dicval_field->value = json_encode($question);
             $dicval_field->save();
 
+
+
+            $quest = $this->getCurrentQuest();
+
+            /**
+             * Обновляем общую сумму сбора и кол-во участников-платежей
+             */
+            if ($quest->id) {
+
+                $quest_dicval_field = DicFieldVal::firstOrCreate(['dicval_id' => $quest->id, 'key' => 'current_amount']);
+                $quest_dicval_field->value += @$input['params']['sum'];
+                $quest_dicval_field->save();
+                unset($quest_dicval_field);
+
+                $quest_dicval_field = DicFieldVal::firstOrCreate(['dicval_id' => $quest->id, 'key' => 'count_members']);
+                $quest_dicval_field->value++;
+                $quest_dicval_field->save();
+                unset($quest_dicval_field);
+            }
+
+
             $this->sendResponse('YES', 'Платеж успешно совершен.');
         }
 
@@ -260,16 +425,20 @@ class PublicQuestController extends BaseController {
         die($response);
     }
 
-
+    /**
+     * Проведение платежа через InPlat
+     *
+     * @return string
+     */
     public function postNotificationInplat() {
 
         $input = Input::all();
 
         file_put_contents(storage_path('inplat_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
 
-        $quest_id = $this->getCurrentQuest();
-        #Helper::tad($quest_id);
-        $quest_id = is_object($quest_id) ? $quest_id->id : false;
+        $quest = $this->getCurrentQuest();
+        #Helper::tad($quest);
+        $quest_id = is_object($quest) ? $quest_id->id : false;
 
         if (!count($input) || !@$input['payment_id'])
             return json_encode(array(
@@ -295,6 +464,22 @@ class PublicQuestController extends BaseController {
                     'payment_full' => json_encode($input),
                 ),
             ));
+
+            /**
+             * Обновляем общую сумму сбора и кол-во участников-платежей
+             */
+            if ($quest->id) {
+
+                $quest_dicval_field = DicFieldVal::firstOrCreate(['dicval_id' => $quest->id, 'key' => 'current_amount']);
+                $quest_dicval_field->value += @$input['params']['sum'];
+                $quest_dicval_field->save();
+                unset($quest_dicval_field);
+
+                $quest_dicval_field = DicFieldVal::firstOrCreate(['dicval_id' => $quest->id, 'key' => 'count_members']);
+                $quest_dicval_field->value++;
+                $quest_dicval_field->save();
+                unset($quest_dicval_field);
+            }
         }
 
         return json_encode(array(
@@ -331,12 +516,14 @@ class PublicQuestController extends BaseController {
             $query->take(1);
         });
 
-        if (!count($dicval))
-            return null;
+        #Helper::dd(count($dicval));
 
-        $dicval = $dicval[0]
-            ->extract(1)
-        ;
+        if (!count($dicval))
+            $dicval = new DicVal;
+        else
+            $dicval = $dicval[0]
+                ->extract(1)
+            ;
 
         #Helper::tad($dicval);
         #Helper::smartQueries(1);
@@ -345,5 +532,3 @@ class PublicQuestController extends BaseController {
     }
 
 }
-
-

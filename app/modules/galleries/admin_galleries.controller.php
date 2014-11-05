@@ -56,10 +56,15 @@ class AdminGalleriesController extends BaseController {
                 }
 
                 #Helper::dd($value);
+                #Helper::dd($params);
 
                 if (is_numeric($value)) {
-                    $value = Gallery::find($value);
+                    $value = Gallery::where('id', $value)->with('photos')->first();
                 }
+
+                #if (isset($params['maxFiles']) && isset($value->photos) && count($value->photos)) {
+                #    $params['maxFiles'] = $params['maxFiles'] - count($value->photos);
+                #}
 
                 $gallery = $value;
                 ## return view with form element
@@ -126,6 +131,7 @@ class AdminGalleriesController extends BaseController {
                 }
 
                 #Helper::dd($value);
+                #Helper::dd($params);
 
                 if ( $value === false || $value === null ) {
                     $val = Form::text($name);
@@ -373,8 +379,8 @@ class AdminGalleriesController extends BaseController {
 	    }
 
         ## Check upload & thumb dir
-		$uploadPath = Config::get('app-default.galleries_photo_dir');
-		$thumbsPath = Config::get('app-default.galleries_thumb_dir');
+		$uploadPath = Config::get('site.galleries_photo_dir');
+		$thumbsPath = Config::get('site.galleries_thumb_dir');
 
 		if(!File::exists($uploadPath))
 			File::makeDirectory($uploadPath, 0777, TRUE);
@@ -385,8 +391,8 @@ class AdminGalleriesController extends BaseController {
 		$fileName = time() . "_" . rand(1000, 1999) . '.' . $file->getClientOriginalExtension();
 
         ## Get images resize parameters from config
-		$thumb_size = Config::get('app-default.galleries_thumb_size');
-		$photo_size = Config::get('app-default.galleries_photo_size');
+		$thumb_size = Config::get('site.galleries_thumb_size');
+		$photo_size = Config::get('site.galleries_photo_size');
 
         ## Get image width & height
         $image = ImageManipulation::make($file->getRealPath());
@@ -405,6 +411,9 @@ class AdminGalleriesController extends BaseController {
             $thumb_resize_w = ($w > $h) ? null : $thumb_size;
             $thumb_resize_h = ($w > $h) ? $thumb_size : null;
         }
+
+        #Helper::dd($thumb_resize_w . ' / ' . $thumb_resize_h);
+
         ## Resize thumb image
         $thumb_upload_success = ImageManipulation::make($file->getRealPath())
                                                 ->resize($thumb_resize_w, $thumb_resize_h, function($constraint){
@@ -449,12 +458,12 @@ class AdminGalleriesController extends BaseController {
 		$id = (int)Input::get('id');
         if ($id)
             $model = Photo::find($id);
-        if (!is_null($model))
+        if (isset($model) && !is_null($model))
 		    $db_delete = $model->delete();
 
 		if(@$db_delete) {
-			$file_delete = File::delete(Config::get('app-default.galleries_photo_dir').'/'.$model->name);
-			$thumb_delete = File::delete(Config::get('app-default.galleries_thumb_dir').'/'.$model->name);
+			$file_delete = File::delete(Config::get('site.galleries_photo_dir').'/'.$model->name);
+			$thumb_delete = File::delete(Config::get('site.galleries_thumb_dir').'/'.$model->name);
 		}
 
 		#if(@$db_delete && @$file_delete && @$thumb_delete) {

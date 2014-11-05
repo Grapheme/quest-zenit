@@ -5,7 +5,7 @@ use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 
-class Builder {
+class CustomBuilder {
 
 	/**
 	 * The base query builder instance.
