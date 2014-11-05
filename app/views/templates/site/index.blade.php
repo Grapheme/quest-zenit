@@ -204,7 +204,7 @@ $target_amount = (int)$quest->target_amount;
     <!-- TODO Вернуть, когда будет актуальны СМИ -->
     <!-- SMI -->
         @if (count($news))
-		<!--
+		<!---->
 		<section class="smi" id="smi">
 			<div class="wrp">
 				<h2 class="block-title main-font main-font_gray main-font_light">СМИ о нас</h2>
@@ -251,8 +251,8 @@ $target_amount = (int)$quest->target_amount;
                                         </a>
                                     @endif
 									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
+										<span class="news__date">{{ (new Carbon())->createFromFormat('Y-m-d', $new->published_at)->format('d') }}</span>
+										<span class="news__month">/{{ (new Carbon())->createFromFormat('Y-m-d', $new->published_at)->format('m') }}</span>
 									</span>
 								</div>
 								<div class="news__information">
