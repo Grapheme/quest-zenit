@@ -195,6 +195,7 @@ class PublicQuestController extends BaseController {
         $news = Dic::valuesBySlug('news', function($query){
             $query->filter_by_field('published_at', '<=', date('Y-m-d H:i:s'));
             $query->order_by_field('published_at', 'DESC');
+            $query->orderBy('id', 'DESC');
         });
         #$news->load((new DicVal)->customHasOne('Photo', 'image_id', 'id'));
         $news = DicVal::extracts($news, 1);
