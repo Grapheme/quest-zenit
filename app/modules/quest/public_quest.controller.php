@@ -226,7 +226,7 @@ class PublicQuestController extends BaseController {
 
         if (
             !$quest_id
-            || !$nickname
+            #|| !$nickname
             #|| !$amount
             || !$mode_type
         )
