@@ -2491,6 +2491,10 @@ button {
   margin-bottom: 40px;
   margin-left: 40px;
   border: 2px solid #a9bbcd;
+  overflow: hidden;
+}
+.partners__each-partner img {
+	max-width: 100%:
 }
 @media only screen and (max-width: 2099px) {
   .partners__each-partner:nth-child(3n - 2) {
