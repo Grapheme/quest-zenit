@@ -209,12 +209,12 @@ class PublicQuestController extends BaseController {
         #Helper::tad($news);
 
         if (Input::get('debug') == '1') {
-            Helper:ta($quest);
-            Helper:ta($count_members);
-            Helper:ta($amount);
-            Helper:ta($finished_quests);
-            Helper:ta($data);
-            Helper:ta($news);
+            Helper::ta($quest);
+            Helper::ta($count_members);
+            Helper::ta($amount);
+            Helper::ta($finished_quests);
+            Helper::ta($data);
+            Helper::ta($news);
             die;
         }
 
