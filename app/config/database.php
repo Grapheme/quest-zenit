@@ -13,9 +13,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'sarykum',
+			'database'  => 'quest',
 			'username'  => 'root',
-			'password'  => 'perl03',
+			'password'  => 'splqndlr54',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

@@ -3,7 +3,7 @@
 		<div class="wrp">
 			<h2 class="block-title main-font main-font_gray main-font_light">Контакты</h2>
 			<p class="middle-font middle-font_white middle-font_center contacts__title">
-				Благотворительный фонд "АдВита"
+				Благотворительный фонд «АдВита»
 			</p>
 			<table class="contacts__container">
 				<tr class="contacts__row  contacts__row_visible">
