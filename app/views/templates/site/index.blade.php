@@ -179,7 +179,7 @@ $target_amount = (int)$quest->target_amount;
 
 	<!--  Other Questions -->
 		<section class="other-quests" id="otherQuests">
-			<h2 class="block-title main-font main-font_gray main-font_light">Прошедние</h2>
+			<h2 class="block-title main-font main-font_gray main-font_light">Прошедшие</h2>
 			<div class="carousel__container carousel__container_gray other-quests__container js-scrollableQuests">
 				<ul class="carousel__list js-otherQuestList" id="latestQuests">
 				</ul>
