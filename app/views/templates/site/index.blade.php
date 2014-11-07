@@ -54,8 +54,8 @@ $target_amount = (int)$quest->target_amount;
 							</div>
 							<div class="game-info__center">
 								<p class="main-font main-font_gray main-font_light">Собрано</p>
-								<p class="big-font js-totalCash" data-total="{{ $amount }}">{{ number_format($amount, 0, '.', ' ') }} <span class="icon icon_rub-big"></span></p>
-								<p class="main-font main-font_gray main-font_light">Цель <span class="js-destination" data-destination="{{ $target_amount }}">{{ number_format($target_amount, 0, '.', ' ') }}</span><span class="icon icon_rub-little"></span></p>
+								<p class="big-font js-totalCash" data-total="{{ $amount }}">{{ $amount }} <span class="icon icon_rub-big"></span></p>
+								<p class="main-font main-font_gray main-font_light">Цель <span class="js-destination" data-destination="{{ $target_amount }}">{{ $target_amount }}</span><span class="icon icon_rub-little"></span></p>
 							</div>
 							<div class="game-info__right">
 								<i class="icon line-icon line-icon_left"></i>
@@ -79,12 +79,12 @@ $target_amount = (int)$quest->target_amount;
 								<span class="icon icon_rub-small"></span>
 							</p>
 							<p class="game-statistic__to little-font little-font_white js-destinationButton">
-								<span>300 000</span>
+								<span>{{ $target_amount }}</span>
 								<span class="icon icon_rub-small"></span>
 								<span class="icon-star icon-star_blue"></span>
 							</p>
 							<div class="game-statistic__total little-font little-font_white js-totalButton">
-								<span>{{ number_format($amount, 0, '.', ' ') }}</span>
+								<span>{{ $amount }}</span>
 								<span class="icon icon_rub-small"></span>
 							</div>
 							<div class="game-statistic__dateStart little-font little-font_white js-startButton">

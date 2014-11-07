@@ -1187,9 +1187,9 @@ button {
 }
 .icon-arrow_up {
   position: absolute;
-  bottom: 70px;
+  bottom: 62px;
   left: 50%;
-  margin-left: -25px;
+  margin-left: -50px;
 }
 .icon-square {
   width: 110px;
@@ -2545,7 +2545,7 @@ button {
 }
 .contacts__documents {
   position: absolute;
-  padding: 30px 0;
+  padding: 30px 0 20px;
   bottom: 3px;
   text-align: center;
   width: 100%;
