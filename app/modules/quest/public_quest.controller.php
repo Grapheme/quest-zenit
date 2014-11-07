@@ -208,6 +208,16 @@ class PublicQuestController extends BaseController {
         #Helper::dd($news);
         #Helper::tad($news);
 
+        if (Input::get('debug') == '1') {
+            Helper:ta($quest);
+            Helper:ta($count_members);
+            Helper:ta($amount);
+            Helper:ta($finished_quests);
+            Helper:ta($data);
+            Helper:ta($news);
+            die;
+        }
+
         return View::make(Helper::layout('index'), compact('quest', 'count_members', 'amount', 'finished_quests', 'data', 'news'));
     }
 
