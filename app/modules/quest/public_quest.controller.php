@@ -181,7 +181,7 @@ class PublicQuestController extends BaseController {
                 'destination' => (string)$finished_quest->target_amount,
                 'action-date' => $finished_quest->date_quest ? (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d', $finished_quest->date_quest)->format('d.m.Y') : '',
                 'gamers' => (string)"234",
-                'questImage' => isset($photos[$finished_quest->photo]) && is_object($photos[$finished_quest->photo]) ? $photos[$finished_quest->photo]->full() : '',
+                'questImage' => isset($photos[$finished_quest->photo_id]) && is_object($photos[$finished_quest->photo_id]) ? $photos[$finished_quest->photo_id]->full() : '',
                 'photos' => isset($gall[$finished_quest->gallery_id]) ? $gall[$finished_quest->gallery_id] : NULL,
                 'videos' => $videos,
                 'fulldescription' => (string)$finished_quest->description,
