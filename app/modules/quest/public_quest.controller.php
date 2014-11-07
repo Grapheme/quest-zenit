@@ -107,7 +107,7 @@ class PublicQuestController extends BaseController {
         $images_ids = array();
         $photos = array();
         foreach ($finished_quests as $finished_quest) {
-            $photo_id = $finished_quest->photo;
+            $photo_id = $finished_quest->photo_id;
             if ($photo_id)
                 $images_ids[] = $photo_id;
         }
@@ -150,7 +150,7 @@ class PublicQuestController extends BaseController {
 
             $data['quests'][] = array(
                 'title' => $finished_quest->name,
-                'image' => isset($photos[$finished_quest->photo]) && is_object($photos[$finished_quest->photo]) ? $photos[$finished_quest->photo]->full() : '',
+                'image' => isset($photos[$finished_quest->photo_id]) && is_object($photos[$finished_quest->photo_id]) ? $photos[$finished_quest->photo_id]->full() : '',
                 'price' => (string)$finished_quest->target_amount,
                 'description' => $finished_quest->short,
                 'link' => (string)$f,
