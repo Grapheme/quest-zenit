@@ -531,7 +531,7 @@ $target_amount = (int)$quest->target_amount;
 			<div class="wrp">
 				<h2 class="block-title main-font main-font_gray main-font_light">Партнеры</h2>
 				<ul class="partners__container">
-					<li class="partners__each-partner"></li>
+					<li class="partners__each-partner"><img src="http://davai.fc-zenit.ru/uploads/files/partner_svg_tmp.jpg" alt="" /></li>
 					<li class="partners__each-partner"></li>
 					<li class="partners__each-partner"></li>
 					<li class="partners__each-partner"></li>

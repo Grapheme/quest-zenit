@@ -19,11 +19,11 @@
 					</td>
 					<td class="contacts__cell contacts__cell_hide">
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови: +7(812) 3372733
+							Телефон диспетчера службы крови: +7 (812) 337-27-33
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови: +7(901) 3000025 
+							Телефон диспетчера службы крови: +7(901) 300-00-25 
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 					</td>
@@ -33,7 +33,7 @@
 						</div>
 						<div class="contacts-info-block">
 							<p class="middle-font middle-font_white middle-font_opacity">
-								+7(812) 3372733  факс<br>+7(92) 963 62 43
+								+7 (812) 337-27-33  факс<br>+7 (901) 300-00-25
 							</p>
 							<a href="mailto:mail@advita.ru" class="middle-font middle-font_white">mail@advita.ru</a> 
 							<a href="http://advita.ru" class="middle-font middle-font_white little-margin">advita.ru</a> 
@@ -43,14 +43,14 @@
 				<tr class="contacts__row contacts__row_hidden">
 					<td class="contacts__cell">
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови:<br>+7(812) 3372733
+							Телефон диспетчера службы крови:<br>+7 (812) 337-27-33
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 					</td>
 					<td class="contacts__cell contacts__cell_hide"></td>
 					<td class="contacts__cell">
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови:<br>+7(901) 3000025 
+							Телефон диспетчера службы крови:<br>+7 (901) 300-00-25 
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 					</td>
