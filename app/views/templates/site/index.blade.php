@@ -179,9 +179,93 @@ $target_amount = (int)$quest->target_amount;
 
 	<!--  Other Questions -->
 		<section class="other-quests" id="otherQuests">
-			<h2 class="block-title main-font main-font_gray main-font_light">Прошедшие</h2>
+			<h2 class="block-title main-font main-font_gray main-font_light">Прошедшие квесты</h2>
 			<div class="carousel__container carousel__container_gray other-quests__container js-scrollableQuests">
 				<ul class="carousel__list js-otherQuestList" id="latestQuests">
+					<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="1">
+						<button class="other-quests__link js-openPopup" onclick="location.href='#1'">
+							<span class="other-quests__title main-font main-font_white main-font_light">Аршавин примет участие в турнире уличных команд</span>
+								<span class="other-quests__each-container">
+								<img class="other-quests__image" src="http://davai.fc-zenit.ru/uploads/galleries/1415377108_1861.jpg" alt="quest">
+								<span class="other-quests__overflow">
+									<span class="other-quests__price main-font main-font_white main-font_light">100000 <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
+									<span class="other-quests__description little-font little-font_white">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которо</span>
+								</span>
+							</span>
+						</button>
+						<div class="morph-content morph-content_renderMe">
+							<div>
+								<span class="icon icon-close icon-play-close">
+									<span class="icon icon-play-close-empty"></span>
+								</span>
+								<div class="js-renderedContainer">
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="2">
+						<button class="other-quests__link js-openPopup" onclick="location.href='#1'">
+							<span class="other-quests__title main-font main-font_white main-font_light">Аршавин примет участие в турнире уличных команд</span>
+								<span class="other-quests__each-container">
+								<img class="other-quests__image" src="http://davai.fc-zenit.ru/uploads/galleries/1415377108_1861.jpg" alt="quest">
+								<span class="other-quests__overflow">
+									<span class="other-quests__price main-font main-font_white main-font_light">100000 <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
+									<span class="other-quests__description little-font little-font_white">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которо</span>
+								</span>
+							</span>
+						</button>
+						<div class="morph-content morph-content_renderMe">
+							<div>
+								<span class="icon icon-close icon-play-close">
+									<span class="icon icon-play-close-empty"></span>
+								</span>
+								<div class="js-renderedContainer">
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="3">
+						<button class="other-quests__link js-openPopup" onclick="location.href='#1'">
+							<span class="other-quests__title main-font main-font_white main-font_light">Аршавин примет участие в турнире уличных команд</span>
+								<span class="other-quests__each-container">
+								<img class="other-quests__image" src="http://davai.fc-zenit.ru/uploads/galleries/1415377108_1861.jpg" alt="quest">
+								<span class="other-quests__overflow">
+									<span class="other-quests__price main-font main-font_white main-font_light">100000 <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
+									<span class="other-quests__description little-font little-font_white">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которо</span>
+								</span>
+							</span>
+						</button>
+						<div class="morph-content morph-content_renderMe">
+							<div>
+								<span class="icon icon-close icon-play-close">
+									<span class="icon icon-play-close-empty"></span>
+								</span>
+								<div class="js-renderedContainer">
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="4">
+						<button class="other-quests__link js-openPopup" onclick="location.href='#1'">
+							<span class="other-quests__title main-font main-font_white main-font_light">Аршавин примет участие в турнире уличных команд</span>
+								<span class="other-quests__each-container">
+								<img class="other-quests__image" src="http://davai.fc-zenit.ru/uploads/galleries/1415377108_1861.jpg" alt="quest">
+								<span class="other-quests__overflow">
+									<span class="other-quests__price main-font main-font_white main-font_light">100000 <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
+									<span class="other-quests__description little-font little-font_white">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которо</span>
+								</span>
+							</span>
+						</button>
+						<div class="morph-content morph-content_renderMe">
+							<div>
+								<span class="icon icon-close icon-play-close">
+									<span class="icon icon-play-close-empty"></span>
+								</span>
+								<div class="js-renderedContainer">
+								</div>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -211,64 +295,9 @@ $target_amount = (int)$quest->target_amount;
 			</div>
 			<div class="carousel__container carousel__container_green smi__container js-scrollableNews">
 				<ul class="carousel__list" id="latestNews">
-
-				    @foreach ($news as $new)
-				    <?
-				    #$class = 'news__container_photo';
-				    if ($new->video_embed != '')
-                        $class = 'news__container_video';
-                    elseif (is_object($new->image))
-                        $class = 'news__container_photo';
-                    else
-                        $class = 'news__container_article';
-
-				    ?>
-					<li class="smi__item news carousel__item">
-						<div class="news__container {{ $class }}">
-							<div class="news__full-container">
-								<div class="news__top">
-									<div class="news__title-info">
-									    @if ($new->video_embed != '')
-                                        <a class="js-youtube icon icon-play-button news__video-button" href="#">
-                                            <span class="icon icon-play-button-empty"></span>
-                                        </a>
-                                        @endif
-										<h3 class="news__title">{{ $new->name }}</h3>
-										@if ($new->source_title)
-                                            <a href="{{ $new->source_url ?: '#' }}" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>{{ $new->source_title }}</a>
-										@endif
-									</div>
-								</div>
-								<div class="js-youtube news__media-container">
-									{{--<img class="news__image" src="http://img.youtube.com/vi/BKorP55Aqvg/hqdefault.jpg" alt="video">--}}
-									@if ($new->video_embed != '')
-									<div class="news__image">
-									    {{ $new->video_embed }}
-									</div>
-									@elseif (is_object($new->image))
-                                        <a href="{{ $new->image->full() }}" class="js-newsPhoto news__media-container">
-                                            <img class="news__image" src="{{ $new->image->full() }}" alt="news-image">
-                                        </a>
-                                    @endif
-									<span class="news__date-icon">
-										<span class="news__date">{{ (new Carbon())->createFromFormat('Y-m-d', $new->published_at)->format('d') }}</span>
-										<span class="news__month">/{{ (new Carbon())->createFromFormat('Y-m-d', $new->published_at)->format('m') }}</span>
-									</span>
-								</div>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">
-									    {{ $new->content }}
-									</p>
-								</div>
-							</div>
-						</div>
-					</li>
-					@endforeach
-
-                    @if (0)
+                    @if (1)
 					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
-							here is variable "BKorP55Aqvg"
 							<div class="news__full-container">
 								<div class="news__top">
 									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/BKorP55Aqvg?rel=0&amp;wmode=transparent">
@@ -368,7 +397,6 @@ $target_amount = (int)$quest->target_amount;
 							</div>
 						</div>
 						<div class="news__container news__container_video">
-							here is variable "ZBAGEeOms-8"
 							<div class="news__full-container">
 								<div class="news__top">
 									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
@@ -394,7 +422,6 @@ $target_amount = (int)$quest->target_amount;
 					</li>
 					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_video">
-							here is variable "ZBAGEeOms-8"
 							<div class="news__full-container">
 								<div class="news__top">
 									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
@@ -494,7 +521,6 @@ $target_amount = (int)$quest->target_amount;
 							</div>
 						</div>
 						<div class="news__container news__container_video">
-							here is variable "ZBAGEeOms-8"
 							<div class="news__full-container">
 								<div class="news__top">
 									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
@@ -519,7 +545,57 @@ $target_amount = (int)$quest->target_amount;
 						</div>
 					</li>
 					@endif
-
+  					@foreach ($news as $new)
+				    <?
+				    #$class = 'news__container_photo';
+				    if ($new->video_embed != '')
+                        $class = 'news__container_video';
+                    elseif (is_object($new->image))
+                        $class = 'news__container_photo';
+                    else
+                        $class = 'news__container_article';
+				    ?>
+					<li class="smi__item news carousel__item">
+						<div class="news__container {{ $class }}">
+							<div class="news__full-container">
+								<div class="news__top">
+									<div class="news__title-info">
+									    @if ($new->video_embed != '')
+                                        <a class="js-youtube icon icon-play-button news__video-button" href="#">
+                                            <span class="icon icon-play-button-empty"></span>
+                                        </a>
+                                        @endif
+										<h3 class="news__title">{{ $new->name }}</h3>
+										@if ($new->source_title)
+                                            <a href="{{ $new->source_url ?: '#' }}" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>{{ $new->source_title }}</a>
+										@endif
+									</div>
+								</div>
+								<div class="js-youtube news__media-container">
+									{{--<img class="news__image" src="http://img.youtube.com/vi/BKorP55Aqvg/hqdefault.jpg" alt="video">--}}
+									@if ($new->video_embed != '')
+									<div class="news__image">
+									    {{ $new->video_embed }}
+									</div>
+									@elseif (is_object($new->image))
+                                        <a href="{{ $new->image->full() }}" class="js-newsPhoto news__media-container">
+                                            <img class="news__image" src="{{ $new->image->full() }}" alt="news-image">
+                                        </a>
+                                    @endif
+									<span class="news__date-icon">
+										<span class="news__date">{{ (new Carbon())->createFromFormat('Y-m-d', $new->published_at)->format('d') }}</span>
+										<span class="news__month">/{{ (new Carbon())->createFromFormat('Y-m-d', $new->published_at)->format('m') }}</span>
+									</span>
+								</div>
+								<div class="news__information">
+									<p class="middle-font middle-font_white middle-font__span">
+									    {{ $new->content }}
+									</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					@endforeach
 				</ul>
 			</div>
 		</section>
@@ -558,10 +634,9 @@ $target_amount = (int)$quest->target_amount;
 				<li class="quest-navigation__item">
 					<a href="#aboutProject" class="js-easyScroll" data-scroll="3"></a>
 				</li>
-				<!-- TODO Вернуть, когда будет актуальны СМИ -->
-				<!-- <li class="quest-navigation__item">
+				<li class="quest-navigation__item">
 					<a href="#smi" class="js-easyScroll" data-scroll="4"></a>
-				</li> -->
+				</li>
 				<li class="quest-navigation__item">
 					<a href="#parthers" class="js-easyScroll" data-scroll="5"></a>
 				</li>

@@ -1436,7 +1436,7 @@ button {
   position: relative;
   float: left;
   padding-left: 4px;
-  padding-top: 16px;
+  padding-top: 13px;
 }
 .top__title {
   color: #333945;
@@ -1697,7 +1697,7 @@ button {
 .game-statistic__to .icon-star {
   position: absolute;
   top: 25px;
-  right: -18px;
+  right: -45px;
 }
 .game-statistic__to.m-active .icon-star {
   right: auto;
@@ -2321,6 +2321,8 @@ button {
   display: block;
   overflow: hidden;
   width: 260px;
+  height: 260px;
+  background: #fff;
 }
 .other-quests__image {
   position: relative;
@@ -2362,6 +2364,7 @@ button {
   display: block;
   padding: 0 20px;
   line-height: 22px;
+  font-weight: 300;
 }
 .about-proj {
   padding-bottom: 50px;
@@ -2551,13 +2554,14 @@ button {
   position: absolute;
   padding: 30px 0 20px;
   bottom: 3px;
-  text-align: center;
   width: 100%;
 }
 .contacts__documents a {
   display: inline-block;
-  margin-left: 100px;
-  min-width: 180px;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #e9e9e9;
 }
 .contacts__documents a:first-child {
   margin-left: 0;
