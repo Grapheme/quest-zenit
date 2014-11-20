@@ -117,7 +117,7 @@ $target_amount = (int)$quest->target_amount;
 										Принять участие
 									</h2>
 									<div id="paymentTabs" class="quest-participate__container">
-										<ul class="quest-participate__list">
+										<!-- <ul class="quest-participate__list">
 											<li class="quest-participate__item"><a href="#internetPayment" class="quest-participate__link">Оплатить через интернет</a></li>
 											<li class="quest-participate__item"><a href="#smsPayment" class="quest-participate__link">Оплатить с помощью СМС</a></li>
 										</ul>
@@ -160,6 +160,49 @@ $target_amount = (int)$quest->target_amount;
 
                                                 @endif
 											</form>
+										</div> -->
+										<div class="quest-participate__content">
+											<div class="payment-blocks">
+												<div class="payment-block">
+													<div class="payment-cont">
+														<div class="payment-title">Оплатить через интернет</div>
+														<form action="{{ URL::route('invoice')  }}" method="POST">
+															<!-- <p class="quest-participate__font">MasterCard, VISA, Яндекс Деньги, WebMoney, QIWI, Мобильные платежи Билайн, Мегафон, МТС и многое другое</p> -->
+															<!-- <input class="quest-participate__input" type="text" name="nickname" placeholder="Отправитель (необязательно)"> -->
+															<input type="submit" value="" class="internet-pay-btn">
+			                                                <input type="hidden" name="mode_type" value="dengionline">
+														</form>
+													</div>
+												</div>
+												<div class="payment-block">
+													<div class="payment-cont">
+														<div class="payment-title">Оплатить с помощью СМС</div>
+														<form action="#">
+			                                                <script type="text/javascript" src="https://pay.inplat.ru/_js/pay_main.js"></script>
+			                                                <p>
+			                                                    <div id="sms-payment"></div>
+			                                                </p>
+			                                                <script type="text/javascript">
+			                                                    InPlat.Widgets.Button(
+			                                                        "sms-payment","2fdgeo45299dfslk29nm21",
+			                                                        {
+			                                                            settings: {
+			                                                            },
+			                                                            params: {
+			                                                                "accountalt": "-"
+			                                                            }
+			                                                        }
+			                                                    );
+			                                                </script>
+														</form>
+														<div class="payment-desc">
+															или отправьте SMS-сообщение
+															<br>на номер 7522 с текстом
+															<br>davai [сумма перевода]
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -168,6 +211,48 @@ $target_amount = (int)$quest->target_amount;
 						</div>
 					</div>
 				</div>
+
+				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest" data-box="do_success">
+					<button class="quest__take-part quest-button js-participate hidden">Присоединиться</button>
+					<div class="morph-content morph-content_participate">
+						<div>
+							<section class="quest-participate">
+								<span class="icon icon-close icon-play-close js-simple-close" data-class="morph-button">
+									<span class="icon icon-play-close-empty"></span>
+								</span>
+								<div class="wrp wrp_quest">
+									<h2 class="quest-participate__title">
+										Успешно
+									</h2>
+									<div class="quest-participate__container">
+										<p class="response-text">Средства успешно переведены. «ФК "Зенит"» и Фонд «Адвита»<br> благодарят вас за ваш вклад!</p>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest" data-box="do_fail">
+					<button class="quest__take-part quest-button js-participate hidden">Присоединиться</button>
+					<div class="morph-content morph-content_participate">
+						<div>
+							<section class="quest-participate">
+								<span class="icon icon-close icon-play-close js-simple-close" data-class="morph-button">
+									<span class="icon icon-play-close-empty"></span>
+								</span>
+								<div class="wrp wrp_quest">
+									<h2 class="quest-participate__title">
+										Ошибка
+									</h2>
+									<div class="quest-participate__container">
+										<p class="response-text">При переводе средств произошла ошибка, попробуйте повторить позднее.</p>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+
 				<!--  Share -->
 				<div class="quest__share-container">
 	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="Отправим Малафеева таксовать на «Audi»!" data-shareDescription="Если до конца ноября мы вместе соберем 300 тысяч рублей для пациентов «АдВиты», Вячеслав Малафеев целый день будет работать таксистом!" data-shareImage="img/quests/quest_1.jpg"></div>
@@ -182,90 +267,6 @@ $target_amount = (int)$quest->target_amount;
 			<h2 class="block-title main-font main-font_gray main-font_light">Прошедшие квесты</h2>
 			<div class="carousel__container carousel__container_gray other-quests__container js-scrollableQuests">
 				<ul class="carousel__list js-otherQuestList" id="latestQuests">
-					<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="1">
-						<button class="other-quests__link js-openPopup" onclick="location.href='#1'">
-							<span class="other-quests__title main-font main-font_white main-font_light">Аршавин примет участие в турнире уличных команд</span>
-								<span class="other-quests__each-container">
-								<img class="other-quests__image" src="http://davai.fc-zenit.ru/uploads/galleries/1415377108_1861.jpg" alt="quest">
-								<span class="other-quests__overflow">
-									<span class="other-quests__price main-font main-font_white main-font_light">100000 <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
-									<span class="other-quests__description little-font little-font_white">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которо</span>
-								</span>
-							</span>
-						</button>
-						<div class="morph-content morph-content_renderMe">
-							<div>
-								<span class="icon icon-close icon-play-close">
-									<span class="icon icon-play-close-empty"></span>
-								</span>
-								<div class="js-renderedContainer">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="2">
-						<button class="other-quests__link js-openPopup" onclick="location.href='#1'">
-							<span class="other-quests__title main-font main-font_white main-font_light">Аршавин примет участие в турнире уличных команд</span>
-								<span class="other-quests__each-container">
-								<img class="other-quests__image" src="http://davai.fc-zenit.ru/uploads/galleries/1415377108_1861.jpg" alt="quest">
-								<span class="other-quests__overflow">
-									<span class="other-quests__price main-font main-font_white main-font_light">100000 <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
-									<span class="other-quests__description little-font little-font_white">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которо</span>
-								</span>
-							</span>
-						</button>
-						<div class="morph-content morph-content_renderMe">
-							<div>
-								<span class="icon icon-close icon-play-close">
-									<span class="icon icon-play-close-empty"></span>
-								</span>
-								<div class="js-renderedContainer">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="3">
-						<button class="other-quests__link js-openPopup" onclick="location.href='#1'">
-							<span class="other-quests__title main-font main-font_white main-font_light">Аршавин примет участие в турнире уличных команд</span>
-								<span class="other-quests__each-container">
-								<img class="other-quests__image" src="http://davai.fc-zenit.ru/uploads/galleries/1415377108_1861.jpg" alt="quest">
-								<span class="other-quests__overflow">
-									<span class="other-quests__price main-font main-font_white main-font_light">100000 <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
-									<span class="other-quests__description little-font little-font_white">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которо</span>
-								</span>
-							</span>
-						</button>
-						<div class="morph-content morph-content_renderMe">
-							<div>
-								<span class="icon icon-close icon-play-close">
-									<span class="icon icon-play-close-empty"></span>
-								</span>
-								<div class="js-renderedContainer">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="4">
-						<button class="other-quests__link js-openPopup" onclick="location.href='#1'">
-							<span class="other-quests__title main-font main-font_white main-font_light">Аршавин примет участие в турнире уличных команд</span>
-								<span class="other-quests__each-container">
-								<img class="other-quests__image" src="http://davai.fc-zenit.ru/uploads/galleries/1415377108_1861.jpg" alt="quest">
-								<span class="other-quests__overflow">
-									<span class="other-quests__price main-font main-font_white main-font_light">100000 <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
-									<span class="other-quests__description little-font little-font_white">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которо</span>
-								</span>
-							</span>
-						</button>
-						<div class="morph-content morph-content_renderMe">
-							<div>
-								<span class="icon icon-close icon-play-close">
-									<span class="icon icon-play-close-empty"></span>
-								</span>
-								<div class="js-renderedContainer">
-								</div>
-							</div>
-						</div>
-					</li>
 				</ul>
 			</div>
 		</section>
@@ -297,48 +298,6 @@ $target_amount = (int)$quest->target_amount;
 				<ul class="carousel__list" id="latestNews">
                     @if (1)
 					<li class="smi__item news carousel__item">
-						<div class="news__container news__container_video">
-							<div class="news__full-container">
-								<div class="news__top">
-									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/BKorP55Aqvg?rel=0&amp;wmode=transparent">
-										<span class="icon icon-play-button-empty"></span>
-									</a>
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="http://www.youtube.com/watch?v=BKorP55Aqvg" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<a href="http://www.youtube.com/embed/BKorP55Aqvg?rel=0&amp;wmode=transparent" class="js-youtube news__media-container">
-									<img class="news__image" src="http://img.youtube.com/vi/BKorP55Aqvg/hqdefault.jpg" alt="video">
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</a>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-						<div class="news__container news__container_article">
-							<div class="news__full-container">
-								<div class="news__top">
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<div class="news__information">
-									<div class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</div>
-									<p class="middle-font middle-font_white middle-font__span news__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="smi__item news carousel__item">
 						<div class="news__container news__container_photo">
 							<div class="news__halph-container">
 								<div class="news__top">
@@ -367,172 +326,6 @@ $target_amount = (int)$quest->target_amount;
 								</div>
 								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
 									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</a>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="smi__item news carousel__item">
-						<div class="news__container news__container_article">
-							<div class="news__full-container">
-								<div class="news__top">
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<div class="news__information">
-									<div class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</div>
-									<p class="middle-font middle-font_white middle-font__span news__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-						<div class="news__container news__container_video">
-							<div class="news__full-container">
-								<div class="news__top">
-									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
-										<span class="icon icon-play-button-empty"></span>
-									</a>
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="http://www.youtube.com/watch?v=ZBAGEeOms-8" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<a href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent" class="js-youtube news__media-container">
-									<img class="news__image" src="http://img.youtube.com/vi/ZBAGEeOms-8/hqdefault.jpg" alt="video">
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</a>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="smi__item news carousel__item">
-						<div class="news__container news__container_video">
-							<div class="news__full-container">
-								<div class="news__top">
-									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
-										<span class="icon icon-play-button-empty"></span>
-									</a>
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="http://www.youtube.com/watch?v=ZBAGEeOms-8" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<a href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent" class="js-youtube news__media-container">
-									<img class="news__image" src="http://img.youtube.com/vi/ZBAGEeOms-8/hqdefault.jpg" alt="video">
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</a>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-						<div class="news__container news__container_article">
-							<div class="news__full-container">
-								<div class="news__top">
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<div class="news__information">
-									<div class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</div>
-									<p class="middle-font middle-font_white middle-font__span news__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="smi__item news carousel__item">
-						<div class="news__container news__container_photo">
-							<div class="news__halph-container">
-								<div class="news__top">
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
-									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</a>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-							<div class="news__halph-container">
-								<div class="news__top">
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
-									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</a>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="smi__item news carousel__item">
-						<div class="news__container news__container_article">
-							<div class="news__full-container">
-								<div class="news__top">
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<div class="news__information">
-									<div class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</div>
-									<p class="middle-font middle-font_white middle-font__span news__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-						<div class="news__container news__container_video">
-							<div class="news__full-container">
-								<div class="news__top">
-									<a class="js-youtube icon icon-play-button news__video-button" href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent">
-										<span class="icon icon-play-button-empty"></span>
-									</a>
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="http://www.youtube.com/watch?v=ZBAGEeOms-8" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<a href="http://www.youtube.com/embed/ZBAGEeOms-8?rel=0&amp;wmode=transparent" class="js-youtube news__media-container">
-									<img class="news__image" src="http://img.youtube.com/vi/ZBAGEeOms-8/hqdefault.jpg" alt="video">
 									<span class="news__date-icon">
 										<span class="news__date">12</span>
 										<span class="news__month">/08</span>
@@ -545,8 +338,10 @@ $target_amount = (int)$quest->target_amount;
 						</div>
 					</li>
 					@endif
+					<? $count_ = 1; ?>
   					@foreach ($news as $new)
 				    <?
+				    $count_++;
 				    #$class = 'news__container_photo';
 				    if ($new->video_embed != '')
                         $class = 'news__container_video';
@@ -554,47 +349,35 @@ $target_amount = (int)$quest->target_amount;
                         $class = 'news__container_photo';
                     else
                         $class = 'news__container_article';
-				    ?>
+				    ?>				    
+				    <? if ($count_ % 2 == 0) : ?>
 					<li class="smi__item news carousel__item">
-						<div class="news__container {{ $class }}">
-							<div class="news__full-container">
+						<div class="news__container news__container_photo">
+					<? endif; ?>
+							<div class="news__halph-container">
 								<div class="news__top">
 									<div class="news__title-info">
-									    @if ($new->video_embed != '')
-                                        <a class="js-youtube icon icon-play-button news__video-button" href="#">
-                                            <span class="icon icon-play-button-empty"></span>
-                                        </a>
-                                        @endif
 										<h3 class="news__title">{{ $new->name }}</h3>
-										@if ($new->source_title)
-                                            <a href="{{ $new->source_url ?: '#' }}" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>{{ $new->source_title }}</a>
-										@endif
+										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
 									</div>
 								</div>
-								<div class="js-youtube news__media-container">
-									{{--<img class="news__image" src="http://img.youtube.com/vi/BKorP55Aqvg/hqdefault.jpg" alt="video">--}}
-									@if ($new->video_embed != '')
-									<div class="news__image">
-									    {{ $new->video_embed }}
-									</div>
-									@elseif (is_object($new->image))
-                                        <a href="{{ $new->image->full() }}" class="js-newsPhoto news__media-container">
-                                            <img class="news__image" src="{{ $new->image->full() }}" alt="news-image">
-                                        </a>
-                                    @endif
+								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
+									<img class="news__image" src="img/news/news.jpg" alt="news-image">
 									<span class="news__date-icon">
 										<span class="news__date">{{ (new Carbon())->createFromFormat('Y-m-d', $new->published_at)->format('d') }}</span>
 										<span class="news__month">/{{ (new Carbon())->createFromFormat('Y-m-d', $new->published_at)->format('m') }}</span>
 									</span>
-								</div>
+								</a>
 								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">
-									    {{ $new->content }}
-									</p>
+									<p class="middle-font middle-font_white middle-font__span">{{ $new->content }}</p>
 								</div>
 							</div>
+					<? if ($count_ % 2 == 0) : ?>
 						</div>
 					</li>
+					<? endif; ?>
+				    
+				    
 					@endforeach
 				</ul>
 			</div>

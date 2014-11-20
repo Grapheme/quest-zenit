@@ -17,8 +17,8 @@ class PublicQuestController extends BaseController {
             Route::any('/form/do', array('as' => 'do', 'uses' => __CLASS__.'@getFormDengiOnline'));
             Route::post('/payment/add_invoice', array('as' => 'invoice', 'uses' => __CLASS__.'@postAddInvoice'));
 
-            Route::any('/dengionline/success', array('as' => 'dengionline.return_url_success', 'uses' => __CLASS__.'@getSuccessDengiOnline'));
-            Route::any('/dengionline/fail', array('as' => 'dengionline.return_url_fail', 'uses' => __CLASS__.'@getFailDengiOnline'));
+            Route::any('/#do_success', array('as' => 'dengionline.return_url_success', 'uses' => __CLASS__.'@getSuccessDengiOnline'));
+            Route::any('/#do_fail', array('as' => 'dengionline.return_url_fail', 'uses' => __CLASS__.'@getFailDengiOnline'));
             Route::any('/dengionline/notification', array('as' => 'dengionline.notification_url', 'uses' => __CLASS__.'@postNotificationDengiOnline'));
 
             Route::any('/inplat/success', array('as' => 'inplat.return_url_success', 'uses' => __CLASS__.'@getSuccessInplat'));
