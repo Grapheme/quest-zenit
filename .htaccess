@@ -18,7 +18,7 @@ Options -Indexes
 </IfModule>
 
 
-AuthType Basic
-AuthName "Access restricted"
-AuthUserFile /data/www/default/quest/.htpasswd
-require valid-user
+#AuthType Basic
+#AuthName "Access restricted"
+#AuthUserFile /data/www/default/quest/.htpasswd
+#require valid-user
