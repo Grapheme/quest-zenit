@@ -19,8 +19,7 @@
 		<li class="other-quests__item morph-button morph-button-overlay morph-button-fixed morph-button_other-quest carousel__item js-renderOther" data-id="{{ link }}">
 			<button class="other-quests__link js-openPopup" onclick="location.href='#{{ link }}'">
 				<span class="other-quests__title main-font main-font_white main-font_light">{{ title }}</span>
-					<span class="other-quests__each-container">
-					<img class="other-quests__image" src="{{ image }}" alt="quest" />
+					<span class="other-quests__each-container" style="background: url('{{ image }}'); background-size:cover;">
 					<span class="other-quests__overflow">
 						<span class="other-quests__price main-font main-font_white main-font_light">{{ price }} <span class="icon icon_rub-small icon_rub-small_biger"></span></span>
 						<span class="other-quests__description little-font little-font_white">{{ description }}</span>

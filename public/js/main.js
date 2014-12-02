@@ -1,8 +1,12 @@
 window.QuestZenit = {};
 
 QuestZenit.Carousel = function() {
-    $(".js-scrollableQuests").cuscarousel(6, 1);
     $(".js-scrollableNews").cuscarousel(3, 0);
+    setTimeout(function(){
+		if ( $('#latestQuests').find('li').length > 3 ) {
+			$(".js-scrollableQuests").cuscarousel(6, 1);
+		}
+	}, 1000);
 };
 
 QuestZenit.ColorboxMedia = function() {
@@ -28,6 +32,19 @@ QuestZenit.ColorboxMedia = function() {
         });
     });
 };
+
+QuestZenit.SimpleBox = function() {
+    $(document).on('click', '.js-simple-close', function(){
+        var this_class = $(this).attr('data-class');
+        $(this).parents('.' + this_class).hide();
+    });
+
+    if(window.location.hash) {
+        var $hash = window.location.hash.substr(1);
+        $('[data-box="' + $hash + '"]').addClass('open active');
+    }
+}
+QuestZenit.SimpleBox();
 
 QuestZenit.LightBox = function() {
     var renderData = renderDataMain;

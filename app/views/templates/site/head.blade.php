@@ -31,4 +31,4 @@
 		<noscript>
 			<link href="img/svgout/icons.fallback.css" rel='stylesheet'>
 		</noscript>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>

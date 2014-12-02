@@ -1436,7 +1436,7 @@ button {
   position: relative;
   float: left;
   padding-left: 4px;
-  padding-top: 16px;
+  padding-top: 13px;
 }
 .top__title {
   color: #333945;
@@ -1697,7 +1697,7 @@ button {
 .game-statistic__to .icon-star {
   position: absolute;
   top: 25px;
-  right: -18px;
+  right: -45px;
 }
 .game-statistic__to.m-active .icon-star {
   right: auto;
@@ -2309,18 +2309,24 @@ button {
   top: 0;
 }
 .other-quests__title {
-  width: 260px;
-  height: 100px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  display: block;
+  	width: 260px;
+	height: 94px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	display: block;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
 }
 .other-quests__each-container {
   position: relative;
   display: block;
   overflow: hidden;
   width: 260px;
+  height: 260px;
+  background: #fff;
 }
 .other-quests__image {
   position: relative;
@@ -2357,11 +2363,23 @@ button {
   padding-bottom: 11px;
 }
 .other-quests__description {
-  position: relative;
-  text-align: center;
-  display: block;
-  padding: 0 20px;
-  line-height: 22px;
+	position: relative;
+	text-align: center;
+	display: block;
+	padding: 0 20px;
+	line-height: 22px;
+	font-weight: 300;
+	height: 135px;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
+}
+.b-share-counter {
+	font-size: 12px !important;
+	padding-right: 5px !important;
 }
 .about-proj {
   padding-bottom: 50px;
@@ -2551,13 +2569,14 @@ button {
   position: absolute;
   padding: 30px 0 20px;
   bottom: 3px;
-  text-align: center;
   width: 100%;
 }
 .contacts__documents a {
   display: inline-block;
-  margin-left: 100px;
-  min-width: 180px;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #e9e9e9;
 }
 .contacts__documents a:first-child {
   margin-left: 0;
@@ -2817,7 +2836,7 @@ button {
   color: #fff;
   text-align: center;
   margin: 0;
-  padding: 16px 0 50px;
+  padding: 38px 0 50px;
   line-height: 60px;
   position: relative;
   text-transform: none;
@@ -3080,4 +3099,49 @@ button {
   top: 0;
   left: 0;
   margin-top: 0;
+}
+.response-text {
+  text-align: center;
+  color: #fff;
+  line-height: 35px;
+}
+.payment-blocks {
+  font-size: 0;
+}
+.payment-block {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  width: 50%;
+}
+.payment-cont {
+  margin: 0 auto;
+  width: 430px;
+  background: rgba(255, 255, 255, .95);
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 1px;
+  height: 255px;
+}
+.internet-pay-btn {
+  background-image: url(../img/btn_internet.jpg);
+  width: 250px;
+  height: 130px;
+  border: 0 none;
+}
+.payment-title {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: #3091d5;
+}
+.payment-desc {
+	font-size: 13px;
+	line-height: 18px;
+	color: #333;
+	margin: 2em 0 0;
+}
+#sms-payment {
+  margin: 0 auto;
 }
