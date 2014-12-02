@@ -16,3 +16,9 @@ Options -Indexes
     RewriteRule (.*) ./public/$1 [L]
 
 </IfModule>
+
+
+AuthType Basic
+AuthName "Access restricted"
+AuthUserFile /data/www/default/quest/.htpasswd
+require valid-user
