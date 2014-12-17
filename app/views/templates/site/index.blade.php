@@ -212,8 +212,8 @@ $target_amount = (int)$quest->target_amount;
 					</div>
 				</div>
 
-				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest" data-box="do_success">
-					<button class="quest__take-part quest-button js-participate hidden">Присоединиться</button>
+				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest" style="height: 0px;" data-box="do_success">
+					<button class="quest__take-part quest-button js-participate" style="display: none;">Присоединиться</button>
 					<div class="morph-content morph-content_participate">
 						<div>
 							<section class="quest-participate">
@@ -232,8 +232,8 @@ $target_amount = (int)$quest->target_amount;
 						</div>
 					</div>
 				</div>
-				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest" data-box="do_fail">
-					<button class="quest__take-part quest-button js-participate hidden">Присоединиться</button>
+				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest" style="height: 0px;" data-box="do_fail">
+					<button class="quest__take-part quest-button js-participate" style="display: none;">Присоединиться</button>
 					<div class="morph-content morph-content_participate">
 						<div>
 							<section class="quest-participate">
@@ -277,10 +277,10 @@ $target_amount = (int)$quest->target_amount;
 				<h2 class="block-title main-font main-font_gray main-font_light">О проекте</h2>
 				<div class="about-proj__container">
 					<div class="about-proj__block about-proj__block_gray fl-l">
-						<p class="middle-font middle-font_white">«Давай-давай!» — совместный проект благотворительного фонда «АдВита» и футбольного клуба «Зенит». Раз в месяц мы объявляем о начале очередного квеста, по условиям которого наш игрок, тренер или известный болельщик готов сделать что-то очень необычное при одном условии: необходимо набрать определенную сумму, которая полностью будет переведена в помощь пациентам «АдВиты».</p>
+						<p class="middle-font middle-font_white">«Давай-давай!» — совместный проект благотворительного фонда «АдВита» и футбольного клуба «Зенит».<br/><br/>Раз в месяц мы объявляем о начале очередного квеста, по условиям которого футболист, тренер или известный болельщик соглашается сделать что-то очень необычное при одном условии: нам вместе необходимо собрать определенную сумму, которая полностью будет переведена в помощь пациентам «АдВиты».</p>
 					</div>
 					<div class="about-proj__block fl-r">
-						<p class="little-font little-font_gray">Для того, чтобы помочь, наши герои действительно готовы на все. Дело за вами! Мы хотим не просто заниматься благотворительностью — мы хотим делать это самым невероятным образом.<br><br>Присоединяйтесь! Будет интересно!</p>
+						<p class="little-font little-font_gray">Даже в самые непростые времена мы должны помогать тем, кто нуждается в этом: что бы ни происходило вокруг, в больницах остаются дети, которым необходимо лечение. И для того, чтобы помочь им, наши герои готовы на все.<br/><br/>Дело за вами! Мы хотим не просто заниматься благотворительностью — мы хотим делать это самым невероятным образом.<br/><br/>Присоединяйтесь! Будет интересно!</p>
 					</div>
 				</div>
 			</div>
@@ -296,48 +296,6 @@ $target_amount = (int)$quest->target_amount;
 			</div>
 			<div class="carousel__container carousel__container_green smi__container js-scrollableNews">
 				<ul class="carousel__list" id="latestNews">
-                    @if (1)
-					<li class="smi__item news carousel__item">
-						<div class="news__container news__container_photo">
-							<div class="news__halph-container">
-								<div class="news__top">
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
-									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</a>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-							<div class="news__halph-container">
-								<div class="news__top">
-									<div class="news__title-info">
-										<h3 class="news__title">Самый веселый способ помочь</h3>
-										<a href="#" class="middle-font middle-font_white middle-font__span news__link"><span class="icon-link"></span>Официальный сайт ХК "Динамо" (Рига)</a>
-									</div>
-								</div>
-								<a href="img/news/news.jpg" class="js-newsPhoto news__media-container">
-									<img class="news__image" src="img/news/news.jpg" alt="news-image">
-									<span class="news__date-icon">
-										<span class="news__date">12</span>
-										<span class="news__month">/08</span>
-									</span>
-								</a>
-								<div class="news__information">
-									<p class="middle-font middle-font_white middle-font__span">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas reiciendis, culpa quasi cumque quidem obcaecati mollitia dolores itaque consectetur nisi facere sed quis earum nobis repellat provident cum sunt ducimus?</p>
-								</div>
-							</div>
-						</div>
-					</li>
-					@endif
 					<? $count_ = 1; ?>
   					@foreach ($news as $new)
 				    <?
@@ -372,7 +330,7 @@ $target_amount = (int)$quest->target_amount;
 									<p class="middle-font middle-font_white middle-font__span">{{ $new->content }}</p>
 								</div>
 							</div>
-					<? if ($count_ % 2 == 0) : ?>
+					<? if (($count_ % 2 > 0) || ($count_ == count($news))) : ?>
 						</div>
 					</li>
 					<? endif; ?>

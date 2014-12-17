@@ -23,7 +23,7 @@
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 						<p class="middle-font middle-font_white">
-							Телефон диспетчера службы крови: +7(901) 300-00-25 
+							Телефон диспетчера службы крови: +7 (901) 300-00-25 
 							<br><span class="middle-font__span">прием звонков в будние дни  9.00 — 17.00</span>
 						</p>
 					</td>
