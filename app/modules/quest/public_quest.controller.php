@@ -98,7 +98,7 @@ class PublicQuestController extends BaseController {
 
         $finished_quests = Dic::valuesBySlug('quests', function($query) use ($quest) {
             #$query->filter_by_field('date_stop', '<=', date('Y-m-d H:i:s', time()));
-            $query->filter_by_field('date_stop', '<=', $quest->date_start, 1);
+            $query->filter_by_field('date_stop', '<=', $quest->date_start ?: date('Y-m-d H:i:s'), 1);
             $query->order_by_field('date_stop', 'DESC');
         });
         $finished_quests = DicVal::extracts($finished_quests, 1);

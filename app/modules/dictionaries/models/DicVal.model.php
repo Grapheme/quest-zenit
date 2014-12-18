@@ -257,7 +257,8 @@ class DicVal extends BaseModel {
         $rand_tbl_alias = md5(time() . rand(999999, 9999999));
         $query->join($tbl_dic_field_val . ' AS ' . $rand_tbl_alias, $rand_tbl_alias . '.dicval_id', '=', $tbl_dicval . '.id')
             ->where($rand_tbl_alias . '.key', '=', $key)
-            ->where($rand_tbl_alias . '.value', $condition, $value);
+            ->where($rand_tbl_alias . '.value', $condition, $value)
+        ;
 
         return $query;
     }
