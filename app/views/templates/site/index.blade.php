@@ -263,6 +263,7 @@ $target_amount = (int)$quest->target_amount;
     @endif
 
 	<!--  Other Questions -->
+	@if (false)
 		<section class="other-quests" id="otherQuests">
 			<h2 class="block-title main-font main-font_gray main-font_light">Прошедшие квесты</h2>
 			<div class="carousel__container carousel__container_gray other-quests__container js-scrollableQuests">
@@ -270,6 +271,7 @@ $target_amount = (int)$quest->target_amount;
 				</ul>
 			</div>
 		</section>
+	@endif
 
 	<!--  About -->
 		<section class="about-proj" id="aboutProject">
@@ -288,7 +290,7 @@ $target_amount = (int)$quest->target_amount;
 
     <!-- TODO Вернуть, когда будет актуальны СМИ -->
     <!-- SMI -->
-		@if (Input::get('news') == 1 || 1)
+	@if (false) {{-- Input::get('news') == 1 || 1 --}}
         @if (count($news))
 		<section class="smi" id="smi">
 			<div class="wrp">
@@ -341,9 +343,10 @@ $target_amount = (int)$quest->target_amount;
 			</div>
 		</section>
 		@endif
-		@endif
+	@endif
 
 	<!-- Partners -->
+	@if (false)
 		<section class="partners" id="parthers">
 			<div class="wrp">
 				<h2 class="block-title main-font main-font_gray main-font_light">Партнеры</h2>
@@ -363,6 +366,8 @@ $target_amount = (int)$quest->target_amount;
 				</ul>
 			</div>
 		</section>
+	@endif
+
 		<!-- End of content -->
 		<nav class="quest-navigation">
 			<ul class="quest-navigation__list">
