@@ -102,7 +102,10 @@ class PublicQuestController extends BaseController {
             $query->order_by_field('date_stop', 'DESC');
         });
         $finished_quests = DicVal::extracts($finished_quests, 1);
-        #Helper::tad($finished_quests);
+
+        Helper::smartQueries(1);
+
+        Helper::tad($finished_quests);
 
         $images_ids = array();
         $photos = array();
