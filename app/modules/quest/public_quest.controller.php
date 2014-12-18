@@ -103,9 +103,8 @@ class PublicQuestController extends BaseController {
         });
         $finished_quests = DicVal::extracts($finished_quests, 1);
 
-        Helper::smartQueries(1);
-
-        Helper::tad($finished_quests);
+        #Helper::smartQueries(1);
+        #Helper::tad($finished_quests);
 
         $images_ids = array();
         $photos = array();
