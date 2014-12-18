@@ -87,6 +87,9 @@ class PublicQuestController extends BaseController {
                 $amount += $transaction->payment_amount;
 
                 $payer_name = $transaction->name;
+
+                $payer_name = preg_replace('~(79[\d][\d][\d])[\d][\d][\d]([\d][\d][\d])~is', '\1***\2', $payer_name);
+
                 $data['players'][] = array(
                     'cash' => (int)$transaction->payment_amount,
                     'class' => (string)$classes[array_rand($classes)],
