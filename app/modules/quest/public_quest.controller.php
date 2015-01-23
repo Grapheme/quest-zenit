@@ -72,6 +72,8 @@ class PublicQuestController extends BaseController {
         #Helper::tad($quest);
 
 
+
+
         #if (is_object($quest)) {
 
             $transactions = Dic::valuesBySlug('transactions', function($query) use ($quest) {
@@ -538,6 +540,20 @@ class PublicQuestController extends BaseController {
 
         #Helper::tad($dicval);
         #Helper::smartQueries(1);
+
+        $videos = array();
+        if (trim($dicval->video) != '') {
+            $lines = explode("\n", $dicval->video);
+            foreach ($lines as $line) {
+                $line = trim($line);
+                if (!$line)
+                    continue;
+                $videos[] = array(
+                    'url' => $line
+                );
+            }
+        }
+        $dicval->video = $videos;
 
         return $dicval;
     }
