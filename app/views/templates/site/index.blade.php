@@ -41,6 +41,13 @@ $target_amount = (int)$quest->target_amount;
 				<p class="quest__description main-font main-font_gray main-font_light">
 				    {{ $quest->short }}
 				</p>
+				@if (isset($quest->videos) && count($quest->videos))
+					@foreach ($quest->videos as $video)
+						<p class="quest__description main-font main-font_gray main-font_light">
+							{{ youtubeReplace($video) }}
+						</p>
+					@endforeach
+				@endif
 				<!--  Quest container -->
 				<div class="quest__container">
 					<div class="game-info">

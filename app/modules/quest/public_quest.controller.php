@@ -543,3 +543,19 @@ class PublicQuestController extends BaseController {
     }
 
 }
+
+
+function youtubeReplace($text) {
+
+    preg_match_all ("~https?\:\/\/(?:www\.|)youtube\.com[\/a-zA-Z0-9\/\?\&\#\_\-\%\=]*?v\=([\/a-zA-Z0-9\/\_\-\%]*)[\/a-zA-Z0-9\/\?\&\#\_\-\%\=]*~", $text, $result );
+
+    $pos = 0;
+
+    foreach ($result[0] as $index => $val) {
+        $text = substr_replace ( $text, $replace = "<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/" . $result [ 1 ] [ $index ] . "\" frameborder=\"0\" allowfullscreen></iframe>", $pos = strpos ( $text, $val, $pos ), $len = strlen ( $val ) );
+        $pos += strlen ( $replace );
+    }
+
+    return $text;
+
+}
