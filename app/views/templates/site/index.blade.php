@@ -42,9 +42,10 @@ $target_amount = (int)$quest->target_amount;
 				    {{ $quest->short }}
 				</p>
 				@if (isset($quest->video) && is_array($quest->video) && count($quest->video))
+					<br/>
 					@foreach ($quest->video as $video)
 						<p class="quest__description main-font main-font_gray main-font_light">
-							{{-- youtubeReplace($video) --}}
+							{{ youtubeReplace($video) }}
 						</p>
 					@endforeach
 				@endif

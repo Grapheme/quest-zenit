@@ -147,7 +147,7 @@ return array(
             'video' => array(
                 'title' => 'Видеозаписи',
                 'type' => 'textarea',
-                'first_note' => 'По одному на строку. Хеш код видео из YouTube. Например:<br/><u>http://www.youtube.com/watch?v=M2-hDrBIlOo</u> => <b>M2-hDrBIlOo</b>',
+                'first_note' => 'По одному на строку. Ссылка на видео из YouTube. Например:<br/><u>http://www.youtube.com/watch?v=M2-hDrBIlOo</u>',
             ),
 
         );

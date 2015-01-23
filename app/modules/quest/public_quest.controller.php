@@ -172,9 +172,12 @@ class PublicQuestController extends BaseController {
                     $line = trim($line);
                     if (!$line)
                         continue;
+                    /*
                     $videos[] = array(
                         'url' => $line
                     );
+                    */
+                    $videos[] = $line;
                 }
             }
 
@@ -548,9 +551,12 @@ class PublicQuestController extends BaseController {
                 $line = trim($line);
                 if (!$line)
                     continue;
+                /*
                 $videos[] = array(
                     'url' => $line
                 );
+                */
+                $videos[] = $line;
             }
         }
         $dicval->video = $videos;
@@ -568,7 +574,7 @@ function youtubeReplace($text) {
     $pos = 0;
 
     foreach ($result[0] as $index => $val) {
-        $text = substr_replace ( $text, $replace = "<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/" . $result [ 1 ] [ $index ] . "\" frameborder=\"0\" allowfullscreen></iframe>", $pos = strpos ( $text, $val, $pos ), $len = strlen ( $val ) );
+        $text = substr_replace ( $text, $replace = "<iframe width=\"700\" height=\"400\" src=\"//www.youtube.com/embed/" . $result [ 1 ] [ $index ] . "\" frameborder=\"0\" allowfullscreen></iframe>", $pos = strpos ( $text, $val, $pos ), $len = strlen ( $val ) );
         $pos += strlen ( $replace );
     }
 
