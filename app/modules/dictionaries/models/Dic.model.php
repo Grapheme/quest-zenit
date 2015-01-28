@@ -291,7 +291,13 @@ class Dic extends BaseModel {
         if (!is_object($dic))
             return $return;
 
-        $values = DicVal::where('dic_id', $dic->id)->where('version_of', NULL);
+        $values = (new DicVal);
+        $tbl_dicval = $values->getTable();
+        $values = $values
+            ->where('dic_id', $dic->id)
+            ->where('version_of', NULL)
+            ->select($tbl_dicval.'.*')
+        ;
 
         /**
          * Дополнительные условия в функции-замыкании
