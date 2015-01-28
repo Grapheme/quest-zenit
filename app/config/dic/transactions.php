@@ -73,6 +73,7 @@ return array(
     'second_line_modifier' => function($line, $dic, $dicval) {
         #Helper::ta($dicval);
         $quests = Config::get('temp.index_quests');
+        $dicval->extract(false);
 
         return '
             <span class="margin-right-10"><i class="fa fa-money"></i> ' . $dicval->payment_amount . '</span>
