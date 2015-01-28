@@ -414,8 +414,10 @@ class PublicQuestController extends BaseController {
 
 
             ## Save name of the payer
-            $dicval->name = @$input['userid'];
-            $dicval->save();
+            ## $fillable don't work - WTF?!
+            $temp = DicVal::find($order_id);
+            $temp->name = @$input['userid'];
+            $temp->save();
 
 
             ## Save full request info to DB
