@@ -87,15 +87,15 @@ class PublicQuestController extends BaseController {
             $amount = 0;
             foreach ($transactions as $transaction) {
 
-                $transaction->payment_full = json_decode($transaction->payment_full, 1);
+                $transaction->payment_full_decoded = json_decode($transaction->payment_full, 1);
                 $amount += $transaction->payment_amount;
 
                 $payer_name = trim($transaction->name);
 
                 if (!$payer_name)
-                    $payer_name = @$transaction->payment_full['userid'];
+                    $payer_name = @$transaction->payment_full_decoded['userid'];
 
-                if (!$payer_name) {
+                if (!$payer_name && $transaction->payment_full != '') {
                     preg_match('~"userid":"[^"]*?"~is', $transaction->payment_full, $matches);
                     $payer_name = @$matches[1];
                 }
