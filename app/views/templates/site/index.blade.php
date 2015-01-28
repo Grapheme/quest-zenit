@@ -112,7 +112,14 @@ $target_amount = (int)$quest->target_amount;
 
 				<!--  Lightbox open button -->
 				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest">
+					{{--
 					<button class="quest__take-part quest-button js-participate">Присоединиться</button>
+					--}}
+					<form action="{{ URL::route('invoice') }}" method="POST">
+						<input type="hidden" name="mode_type" value="dengionline">
+						<button class="quest__take-part quest-button">Присоединиться</button>
+					</form>
+
 					<div class="morph-content morph-content_participate">
 						<div>
 							<!-- LightBox content -->
@@ -174,7 +181,7 @@ $target_amount = (int)$quest->target_amount;
 												<div class="payment-block">
 													<div class="payment-cont">
 														<div class="payment-title">Оплатить через интернет</div>
-														<form action="{{ URL::route('invoice')  }}" method="POST">
+														<form action="{{ URL::route('invoice') }}" method="POST">
 															<!-- <p class="quest-participate__font">MasterCard, VISA, Яндекс Деньги, WebMoney, QIWI, Мобильные платежи Билайн, Мегафон, МТС и многое другое</p> -->
 															<!-- <input class="quest-participate__input" type="text" name="nickname" placeholder="Отправитель (необязательно)"> -->
 															<input type="submit" value="" class="internet-pay-btn">
