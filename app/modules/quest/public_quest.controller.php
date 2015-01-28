@@ -95,8 +95,12 @@ class PublicQuestController extends BaseController {
                 if (!$payer_name)
                     $payer_name = @$transaction->payment_full_decoded['userid'];
 
-                if (!$payer_name && $transaction->payment_full != '') {
+                if (!$payer_name && is_string($transaction->payment_full) && $transaction->payment_full != '') {
                     preg_match('~\"userid\"\:\".*?\"~is', $transaction->payment_full, $matches);
+                    if (Input::get('debug') == '1') {
+                        Helper::ta($transaction->payment_full);
+                        Helper::ta($matches);
+                    }
                     $payer_name = @$matches[1];
                 }
 
