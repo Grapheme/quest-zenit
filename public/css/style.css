@@ -1698,7 +1698,7 @@ button {
 .game-statistic__to .icon-star {
   position: absolute;
   top: 25px;
-  right: -45px;
+  right: -5px;
 }
 .game-statistic__to.m-active .icon-star {
   right: auto;
