@@ -126,7 +126,7 @@ margin-left: 0;
 
 
 .margin-left-0 {
-    margin-bottom:0px !important;
+    margin-left:0px !important;
 }
 .margin-left-5 {
     margin-left: 5px !important;
@@ -226,7 +226,7 @@ margin-left: 0;
 
 
 .padding-left-0 {
-    padding-bottom:0px !important;
+    padding-left:0px !important;
 }
 .padding-left-5 {
     padding-left: 5px !important;
@@ -264,13 +264,53 @@ margin-left: 0;
     padding-right: 25px !important;
 }
 
+.padding-1-5 {
+    padding: 1px 5px !important;
+}
+
+
+.border-0 {
+    border: 0px !important;
+}
+.border-1 {
+    border: 1px !important;
+}
+
+.border-top-0 {
+    border-top: 0px !important;
+}
+.border-top-1 {
+    border-top: 1px !important;
+}
+
+.border-bottom-0 {
+    border-bottom:0px !important;
+}
+.border-bottom-1 {
+    border-bottom: 1px !important;
+}
+
+.border-left-0 {
+    border-left:0px !important;
+}
+.border-left-1 {
+    border-left: 1px !important;
+}
+
+.border-right-0 {
+    border-right:0px !important;
+}
+.border-right-1 {
+    border-right: 1px !important;
+}
+
 
 
 .inline{
 	display: inline;
 }
 
-.redactor {
+.redactor, .redactor_redactor {
 	min-height: 200px !important;
 }
 
@@ -343,6 +383,11 @@ margin-left: 0;
     width: 100px;
 }
 
+.photo-previews:nth-child(0) {
+    width: 200%;
+    height: 200%;
+}
+
 .photo-preview {
     display:inline-block;
     width:100px;
@@ -352,6 +397,7 @@ margin-left: 0;
     position:relative;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    margin: 0 5px !important;
 }
 
 .photo-preview a.photo-delete, .photo-preview a.photo-delete-single {
@@ -737,6 +783,15 @@ nav > ul > li > a > i > em {
 
 .smart-form fieldset {
     padding-top: 20px;
+    padding-bottom: 14px;
+}
+
+.tab-pane section {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+.tab-pane section:first-child {
+    margin-top: 0;
 }
 
 .checkbox.col {
@@ -785,9 +840,11 @@ div.redactor_dropdown {
 .display-block {
     display: block !important;
 }
-
 .display-inline-block {
     display: inline-block !important;
+}
+.display-inline {
+    display: inline !important;
 }
 
 .smart-form .label {
@@ -803,9 +860,114 @@ div.redactor_dropdown {
     margin: 6px 0 0 0;
 }
 
-.redactor_redactor_preview {
-    min-height: 80px !important;
+
+.dd.dicval-list {
+    display: block;
+    width: 100%;
+    min-width: 600px;
+    max-width: 1200px;
 }
-.redactor_redactor_content {
-    min-height: 200px !important;
+
+
+
+
+div > .dd-list > .dd-item:first-child > button::before {
+    padding-top: 4px
+}
+
+
+.dd-item-fixed-height .dd-handle {
+    height: 56px;
+}
+.dd-item-fixed-height .dd-handle:before {
+    line-height: 48px;
+}
+.dd-item-fixed-height > button[type=button] {
+    margin-top: 17px;
+    margin-right: 5px;
+}
+.dd-list .dd-list {
+    padding-left: 32px;
+}
+.dicval-actions {
+    display: block;
+    text-align: left;
+    position: relative;
+    top: 3px;
+    right: 1px;
+}
+.dicval-main-actions {
+    min-width: 80px;
+}
+.dicval-actions-margin-left {
+    margin-left: 4px;
+}
+.dicval-actions-edit, .dicval-actions-delete button {
+    width: 38px;
+    content: '';
+}
+.dicval-actions-edit:before, .dicval-actions-delete button:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+}
+.dicval-actions-edit:before {
+    content: '\f040';
+}
+.dicval-actions-delete button:before {
+    content: '\f014';
+}
+
+
+nav ul li a {
+    position: relative;
+}
+
+nav > ul > li > a b {
+    margin: 2px 0px 0px;
+}
+
+.dd-item > button[data-action="collapse"]::before {
+    color: #3276B1;
+    content: "\f146";
+}
+.dd-item > button[data-action="expand"]::before {
+    color: #3276B1;
+    content: "\f0fe";
+}
+
+
+
+
+
+.dicval-lines {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+.cursor-help {
+    cursor: help;
+}
+
+.cursor-move {
+    cursor: move
+}
+.list-style-none {
+    list-style: none
+}
+
+.smart-accordion-default.panel-group .panel-title .panel-title-link {
+    padding: 6px 15px 6px 40px;
+    cursor: pointer;
+}
+.smart-accordion-default .panel-title > .panel-title-link > :first-child {
+    display: none;
+}
+.smart-accordion-default .panel-title > .panel-title-link.collapsed > .fa {
+    display: none;
+}
+.smart-accordion-default .panel-title > .panel-title-link.collapsed > :first-child {
+    display: inline-block;
 }
