@@ -86,12 +86,14 @@ class PublicQuestController extends BaseController {
             $count_members = count($transactions);
             $amount = 0;
             foreach ($transactions as $transaction) {
+
+                $transaction->payment_full = json_decode($transaction->payment_full, 1);
                 $amount += $transaction->payment_amount;
 
-                $payer_name = $transaction->name;
+                $payer_name = trim($transaction->name);
 
                 if (!$payer_name)
-                    $payer_name = @json_decode($transaction->payment_full, 1)['userid'];
+                    $payer_name = @$transaction->payment_full['userid'];
 
                 $payer_name = preg_replace('~(79[\d][\d][\d])[\d][\d][\d]([\d][\d][\d])~is', '\1***\2', $payer_name);
 
@@ -100,6 +102,7 @@ class PublicQuestController extends BaseController {
                     'class' => (string)$classes[array_rand($classes)],
                     'date' => $transaction->payment_date ? (string)(new \Carbon\Carbon())->createFromFormat('Y-m-d H:i:s', $transaction->payment_date)->format('d.m.Y') : '',
                     'name' => (string)$payer_name,
+                    'tid' => $transaction->id,
                 );
             }
         #}
