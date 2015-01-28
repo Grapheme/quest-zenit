@@ -225,7 +225,7 @@ $target_amount = (int)$quest->target_amount;
 					<div class="morph-content morph-content_participate">
 						<div>
 							<section class="quest-participate">
-								<span class="icon icon-close icon-play-close js-simple-close" data-class="morph-button">
+								<span class="icon icon-play-close js-simple-close" data-class="morph-button">
 									<span class="icon icon-play-close-empty"></span>
 								</span>
 								<div class="wrp wrp_quest">
@@ -245,7 +245,7 @@ $target_amount = (int)$quest->target_amount;
 					<div class="morph-content morph-content_participate">
 						<div>
 							<section class="quest-participate">
-								<span class="icon icon-close icon-play-close js-simple-close" data-class="morph-button">
+								<span class="icon icon-play-close js-simple-close" data-class="morph-button">
 									<span class="icon icon-play-close-empty"></span>
 								</span>
 								<div class="wrp wrp_quest">

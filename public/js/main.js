@@ -36,7 +36,9 @@ QuestZenit.ColorboxMedia = function() {
 QuestZenit.SimpleBox = function() {
     $(document).on('click', '.js-simple-close', function(){
         var this_class = $(this).attr('data-class');
-        $(this).parents('.' + this_class).hide();
+        var this_name = $(this).parents('.' + this_class).attr('data-box');
+        var this_box = $('[data-box="' + this_name + '"]');
+        this_box.removeClass('open active');
     });
 
     if(window.location.hash) {
