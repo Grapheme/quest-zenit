@@ -59,7 +59,7 @@ return array(
          * Вызывается в самом начале метода index, после хука before_all
          */
         'before_index' => function ($dic) {
-            $quests = Dic::whereSlugValues('quests');
+            $quests = Dic::valuesBySlug('quests');
             $quests = Dic::modifyKeys($quests, 'id');
             $quests = Dic::makeLists($quests, false, 'name', 'id');
             Config::set('temp.index_quests', $quests);
