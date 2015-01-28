@@ -95,6 +95,11 @@ class PublicQuestController extends BaseController {
                 if (!$payer_name)
                     $payer_name = @$transaction->payment_full['userid'];
 
+                if (!$payer_name) {
+                    preg_match('~"userid":"[^"]*?"~is', $transaction->payment_full, $matches);
+                    $payer_name = @$matches[1];
+                }
+
                 $payer_name = preg_replace('~(79[\d][\d][\d])[\d][\d][\d]([\d][\d][\d])~is', '\1***\2', $payer_name);
 
                 $data['players'][] = array(
