@@ -1,3 +1,8 @@
+$('.quest-button-simple-link').click(function(){
+    $(this).parent().submit();
+    return false;
+});
+
 window.QuestZenit = {};
 
 QuestZenit.Carousel = function() {
