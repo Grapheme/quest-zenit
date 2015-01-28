@@ -6,7 +6,7 @@
         'title' => $dic->name,
         'class' => 'btn btn-default'
     );
-    if (isset($element) && is_object($element) && $element->name && 0) {
+    if (isset($element) && is_object($element) && $element->name) {
         $menus[] = array(
             'link' => action(is_numeric($dic_id) ? 'dicval.edit' : 'entity.edit', array('dic_id' => $dic_id, $element->id)),
             'title' => "&laquo;" . $element->name . "&raquo;",
@@ -22,7 +22,6 @@
     ) {
         $menus[] = array(
             'link' => action(is_numeric($dic_id) ? 'dicval.destroy' : 'entity.destroy', array('dic_id' => $dic_id, $element->id)),
-            #'link' => '#',
             'title' => '<i class="fa fa-trash-o"></i>',
             'class' => 'btn btn-danger remove-dicval-record',
             'others' => [
@@ -69,12 +68,6 @@
     #Helper::d($menus);
 ?>
     
-    <h1>
-        {{ $dic->name }}
-        {{ $dic->entity && is_numeric($dic_id) ? ' <i class="fa fa-angle-double-right"></i> <a href="' . URL::route('entity.index', $dic->slug) . '" title="Вынесено в отдельную сущность">' . $dic->slug . '</a>' : '' }}
-        @if (isset($element) && is_object($element) && $element->name)
-            &nbsp;&mdash;&nbsp; {{ $element->name }}
-        @endif
-    </h1>
+    <h1>{{ $dic->name }}{{ $dic->entity && is_numeric($dic_id) ? ' <i class="fa fa-angle-double-right"></i> <a href="' . URL::route('entity.index', $dic->slug) . '" title="Вынесено в отдельную сущность">' . $dic->slug . '</a>' : '' }}</h1>
 
     {{ Helper::drawmenu($menus) }}

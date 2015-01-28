@@ -182,29 +182,14 @@
                     </section>
 
                     <section>
-                        <label class="label">
+                        <label class="note">
+                            Следующая возможность будет работать только если отключена пагинация и сортировка осуществляется по умолчанию (по полю order)
+                        </label>
+                        <label class="checkbox">
+                            {{ Form::checkbox('sortable', 1, $element->id ? NULL : true) }}
+                            <i></i>
                             Возможность менять порядок элементов перетаскиванием
                         </label>
-                        <label class="note">
-                             Данная возможность будет работать только если отключена пагинация и сортировка осуществляется по умолчанию (по полям left/right)
-                         </label>
-                         <label class="select">
-                            {{ Form::select('sortable', array(
-                                '0' => 'Запрещено',
-                                '1' => 'Разрешено, без вложенности',
-                                'Максимальное количество уровней вложенности' => array(
-                                    '2' => '2 уровня',
-                                    '3' => '3 уровня',
-                                    '4' => '4 уровня',
-                                    '5' => '5 уровней',
-                                    '6' => '6 уровней',
-                                    '7' => '7 уровней',
-                                    '8' => '8 уровней',
-                                    '9' => '9 уровней',
-                                ),
-                            )) }}
-                        </label>
-
                     </section>
 
                 </fieldset>
@@ -239,14 +224,14 @@
 	};
     </script>
 
-	{{ HTML::script('private/js/modules/standard.js') }}
+	{{ HTML::script('js/modules/standard.js') }}
 
 	<script type="text/javascript">
 		if(typeof pageSetUp === 'function'){pageSetUp();}
 		if(typeof runFormValidation === 'function') {
-			loadScript("{{ asset('private/js/vendor/jquery-form.min.js'); }}", runFormValidation);
+			loadScript("{{ asset('js/vendor/jquery-form.min.js'); }}", runFormValidation);
 		} else {
-			loadScript("{{ asset('private/js/vendor/jquery-form.min.js'); }}");
+			loadScript("{{ asset('js/vendor/jquery-form.min.js'); }}");
 		}        
 	</script>
 

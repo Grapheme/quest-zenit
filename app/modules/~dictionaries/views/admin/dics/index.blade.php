@@ -32,11 +32,7 @@
 						<td class="text-center" style="white-space:nowrap;">
 
         					@if(Allow::action($module['group'], 'dicval_view'))
-                            <a href="{{
-                                $element->entity
-                                ? URL::route('entity.index', $element->slug)
-                                : URL::route('dicval.index', $element->id)
-                            }}" class="btn btn-warning">
+                            <a href="{{ action('dicval.index', array('dic_id' => $element->id)) }}" class="btn btn-warning">
                                 Содержимое ({{ $element->count }})
                             </a>
                     		@endif
@@ -92,14 +88,14 @@
 	};
     </script>
 
-	{{ HTML::script('private/js/modules/standard.js') }}
+	{{ HTML::script('js/modules/standard.js') }}
 
 	<script type="text/javascript">
 		if(typeof pageSetUp === 'function'){pageSetUp();}
 		if(typeof runFormValidation === 'function'){
-			loadScript("{{ asset('private/js/vendor/jquery-form.min.js'); }}", runFormValidation);
+			loadScript("{{ asset('js/vendor/jquery-form.min.js'); }}", runFormValidation);
 		}else{
-			loadScript("{{ asset('private/js/vendor/jquery-form.min.js'); }}");
+			loadScript("{{ asset('js/vendor/jquery-form.min.js'); }}");
 		}
 	</script>
 
