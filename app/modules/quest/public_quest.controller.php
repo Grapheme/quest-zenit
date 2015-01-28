@@ -489,7 +489,7 @@ class PublicQuestController extends BaseController {
 
         $quest = $this->getCurrentQuest();
         #Helper::tad($quest);
-        $quest_id = is_object($quest) ? $quest_id->id : false;
+        $quest_id = is_object($quest) ? $quest->id : false;
 
         if (!count($input) || !@$input['payment_id'])
             return json_encode(array(
@@ -512,6 +512,8 @@ class PublicQuestController extends BaseController {
                     'payment_amount' => @$input['params']['sum'],
                     'payment_date' => date("Y-m-d H:i:s"),
                     'payment_method' => 'inplat',
+                ),
+                'textfields' => array(
                     'payment_full' => json_encode($input),
                 ),
             ));
