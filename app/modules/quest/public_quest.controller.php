@@ -80,7 +80,7 @@ class PublicQuestController extends BaseController {
                 $query->filter_by_field('quest_id', '=', $quest->id);
                 #$query->filter_by_field('payment_date', '=', '2014-09-04 15:05:18');
             });
-            $transactions = DicVal::extracts($transactions, 1);
+            $transactions = DicVal::extracts($transactions, null, true, true);
             #Helper::tad($transactions);
 
             $count_members = count($transactions);
@@ -121,7 +121,7 @@ class PublicQuestController extends BaseController {
             $query->filter_by_field('date_stop', '<=', $quest->date_start ?: date('Y-m-d'), 1);
             $query->order_by_field('date_stop', 'DESC');
         });
-        $finished_quests = DicVal::extracts($finished_quests, 1);
+        $finished_quests = DicVal::extracts($finished_quests, null, true, true);
 
         #Helper::smartQueries(1);
         #Helper::tad($finished_quests);
@@ -223,7 +223,7 @@ class PublicQuestController extends BaseController {
             $query->orderBy('id', 'DESC');
         });
         #$news->load((new DicVal)->customHasOne('Photo', 'image_id', 'id'));
-        $news = DicVal::extracts($news, 1);
+        $news = DicVal::extracts($news, null, true, true);
 
         $news = Dic::custom_load_hasOne($news, 'image', ['Photo', 'image_id', 'id']);
         $news = Dic::custom_load_hasOne($news, 'gallery', ['Gallery', 'gallery_id', 'id'], function($query){
