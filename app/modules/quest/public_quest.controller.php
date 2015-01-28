@@ -278,6 +278,8 @@ class PublicQuestController extends BaseController {
                 'payment_amount' => 'unknown',
                 'payment_date' => date("Y-m-d H:i:s"),
                 'payment_method' => 'dengionline',
+            ),
+            'textfields' => array(
                 'payment_full' => json_encode(array('paymode' => $mode_type)),
             ),
         ));
@@ -342,6 +344,8 @@ class PublicQuestController extends BaseController {
                     'payment_amount' => @$input['amount'],
                     'payment_date' => @$input['ps_paid_date'],
                     'payment_method' => 'dengionline',
+                ),
+                'textfields' => array(
                     'payment_full' => json_encode($input),
                 ),
             ));
