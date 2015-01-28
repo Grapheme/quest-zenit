@@ -115,10 +115,10 @@ $target_amount = (int)$quest->target_amount;
 					{{--
 					<button class="quest__take-part quest-button js-participate">Присоединиться</button>
 					--}}
-					<form action="{{ URL::route('invoice') }}" method="POST">
+					<form2 action="{{ URL::route('invoice') }}" method="POST">
 						<input type="hidden" name="mode_type" value="dengionline">
-						<button class="quest-button">Присоединиться</button>
-					</form>
+						<button class="quest__take-part quest-button">Присоединиться</button>
+					</form2>
 
 					<div class="morph-content morph-content_participate">
 						<div>
