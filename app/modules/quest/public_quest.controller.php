@@ -432,6 +432,10 @@ class PublicQuestController extends BaseController {
 
 
             ## Mark payment as finished
+            $dicval_field = DicFieldVal::firstOrNew(array(
+                'dicval_id' => $dicval->id,
+                'key' => 'payment_status',
+            ));
             $dicval_field->value = '1';
             $dicval_field->save();
 
