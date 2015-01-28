@@ -419,7 +419,7 @@ class PublicQuestController extends BaseController {
             $dicval_field->save();
 
             ## Save full request to DB
-            $dicval_field = DicFieldVal::firstOrNew(array(
+            $dicval_field = DicTextFieldVal::firstOrNew(array(
                 'dicval_id' => $dicval->id,
                 'key' => 'payment_full',
             ));
