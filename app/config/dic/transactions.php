@@ -76,6 +76,7 @@ return array(
         $dicval->extract(false);
 
         return '
+            <span class="margin-right-10"><i class="fa fa-clock-o"></i> ' . Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $dicval->payment_date)->format('d.m.Y, H:i') . '</span>
             <span class="margin-right-10"><i class="fa fa-money"></i> ' . $dicval->payment_amount . '</span>
             <span class="margin-right-10">' . ($dicval->payment_status ? '<i class="fa fa-check"></i> Оплачен' : '<i class="fa fa-refresh"></i> Ожидает оплаты') . '</span>
             <span class="margin-right-10"><i class="fa fa-info-circle"></i> ' . $dicval->payment_method . '</span>
