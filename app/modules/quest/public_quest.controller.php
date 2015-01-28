@@ -413,10 +413,10 @@ class PublicQuestController extends BaseController {
             $dicval_field_amount->save();
 
 
+            ## Save name of the payer
+            $dicval->name = @$input['userid'];
+            $dicval->save();
 
-            ## Mark payment as finished
-            $dicval_field->value = '1';
-            $dicval_field->save();
 
             ## Save full request info to DB
             $dicval_field = DicTextFieldVal::firstOrNew(array(
@@ -424,6 +424,11 @@ class PublicQuestController extends BaseController {
                 'key' => 'payment_full',
             ));
             $dicval_field->value = json_encode($question);
+            $dicval_field->save();
+
+
+            ## Mark payment as finished
+            $dicval_field->value = '1';
             $dicval_field->save();
 
 
