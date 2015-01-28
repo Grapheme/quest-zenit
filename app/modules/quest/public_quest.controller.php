@@ -231,6 +231,7 @@ class PublicQuestController extends BaseController {
             Helper::ta($finished_quests);
             Helper::ta($data);
             Helper::ta($news);
+            Helper::ta($transaction);
             die;
         }
 
