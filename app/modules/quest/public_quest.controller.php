@@ -358,7 +358,7 @@ class PublicQuestController extends BaseController {
             $this->sendResponse('NO', 'Не указан номер заказа.');
 
         ## Find transaction by Order ID
-        $dicval = DicVal::where('id', $order_id)->with('allfields', 'dic')->first()->extract(1);
+        $dicval = DicVal::where('id', $order_id)->with('allfields', 'dic')->first();
 
         ## Check transaction
         if (
@@ -366,6 +366,8 @@ class PublicQuestController extends BaseController {
             /*** ...SOME VERIFICATIONS... ***/
         )
             $this->sendResponse('NO', 'Идентификатор платежа не найден.');
+
+        $dicval->extract(1);
 
         $projectHash = md5($question['amount'].$question['userid'].$question['paymentid'].$secretKey);
         if($projectHash != $question['key']) {
