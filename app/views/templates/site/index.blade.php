@@ -270,7 +270,7 @@ $target_amount = (int)$quest->target_amount;
 
 				<!--  Share -->
 				<div class="quest__share-container">
-	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="Халк споет на Невском!" data-shareDescription="Для того, чтобы помочь тем, кто в этом действительно нуждается, бразильский нападающий готов спеть и станцевать на главной улице Санкт-Петербурга!" data-shareImage="img/quests/quest_share.jpg"></div>
+	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="{{ isset($quest) && is_object($quest) ? $quest->name : '' }}" data-shareDescription="{{ isset($quest) && is_object($quest) ? $quest->short : '' }}" data-shareImage="{{ isset($quest) && is_object($quest) && is_object($quest->photo_id) ? $quest->photo_id->thumb() : '' }}"></div>
 				</div>
 			</div>
 		</section>
