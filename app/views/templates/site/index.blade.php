@@ -270,7 +270,7 @@ $target_amount = (int)$quest->target_amount;
 
 				<!--  Share -->
 				<div class="quest__share-container">
-	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="Отправим Малафеева таксовать на «Audi»!" data-shareDescription="Если до конца ноября мы вместе соберем 300 тысяч рублей для пациентов «АдВиты», Вячеслав Малафеев целый день будет работать таксистом!" data-shareImage="img/quests/quest_1.jpg"></div>
+	                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="Халк споет на Невском!" data-shareDescription="Для того, чтобы помочь тем, кто в этом действительно нуждается, бразильский нападающий готов спеть и станцевать на главной улице Санкт-Петербурга!" data-shareImage="img/quests/quest_share.jpg"></div>
 				</div>
 			</div>
 		</section>

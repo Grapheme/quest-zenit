@@ -14,6 +14,15 @@
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 	<meta name="viewport" content="width=1300,initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	
+	<!-- Open Graph Meta Data -->
+    <meta property="og:url" content="http://davai.fc-zenit.ru">
+    <meta property="og:title" content="Халк споет на Невском!">
+    <meta property="og:description" content="Для того, чтобы помочь тем, кто в этом действительно нуждается, бразильский нападающий готов спеть и станцевать на главной улице Санкт-Петербурга!">
+    <meta property="og:image" content="http://davai.fc-zenit.ru/img/quests/quest_share.jpg">
+    <meta property="og:site_name" content="ДАВАЙ-ДАВАЙ">
+    <meta property="og:type" content="website">
+	
 	{{ HTML::scriptmod('js/vendor/modernizr-2.6.2.min.js') }}
 	{{ HTML::stylemod('css/style.css') }}
 	<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>

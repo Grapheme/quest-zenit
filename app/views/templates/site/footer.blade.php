@@ -56,9 +56,10 @@
 					</td>
 				</tr>
 			</table>
-			<div class="contacts__documents">
-				<a href="docs/offer_advita.pdf" target="_blank" class="middle-font middle-font_white middle-font__span">Оферта</a>
-				<a href="docs/pp.pdf" target="_blank" class="middle-font middle-font_white middle-font__span">Оплата и безопасность</a>
+			<div class="contacts__documents clearfix">
+				<a href="docs/offer_advita.pdf" target="_blank" class="middle-font middle-font_white middle-font__span left-a">Оферта</a>
+				<a href="docs/pp.pdf" target="_blank" class="middle-font middle-font_white middle-font__span left-a">Оплата и безопасность</a>
+				<div class="copyright"><a href="http://funcfunc.ru" target="_blank">Разработка сайта</a> Func</div>
 			</div>
 			<span class="icon icon-arrow_up js-scrollTop">
 				<span class="icon icon-arrow_up-empty"></span>
