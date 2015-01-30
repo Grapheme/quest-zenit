@@ -599,7 +599,7 @@ class PublicQuestController extends BaseController {
         }
         $dicval->video = $videos;
 
-        $dicval = DicLib::loadImages($dicval, 'image_id');
+        $dicval = DicLib::loadImages($dicval, 'photo_id');
 
         if (Input::get('dbg') == '1')
             Helper::tad($dicval);
