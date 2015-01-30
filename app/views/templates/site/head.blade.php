@@ -19,7 +19,7 @@
     <meta property="og:url" content="http://davai.fc-zenit.ru">
     <meta property="og:title" content="{{ isset($quest) && is_object($quest) ? $quest->name : '' }}">
     <meta property="og:description" content="{{ isset($quest) && is_object($quest) ? $quest->short : '' }}">
-    <meta property="og:image" content="{{ isset($quest) && is_object($quest) && is_object($quest->image_id) ? $quest->image_id->full() : 'http://davai.fc-zenit.ru/img/quests/quest_share.jpg' }}">
+    <meta property="og:image" content="{{ isset($quest) && is_object($quest) && is_object($quest->photo_id ? $quest->photo_id->full() : 'http://davai.fc-zenit.ru/img/quests/quest_share.jpg' }}">
     <meta property="og:site_name" content="ДАВАЙ-ДАВАЙ">
     <meta property="og:type" content="website">
     
