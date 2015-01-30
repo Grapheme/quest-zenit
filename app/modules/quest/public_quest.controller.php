@@ -601,6 +601,9 @@ class PublicQuestController extends BaseController {
 
         $dicval = DicLib::loadImages($dicval, 'image_id');
 
+        if (Input::get('dbg') == '1')
+            Helper::tad($dicval);
+
         return $dicval;
     }
 
