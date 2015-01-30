@@ -599,6 +599,8 @@ class PublicQuestController extends BaseController {
         }
         $dicval->video = $videos;
 
+        $dicval = DicLib::loadImages($dicval, 'image_id');
+
         return $dicval;
     }
 
