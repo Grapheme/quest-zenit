@@ -78,6 +78,7 @@ class PublicQuestController extends BaseController {
 
             $transactions = Dic::valuesBySlug('transactions', function($query) use ($quest) {
                 $query->filter_by_field('quest_id', '=', $quest->id);
+                $query->filter_by_field('payment_status', '=', 1);
                 #$query->filter_by_field('payment_date', '=', '2014-09-04 15:05:18');
             }, ['fields', 'textfields'], true, true, false, false);
             #Helper::smartQueries(1);
