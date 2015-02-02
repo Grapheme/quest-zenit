@@ -869,6 +869,15 @@ button {
 .middle-font_white {
   color: #ffffff;
 }
+.left-a { float: left; display: inline-block; }
+.contacts__documents .copyright {
+	font-size: 13px;
+	color: #e9e9e9;
+	float: right;
+	margin-top: -3px;
+}
+.contacts__documents .copyright a { text-align: left; margin: 0; padding: 0; border-bottom: 1px solid transparent; line-height: 1.2em; }
+.contacts__documents .copyright a:hover { color: #fff; display: inline-block; border-bottom: 1px solid rgba(255,255,255,0.5);  } 
 .middle-font_gray {
   color: #a9bbcd;
 }
@@ -882,9 +891,14 @@ button {
   opacity: 0.7;
 }
 .middle-font__span {
-  opacity: 0.7;
   font-size: 16px;
   line-height: 1;
+  display: inline-block;
+  line-height: 1.2em;
+  border-bottom: 1px solid transparent;
+}
+.middle-font__span:hover {
+	color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); cursor: pointer; 
 }
 .main-font {
   font-size: 30px;
@@ -2588,6 +2602,7 @@ button {
   left: 40px;
   top: 200px;
   z-index: 10;
+  visibility: hidden;
 }
 .quest-navigation__list {
   margin: 0;
@@ -3145,4 +3160,7 @@ button {
 }
 #sms-payment {
   margin: 0 auto;
+}
+.game-statistic__dateEnd span {
+	visibility: hidden;
 }
