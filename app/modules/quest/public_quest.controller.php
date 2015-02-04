@@ -24,6 +24,8 @@ class PublicQuestController extends BaseController {
             Route::any('/inplat/success', array('as' => 'inplat.return_url_success', 'uses' => __CLASS__.'@getSuccessInplat'));
             Route::any('/inplat/fail', array('as' => 'inplat.return_url_fail', 'uses' => __CLASS__.'@getFailInplat'));
             Route::any('/inplat/notification', array('as' => 'inplat.notification_url', 'uses' => __CLASS__.'@postNotificationInplat'));
+
+            Route::any('/mixplat/notification', array('as' => 'inplat.notification_url', 'uses' => __CLASS__.'@postNotificationMixplat'));
         });
     }
 
@@ -541,6 +543,85 @@ class PublicQuestController extends BaseController {
             'text' => 'Операция осуществлена.',
             'redirect_url' => URL::route('inplat.return_url_success'),
         ));
+    }
+
+
+    public function postNotificationMixplat() {
+
+        $input = Input::all();
+        file_put_contents(storage_path('mixplat_' . time() . '_' . rand(9999, 99999) . '.txt'), json_encode($input));
+
+
+        $serviceId = Config::get('site.mixplat.serviceId');
+        $secretKey = Config::get('site.mixplat.secretKey');
+        $isTestMode = Config::get('site.mixplat.isTestMode');
+        $logDirectory = Config::get('site.mixplat.logDirectory');
+
+        $mixplat = new Mixplat($serviceId, $secretKey, $isTestMode, $logDirectory);
+
+        $result = $mixplat->handleStatus();
+
+        if ($result->isSignCorrect()) {
+            // Подпись корректная
+            // Данные запроса находятся в $result->getData()
+
+            /* ... */
+
+
+            /**
+             * Обновляем данные квеста
+             */
+            $quest = $this->getCurrentQuest();
+            #Helper::tad($quest);
+            $quest_id = is_object($quest) ? $quest->id : false;
+            $payment_slug = 'mixplat_' . $input['order_id'];
+            $dicval_exists = DicVal::where('slug', $payment_slug)->first();
+
+            if (!$dicval_exists) {
+
+                ## Create new Transaction
+                $dicval = DicVal::inject('transactions', array(
+                    'slug' => $payment_slug,
+                    'name' => @$input['phone'],
+                    'fields' => array(
+                        'quest_id' => $quest_id,
+                        'payment_status' => 1,
+                        'payment_amount' => @$input['amount_charged'],
+                        'payment_date' => date("Y-m-d H:i:s"),
+                        'payment_method' => 'mixplat',
+                    ),
+                    'textfields' => array(
+                        'payment_full' => json_encode($input),
+                    ),
+                ));
+
+                /**
+                 * Обновляем общую сумму сбора и кол-во участников-платежей
+                 */
+                if ($quest->id) {
+
+                    $quest_dicval_field = DicFieldVal::firstOrCreate(['dicval_id' => $quest->id, 'key' => 'current_amount']);
+                    $quest_dicval_field->value += @$input['params']['sum'];
+                    $quest_dicval_field->save();
+                    unset($quest_dicval_field);
+
+                    $quest_dicval_field = DicFieldVal::firstOrCreate(['dicval_id' => $quest->id, 'key' => 'count_members']);
+                    $quest_dicval_field->value++;
+                    $quest_dicval_field->save();
+                    unset($quest_dicval_field);
+                }
+            }
+
+
+            // Отправляем ответ об успешной обработке
+            $mixplat->sendOk();
+
+        } else {
+            // Подпись некорректная
+
+            die('Некорректная подпись запроса');
+        }
+
     }
 
 

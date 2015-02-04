@@ -34,6 +34,13 @@ return array(
         'return_url_fail' => URL::route('dengionline.return_url_fail'),
         'notification_url' => URL::route('dengionline.notification_url'),
     ),
+
+    'mixplat' => array(
+        'serviceId' => 100449,
+        'secretKey' => '5668480858d9ffa2091008bcf555db922fa78bfd',
+        'isTestMode' => false,
+        'logDirectory' => storage_path('log'),
+    ),
 );
 
 /**
