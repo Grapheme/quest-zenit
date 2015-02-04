@@ -39,7 +39,7 @@ return array(
         'serviceId' => 100449,
         'secretKey' => '5668480858d9ffa2091008bcf555db922fa78bfd',
         'isTestMode' => false,
-        'logDirectory' => storage_path('log/'),
+        'logDirectory' => storage_path('logs/'),
     ),
 );
 
