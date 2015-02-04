@@ -222,7 +222,7 @@ $target_amount = (int)$quest->target_amount;
 														</div>
 														-->
 														<div class="payment-desc">
-															или отправьте SMS-сообщение
+															Отправьте SMS-сообщение
 															<br>на номер 3443 с текстом
 															<br>davai [сумма перевода]
 														</div>
