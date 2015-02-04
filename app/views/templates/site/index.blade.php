@@ -112,13 +112,15 @@ $target_amount = (int)$quest->target_amount;
 
 				<!--  Lightbox open button -->
 				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest">
-					{{--
+					{{----}}
 					<button class="quest__take-part quest-button js-participate">Присоединиться</button>
-					--}}
+					{{----}}
+					<!--
 					<form action="{{ URL::route('invoice') }}" method="POST">
 						<input type="hidden" name="mode_type" value="dengionline">
 						<button class="quest__take-part quest-button quest-button-simple-link">Присоединиться</button>
 					</form>
+					-->
 
 					<div class="morph-content morph-content_participate">
 						<div>
@@ -192,6 +194,7 @@ $target_amount = (int)$quest->target_amount;
 												<div class="payment-block">
 													<div class="payment-cont">
 														<div class="payment-title">Оплатить с помощью СМС</div>
+														<!--
 														<form action="#">
 			                                                <script type="text/javascript" src="https://pay.inplat.ru/_js/pay_main.js"></script>
 			                                                <p>
@@ -210,9 +213,17 @@ $target_amount = (int)$quest->target_amount;
 			                                                    );
 			                                                </script>
 														</form>
+														-->
+														<!--
 														<div class="payment-desc">
 															или отправьте SMS-сообщение
 															<br>на номер 7522 с текстом
+															<br>davai [сумма перевода]
+														</div>
+														-->
+														<div class="payment-desc">
+															или отправьте SMS-сообщение
+															<br>на номер 3443 с текстом
 															<br>davai [сумма перевода]
 														</div>
 													</div>
