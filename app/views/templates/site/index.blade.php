@@ -224,7 +224,8 @@ $target_amount = (int)$quest->target_amount;
 														<div class="payment-desc">
 															Отправьте SMS-сообщение
 															<br>на номер 3443 с текстом
-															<br>davai [сумма перевода]
+															<br><b>davai [сумма перевода]</b>
+															<p>только для абонентов операторов Мегафон и Билайн</p>
 														</div>
 													</div>
 												</div>
