@@ -225,7 +225,7 @@ $target_amount = (int)$quest->target_amount;
 															Отправьте SMS-сообщение
 															<br>на номер 3443 с текстом
 															<br><b>davai [сумма перевода]</b>
-															<p>только для абонентов операторов Мегафон и Билайн</p>
+															<p>только для абонентов операторов Мегафон, Билайн, МТС</p>
 														</div>
 													</div>
 												</div>
@@ -249,10 +249,13 @@ $target_amount = (int)$quest->target_amount;
 								</span>
 								<div class="wrp wrp_quest">
 									<h2 class="quest-participate__title">
-										Успешно
+										Спасибо за ваше пожертвование!
 									</h2>
 									<div class="quest-participate__container">
 										<p class="response-text">Средства успешно переведены. «ФК "Зенит"» и Фонд «Адвита»<br> благодарят вас за ваш вклад!</p>
+									</div>
+									<div class="quest__share-container">
+						                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="{{ isset($quest) && is_object($quest) ? $quest->name : '' }}" data-shareDescription="{{ isset($quest) && is_object($quest) ? $quest->short : '' }}" data-shareImage="{{ isset($quest) && is_object($quest) && is_object($quest->photo_id) ? $quest->photo_id->thumb() : '' }}"></div>
 									</div>
 								</div>
 							</section>

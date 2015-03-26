@@ -2,8 +2,9 @@
 			<div class="wrp">
 				<div class="top__container">
 					<div class="top__left">
-						<h3 class="top__title">давай-давай.<span>Самый удивительный благотворительный проект России</span></h3>
-						
+						<a href="/" class="top__title__link">
+							<span>Самый удивительный благотворительный проект России</span>
+						</a>
 					</div>
 					<div class="top__right">
 						<a href="#" class="icon icon_zenit_logo">
