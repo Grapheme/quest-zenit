@@ -1,0 +1,1 @@
+{"method":"check","service_id":"100449","order_id":"J31DprtsQ42IKILm2s-pfg","phone":"79217714812","operator":"mf","date":"2015-02-13T21:59:42","text":"","amount":"100","amount_charged":"90","sign":"963546f2b9239fe9296502568613122c"}

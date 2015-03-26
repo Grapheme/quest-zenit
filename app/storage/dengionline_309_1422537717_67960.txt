@@ -1,0 +1,1 @@
+{"amount":"100.00","userid":"Shalonia Ekaterina","userid_extra":"","paymentid":"282382150","paymode":"263","orderid":"309","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"9189586b9662f2234f22c1c879fd7f3d","ps_paid_date":"2015-01-29 16:21:56","key":"b0a4a5ff4156da66b84c7aa065900154"}

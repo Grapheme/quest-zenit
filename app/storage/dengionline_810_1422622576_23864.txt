@@ -1,0 +1,1 @@
+{"amount":"100.00","userid":"OLGA POMELNIKOVA","userid_extra":"","paymentid":"282450724","paymode":"263","orderid":"810","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"1e65e1a20717993a3ca2e26044eb8cee","ps_paid_date":"2015-01-30 15:56:14","key":"d97ae00eef77ec19579a5394a5f22441"}

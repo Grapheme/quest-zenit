@@ -1,0 +1,1 @@
+{"method":"check","service_id":"100449","order_id":"79uYTlGzScOQMnQ-sAJxmA","phone":"79829151941","operator":"mts","date":"2015-02-19T23:53:38","text":"","amount":"200","amount_charged":"180","sign":"66a8cf0865f5d7b658f09eff8939f4b4"}

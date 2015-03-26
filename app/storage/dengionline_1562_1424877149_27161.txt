@@ -1,0 +1,1 @@
+{"amount":"1000.00","userid":"MAKARENKO ANTON","userid_extra":"","paymentid":"284346538","paymode":"263","orderid":"1562","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"352c3cb61cd0feb7349278e3e6f26949","ps_paid_date":"2015-02-25 18:11:55","key":"e7facf6bec8dfd286adf33ad76ea269d"}

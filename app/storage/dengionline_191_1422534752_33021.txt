@@ -1,0 +1,1 @@
+{"amount":"50.00","userid":"Tatiana Parfenova","userid_extra":"","paymentid":"282378636","paymode":"263","orderid":"191","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"267f185d6ee48d4b7dc8c1cad7f5b604","ps_paid_date":"2015-01-29 15:32:31","key":"553eb753eb9ed254898ed0d5a2371521"}

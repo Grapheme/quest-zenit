@@ -1,0 +1,1 @@
+{"amount":"44.00","userid":"Artem Dzyuban","userid_extra":"","paymentid":"282458704","paymode":"263","orderid":"848","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"4e594a4d202c8516e70e574e28a5f652","ps_paid_date":"2015-01-30 17:38:22","key":"fb14989199129499ce0d0897284abc0f"}

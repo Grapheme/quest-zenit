@@ -1,0 +1,1 @@
+{"amount":"100.00","userid":"Denis","userid_extra":"","paymentid":"283884122","paymode":"76","orderid":"1489","merchant":"davai.fc-zenit.ru","field":"1099331","source_new_pgw":"1","pg_hash":"2e8440c6000999f33bd51df5cc0734eb","AlfaClickUserID":"1099331","key":"3cab8aa64d50fde2eccff1490a332abf"}

@@ -1,0 +1,1 @@
+{"amount":"1200.00","userid":"Xamber","userid_extra":"","paymentid":"282401202","paymode":"263","orderid":"561","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"d6ad55e9ff9e866f7b31a20feefe3d21","ps_paid_date":"2015-01-29 20:39:05","key":"6a681d4a1f8ac037ed84bc71ddcd7275"}
