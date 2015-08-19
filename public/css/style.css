@@ -941,7 +941,7 @@ button {
 .rouble:before {
   content: '';
 }
-.quest-button {
+.quest-button, .join-link {
   background: #ffffff;
   border: none;
   display: inline-block;
@@ -957,12 +957,17 @@ button {
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
 }
-.quest-button:hover {
+.join-link {
+	margin-top: 1em;
+}
+.quest-button:hover, .join-link:hover {
   background: #dff5ff;
   color: #3091d5;
 }
 .quest-button:active,
-.quest-button:focus {
+.quest-button:focus,
+.join-link:active,
+.join-link:focus {
   outline: none;
   background: #bfebff;
 }
@@ -1053,6 +1058,14 @@ button {
 .icon_advita {
   width: 90px;
   height: 50px;
+}
+.icon_rusfond {
+  width: 127px;
+  height: 35px;
+  background-image: url('../img/rusfond.png');
+  background-repeat: no-repeat;
+  margin-left: 30px;
+  margin-top: 5px;
 }
 .icon_rub-big {
   margin-top: 7px;
