@@ -11,42 +11,42 @@ return array(
                 'type' => 'select',
                 'values' => array('Выберите..')+Dic::valuesBySlug('quests')->lists('name', 'id'),
                 'others' => array(
-                    'disabled',
+                    #'disabled',
                 ),
             ),
             'payment_status' => array(
                 'title' => 'Статус платежа',
                 'type' => 'text',
                 'others' => array(
-                    'disabled',
+                    #'disabled',
                 ),
             ),
             'payment_amount' => array(
                 'title' => 'Сумма платежа',
                 'type' => 'text',
                 'others' => array(
-                    'disabled',
+                    #'disabled',
                 ),
             ),
             'payment_date' => array(
                 'title' => 'Дата платежа',
                 'type' => 'text',
                 'others' => array(
-                    'disabled',
+                    #'disabled',
                 ),
             ),
             'payment_method' => array(
                 'title' => 'Интерфейс платежа',
                 'type' => 'text',
                 'others' => array(
-                    'disabled',
+                    #'disabled',
                 ),
             ),
             'payment_full' => array(
                 'title' => 'Техническая информация о платеже',
                 'type' => 'textarea',
                 'others' => array(
-                    'disabled',
+                    #'disabled',
                 ),
             ),
         );
