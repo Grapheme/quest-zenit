@@ -1,0 +1,1 @@
+{"method":"check","service_id":"100449","order_id":"SYUy3Y4_R4qNtgycyKDHhA","phone":"79218916306","operator":"mf","date":"2015-02-28T12:28:22","text":"","amount":"100","amount_charged":"90","sign":"64c2ac0cd5b8a9c68c2eac3d39cd9693"}

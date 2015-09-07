@@ -1,0 +1,1 @@
+{"method":"notifyStatus","service_id":"100449","date":"2015-02-27T15:33:37","order_id":"aHuubSWVTH-TBP3_U8ABCw","merchant_order_id":"","status":"18","phone":"79111588412","operator":"mts","amount":"100","amount_charged":"90","sign":"30603acaa8ed8433a0473bac38f7589f"}

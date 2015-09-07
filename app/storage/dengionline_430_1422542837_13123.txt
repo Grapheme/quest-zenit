@@ -1,0 +1,1 @@
+{"amount":"100.00","userid":"\u0418\u0432\u0430\u043d","userid_extra":"","paymentid":"282388606","paymode":"263","orderid":"430","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"6e26b131c0632d75417a527ecb9a92d3","ps_paid_date":"2015-01-29 17:47:16","key":"a94f6043210aa4150d2805c0e9b662d5"}

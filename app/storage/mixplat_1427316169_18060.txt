@@ -1,0 +1,1 @@
+{"method":"notifyStatus","service_id":"100449","date":"2015-03-25T23:41:42","order_id":"IFMIjQv9UpVgXoobxvBfILTvTpUjUff7","merchant_order_id":"","status":"2","phone":"79117476170","operator":"mts","amount":"100","amount_charged":"90","sign":"b6f8764f6ee07933943d1b34bd116356"}

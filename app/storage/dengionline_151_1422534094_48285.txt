@@ -1,0 +1,1 @@
+{"amount":"500.00","userid":"liquide","userid_extra":"","paymentid":"282377888","paymode":"470","orderid":"151","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"324bccfec0baa5f891764ec06c762df9","key":"d4cd74b58991c22daf3efa7cdb72aeeb"}

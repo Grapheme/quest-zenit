@@ -1,0 +1,1 @@
+{"amount":"300.00","userid":"IGOR VORONIN","userid_extra":"","paymentid":"284299052","paymode":"76","orderid":"1541","merchant":"davai.fc-zenit.ru","field":"7095954","source_new_pgw":"1","pg_hash":"ed2184647fc16a52ab9c94d054165385","AlfaClickUserID":"7095954","key":"94237c41d10b536a8d3f74301a8151f9"}

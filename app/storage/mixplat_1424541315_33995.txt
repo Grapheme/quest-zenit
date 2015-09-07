@@ -1,0 +1,1 @@
+{"method":"check","service_id":"100449","order_id":"uslgIiN6TLK3nW23-HWpaA","phone":"79270752327","operator":"mf","date":"2015-02-21T20:54:45","text":"","amount":"500","amount_charged":"450","sign":"fb6bf69fb5a3107a4094f3df8e30ae98"}

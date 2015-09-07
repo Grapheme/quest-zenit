@@ -1,0 +1,1 @@
+{"amount":"300.00","userid":"Maxim Potapov","userid_extra":"","paymentid":"286090806","paymode":"263","orderid":"1898","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"236bf2a42ebb150fa0de01022568cbab","ps_paid_date":"2015-03-24 10:38:32","key":"37e9b40978cf01bf4056d778015c2fb9"}

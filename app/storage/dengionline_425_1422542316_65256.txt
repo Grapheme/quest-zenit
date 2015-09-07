@@ -1,0 +1,1 @@
+{"amount":"20.00","userid":"igratar","userid_extra":"","paymentid":"282388148","paymode":"250","orderid":"425","merchant":"davai.fc-zenit.ru","field":"9627276598","source_new_pgw":"1","key":"d984ae9406793a811054e1c49da63a55"}

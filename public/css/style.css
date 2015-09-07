@@ -856,7 +856,8 @@ button {
   color: #ffffff;
 }
 .little-font_gray {
-  color: #a9bbcd;
+  /*color: #a9bbcd;*/
+  color: #576C81;
 }
 .little-font_bold {
   font-weight: 700;
@@ -940,7 +941,7 @@ button {
 .rouble:before {
   content: '';
 }
-.quest-button {
+.quest-button, .join-link {
   background: #ffffff;
   border: none;
   display: inline-block;
@@ -956,12 +957,17 @@ button {
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
 }
-.quest-button:hover {
+.join-link {
+	margin-top: 1em;
+}
+.quest-button:hover, .join-link:hover {
   background: #dff5ff;
   color: #3091d5;
 }
 .quest-button:active,
-.quest-button:focus {
+.quest-button:focus,
+.join-link:active,
+.join-link:focus {
   outline: none;
   background: #bfebff;
 }
@@ -1052,6 +1058,14 @@ button {
 .icon_advita {
   width: 90px;
   height: 50px;
+}
+.icon_rusfond {
+  width: 127px;
+  height: 35px;
+  background-image: url('../img/rusfond.png');
+  background-repeat: no-repeat;
+  margin-left: 30px;
+  margin-top: 5px;
 }
 .icon_rub-big {
   margin-top: 7px;
@@ -1465,6 +1479,24 @@ button {
   padding-left: 10px;
   font-weight: normal;
 }
+
+.top__title__link {
+	background: url('../img/davai_logo_new.png') 0 0 no-repeat;
+  	display: inline-block;
+  	width: 380px;
+  	height: 90px;
+  	margin-top: -28px;
+}
+.top__title__link > span {
+  	text-transform: none;
+  	padding-left: 130px;
+  	font-weight: normal;
+  	color: #70747c;
+  	font-size: 14px;
+  	display: inline-block;
+  	padding-top: 35px;
+}
+
 .top__description {
   margin: 0;
   color: #fff;

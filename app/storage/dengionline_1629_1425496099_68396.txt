@@ -1,0 +1,1 @@
+{"amount":"500.00","userid":"Boris Borzenko","userid_extra":"","paymentid":"284852818","paymode":"263","orderid":"1629","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"bddbc88f6f30c7f327474783df03b90b","ps_paid_date":"2015-03-04 22:07:36","key":"842e60c581ce078ccafdfc3f5b70ab71"}

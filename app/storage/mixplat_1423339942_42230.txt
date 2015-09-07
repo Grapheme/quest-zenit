@@ -1,0 +1,1 @@
+{"method":"notifyStatus","service_id":"100449","date":"2015-02-07T23:12:10","order_id":"wwgNhEIkS929RJzZ5BEQLA","merchant_order_id":"","status":"2","phone":"79312815032","operator":"mf","amount":"50","amount_charged":"45","sign":"7893efc9c00b7ceba1cea66cfd6ad579"}

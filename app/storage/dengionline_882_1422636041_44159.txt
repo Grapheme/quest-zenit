@@ -1,0 +1,1 @@
+{"amount":"50.00","userid":"Gleb Krupin","userid_extra":"","paymentid":"282468948","paymode":"546","orderid":"882","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"6a3c882e12c1e00034c7b2b1443dfa29","ps_paid_date":"2015-01-30 19:40:38","key":"6f66f34dc2dd4021219eb81b4015eed2"}

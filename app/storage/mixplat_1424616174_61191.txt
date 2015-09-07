@@ -1,0 +1,1 @@
+{"method":"check","service_id":"100449","order_id":"DxdnlEZ6T6GpoEhvcsdikQ","phone":"79617241872","operator":"beeline","date":"2015-02-22T17:42:23","text":"","amount":"15","amount_charged":"13.5","sign":"59cfc228489d64a310f54664aaf61983"}

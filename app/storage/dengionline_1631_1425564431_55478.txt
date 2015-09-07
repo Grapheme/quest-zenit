@@ -1,0 +1,1 @@
+{"amount":"3000.00","userid":"Dembo Zhanna","userid_extra":"","paymentid":"284898634","paymode":"263","orderid":"1631","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"884c85ad139f506f26cb28bef108fb83","ps_paid_date":"2015-03-05 17:06:27","key":"ed1685c1748f37f48b4e0fdbdd298972"}

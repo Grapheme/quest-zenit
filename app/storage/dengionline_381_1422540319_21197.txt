@@ -1,0 +1,1 @@
+{"amount":"100.00","userid":"gremio812","userid_extra":"","paymentid":"282385636","paymode":"470","orderid":"381","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"4d34496c26d4baa3e1cbfa270c684aaf","key":"970a3b4cf34128e49113ce76bd16dfbd"}

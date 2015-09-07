@@ -113,7 +113,8 @@ $target_amount = (int)$quest->target_amount;
 				<!--  Lightbox open button -->
 				<div class="morph-button morph-button-overlay morph-button-fixed morph-button_quest">
 					{{----}}
-					<button class="quest__take-part quest-button js-participate">Присоединиться</button>
+					<!-- <button class="quest__take-part quest-button js-participate">Присоединиться</button> -->
+					<a class="join-link" href="http://www.rusfond.ru/letter/42/9930" target="_blank">Присоединиться</a>
 					{{----}}
 					<!--
 					<form action="{{ URL::route('invoice') }}" method="POST">
@@ -225,7 +226,7 @@ $target_amount = (int)$quest->target_amount;
 															Отправьте SMS-сообщение
 															<br>на номер 3443 с текстом
 															<br><b>davai [сумма перевода]</b>
-															<p>только для абонентов операторов Мегафон и Билайн</p>
+															<p>только для абонентов операторов Мегафон, Билайн, МТС</p>
 														</div>
 													</div>
 												</div>
@@ -249,10 +250,13 @@ $target_amount = (int)$quest->target_amount;
 								</span>
 								<div class="wrp wrp_quest">
 									<h2 class="quest-participate__title">
-										Успешно
+										Спасибо за ваше пожертвование!
 									</h2>
 									<div class="quest-participate__container">
 										<p class="response-text">Средства успешно переведены. «ФК "Зенит"» и Фонд «Адвита»<br> благодарят вас за ваш вклад!</p>
+									</div>
+									<div class="quest__share-container">
+						                <div class="social-share__list quest__share-yaShare" id="ya-shareMain"  data-shareTitle="{{ isset($quest) && is_object($quest) ? $quest->name : '' }}" data-shareDescription="{{ isset($quest) && is_object($quest) ? $quest->short : '' }}" data-shareImage="{{ isset($quest) && is_object($quest) && is_object($quest->photo_id) ? $quest->photo_id->thumb() : '' }}"></div>
 									</div>
 								</div>
 							</section>
@@ -306,7 +310,7 @@ $target_amount = (int)$quest->target_amount;
 				<h2 class="block-title main-font main-font_gray main-font_light">О проекте</h2>
 				<div class="about-proj__container">
 					<div class="about-proj__block about-proj__block_gray fl-l">
-						<p class="middle-font middle-font_white">«Давай-давай!» — совместный проект благотворительного фонда «АдВита» и футбольного клуба «Зенит».<br/><br/>Раз в месяц мы объявляем о начале очередного квеста, по условиям которого футболист, тренер или известный болельщик соглашается сделать что-то очень необычное при одном условии: нам вместе необходимо собрать определенную сумму, которая полностью будет переведена в помощь пациентам «АдВиты».</p>
+						<p class="middle-font middle-font_white">«Давай-Давай» – совместный проект, который начинает Русфонд с футбольным клубом «Зенит».<br/><br/>Раз в месяц мы будем объявлять о начале очередной необычной благотворительной акции. Суть акции заключается в том, что футболист, тренер или известный болельщик «Зенита» соглашается сделать что-то очень нестандартное (из ряда вон выходящее) при одном условии: необходимо собрать определенную сумму, которая требуется для оплаты лечения тяжелобольного ребенка — подопечного Русфонда в Санкт-Петербурге.</p>
 					</div>
 					<div class="about-proj__block fl-r">
 						<p class="little-font little-font_gray">Даже в самые непростые времена мы должны помогать тем, кто нуждается в этом: что бы ни происходило вокруг, в больницах остаются дети, которым необходимо лечение. И для того, чтобы помочь им, наши герои готовы на все.<br/><br/>Дело за вами! Мы хотим не просто заниматься благотворительностью — мы хотим делать это самым невероятным образом.<br/><br/>Присоединяйтесь! Будет интересно!</p>

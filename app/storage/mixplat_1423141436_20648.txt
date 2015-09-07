@@ -1,0 +1,1 @@
+{"method":"notifyStatus","service_id":"100449","date":"2015-02-05T16:03:47","order_id":"6NnVw_HtT8yj4CttjBEcKw","merchant_order_id":"","status":"5","phone":"79671607657","operator":"beeline","amount":"100","amount_charged":"90","sign":"14046c5bf68c78ab10a43d366ecfd6a3"}

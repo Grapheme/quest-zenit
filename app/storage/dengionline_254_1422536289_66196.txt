@@ -1,0 +1,1 @@
+{"amount":"1000.00","userid":"aleks.tolstyi@mail.ru","userid_extra":"","paymentid":"282379976","paymode":"263","orderid":"254","merchant":"davai.fc-zenit.ru","field":"","source_new_pgw":"1","pg_hash":"76f2c646e514d3a8cd8aee5b9c570cef","ps_paid_date":"2015-01-29 15:58:08","key":"1a65eeb7525547bef4f3f8790271340e"}

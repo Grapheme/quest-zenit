@@ -1,0 +1,1 @@
+{"payment_id":468072641198186100,"status":"auth","params":{"sum":"10","msisdn":79094281234}}
