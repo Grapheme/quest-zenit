@@ -53,7 +53,6 @@ return array(
     },
 
 
-
     'hooks' => array(
 
         /**
@@ -105,3 +104,9 @@ return array(
     ),
 
 );
+
+/*
+ *
+ * $('*').each(function(){$(this).attr('disabled', null);});da
+ *
+ */
