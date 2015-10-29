@@ -33,6 +33,7 @@ return array(
                 'type' => 'text',
                 'others' => array(
                     #'disabled',
+                    'placeholder' => '0000-00-00 00:00:00',
                 ),
             ),
             'payment_method' => array(
