@@ -79,7 +79,7 @@ return array(
         if (preg_match('~\d{4}\-\d{2}\-\d{2} \d{2}\:\d{2}\:\d{2}~is', $dicval->payment_date)) {
             $time = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $dicval->payment_date)->format('d.m.Y, H:i');
         } else {
-            $time = '<span color="red">incorrect</span>';
+            $time = '<span style="color:#f00">incorrect</span>';
         }
 
         return '
